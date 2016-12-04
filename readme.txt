@@ -2,30 +2,10 @@
 ** ChibiOS/RT port for ARM-Cortex-M4 STM32F407.                            **
 *****************************************************************************
 
-** TARGET **
+This repo contains DCM (directional cosine matrix) based IMU which developed over ChibiOS RTOS and It's charming HAL.
 
-The demo runs on an ST STM32F4-Discovery board.
+the motivation for this job rased when i was looking at ArdoPilot    
 
-** The Demo **
+i used GY-86 (MPU6050 , MS5611 , HMC5883) and also stm32f407VGT on my customized board (tested with stm32f407 discovery boardssadasda
 
-The demo shows how to use the ADC, PWM and SPI drivers using asynchronous
-APIs. The ADC samples two channels (temperature sensor and PC1) and modulates
-the PWM using the sampled values. The sample data is also transmitted using
-the SPI port 2 (NSS=PB12, SCK=PB13, MISO=PB14, MOSI=PB15).
-By pressing the button located on the board the test procedure is activated
-with output on the serial port SD2 (USART2).
-
-** Build Procedure **
-
-The demo has been tested by using the free Codesourcery GCC-based toolchain
-and YAGARTO. just modify the TRGT line in the makefile in order to use
-different GCC toolchains.
-
-** Notes **
-
-Some files used by the demo are not part of ChibiOS/RT but are copyright of
-ST Microelectronics and are licensed under a different license.
-Also note that not all the files present in the ST library are distributed
-with ChibiOS/RT, you can find the whole library on the ST web site:
-
-                             http://www.st.com
+in order to get data from IMU i user Mavlink 
