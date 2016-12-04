@@ -1,0 +1,2071 @@
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"ext.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.extInit,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.global	extInit
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	extInit, %function
+  25              	extInit:
+  26              	.LFB118:
+  27              		.file 1 "../../chibios/os/hal/src/ext.c"
+  28              		.loc 1 68 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              		.loc 1 71 0
+  34              		.loc 1 70 0
+  35 0000 FFF7FEBF 		b	ext_lld_init
+  36              	.LVL0:
+  37              		.cfi_endproc
+  38              	.LFE118:
+  39              		.size	extInit, .-extInit
+  40 0004 AFF30080 		.section	.text.extObjectInit,"ax",%progbits
+  40      AFF30080 
+  40      AFF30080 
+  41              		.align	2
+  42              		.p2align 4,,15
+  43              		.global	extObjectInit
+  44              		.thumb
+  45              		.thumb_func
+  46              		.type	extObjectInit, %function
+  47              	extObjectInit:
+  48              	.LFB119:
+  49              		.loc 1 80 0
+  50              		.cfi_startproc
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  54              	.LVL1:
+  55              		.loc 1 82 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 2
+
+
+  56 0000 0123     		movs	r3, #1
+  57              		.loc 1 83 0
+  58 0002 0021     		movs	r1, #0
+  59              		.loc 1 82 0
+  60 0004 0370     		strb	r3, [r0, #0]
+  61              		.loc 1 83 0
+  62 0006 4160     		str	r1, [r0, #4]
+  63 0008 7047     		bx	lr
+  64              		.cfi_endproc
+  65              	.LFE119:
+  66              		.size	extObjectInit, .-extObjectInit
+  67 000a 00BFAFF3 		.section	.text.extStart,"ax",%progbits
+  67      0080
+  68              		.align	2
+  69              		.p2align 4,,15
+  70              		.global	extStart
+  71              		.thumb
+  72              		.thumb_func
+  73              		.type	extStart, %function
+  74              	extStart:
+  75              	.LFB120:
+  76              		.loc 1 96 0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80              	.LVL2:
+  81 0000 10B5     		push	{r4, lr}
+  82              	.LCFI0:
+  83              		.cfi_def_cfa_offset 8
+  84              		.cfi_offset 4, -8
+  85              		.cfi_offset 14, -4
+  86              	.LBB2:
+  87              		.loc 1 100 0
+  88 0002 2023     		movs	r3, #32
+  89              	.LVL3:
+  90              	.LBE2:
+  91              		.loc 1 96 0
+  92 0004 0446     		mov	r4, r0
+  93              	.LBB3:
+  94              		.loc 1 100 0
+  95              	@ 100 "../../chibios/os/hal/src/ext.c" 1
+  96 0006 83F31188 		msr     BASEPRI, r3
+  97              	@ 0 "" 2
+  98              	.LVL4:
+  99              		.thumb
+ 100              	.LBE3:
+ 101              		.loc 1 103 0
+ 102 000a 4160     		str	r1, [r0, #4]
+ 103              		.loc 1 104 0
+ 104 000c FFF7FEFF 		bl	ext_lld_start
+ 105              	.LVL5:
+ 106              		.loc 1 105 0
+ 107 0010 0223     		movs	r3, #2
+ 108 0012 2370     		strb	r3, [r4, #0]
+ 109              	.LBB4:
+ 110              		.loc 1 106 0
+ 111 0014 0023     		movs	r3, #0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 3
+
+
+ 112              	.LVL6:
+ 113              	@ 106 "../../chibios/os/hal/src/ext.c" 1
+ 114 0016 83F31188 		msr     BASEPRI, r3
+ 115              	@ 0 "" 2
+ 116              	.LVL7:
+ 117              		.thumb
+ 118 001a 10BD     		pop	{r4, pc}
+ 119              	.LBE4:
+ 120              		.cfi_endproc
+ 121              	.LFE120:
+ 122              		.size	extStart, .-extStart
+ 123 001c AFF30080 		.section	.text.extStop,"ax",%progbits
+ 124              		.align	2
+ 125              		.p2align 4,,15
+ 126              		.global	extStop
+ 127              		.thumb
+ 128              		.thumb_func
+ 129              		.type	extStop, %function
+ 130              	extStop:
+ 131              	.LFB121:
+ 132              		.loc 1 116 0
+ 133              		.cfi_startproc
+ 134              		@ args = 0, pretend = 0, frame = 0
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136              	.LVL8:
+ 137 0000 10B5     		push	{r4, lr}
+ 138              	.LCFI1:
+ 139              		.cfi_def_cfa_offset 8
+ 140              		.cfi_offset 4, -8
+ 141              		.cfi_offset 14, -4
+ 142              	.LBB5:
+ 143              		.loc 1 120 0
+ 144 0002 2023     		movs	r3, #32
+ 145              	.LVL9:
+ 146              	.LBE5:
+ 147              		.loc 1 116 0
+ 148 0004 0446     		mov	r4, r0
+ 149              	.LBB6:
+ 150              		.loc 1 120 0
+ 151              	@ 120 "../../chibios/os/hal/src/ext.c" 1
+ 152 0006 83F31188 		msr     BASEPRI, r3
+ 153              	@ 0 "" 2
+ 154              	.LVL10:
+ 155              		.thumb
+ 156              	.LBE6:
+ 157              		.loc 1 123 0
+ 158 000a FFF7FEFF 		bl	ext_lld_stop
+ 159              	.LVL11:
+ 160              		.loc 1 124 0
+ 161 000e 0123     		movs	r3, #1
+ 162 0010 2370     		strb	r3, [r4, #0]
+ 163              	.LBB7:
+ 164              		.loc 1 125 0
+ 165 0012 0023     		movs	r3, #0
+ 166              	.LVL12:
+ 167              	@ 125 "../../chibios/os/hal/src/ext.c" 1
+ 168 0014 83F31188 		msr     BASEPRI, r3
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 4
+
+
+ 169              	@ 0 "" 2
+ 170              	.LVL13:
+ 171              		.thumb
+ 172 0018 10BD     		pop	{r4, pc}
+ 173              	.LBE7:
+ 174              		.cfi_endproc
+ 175              	.LFE121:
+ 176              		.size	extStop, .-extStop
+ 177 001a 00BFAFF3 		.section	.text.extChannelEnable,"ax",%progbits
+ 177      0080
+ 178              		.align	2
+ 179              		.p2align 4,,15
+ 180              		.global	extChannelEnable
+ 181              		.thumb
+ 182              		.thumb_func
+ 183              		.type	extChannelEnable, %function
+ 184              	extChannelEnable:
+ 185              	.LFB122:
+ 186              		.loc 1 137 0
+ 187              		.cfi_startproc
+ 188              		@ args = 0, pretend = 0, frame = 0
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190              	.LVL14:
+ 191 0000 08B5     		push	{r3, lr}
+ 192              	.LCFI2:
+ 193              		.cfi_def_cfa_offset 8
+ 194              		.cfi_offset 3, -8
+ 195              		.cfi_offset 14, -4
+ 196              	.LBB8:
+ 197              		.loc 1 142 0
+ 198 0002 2023     		movs	r3, #32
+ 199              	.LVL15:
+ 200              	@ 142 "../../chibios/os/hal/src/ext.c" 1
+ 201 0004 83F31188 		msr     BASEPRI, r3
+ 202              	@ 0 "" 2
+ 203              	.LVL16:
+ 204              		.thumb
+ 205              	.LBE8:
+ 206              		.loc 1 147 0
+ 207 0008 FFF7FEFF 		bl	ext_lld_channel_enable
+ 208              	.LVL17:
+ 209              	.LBB9:
+ 210              		.loc 1 148 0
+ 211 000c 0023     		movs	r3, #0
+ 212              	.LVL18:
+ 213              	@ 148 "../../chibios/os/hal/src/ext.c" 1
+ 214 000e 83F31188 		msr     BASEPRI, r3
+ 215              	@ 0 "" 2
+ 216              	.LVL19:
+ 217              		.thumb
+ 218 0012 08BD     		pop	{r3, pc}
+ 219              	.LBE9:
+ 220              		.cfi_endproc
+ 221              	.LFE122:
+ 222              		.size	extChannelEnable, .-extChannelEnable
+ 223 0014 AFF30080 		.section	.text.extChannelDisable,"ax",%progbits
+ 223      AFF30080 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 5
+
+
+ 223      AFF30080 
+ 224              		.align	2
+ 225              		.p2align 4,,15
+ 226              		.global	extChannelDisable
+ 227              		.thumb
+ 228              		.thumb_func
+ 229              		.type	extChannelDisable, %function
+ 230              	extChannelDisable:
+ 231              	.LFB123:
+ 232              		.loc 1 160 0
+ 233              		.cfi_startproc
+ 234              		@ args = 0, pretend = 0, frame = 0
+ 235              		@ frame_needed = 0, uses_anonymous_args = 0
+ 236              	.LVL20:
+ 237 0000 08B5     		push	{r3, lr}
+ 238              	.LCFI3:
+ 239              		.cfi_def_cfa_offset 8
+ 240              		.cfi_offset 3, -8
+ 241              		.cfi_offset 14, -4
+ 242              	.LBB10:
+ 243              		.loc 1 165 0
+ 244 0002 2023     		movs	r3, #32
+ 245              	.LVL21:
+ 246              	@ 165 "../../chibios/os/hal/src/ext.c" 1
+ 247 0004 83F31188 		msr     BASEPRI, r3
+ 248              	@ 0 "" 2
+ 249              	.LVL22:
+ 250              		.thumb
+ 251              	.LBE10:
+ 252              		.loc 1 170 0
+ 253 0008 FFF7FEFF 		bl	ext_lld_channel_disable
+ 254              	.LVL23:
+ 255              	.LBB11:
+ 256              		.loc 1 171 0
+ 257 000c 0023     		movs	r3, #0
+ 258              	.LVL24:
+ 259              	@ 171 "../../chibios/os/hal/src/ext.c" 1
+ 260 000e 83F31188 		msr     BASEPRI, r3
+ 261              	@ 0 "" 2
+ 262              	.LVL25:
+ 263              		.thumb
+ 264 0012 08BD     		pop	{r3, pc}
+ 265              	.LBE11:
+ 266              		.cfi_endproc
+ 267              	.LFE123:
+ 268              		.size	extChannelDisable, .-extChannelDisable
+ 269 0014 AFF30080 		.section	.text.extSetChannelModeI,"ax",%progbits
+ 269      AFF30080 
+ 269      AFF30080 
+ 270              		.align	2
+ 271              		.p2align 4,,15
+ 272              		.global	extSetChannelModeI
+ 273              		.thumb
+ 274              		.thumb_func
+ 275              		.type	extSetChannelModeI, %function
+ 276              	extSetChannelModeI:
+ 277              	.LFB124:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 6
+
+
+ 278              		.loc 1 193 0
+ 279              		.cfi_startproc
+ 280              		@ args = 0, pretend = 0, frame = 0
+ 281              		@ frame_needed = 0, uses_anonymous_args = 0
+ 282              		@ link register save eliminated.
+ 283              	.LVL26:
+ 284 0000 30B4     		push	{r4, r5}
+ 285              	.LCFI4:
+ 286              		.cfi_def_cfa_offset 8
+ 287              		.cfi_offset 4, -8
+ 288              		.cfi_offset 5, -4
+ 289              		.loc 1 193 0
+ 290 0002 0B46     		mov	r3, r1
+ 291              	.LVL27:
+ 292              		.loc 1 208 0
+ 293 0004 4568     		ldr	r5, [r0, #4]
+ 294              		.loc 1 193 0
+ 295 0006 0446     		mov	r4, r0
+ 296              		.loc 1 208 0
+ 297 0008 92E80300 		ldmia	r2, {r0, r1}
+ 298              	.LVL28:
+ 299 000c 05EBC302 		add	r2, r5, r3, lsl #3
+ 300              	.LVL29:
+ 301 0010 82E80300 		stmia	r2, {r0, r1}
+ 302              		.loc 1 209 0
+ 303 0014 2046     		mov	r0, r4
+ 304 0016 1946     		mov	r1, r3
+ 305              		.loc 1 210 0
+ 306 0018 30BC     		pop	{r4, r5}
+ 307              		.loc 1 209 0
+ 308 001a FFF7FEBF 		b	ext_lld_channel_enable
+ 309              	.LVL30:
+ 310              		.cfi_endproc
+ 311              	.LFE124:
+ 312              		.size	extSetChannelModeI, .-extSetChannelModeI
+ 313 001e 00BF     		.text
+ 314              	.Letext0:
+ 315              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 316              		.file 3 "../../chibios/os/hal/include/ext.h"
+ 317              		.file 4 "../../chibios/os/hal/platforms/STM32/ext_lld.h"
+ 318              		.file 5 "../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4.h"
+ 319              		.section	.debug_info,"",%progbits
+ 320              	.Ldebug_info0:
+ 321 0000 D3040000 		.4byte	0x4d3
+ 322 0004 0200     		.2byte	0x2
+ 323 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 324 000a 04       		.byte	0x4
+ 325 000b 01       		.uleb128 0x1
+ 326 000c DE010000 		.4byte	.LASF41
+ 327 0010 01       		.byte	0x1
+ 328 0011 BF010000 		.4byte	.LASF42
+ 329 0015 0A010000 		.4byte	.LASF43
+ 330 0019 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 331 001d 00000000 		.4byte	0
+ 332 0021 00000000 		.4byte	0
+ 333 0025 00000000 		.4byte	.Ldebug_line0
+ 334 0029 02       		.uleb128 0x2
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 7
+
+
+ 335 002a 04       		.byte	0x4
+ 336 002b 05       		.byte	0x5
+ 337 002c 696E7400 		.ascii	"int\000"
+ 338 0030 03       		.uleb128 0x3
+ 339 0031 04       		.byte	0x4
+ 340 0032 07       		.byte	0x7
+ 341 0033 50010000 		.4byte	.LASF0
+ 342 0037 03       		.uleb128 0x3
+ 343 0038 01       		.byte	0x1
+ 344 0039 06       		.byte	0x6
+ 345 003a 6B020000 		.4byte	.LASF1
+ 346 003e 03       		.uleb128 0x3
+ 347 003f 01       		.byte	0x1
+ 348 0040 08       		.byte	0x8
+ 349 0041 B3000000 		.4byte	.LASF2
+ 350 0045 03       		.uleb128 0x3
+ 351 0046 02       		.byte	0x2
+ 352 0047 05       		.byte	0x5
+ 353 0048 41020000 		.4byte	.LASF3
+ 354 004c 03       		.uleb128 0x3
+ 355 004d 02       		.byte	0x2
+ 356 004e 07       		.byte	0x7
+ 357 004f D9000000 		.4byte	.LASF4
+ 358 0053 04       		.uleb128 0x4
+ 359 0054 A0010000 		.4byte	.LASF6
+ 360 0058 02       		.byte	0x2
+ 361 0059 4F       		.byte	0x4f
+ 362 005a 5E000000 		.4byte	0x5e
+ 363 005e 03       		.uleb128 0x3
+ 364 005f 04       		.byte	0x4
+ 365 0060 05       		.byte	0x5
+ 366 0061 62020000 		.4byte	.LASF5
+ 367 0065 04       		.uleb128 0x4
+ 368 0066 59020000 		.4byte	.LASF7
+ 369 006a 02       		.byte	0x2
+ 370 006b 50       		.byte	0x50
+ 371 006c 70000000 		.4byte	0x70
+ 372 0070 03       		.uleb128 0x3
+ 373 0071 04       		.byte	0x4
+ 374 0072 07       		.byte	0x7
+ 375 0073 C7000000 		.4byte	.LASF8
+ 376 0077 03       		.uleb128 0x3
+ 377 0078 08       		.byte	0x8
+ 378 0079 05       		.byte	0x5
+ 379 007a B1010000 		.4byte	.LASF9
+ 380 007e 03       		.uleb128 0x3
+ 381 007f 08       		.byte	0x8
+ 382 0080 07       		.byte	0x7
+ 383 0081 9C000000 		.4byte	.LASF10
+ 384 0085 03       		.uleb128 0x3
+ 385 0086 01       		.byte	0x1
+ 386 0087 02       		.byte	0x2
+ 387 0088 77020000 		.4byte	.LASF11
+ 388 008c 03       		.uleb128 0x3
+ 389 008d 04       		.byte	0x4
+ 390 008e 07       		.byte	0x7
+ 391 008f A8010000 		.4byte	.LASF12
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 8
+
+
+ 392 0093 03       		.uleb128 0x3
+ 393 0094 01       		.byte	0x1
+ 394 0095 08       		.byte	0x8
+ 395 0096 62010000 		.4byte	.LASF13
+ 396 009a 05       		.uleb128 0x5
+ 397 009b 53000000 		.4byte	0x53
+ 398 009f 06       		.uleb128 0x6
+ 399 00a0 01       		.byte	0x1
+ 400 00a1 03       		.byte	0x3
+ 401 00a2 4A       		.byte	0x4a
+ 402 00a3 BA000000 		.4byte	0xba
+ 403 00a7 07       		.uleb128 0x7
+ 404 00a8 41000000 		.4byte	.LASF14
+ 405 00ac 00       		.sleb128 0
+ 406 00ad 07       		.uleb128 0x7
+ 407 00ae 8B020000 		.4byte	.LASF15
+ 408 00b2 01       		.sleb128 1
+ 409 00b3 07       		.uleb128 0x7
+ 410 00b4 45010000 		.4byte	.LASF16
+ 411 00b8 02       		.sleb128 2
+ 412 00b9 00       		.byte	0
+ 413 00ba 04       		.uleb128 0x4
+ 414 00bb 25000000 		.4byte	.LASF17
+ 415 00bf 03       		.byte	0x3
+ 416 00c0 4E       		.byte	0x4e
+ 417 00c1 9F000000 		.4byte	0x9f
+ 418 00c5 04       		.uleb128 0x4
+ 419 00c6 00000000 		.4byte	.LASF18
+ 420 00ca 03       		.byte	0x3
+ 421 00cb 53       		.byte	0x53
+ 422 00cc D0000000 		.4byte	0xd0
+ 423 00d0 08       		.uleb128 0x8
+ 424 00d1 00000000 		.4byte	.LASF18
+ 425 00d5 08       		.byte	0x8
+ 426 00d6 04       		.byte	0x4
+ 427 00d7 71       		.byte	0x71
+ 428 00d8 F9000000 		.4byte	0xf9
+ 429 00dc 09       		.uleb128 0x9
+ 430 00dd 1F000000 		.4byte	.LASF19
+ 431 00e1 04       		.byte	0x4
+ 432 00e2 75       		.byte	0x75
+ 433 00e3 BA000000 		.4byte	0xba
+ 434 00e7 02       		.byte	0x2
+ 435 00e8 23       		.byte	0x23
+ 436 00e9 00       		.uleb128 0
+ 437 00ea 09       		.uleb128 0x9
+ 438 00eb F9000000 		.4byte	.LASF20
+ 439 00ef 04       		.byte	0x4
+ 440 00f0 79       		.byte	0x79
+ 441 00f1 8D010000 		.4byte	0x18d
+ 442 00f5 02       		.byte	0x2
+ 443 00f6 23       		.byte	0x23
+ 444 00f7 04       		.uleb128 0x4
+ 445 00f8 00       		.byte	0
+ 446 00f9 04       		.uleb128 0x4
+ 447 00fa 6E000000 		.4byte	.LASF21
+ 448 00fe 04       		.byte	0x4
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 9
+
+
+ 449 00ff 47       		.byte	0x47
+ 450 0100 65000000 		.4byte	0x65
+ 451 0104 04       		.uleb128 0x4
+ 452 0105 67010000 		.4byte	.LASF22
+ 453 0109 04       		.byte	0x4
+ 454 010a 4F       		.byte	0x4f
+ 455 010b 0F010000 		.4byte	0x10f
+ 456 010f 0A       		.uleb128 0xa
+ 457 0110 04       		.byte	0x4
+ 458 0111 15010000 		.4byte	0x115
+ 459 0115 0B       		.uleb128 0xb
+ 460 0116 01       		.byte	0x1
+ 461 0117 26010000 		.4byte	0x126
+ 462 011b 0C       		.uleb128 0xc
+ 463 011c 26010000 		.4byte	0x126
+ 464 0120 0C       		.uleb128 0xc
+ 465 0121 F9000000 		.4byte	0xf9
+ 466 0125 00       		.byte	0
+ 467 0126 0A       		.uleb128 0xa
+ 468 0127 04       		.byte	0x4
+ 469 0128 C5000000 		.4byte	0xc5
+ 470 012c 0D       		.uleb128 0xd
+ 471 012d 08       		.byte	0x8
+ 472 012e 04       		.byte	0x4
+ 473 012f 54       		.byte	0x54
+ 474 0130 50010000 		.4byte	0x150
+ 475 0134 09       		.uleb128 0x9
+ 476 0135 75010000 		.4byte	.LASF23
+ 477 0139 04       		.byte	0x4
+ 478 013a 58       		.byte	0x58
+ 479 013b 65000000 		.4byte	0x65
+ 480 013f 02       		.byte	0x2
+ 481 0140 23       		.byte	0x23
+ 482 0141 00       		.uleb128 0
+ 483 0142 0E       		.uleb128 0xe
+ 484 0143 636200   		.ascii	"cb\000"
+ 485 0146 04       		.byte	0x4
+ 486 0147 5F       		.byte	0x5f
+ 487 0148 04010000 		.4byte	0x104
+ 488 014c 02       		.byte	0x2
+ 489 014d 23       		.byte	0x23
+ 490 014e 04       		.uleb128 0x4
+ 491 014f 00       		.byte	0
+ 492 0150 04       		.uleb128 0x4
+ 493 0151 30000000 		.4byte	.LASF24
+ 494 0155 04       		.byte	0x4
+ 495 0156 60       		.byte	0x60
+ 496 0157 2C010000 		.4byte	0x12c
+ 497 015b 0D       		.uleb128 0xd
+ 498 015c B8       		.byte	0xb8
+ 499 015d 04       		.byte	0x4
+ 500 015e 66       		.byte	0x66
+ 501 015f 72010000 		.4byte	0x172
+ 502 0163 09       		.uleb128 0x9
+ 503 0164 27020000 		.4byte	.LASF25
+ 504 0168 04       		.byte	0x4
+ 505 0169 6A       		.byte	0x6a
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 10
+
+
+ 506 016a 72010000 		.4byte	0x172
+ 507 016e 02       		.byte	0x2
+ 508 016f 23       		.byte	0x23
+ 509 0170 00       		.uleb128 0
+ 510 0171 00       		.byte	0
+ 511 0172 0F       		.uleb128 0xf
+ 512 0173 50010000 		.4byte	0x150
+ 513 0177 82010000 		.4byte	0x182
+ 514 017b 10       		.uleb128 0x10
+ 515 017c 8C000000 		.4byte	0x8c
+ 516 0180 16       		.byte	0x16
+ 517 0181 00       		.byte	0
+ 518 0182 04       		.uleb128 0x4
+ 519 0183 00010000 		.4byte	.LASF26
+ 520 0187 04       		.byte	0x4
+ 521 0188 6C       		.byte	0x6c
+ 522 0189 5B010000 		.4byte	0x15b
+ 523 018d 0A       		.uleb128 0xa
+ 524 018e 04       		.byte	0x4
+ 525 018f 93010000 		.4byte	0x193
+ 526 0193 11       		.uleb128 0x11
+ 527 0194 82010000 		.4byte	0x182
+ 528 0198 12       		.uleb128 0x12
+ 529 0199 01       		.byte	0x1
+ 530 019a 54000000 		.4byte	.LASF27
+ 531 019e 01       		.byte	0x1
+ 532 019f 44       		.byte	0x44
+ 533 01a0 01       		.byte	0x1
+ 534 01a1 00000000 		.4byte	.LFB118
+ 535 01a5 04000000 		.4byte	.LFE118
+ 536 01a9 02       		.byte	0x2
+ 537 01aa 7D       		.byte	0x7d
+ 538 01ab 00       		.sleb128 0
+ 539 01ac 01       		.byte	0x1
+ 540 01ad BC010000 		.4byte	0x1bc
+ 541 01b1 13       		.uleb128 0x13
+ 542 01b2 04000000 		.4byte	.LVL0
+ 543 01b6 01       		.byte	0x1
+ 544 01b7 76040000 		.4byte	0x476
+ 545 01bb 00       		.byte	0
+ 546 01bc 12       		.uleb128 0x12
+ 547 01bd 01       		.byte	0x1
+ 548 01be 4B020000 		.4byte	.LASF28
+ 549 01c2 01       		.byte	0x1
+ 550 01c3 50       		.byte	0x50
+ 551 01c4 01       		.byte	0x1
+ 552 01c5 00000000 		.4byte	.LFB119
+ 553 01c9 0A000000 		.4byte	.LFE119
+ 554 01cd 02       		.byte	0x2
+ 555 01ce 7D       		.byte	0x7d
+ 556 01cf 00       		.sleb128 0
+ 557 01d0 01       		.byte	0x1
+ 558 01d1 E3010000 		.4byte	0x1e3
+ 559 01d5 14       		.uleb128 0x14
+ 560 01d6 5D010000 		.4byte	.LASF30
+ 561 01da 01       		.byte	0x1
+ 562 01db 50       		.byte	0x50
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 11
+
+
+ 563 01dc 26010000 		.4byte	0x126
+ 564 01e0 01       		.byte	0x1
+ 565 01e1 50       		.byte	0x50
+ 566 01e2 00       		.byte	0
+ 567 01e3 15       		.uleb128 0x15
+ 568 01e4 01       		.byte	0x1
+ 569 01e5 7B000000 		.4byte	.LASF29
+ 570 01e9 01       		.byte	0x1
+ 571 01ea 60       		.byte	0x60
+ 572 01eb 01       		.byte	0x1
+ 573 01ec 00000000 		.4byte	.LFB120
+ 574 01f0 1C000000 		.4byte	.LFE120
+ 575 01f4 00000000 		.4byte	.LLST0
+ 576 01f8 01       		.byte	0x1
+ 577 01f9 62020000 		.4byte	0x262
+ 578 01fd 16       		.uleb128 0x16
+ 579 01fe 5D010000 		.4byte	.LASF30
+ 580 0202 01       		.byte	0x1
+ 581 0203 60       		.byte	0x60
+ 582 0204 26010000 		.4byte	0x126
+ 583 0208 20000000 		.4byte	.LLST1
+ 584 020c 16       		.uleb128 0x16
+ 585 020d F9000000 		.4byte	.LASF20
+ 586 0211 01       		.byte	0x1
+ 587 0212 60       		.byte	0x60
+ 588 0213 8D010000 		.4byte	0x18d
+ 589 0217 3E000000 		.4byte	.LLST2
+ 590 021b 17       		.uleb128 0x17
+ 591 021c 00000000 		.4byte	.Ldebug_ranges0+0
+ 592 0220 34020000 		.4byte	0x234
+ 593 0224 18       		.uleb128 0x18
+ 594 0225 746D7000 		.ascii	"tmp\000"
+ 595 0229 01       		.byte	0x1
+ 596 022a 64       		.byte	0x64
+ 597 022b 65000000 		.4byte	0x65
+ 598 022f 5F000000 		.4byte	.LLST3
+ 599 0233 00       		.byte	0
+ 600 0234 19       		.uleb128 0x19
+ 601 0235 14000000 		.4byte	.LBB4
+ 602 0239 1C000000 		.4byte	.LBE4
+ 603 023d 51020000 		.4byte	0x251
+ 604 0241 18       		.uleb128 0x18
+ 605 0242 746D7000 		.ascii	"tmp\000"
+ 606 0246 01       		.byte	0x1
+ 607 0247 6A       		.byte	0x6a
+ 608 0248 65000000 		.4byte	0x65
+ 609 024c 72000000 		.4byte	.LLST4
+ 610 0250 00       		.byte	0
+ 611 0251 1A       		.uleb128 0x1a
+ 612 0252 10000000 		.4byte	.LVL5
+ 613 0256 80040000 		.4byte	0x480
+ 614 025a 1B       		.uleb128 0x1b
+ 615 025b 01       		.byte	0x1
+ 616 025c 50       		.byte	0x50
+ 617 025d 02       		.byte	0x2
+ 618 025e 74       		.byte	0x74
+ 619 025f 00       		.sleb128 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 12
+
+
+ 620 0260 00       		.byte	0
+ 621 0261 00       		.byte	0
+ 622 0262 15       		.uleb128 0x15
+ 623 0263 01       		.byte	0x1
+ 624 0264 4C000000 		.4byte	.LASF31
+ 625 0268 01       		.byte	0x1
+ 626 0269 74       		.byte	0x74
+ 627 026a 01       		.byte	0x1
+ 628 026b 00000000 		.4byte	.LFB121
+ 629 026f 1A000000 		.4byte	.LFE121
+ 630 0273 85000000 		.4byte	.LLST5
+ 631 0277 01       		.byte	0x1
+ 632 0278 D2020000 		.4byte	0x2d2
+ 633 027c 16       		.uleb128 0x16
+ 634 027d 5D010000 		.4byte	.LASF30
+ 635 0281 01       		.byte	0x1
+ 636 0282 74       		.byte	0x74
+ 637 0283 26010000 		.4byte	0x126
+ 638 0287 A5000000 		.4byte	.LLST6
+ 639 028b 17       		.uleb128 0x17
+ 640 028c 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 641 0290 A4020000 		.4byte	0x2a4
+ 642 0294 18       		.uleb128 0x18
+ 643 0295 746D7000 		.ascii	"tmp\000"
+ 644 0299 01       		.byte	0x1
+ 645 029a 78       		.byte	0x78
+ 646 029b 65000000 		.4byte	0x65
+ 647 029f C3000000 		.4byte	.LLST7
+ 648 02a3 00       		.byte	0
+ 649 02a4 19       		.uleb128 0x19
+ 650 02a5 12000000 		.4byte	.LBB7
+ 651 02a9 1A000000 		.4byte	.LBE7
+ 652 02ad C1020000 		.4byte	0x2c1
+ 653 02b1 18       		.uleb128 0x18
+ 654 02b2 746D7000 		.ascii	"tmp\000"
+ 655 02b6 01       		.byte	0x1
+ 656 02b7 7D       		.byte	0x7d
+ 657 02b8 65000000 		.4byte	0x65
+ 658 02bc D6000000 		.4byte	.LLST8
+ 659 02c0 00       		.byte	0
+ 660 02c1 1A       		.uleb128 0x1a
+ 661 02c2 0E000000 		.4byte	.LVL11
+ 662 02c6 94040000 		.4byte	0x494
+ 663 02ca 1B       		.uleb128 0x1b
+ 664 02cb 01       		.byte	0x1
+ 665 02cc 50       		.byte	0x50
+ 666 02cd 02       		.byte	0x2
+ 667 02ce 74       		.byte	0x74
+ 668 02cf 00       		.sleb128 0
+ 669 02d0 00       		.byte	0
+ 670 02d1 00       		.byte	0
+ 671 02d2 15       		.uleb128 0x15
+ 672 02d3 01       		.byte	0x1
+ 673 02d4 30020000 		.4byte	.LASF32
+ 674 02d8 01       		.byte	0x1
+ 675 02d9 89       		.byte	0x89
+ 676 02da 01       		.byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 13
+
+
+ 677 02db 00000000 		.4byte	.LFB122
+ 678 02df 14000000 		.4byte	.LFE122
+ 679 02e3 E9000000 		.4byte	.LLST9
+ 680 02e7 01       		.byte	0x1
+ 681 02e8 5D030000 		.4byte	0x35d
+ 682 02ec 16       		.uleb128 0x16
+ 683 02ed 5D010000 		.4byte	.LASF30
+ 684 02f1 01       		.byte	0x1
+ 685 02f2 89       		.byte	0x89
+ 686 02f3 26010000 		.4byte	0x126
+ 687 02f7 09010000 		.4byte	.LLST10
+ 688 02fb 16       		.uleb128 0x16
+ 689 02fc 0A000000 		.4byte	.LASF33
+ 690 0300 01       		.byte	0x1
+ 691 0301 89       		.byte	0x89
+ 692 0302 F9000000 		.4byte	0xf9
+ 693 0306 2A010000 		.4byte	.LLST11
+ 694 030a 19       		.uleb128 0x19
+ 695 030b 02000000 		.4byte	.LBB8
+ 696 030f 08000000 		.4byte	.LBE8
+ 697 0313 27030000 		.4byte	0x327
+ 698 0317 18       		.uleb128 0x18
+ 699 0318 746D7000 		.ascii	"tmp\000"
+ 700 031c 01       		.byte	0x1
+ 701 031d 8E       		.byte	0x8e
+ 702 031e 65000000 		.4byte	0x65
+ 703 0322 4B010000 		.4byte	.LLST12
+ 704 0326 00       		.byte	0
+ 705 0327 19       		.uleb128 0x19
+ 706 0328 0C000000 		.4byte	.LBB9
+ 707 032c 14000000 		.4byte	.LBE9
+ 708 0330 44030000 		.4byte	0x344
+ 709 0334 18       		.uleb128 0x18
+ 710 0335 746D7000 		.ascii	"tmp\000"
+ 711 0339 01       		.byte	0x1
+ 712 033a 94       		.byte	0x94
+ 713 033b 65000000 		.4byte	0x65
+ 714 033f 5E010000 		.4byte	.LLST13
+ 715 0343 00       		.byte	0
+ 716 0344 1A       		.uleb128 0x1a
+ 717 0345 0C000000 		.4byte	.LVL17
+ 718 0349 A8040000 		.4byte	0x4a8
+ 719 034d 1B       		.uleb128 0x1b
+ 720 034e 01       		.byte	0x1
+ 721 034f 51       		.byte	0x51
+ 722 0350 03       		.byte	0x3
+ 723 0351 F3       		.byte	0xf3
+ 724 0352 01       		.uleb128 0x1
+ 725 0353 51       		.byte	0x51
+ 726 0354 1B       		.uleb128 0x1b
+ 727 0355 01       		.byte	0x1
+ 728 0356 50       		.byte	0x50
+ 729 0357 03       		.byte	0x3
+ 730 0358 F3       		.byte	0xf3
+ 731 0359 01       		.uleb128 0x1
+ 732 035a 50       		.byte	0x50
+ 733 035b 00       		.byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 14
+
+
+ 734 035c 00       		.byte	0
+ 735 035d 15       		.uleb128 0x15
+ 736 035e 01       		.byte	0x1
+ 737 035f 5C000000 		.4byte	.LASF34
+ 738 0363 01       		.byte	0x1
+ 739 0364 A0       		.byte	0xa0
+ 740 0365 01       		.byte	0x1
+ 741 0366 00000000 		.4byte	.LFB123
+ 742 036a 14000000 		.4byte	.LFE123
+ 743 036e 71010000 		.4byte	.LLST14
+ 744 0372 01       		.byte	0x1
+ 745 0373 E8030000 		.4byte	0x3e8
+ 746 0377 16       		.uleb128 0x16
+ 747 0378 5D010000 		.4byte	.LASF30
+ 748 037c 01       		.byte	0x1
+ 749 037d A0       		.byte	0xa0
+ 750 037e 26010000 		.4byte	0x126
+ 751 0382 91010000 		.4byte	.LLST15
+ 752 0386 16       		.uleb128 0x16
+ 753 0387 0A000000 		.4byte	.LASF33
+ 754 038b 01       		.byte	0x1
+ 755 038c A0       		.byte	0xa0
+ 756 038d F9000000 		.4byte	0xf9
+ 757 0391 B2010000 		.4byte	.LLST16
+ 758 0395 19       		.uleb128 0x19
+ 759 0396 02000000 		.4byte	.LBB10
+ 760 039a 08000000 		.4byte	.LBE10
+ 761 039e B2030000 		.4byte	0x3b2
+ 762 03a2 18       		.uleb128 0x18
+ 763 03a3 746D7000 		.ascii	"tmp\000"
+ 764 03a7 01       		.byte	0x1
+ 765 03a8 A5       		.byte	0xa5
+ 766 03a9 65000000 		.4byte	0x65
+ 767 03ad D3010000 		.4byte	.LLST17
+ 768 03b1 00       		.byte	0
+ 769 03b2 19       		.uleb128 0x19
+ 770 03b3 0C000000 		.4byte	.LBB11
+ 771 03b7 14000000 		.4byte	.LBE11
+ 772 03bb CF030000 		.4byte	0x3cf
+ 773 03bf 18       		.uleb128 0x18
+ 774 03c0 746D7000 		.ascii	"tmp\000"
+ 775 03c4 01       		.byte	0x1
+ 776 03c5 AB       		.byte	0xab
+ 777 03c6 65000000 		.4byte	0x65
+ 778 03ca E6010000 		.4byte	.LLST18
+ 779 03ce 00       		.byte	0
+ 780 03cf 1A       		.uleb128 0x1a
+ 781 03d0 0C000000 		.4byte	.LVL23
+ 782 03d4 C1040000 		.4byte	0x4c1
+ 783 03d8 1B       		.uleb128 0x1b
+ 784 03d9 01       		.byte	0x1
+ 785 03da 51       		.byte	0x51
+ 786 03db 03       		.byte	0x3
+ 787 03dc F3       		.byte	0xf3
+ 788 03dd 01       		.uleb128 0x1
+ 789 03de 51       		.byte	0x51
+ 790 03df 1B       		.uleb128 0x1b
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 15
+
+
+ 791 03e0 01       		.byte	0x1
+ 792 03e1 50       		.byte	0x50
+ 793 03e2 03       		.byte	0x3
+ 794 03e3 F3       		.byte	0xf3
+ 795 03e4 01       		.uleb128 0x1
+ 796 03e5 50       		.byte	0x50
+ 797 03e6 00       		.byte	0
+ 798 03e7 00       		.byte	0
+ 799 03e8 15       		.uleb128 0x15
+ 800 03e9 01       		.byte	0x1
+ 801 03ea 87010000 		.4byte	.LASF35
+ 802 03ee 01       		.byte	0x1
+ 803 03ef BF       		.byte	0xbf
+ 804 03f0 01       		.byte	0x1
+ 805 03f1 00000000 		.4byte	.LFB124
+ 806 03f5 1E000000 		.4byte	.LFE124
+ 807 03f9 F9010000 		.4byte	.LLST19
+ 808 03fd 01       		.byte	0x1
+ 809 03fe 57040000 		.4byte	0x457
+ 810 0402 16       		.uleb128 0x16
+ 811 0403 5D010000 		.4byte	.LASF30
+ 812 0407 01       		.byte	0x1
+ 813 0408 BF       		.byte	0xbf
+ 814 0409 26010000 		.4byte	0x126
+ 815 040d 19020000 		.4byte	.LLST20
+ 816 0411 16       		.uleb128 0x16
+ 817 0412 0A000000 		.4byte	.LASF33
+ 818 0416 01       		.byte	0x1
+ 819 0417 C0       		.byte	0xc0
+ 820 0418 F9000000 		.4byte	0xf9
+ 821 041c 37020000 		.4byte	.LLST21
+ 822 0420 16       		.uleb128 0x16
+ 823 0421 C1000000 		.4byte	.LASF36
+ 824 0425 01       		.byte	0x1
+ 825 0426 C1       		.byte	0xc1
+ 826 0427 57040000 		.4byte	0x457
+ 827 042b 63020000 		.4byte	.LLST22
+ 828 042f 1C       		.uleb128 0x1c
+ 829 0430 9A010000 		.4byte	.LASF37
+ 830 0434 01       		.byte	0x1
+ 831 0435 C2       		.byte	0xc2
+ 832 0436 62040000 		.4byte	0x462
+ 833 043a 84020000 		.4byte	.LLST23
+ 834 043e 1D       		.uleb128 0x1d
+ 835 043f 1E000000 		.4byte	.LVL30
+ 836 0443 01       		.byte	0x1
+ 837 0444 A8040000 		.4byte	0x4a8
+ 838 0448 1B       		.uleb128 0x1b
+ 839 0449 01       		.byte	0x1
+ 840 044a 51       		.byte	0x51
+ 841 044b 03       		.byte	0x3
+ 842 044c F3       		.byte	0xf3
+ 843 044d 01       		.uleb128 0x1
+ 844 044e 51       		.byte	0x51
+ 845 044f 1B       		.uleb128 0x1b
+ 846 0450 01       		.byte	0x1
+ 847 0451 50       		.byte	0x50
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 16
+
+
+ 848 0452 02       		.byte	0x2
+ 849 0453 74       		.byte	0x74
+ 850 0454 00       		.sleb128 0
+ 851 0455 00       		.byte	0
+ 852 0456 00       		.byte	0
+ 853 0457 0A       		.uleb128 0xa
+ 854 0458 04       		.byte	0x4
+ 855 0459 5D040000 		.4byte	0x45d
+ 856 045d 11       		.uleb128 0x11
+ 857 045e 50010000 		.4byte	0x150
+ 858 0462 0A       		.uleb128 0xa
+ 859 0463 04       		.byte	0x4
+ 860 0464 50010000 		.4byte	0x150
+ 861 0468 1E       		.uleb128 0x1e
+ 862 0469 EC000000 		.4byte	.LASF44
+ 863 046d 05       		.byte	0x5
+ 864 046e 9806     		.2byte	0x698
+ 865 0470 9A000000 		.4byte	0x9a
+ 866 0474 01       		.byte	0x1
+ 867 0475 01       		.byte	0x1
+ 868 0476 1F       		.uleb128 0x1f
+ 869 0477 01       		.byte	0x1
+ 870 0478 12000000 		.4byte	.LASF45
+ 871 047c 04       		.byte	0x4
+ 872 047d 8C       		.byte	0x8c
+ 873 047e 01       		.byte	0x1
+ 874 047f 01       		.byte	0x1
+ 875 0480 20       		.uleb128 0x20
+ 876 0481 01       		.byte	0x1
+ 877 0482 7D020000 		.4byte	.LASF38
+ 878 0486 04       		.byte	0x4
+ 879 0487 8D       		.byte	0x8d
+ 880 0488 01       		.byte	0x1
+ 881 0489 01       		.byte	0x1
+ 882 048a 94040000 		.4byte	0x494
+ 883 048e 0C       		.uleb128 0xc
+ 884 048f 26010000 		.4byte	0x126
+ 885 0493 00       		.byte	0
+ 886 0494 20       		.uleb128 0x20
+ 887 0495 01       		.byte	0x1
+ 888 0496 7A010000 		.4byte	.LASF39
+ 889 049a 04       		.byte	0x4
+ 890 049b 8E       		.byte	0x8e
+ 891 049c 01       		.byte	0x1
+ 892 049d 01       		.byte	0x1
+ 893 049e A8040000 		.4byte	0x4a8
+ 894 04a2 0C       		.uleb128 0xc
+ 895 04a3 26010000 		.4byte	0x126
+ 896 04a7 00       		.byte	0
+ 897 04a8 20       		.uleb128 0x20
+ 898 04a9 01       		.byte	0x1
+ 899 04aa 2E010000 		.4byte	.LASF40
+ 900 04ae 04       		.byte	0x4
+ 901 04af 8F       		.byte	0x8f
+ 902 04b0 01       		.byte	0x1
+ 903 04b1 01       		.byte	0x1
+ 904 04b2 C1040000 		.4byte	0x4c1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 17
+
+
+ 905 04b6 0C       		.uleb128 0xc
+ 906 04b7 26010000 		.4byte	0x126
+ 907 04bb 0C       		.uleb128 0xc
+ 908 04bc F9000000 		.4byte	0xf9
+ 909 04c0 00       		.byte	0
+ 910 04c1 21       		.uleb128 0x21
+ 911 04c2 01       		.byte	0x1
+ 912 04c3 84000000 		.4byte	.LASF46
+ 913 04c7 04       		.byte	0x4
+ 914 04c8 90       		.byte	0x90
+ 915 04c9 01       		.byte	0x1
+ 916 04ca 01       		.byte	0x1
+ 917 04cb 0C       		.uleb128 0xc
+ 918 04cc 26010000 		.4byte	0x126
+ 919 04d0 0C       		.uleb128 0xc
+ 920 04d1 F9000000 		.4byte	0xf9
+ 921 04d5 00       		.byte	0
+ 922 04d6 00       		.byte	0
+ 923              		.section	.debug_abbrev,"",%progbits
+ 924              	.Ldebug_abbrev0:
+ 925 0000 01       		.uleb128 0x1
+ 926 0001 11       		.uleb128 0x11
+ 927 0002 01       		.byte	0x1
+ 928 0003 25       		.uleb128 0x25
+ 929 0004 0E       		.uleb128 0xe
+ 930 0005 13       		.uleb128 0x13
+ 931 0006 0B       		.uleb128 0xb
+ 932 0007 03       		.uleb128 0x3
+ 933 0008 0E       		.uleb128 0xe
+ 934 0009 1B       		.uleb128 0x1b
+ 935 000a 0E       		.uleb128 0xe
+ 936 000b 55       		.uleb128 0x55
+ 937 000c 06       		.uleb128 0x6
+ 938 000d 11       		.uleb128 0x11
+ 939 000e 01       		.uleb128 0x1
+ 940 000f 52       		.uleb128 0x52
+ 941 0010 01       		.uleb128 0x1
+ 942 0011 10       		.uleb128 0x10
+ 943 0012 06       		.uleb128 0x6
+ 944 0013 00       		.byte	0
+ 945 0014 00       		.byte	0
+ 946 0015 02       		.uleb128 0x2
+ 947 0016 24       		.uleb128 0x24
+ 948 0017 00       		.byte	0
+ 949 0018 0B       		.uleb128 0xb
+ 950 0019 0B       		.uleb128 0xb
+ 951 001a 3E       		.uleb128 0x3e
+ 952 001b 0B       		.uleb128 0xb
+ 953 001c 03       		.uleb128 0x3
+ 954 001d 08       		.uleb128 0x8
+ 955 001e 00       		.byte	0
+ 956 001f 00       		.byte	0
+ 957 0020 03       		.uleb128 0x3
+ 958 0021 24       		.uleb128 0x24
+ 959 0022 00       		.byte	0
+ 960 0023 0B       		.uleb128 0xb
+ 961 0024 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 18
+
+
+ 962 0025 3E       		.uleb128 0x3e
+ 963 0026 0B       		.uleb128 0xb
+ 964 0027 03       		.uleb128 0x3
+ 965 0028 0E       		.uleb128 0xe
+ 966 0029 00       		.byte	0
+ 967 002a 00       		.byte	0
+ 968 002b 04       		.uleb128 0x4
+ 969 002c 16       		.uleb128 0x16
+ 970 002d 00       		.byte	0
+ 971 002e 03       		.uleb128 0x3
+ 972 002f 0E       		.uleb128 0xe
+ 973 0030 3A       		.uleb128 0x3a
+ 974 0031 0B       		.uleb128 0xb
+ 975 0032 3B       		.uleb128 0x3b
+ 976 0033 0B       		.uleb128 0xb
+ 977 0034 49       		.uleb128 0x49
+ 978 0035 13       		.uleb128 0x13
+ 979 0036 00       		.byte	0
+ 980 0037 00       		.byte	0
+ 981 0038 05       		.uleb128 0x5
+ 982 0039 35       		.uleb128 0x35
+ 983 003a 00       		.byte	0
+ 984 003b 49       		.uleb128 0x49
+ 985 003c 13       		.uleb128 0x13
+ 986 003d 00       		.byte	0
+ 987 003e 00       		.byte	0
+ 988 003f 06       		.uleb128 0x6
+ 989 0040 04       		.uleb128 0x4
+ 990 0041 01       		.byte	0x1
+ 991 0042 0B       		.uleb128 0xb
+ 992 0043 0B       		.uleb128 0xb
+ 993 0044 3A       		.uleb128 0x3a
+ 994 0045 0B       		.uleb128 0xb
+ 995 0046 3B       		.uleb128 0x3b
+ 996 0047 0B       		.uleb128 0xb
+ 997 0048 01       		.uleb128 0x1
+ 998 0049 13       		.uleb128 0x13
+ 999 004a 00       		.byte	0
+ 1000 004b 00       		.byte	0
+ 1001 004c 07       		.uleb128 0x7
+ 1002 004d 28       		.uleb128 0x28
+ 1003 004e 00       		.byte	0
+ 1004 004f 03       		.uleb128 0x3
+ 1005 0050 0E       		.uleb128 0xe
+ 1006 0051 1C       		.uleb128 0x1c
+ 1007 0052 0D       		.uleb128 0xd
+ 1008 0053 00       		.byte	0
+ 1009 0054 00       		.byte	0
+ 1010 0055 08       		.uleb128 0x8
+ 1011 0056 13       		.uleb128 0x13
+ 1012 0057 01       		.byte	0x1
+ 1013 0058 03       		.uleb128 0x3
+ 1014 0059 0E       		.uleb128 0xe
+ 1015 005a 0B       		.uleb128 0xb
+ 1016 005b 0B       		.uleb128 0xb
+ 1017 005c 3A       		.uleb128 0x3a
+ 1018 005d 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 19
+
+
+ 1019 005e 3B       		.uleb128 0x3b
+ 1020 005f 0B       		.uleb128 0xb
+ 1021 0060 01       		.uleb128 0x1
+ 1022 0061 13       		.uleb128 0x13
+ 1023 0062 00       		.byte	0
+ 1024 0063 00       		.byte	0
+ 1025 0064 09       		.uleb128 0x9
+ 1026 0065 0D       		.uleb128 0xd
+ 1027 0066 00       		.byte	0
+ 1028 0067 03       		.uleb128 0x3
+ 1029 0068 0E       		.uleb128 0xe
+ 1030 0069 3A       		.uleb128 0x3a
+ 1031 006a 0B       		.uleb128 0xb
+ 1032 006b 3B       		.uleb128 0x3b
+ 1033 006c 0B       		.uleb128 0xb
+ 1034 006d 49       		.uleb128 0x49
+ 1035 006e 13       		.uleb128 0x13
+ 1036 006f 38       		.uleb128 0x38
+ 1037 0070 0A       		.uleb128 0xa
+ 1038 0071 00       		.byte	0
+ 1039 0072 00       		.byte	0
+ 1040 0073 0A       		.uleb128 0xa
+ 1041 0074 0F       		.uleb128 0xf
+ 1042 0075 00       		.byte	0
+ 1043 0076 0B       		.uleb128 0xb
+ 1044 0077 0B       		.uleb128 0xb
+ 1045 0078 49       		.uleb128 0x49
+ 1046 0079 13       		.uleb128 0x13
+ 1047 007a 00       		.byte	0
+ 1048 007b 00       		.byte	0
+ 1049 007c 0B       		.uleb128 0xb
+ 1050 007d 15       		.uleb128 0x15
+ 1051 007e 01       		.byte	0x1
+ 1052 007f 27       		.uleb128 0x27
+ 1053 0080 0C       		.uleb128 0xc
+ 1054 0081 01       		.uleb128 0x1
+ 1055 0082 13       		.uleb128 0x13
+ 1056 0083 00       		.byte	0
+ 1057 0084 00       		.byte	0
+ 1058 0085 0C       		.uleb128 0xc
+ 1059 0086 05       		.uleb128 0x5
+ 1060 0087 00       		.byte	0
+ 1061 0088 49       		.uleb128 0x49
+ 1062 0089 13       		.uleb128 0x13
+ 1063 008a 00       		.byte	0
+ 1064 008b 00       		.byte	0
+ 1065 008c 0D       		.uleb128 0xd
+ 1066 008d 13       		.uleb128 0x13
+ 1067 008e 01       		.byte	0x1
+ 1068 008f 0B       		.uleb128 0xb
+ 1069 0090 0B       		.uleb128 0xb
+ 1070 0091 3A       		.uleb128 0x3a
+ 1071 0092 0B       		.uleb128 0xb
+ 1072 0093 3B       		.uleb128 0x3b
+ 1073 0094 0B       		.uleb128 0xb
+ 1074 0095 01       		.uleb128 0x1
+ 1075 0096 13       		.uleb128 0x13
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 20
+
+
+ 1076 0097 00       		.byte	0
+ 1077 0098 00       		.byte	0
+ 1078 0099 0E       		.uleb128 0xe
+ 1079 009a 0D       		.uleb128 0xd
+ 1080 009b 00       		.byte	0
+ 1081 009c 03       		.uleb128 0x3
+ 1082 009d 08       		.uleb128 0x8
+ 1083 009e 3A       		.uleb128 0x3a
+ 1084 009f 0B       		.uleb128 0xb
+ 1085 00a0 3B       		.uleb128 0x3b
+ 1086 00a1 0B       		.uleb128 0xb
+ 1087 00a2 49       		.uleb128 0x49
+ 1088 00a3 13       		.uleb128 0x13
+ 1089 00a4 38       		.uleb128 0x38
+ 1090 00a5 0A       		.uleb128 0xa
+ 1091 00a6 00       		.byte	0
+ 1092 00a7 00       		.byte	0
+ 1093 00a8 0F       		.uleb128 0xf
+ 1094 00a9 01       		.uleb128 0x1
+ 1095 00aa 01       		.byte	0x1
+ 1096 00ab 49       		.uleb128 0x49
+ 1097 00ac 13       		.uleb128 0x13
+ 1098 00ad 01       		.uleb128 0x1
+ 1099 00ae 13       		.uleb128 0x13
+ 1100 00af 00       		.byte	0
+ 1101 00b0 00       		.byte	0
+ 1102 00b1 10       		.uleb128 0x10
+ 1103 00b2 21       		.uleb128 0x21
+ 1104 00b3 00       		.byte	0
+ 1105 00b4 49       		.uleb128 0x49
+ 1106 00b5 13       		.uleb128 0x13
+ 1107 00b6 2F       		.uleb128 0x2f
+ 1108 00b7 0B       		.uleb128 0xb
+ 1109 00b8 00       		.byte	0
+ 1110 00b9 00       		.byte	0
+ 1111 00ba 11       		.uleb128 0x11
+ 1112 00bb 26       		.uleb128 0x26
+ 1113 00bc 00       		.byte	0
+ 1114 00bd 49       		.uleb128 0x49
+ 1115 00be 13       		.uleb128 0x13
+ 1116 00bf 00       		.byte	0
+ 1117 00c0 00       		.byte	0
+ 1118 00c1 12       		.uleb128 0x12
+ 1119 00c2 2E       		.uleb128 0x2e
+ 1120 00c3 01       		.byte	0x1
+ 1121 00c4 3F       		.uleb128 0x3f
+ 1122 00c5 0C       		.uleb128 0xc
+ 1123 00c6 03       		.uleb128 0x3
+ 1124 00c7 0E       		.uleb128 0xe
+ 1125 00c8 3A       		.uleb128 0x3a
+ 1126 00c9 0B       		.uleb128 0xb
+ 1127 00ca 3B       		.uleb128 0x3b
+ 1128 00cb 0B       		.uleb128 0xb
+ 1129 00cc 27       		.uleb128 0x27
+ 1130 00cd 0C       		.uleb128 0xc
+ 1131 00ce 11       		.uleb128 0x11
+ 1132 00cf 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 21
+
+
+ 1133 00d0 12       		.uleb128 0x12
+ 1134 00d1 01       		.uleb128 0x1
+ 1135 00d2 40       		.uleb128 0x40
+ 1136 00d3 0A       		.uleb128 0xa
+ 1137 00d4 9742     		.uleb128 0x2117
+ 1138 00d6 0C       		.uleb128 0xc
+ 1139 00d7 01       		.uleb128 0x1
+ 1140 00d8 13       		.uleb128 0x13
+ 1141 00d9 00       		.byte	0
+ 1142 00da 00       		.byte	0
+ 1143 00db 13       		.uleb128 0x13
+ 1144 00dc 898201   		.uleb128 0x4109
+ 1145 00df 00       		.byte	0
+ 1146 00e0 11       		.uleb128 0x11
+ 1147 00e1 01       		.uleb128 0x1
+ 1148 00e2 9542     		.uleb128 0x2115
+ 1149 00e4 0C       		.uleb128 0xc
+ 1150 00e5 31       		.uleb128 0x31
+ 1151 00e6 13       		.uleb128 0x13
+ 1152 00e7 00       		.byte	0
+ 1153 00e8 00       		.byte	0
+ 1154 00e9 14       		.uleb128 0x14
+ 1155 00ea 05       		.uleb128 0x5
+ 1156 00eb 00       		.byte	0
+ 1157 00ec 03       		.uleb128 0x3
+ 1158 00ed 0E       		.uleb128 0xe
+ 1159 00ee 3A       		.uleb128 0x3a
+ 1160 00ef 0B       		.uleb128 0xb
+ 1161 00f0 3B       		.uleb128 0x3b
+ 1162 00f1 0B       		.uleb128 0xb
+ 1163 00f2 49       		.uleb128 0x49
+ 1164 00f3 13       		.uleb128 0x13
+ 1165 00f4 02       		.uleb128 0x2
+ 1166 00f5 0A       		.uleb128 0xa
+ 1167 00f6 00       		.byte	0
+ 1168 00f7 00       		.byte	0
+ 1169 00f8 15       		.uleb128 0x15
+ 1170 00f9 2E       		.uleb128 0x2e
+ 1171 00fa 01       		.byte	0x1
+ 1172 00fb 3F       		.uleb128 0x3f
+ 1173 00fc 0C       		.uleb128 0xc
+ 1174 00fd 03       		.uleb128 0x3
+ 1175 00fe 0E       		.uleb128 0xe
+ 1176 00ff 3A       		.uleb128 0x3a
+ 1177 0100 0B       		.uleb128 0xb
+ 1178 0101 3B       		.uleb128 0x3b
+ 1179 0102 0B       		.uleb128 0xb
+ 1180 0103 27       		.uleb128 0x27
+ 1181 0104 0C       		.uleb128 0xc
+ 1182 0105 11       		.uleb128 0x11
+ 1183 0106 01       		.uleb128 0x1
+ 1184 0107 12       		.uleb128 0x12
+ 1185 0108 01       		.uleb128 0x1
+ 1186 0109 40       		.uleb128 0x40
+ 1187 010a 06       		.uleb128 0x6
+ 1188 010b 9742     		.uleb128 0x2117
+ 1189 010d 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 22
+
+
+ 1190 010e 01       		.uleb128 0x1
+ 1191 010f 13       		.uleb128 0x13
+ 1192 0110 00       		.byte	0
+ 1193 0111 00       		.byte	0
+ 1194 0112 16       		.uleb128 0x16
+ 1195 0113 05       		.uleb128 0x5
+ 1196 0114 00       		.byte	0
+ 1197 0115 03       		.uleb128 0x3
+ 1198 0116 0E       		.uleb128 0xe
+ 1199 0117 3A       		.uleb128 0x3a
+ 1200 0118 0B       		.uleb128 0xb
+ 1201 0119 3B       		.uleb128 0x3b
+ 1202 011a 0B       		.uleb128 0xb
+ 1203 011b 49       		.uleb128 0x49
+ 1204 011c 13       		.uleb128 0x13
+ 1205 011d 02       		.uleb128 0x2
+ 1206 011e 06       		.uleb128 0x6
+ 1207 011f 00       		.byte	0
+ 1208 0120 00       		.byte	0
+ 1209 0121 17       		.uleb128 0x17
+ 1210 0122 0B       		.uleb128 0xb
+ 1211 0123 01       		.byte	0x1
+ 1212 0124 55       		.uleb128 0x55
+ 1213 0125 06       		.uleb128 0x6
+ 1214 0126 01       		.uleb128 0x1
+ 1215 0127 13       		.uleb128 0x13
+ 1216 0128 00       		.byte	0
+ 1217 0129 00       		.byte	0
+ 1218 012a 18       		.uleb128 0x18
+ 1219 012b 34       		.uleb128 0x34
+ 1220 012c 00       		.byte	0
+ 1221 012d 03       		.uleb128 0x3
+ 1222 012e 08       		.uleb128 0x8
+ 1223 012f 3A       		.uleb128 0x3a
+ 1224 0130 0B       		.uleb128 0xb
+ 1225 0131 3B       		.uleb128 0x3b
+ 1226 0132 0B       		.uleb128 0xb
+ 1227 0133 49       		.uleb128 0x49
+ 1228 0134 13       		.uleb128 0x13
+ 1229 0135 02       		.uleb128 0x2
+ 1230 0136 06       		.uleb128 0x6
+ 1231 0137 00       		.byte	0
+ 1232 0138 00       		.byte	0
+ 1233 0139 19       		.uleb128 0x19
+ 1234 013a 0B       		.uleb128 0xb
+ 1235 013b 01       		.byte	0x1
+ 1236 013c 11       		.uleb128 0x11
+ 1237 013d 01       		.uleb128 0x1
+ 1238 013e 12       		.uleb128 0x12
+ 1239 013f 01       		.uleb128 0x1
+ 1240 0140 01       		.uleb128 0x1
+ 1241 0141 13       		.uleb128 0x13
+ 1242 0142 00       		.byte	0
+ 1243 0143 00       		.byte	0
+ 1244 0144 1A       		.uleb128 0x1a
+ 1245 0145 898201   		.uleb128 0x4109
+ 1246 0148 01       		.byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 23
+
+
+ 1247 0149 11       		.uleb128 0x11
+ 1248 014a 01       		.uleb128 0x1
+ 1249 014b 31       		.uleb128 0x31
+ 1250 014c 13       		.uleb128 0x13
+ 1251 014d 00       		.byte	0
+ 1252 014e 00       		.byte	0
+ 1253 014f 1B       		.uleb128 0x1b
+ 1254 0150 8A8201   		.uleb128 0x410a
+ 1255 0153 00       		.byte	0
+ 1256 0154 02       		.uleb128 0x2
+ 1257 0155 0A       		.uleb128 0xa
+ 1258 0156 9142     		.uleb128 0x2111
+ 1259 0158 0A       		.uleb128 0xa
+ 1260 0159 00       		.byte	0
+ 1261 015a 00       		.byte	0
+ 1262 015b 1C       		.uleb128 0x1c
+ 1263 015c 34       		.uleb128 0x34
+ 1264 015d 00       		.byte	0
+ 1265 015e 03       		.uleb128 0x3
+ 1266 015f 0E       		.uleb128 0xe
+ 1267 0160 3A       		.uleb128 0x3a
+ 1268 0161 0B       		.uleb128 0xb
+ 1269 0162 3B       		.uleb128 0x3b
+ 1270 0163 0B       		.uleb128 0xb
+ 1271 0164 49       		.uleb128 0x49
+ 1272 0165 13       		.uleb128 0x13
+ 1273 0166 02       		.uleb128 0x2
+ 1274 0167 06       		.uleb128 0x6
+ 1275 0168 00       		.byte	0
+ 1276 0169 00       		.byte	0
+ 1277 016a 1D       		.uleb128 0x1d
+ 1278 016b 898201   		.uleb128 0x4109
+ 1279 016e 01       		.byte	0x1
+ 1280 016f 11       		.uleb128 0x11
+ 1281 0170 01       		.uleb128 0x1
+ 1282 0171 9542     		.uleb128 0x2115
+ 1283 0173 0C       		.uleb128 0xc
+ 1284 0174 31       		.uleb128 0x31
+ 1285 0175 13       		.uleb128 0x13
+ 1286 0176 00       		.byte	0
+ 1287 0177 00       		.byte	0
+ 1288 0178 1E       		.uleb128 0x1e
+ 1289 0179 34       		.uleb128 0x34
+ 1290 017a 00       		.byte	0
+ 1291 017b 03       		.uleb128 0x3
+ 1292 017c 0E       		.uleb128 0xe
+ 1293 017d 3A       		.uleb128 0x3a
+ 1294 017e 0B       		.uleb128 0xb
+ 1295 017f 3B       		.uleb128 0x3b
+ 1296 0180 05       		.uleb128 0x5
+ 1297 0181 49       		.uleb128 0x49
+ 1298 0182 13       		.uleb128 0x13
+ 1299 0183 3F       		.uleb128 0x3f
+ 1300 0184 0C       		.uleb128 0xc
+ 1301 0185 3C       		.uleb128 0x3c
+ 1302 0186 0C       		.uleb128 0xc
+ 1303 0187 00       		.byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 24
+
+
+ 1304 0188 00       		.byte	0
+ 1305 0189 1F       		.uleb128 0x1f
+ 1306 018a 2E       		.uleb128 0x2e
+ 1307 018b 00       		.byte	0
+ 1308 018c 3F       		.uleb128 0x3f
+ 1309 018d 0C       		.uleb128 0xc
+ 1310 018e 03       		.uleb128 0x3
+ 1311 018f 0E       		.uleb128 0xe
+ 1312 0190 3A       		.uleb128 0x3a
+ 1313 0191 0B       		.uleb128 0xb
+ 1314 0192 3B       		.uleb128 0x3b
+ 1315 0193 0B       		.uleb128 0xb
+ 1316 0194 27       		.uleb128 0x27
+ 1317 0195 0C       		.uleb128 0xc
+ 1318 0196 3C       		.uleb128 0x3c
+ 1319 0197 0C       		.uleb128 0xc
+ 1320 0198 00       		.byte	0
+ 1321 0199 00       		.byte	0
+ 1322 019a 20       		.uleb128 0x20
+ 1323 019b 2E       		.uleb128 0x2e
+ 1324 019c 01       		.byte	0x1
+ 1325 019d 3F       		.uleb128 0x3f
+ 1326 019e 0C       		.uleb128 0xc
+ 1327 019f 03       		.uleb128 0x3
+ 1328 01a0 0E       		.uleb128 0xe
+ 1329 01a1 3A       		.uleb128 0x3a
+ 1330 01a2 0B       		.uleb128 0xb
+ 1331 01a3 3B       		.uleb128 0x3b
+ 1332 01a4 0B       		.uleb128 0xb
+ 1333 01a5 27       		.uleb128 0x27
+ 1334 01a6 0C       		.uleb128 0xc
+ 1335 01a7 3C       		.uleb128 0x3c
+ 1336 01a8 0C       		.uleb128 0xc
+ 1337 01a9 01       		.uleb128 0x1
+ 1338 01aa 13       		.uleb128 0x13
+ 1339 01ab 00       		.byte	0
+ 1340 01ac 00       		.byte	0
+ 1341 01ad 21       		.uleb128 0x21
+ 1342 01ae 2E       		.uleb128 0x2e
+ 1343 01af 01       		.byte	0x1
+ 1344 01b0 3F       		.uleb128 0x3f
+ 1345 01b1 0C       		.uleb128 0xc
+ 1346 01b2 03       		.uleb128 0x3
+ 1347 01b3 0E       		.uleb128 0xe
+ 1348 01b4 3A       		.uleb128 0x3a
+ 1349 01b5 0B       		.uleb128 0xb
+ 1350 01b6 3B       		.uleb128 0x3b
+ 1351 01b7 0B       		.uleb128 0xb
+ 1352 01b8 27       		.uleb128 0x27
+ 1353 01b9 0C       		.uleb128 0xc
+ 1354 01ba 3C       		.uleb128 0x3c
+ 1355 01bb 0C       		.uleb128 0xc
+ 1356 01bc 00       		.byte	0
+ 1357 01bd 00       		.byte	0
+ 1358 01be 00       		.byte	0
+ 1359              		.section	.debug_loc,"",%progbits
+ 1360              	.Ldebug_loc0:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 25
+
+
+ 1361              	.LLST0:
+ 1362 0000 00000000 		.4byte	.LFB120
+ 1363 0004 02000000 		.4byte	.LCFI0
+ 1364 0008 0200     		.2byte	0x2
+ 1365 000a 7D       		.byte	0x7d
+ 1366 000b 00       		.sleb128 0
+ 1367 000c 02000000 		.4byte	.LCFI0
+ 1368 0010 1C000000 		.4byte	.LFE120
+ 1369 0014 0200     		.2byte	0x2
+ 1370 0016 7D       		.byte	0x7d
+ 1371 0017 08       		.sleb128 8
+ 1372 0018 00000000 		.4byte	0
+ 1373 001c 00000000 		.4byte	0
+ 1374              	.LLST1:
+ 1375 0020 00000000 		.4byte	.LVL2
+ 1376 0024 0F000000 		.4byte	.LVL5-1
+ 1377 0028 0100     		.2byte	0x1
+ 1378 002a 50       		.byte	0x50
+ 1379 002b 0F000000 		.4byte	.LVL5-1
+ 1380 002f 1C000000 		.4byte	.LFE120
+ 1381 0033 0100     		.2byte	0x1
+ 1382 0035 54       		.byte	0x54
+ 1383 0036 00000000 		.4byte	0
+ 1384 003a 00000000 		.4byte	0
+ 1385              	.LLST2:
+ 1386 003e 00000000 		.4byte	.LVL2
+ 1387 0042 0F000000 		.4byte	.LVL5-1
+ 1388 0046 0100     		.2byte	0x1
+ 1389 0048 51       		.byte	0x51
+ 1390 0049 0F000000 		.4byte	.LVL5-1
+ 1391 004d 1C000000 		.4byte	.LFE120
+ 1392 0051 0400     		.2byte	0x4
+ 1393 0053 F3       		.byte	0xf3
+ 1394 0054 01       		.uleb128 0x1
+ 1395 0055 51       		.byte	0x51
+ 1396 0056 9F       		.byte	0x9f
+ 1397 0057 00000000 		.4byte	0
+ 1398 005b 00000000 		.4byte	0
+ 1399              	.LLST3:
+ 1400 005f 0A000000 		.4byte	.LVL4
+ 1401 0063 0F000000 		.4byte	.LVL5-1
+ 1402 0067 0100     		.2byte	0x1
+ 1403 0069 53       		.byte	0x53
+ 1404 006a 00000000 		.4byte	0
+ 1405 006e 00000000 		.4byte	0
+ 1406              	.LLST4:
+ 1407 0072 1A000000 		.4byte	.LVL7
+ 1408 0076 1C000000 		.4byte	.LFE120
+ 1409 007a 0100     		.2byte	0x1
+ 1410 007c 53       		.byte	0x53
+ 1411 007d 00000000 		.4byte	0
+ 1412 0081 00000000 		.4byte	0
+ 1413              	.LLST5:
+ 1414 0085 00000000 		.4byte	.LFB121
+ 1415 0089 02000000 		.4byte	.LCFI1
+ 1416 008d 0200     		.2byte	0x2
+ 1417 008f 7D       		.byte	0x7d
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 26
+
+
+ 1418 0090 00       		.sleb128 0
+ 1419 0091 02000000 		.4byte	.LCFI1
+ 1420 0095 1A000000 		.4byte	.LFE121
+ 1421 0099 0200     		.2byte	0x2
+ 1422 009b 7D       		.byte	0x7d
+ 1423 009c 08       		.sleb128 8
+ 1424 009d 00000000 		.4byte	0
+ 1425 00a1 00000000 		.4byte	0
+ 1426              	.LLST6:
+ 1427 00a5 00000000 		.4byte	.LVL8
+ 1428 00a9 0D000000 		.4byte	.LVL11-1
+ 1429 00ad 0100     		.2byte	0x1
+ 1430 00af 50       		.byte	0x50
+ 1431 00b0 0D000000 		.4byte	.LVL11-1
+ 1432 00b4 1A000000 		.4byte	.LFE121
+ 1433 00b8 0100     		.2byte	0x1
+ 1434 00ba 54       		.byte	0x54
+ 1435 00bb 00000000 		.4byte	0
+ 1436 00bf 00000000 		.4byte	0
+ 1437              	.LLST7:
+ 1438 00c3 0A000000 		.4byte	.LVL10
+ 1439 00c7 0D000000 		.4byte	.LVL11-1
+ 1440 00cb 0100     		.2byte	0x1
+ 1441 00cd 53       		.byte	0x53
+ 1442 00ce 00000000 		.4byte	0
+ 1443 00d2 00000000 		.4byte	0
+ 1444              	.LLST8:
+ 1445 00d6 18000000 		.4byte	.LVL13
+ 1446 00da 1A000000 		.4byte	.LFE121
+ 1447 00de 0100     		.2byte	0x1
+ 1448 00e0 53       		.byte	0x53
+ 1449 00e1 00000000 		.4byte	0
+ 1450 00e5 00000000 		.4byte	0
+ 1451              	.LLST9:
+ 1452 00e9 00000000 		.4byte	.LFB122
+ 1453 00ed 02000000 		.4byte	.LCFI2
+ 1454 00f1 0200     		.2byte	0x2
+ 1455 00f3 7D       		.byte	0x7d
+ 1456 00f4 00       		.sleb128 0
+ 1457 00f5 02000000 		.4byte	.LCFI2
+ 1458 00f9 14000000 		.4byte	.LFE122
+ 1459 00fd 0200     		.2byte	0x2
+ 1460 00ff 7D       		.byte	0x7d
+ 1461 0100 08       		.sleb128 8
+ 1462 0101 00000000 		.4byte	0
+ 1463 0105 00000000 		.4byte	0
+ 1464              	.LLST10:
+ 1465 0109 00000000 		.4byte	.LVL14
+ 1466 010d 0B000000 		.4byte	.LVL17-1
+ 1467 0111 0100     		.2byte	0x1
+ 1468 0113 50       		.byte	0x50
+ 1469 0114 0B000000 		.4byte	.LVL17-1
+ 1470 0118 14000000 		.4byte	.LFE122
+ 1471 011c 0400     		.2byte	0x4
+ 1472 011e F3       		.byte	0xf3
+ 1473 011f 01       		.uleb128 0x1
+ 1474 0120 50       		.byte	0x50
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 27
+
+
+ 1475 0121 9F       		.byte	0x9f
+ 1476 0122 00000000 		.4byte	0
+ 1477 0126 00000000 		.4byte	0
+ 1478              	.LLST11:
+ 1479 012a 00000000 		.4byte	.LVL14
+ 1480 012e 0B000000 		.4byte	.LVL17-1
+ 1481 0132 0100     		.2byte	0x1
+ 1482 0134 51       		.byte	0x51
+ 1483 0135 0B000000 		.4byte	.LVL17-1
+ 1484 0139 14000000 		.4byte	.LFE122
+ 1485 013d 0400     		.2byte	0x4
+ 1486 013f F3       		.byte	0xf3
+ 1487 0140 01       		.uleb128 0x1
+ 1488 0141 51       		.byte	0x51
+ 1489 0142 9F       		.byte	0x9f
+ 1490 0143 00000000 		.4byte	0
+ 1491 0147 00000000 		.4byte	0
+ 1492              	.LLST12:
+ 1493 014b 08000000 		.4byte	.LVL16
+ 1494 014f 0B000000 		.4byte	.LVL17-1
+ 1495 0153 0100     		.2byte	0x1
+ 1496 0155 53       		.byte	0x53
+ 1497 0156 00000000 		.4byte	0
+ 1498 015a 00000000 		.4byte	0
+ 1499              	.LLST13:
+ 1500 015e 12000000 		.4byte	.LVL19
+ 1501 0162 14000000 		.4byte	.LFE122
+ 1502 0166 0100     		.2byte	0x1
+ 1503 0168 53       		.byte	0x53
+ 1504 0169 00000000 		.4byte	0
+ 1505 016d 00000000 		.4byte	0
+ 1506              	.LLST14:
+ 1507 0171 00000000 		.4byte	.LFB123
+ 1508 0175 02000000 		.4byte	.LCFI3
+ 1509 0179 0200     		.2byte	0x2
+ 1510 017b 7D       		.byte	0x7d
+ 1511 017c 00       		.sleb128 0
+ 1512 017d 02000000 		.4byte	.LCFI3
+ 1513 0181 14000000 		.4byte	.LFE123
+ 1514 0185 0200     		.2byte	0x2
+ 1515 0187 7D       		.byte	0x7d
+ 1516 0188 08       		.sleb128 8
+ 1517 0189 00000000 		.4byte	0
+ 1518 018d 00000000 		.4byte	0
+ 1519              	.LLST15:
+ 1520 0191 00000000 		.4byte	.LVL20
+ 1521 0195 0B000000 		.4byte	.LVL23-1
+ 1522 0199 0100     		.2byte	0x1
+ 1523 019b 50       		.byte	0x50
+ 1524 019c 0B000000 		.4byte	.LVL23-1
+ 1525 01a0 14000000 		.4byte	.LFE123
+ 1526 01a4 0400     		.2byte	0x4
+ 1527 01a6 F3       		.byte	0xf3
+ 1528 01a7 01       		.uleb128 0x1
+ 1529 01a8 50       		.byte	0x50
+ 1530 01a9 9F       		.byte	0x9f
+ 1531 01aa 00000000 		.4byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 28
+
+
+ 1532 01ae 00000000 		.4byte	0
+ 1533              	.LLST16:
+ 1534 01b2 00000000 		.4byte	.LVL20
+ 1535 01b6 0B000000 		.4byte	.LVL23-1
+ 1536 01ba 0100     		.2byte	0x1
+ 1537 01bc 51       		.byte	0x51
+ 1538 01bd 0B000000 		.4byte	.LVL23-1
+ 1539 01c1 14000000 		.4byte	.LFE123
+ 1540 01c5 0400     		.2byte	0x4
+ 1541 01c7 F3       		.byte	0xf3
+ 1542 01c8 01       		.uleb128 0x1
+ 1543 01c9 51       		.byte	0x51
+ 1544 01ca 9F       		.byte	0x9f
+ 1545 01cb 00000000 		.4byte	0
+ 1546 01cf 00000000 		.4byte	0
+ 1547              	.LLST17:
+ 1548 01d3 08000000 		.4byte	.LVL22
+ 1549 01d7 0B000000 		.4byte	.LVL23-1
+ 1550 01db 0100     		.2byte	0x1
+ 1551 01dd 53       		.byte	0x53
+ 1552 01de 00000000 		.4byte	0
+ 1553 01e2 00000000 		.4byte	0
+ 1554              	.LLST18:
+ 1555 01e6 12000000 		.4byte	.LVL25
+ 1556 01ea 14000000 		.4byte	.LFE123
+ 1557 01ee 0100     		.2byte	0x1
+ 1558 01f0 53       		.byte	0x53
+ 1559 01f1 00000000 		.4byte	0
+ 1560 01f5 00000000 		.4byte	0
+ 1561              	.LLST19:
+ 1562 01f9 00000000 		.4byte	.LFB124
+ 1563 01fd 02000000 		.4byte	.LCFI4
+ 1564 0201 0200     		.2byte	0x2
+ 1565 0203 7D       		.byte	0x7d
+ 1566 0204 00       		.sleb128 0
+ 1567 0205 02000000 		.4byte	.LCFI4
+ 1568 0209 1E000000 		.4byte	.LFE124
+ 1569 020d 0200     		.2byte	0x2
+ 1570 020f 7D       		.byte	0x7d
+ 1571 0210 08       		.sleb128 8
+ 1572 0211 00000000 		.4byte	0
+ 1573 0215 00000000 		.4byte	0
+ 1574              	.LLST20:
+ 1575 0219 00000000 		.4byte	.LVL26
+ 1576 021d 0C000000 		.4byte	.LVL28
+ 1577 0221 0100     		.2byte	0x1
+ 1578 0223 50       		.byte	0x50
+ 1579 0224 0C000000 		.4byte	.LVL28
+ 1580 0228 1E000000 		.4byte	.LFE124
+ 1581 022c 0100     		.2byte	0x1
+ 1582 022e 54       		.byte	0x54
+ 1583 022f 00000000 		.4byte	0
+ 1584 0233 00000000 		.4byte	0
+ 1585              	.LLST21:
+ 1586 0237 00000000 		.4byte	.LVL26
+ 1587 023b 0C000000 		.4byte	.LVL28
+ 1588 023f 0100     		.2byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 29
+
+
+ 1589 0241 51       		.byte	0x51
+ 1590 0242 0C000000 		.4byte	.LVL28
+ 1591 0246 1D000000 		.4byte	.LVL30-1
+ 1592 024a 0100     		.2byte	0x1
+ 1593 024c 53       		.byte	0x53
+ 1594 024d 1D000000 		.4byte	.LVL30-1
+ 1595 0251 1E000000 		.4byte	.LFE124
+ 1596 0255 0400     		.2byte	0x4
+ 1597 0257 F3       		.byte	0xf3
+ 1598 0258 01       		.uleb128 0x1
+ 1599 0259 51       		.byte	0x51
+ 1600 025a 9F       		.byte	0x9f
+ 1601 025b 00000000 		.4byte	0
+ 1602 025f 00000000 		.4byte	0
+ 1603              	.LLST22:
+ 1604 0263 00000000 		.4byte	.LVL26
+ 1605 0267 10000000 		.4byte	.LVL29
+ 1606 026b 0100     		.2byte	0x1
+ 1607 026d 52       		.byte	0x52
+ 1608 026e 10000000 		.4byte	.LVL29
+ 1609 0272 1E000000 		.4byte	.LFE124
+ 1610 0276 0400     		.2byte	0x4
+ 1611 0278 F3       		.byte	0xf3
+ 1612 0279 01       		.uleb128 0x1
+ 1613 027a 52       		.byte	0x52
+ 1614 027b 9F       		.byte	0x9f
+ 1615 027c 00000000 		.4byte	0
+ 1616 0280 00000000 		.4byte	0
+ 1617              	.LLST23:
+ 1618 0284 04000000 		.4byte	.LVL27
+ 1619 0288 0C000000 		.4byte	.LVL28
+ 1620 028c 0900     		.2byte	0x9
+ 1621 028e 71       		.byte	0x71
+ 1622 028f 00       		.sleb128 0
+ 1623 0290 33       		.byte	0x33
+ 1624 0291 24       		.byte	0x24
+ 1625 0292 70       		.byte	0x70
+ 1626 0293 04       		.sleb128 4
+ 1627 0294 06       		.byte	0x6
+ 1628 0295 22       		.byte	0x22
+ 1629 0296 9F       		.byte	0x9f
+ 1630 0297 0C000000 		.4byte	.LVL28
+ 1631 029b 1D000000 		.4byte	.LVL30-1
+ 1632 029f 0800     		.2byte	0x8
+ 1633 02a1 73       		.byte	0x73
+ 1634 02a2 00       		.sleb128 0
+ 1635 02a3 33       		.byte	0x33
+ 1636 02a4 24       		.byte	0x24
+ 1637 02a5 75       		.byte	0x75
+ 1638 02a6 00       		.sleb128 0
+ 1639 02a7 22       		.byte	0x22
+ 1640 02a8 9F       		.byte	0x9f
+ 1641 02a9 1D000000 		.4byte	.LVL30-1
+ 1642 02ad 1E000000 		.4byte	.LFE124
+ 1643 02b1 0900     		.2byte	0x9
+ 1644 02b3 F3       		.byte	0xf3
+ 1645 02b4 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 30
+
+
+ 1646 02b5 51       		.byte	0x51
+ 1647 02b6 33       		.byte	0x33
+ 1648 02b7 24       		.byte	0x24
+ 1649 02b8 75       		.byte	0x75
+ 1650 02b9 00       		.sleb128 0
+ 1651 02ba 22       		.byte	0x22
+ 1652 02bb 9F       		.byte	0x9f
+ 1653 02bc 00000000 		.4byte	0
+ 1654 02c0 00000000 		.4byte	0
+ 1655              		.section	.debug_aranges,"",%progbits
+ 1656 0000 4C000000 		.4byte	0x4c
+ 1657 0004 0200     		.2byte	0x2
+ 1658 0006 00000000 		.4byte	.Ldebug_info0
+ 1659 000a 04       		.byte	0x4
+ 1660 000b 00       		.byte	0
+ 1661 000c 0000     		.2byte	0
+ 1662 000e 0000     		.2byte	0
+ 1663 0010 00000000 		.4byte	.LFB118
+ 1664 0014 04000000 		.4byte	.LFE118-.LFB118
+ 1665 0018 00000000 		.4byte	.LFB119
+ 1666 001c 0A000000 		.4byte	.LFE119-.LFB119
+ 1667 0020 00000000 		.4byte	.LFB120
+ 1668 0024 1C000000 		.4byte	.LFE120-.LFB120
+ 1669 0028 00000000 		.4byte	.LFB121
+ 1670 002c 1A000000 		.4byte	.LFE121-.LFB121
+ 1671 0030 00000000 		.4byte	.LFB122
+ 1672 0034 14000000 		.4byte	.LFE122-.LFB122
+ 1673 0038 00000000 		.4byte	.LFB123
+ 1674 003c 14000000 		.4byte	.LFE123-.LFB123
+ 1675 0040 00000000 		.4byte	.LFB124
+ 1676 0044 1E000000 		.4byte	.LFE124-.LFB124
+ 1677 0048 00000000 		.4byte	0
+ 1678 004c 00000000 		.4byte	0
+ 1679              		.section	.debug_ranges,"",%progbits
+ 1680              	.Ldebug_ranges0:
+ 1681 0000 02000000 		.4byte	.LBB2
+ 1682 0004 04000000 		.4byte	.LBE2
+ 1683 0008 06000000 		.4byte	.LBB3
+ 1684 000c 0A000000 		.4byte	.LBE3
+ 1685 0010 00000000 		.4byte	0
+ 1686 0014 00000000 		.4byte	0
+ 1687 0018 02000000 		.4byte	.LBB5
+ 1688 001c 04000000 		.4byte	.LBE5
+ 1689 0020 06000000 		.4byte	.LBB6
+ 1690 0024 0A000000 		.4byte	.LBE6
+ 1691 0028 00000000 		.4byte	0
+ 1692 002c 00000000 		.4byte	0
+ 1693 0030 00000000 		.4byte	.LFB118
+ 1694 0034 04000000 		.4byte	.LFE118
+ 1695 0038 00000000 		.4byte	.LFB119
+ 1696 003c 0A000000 		.4byte	.LFE119
+ 1697 0040 00000000 		.4byte	.LFB120
+ 1698 0044 1C000000 		.4byte	.LFE120
+ 1699 0048 00000000 		.4byte	.LFB121
+ 1700 004c 1A000000 		.4byte	.LFE121
+ 1701 0050 00000000 		.4byte	.LFB122
+ 1702 0054 14000000 		.4byte	.LFE122
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 31
+
+
+ 1703 0058 00000000 		.4byte	.LFB123
+ 1704 005c 14000000 		.4byte	.LFE123
+ 1705 0060 00000000 		.4byte	.LFB124
+ 1706 0064 1E000000 		.4byte	.LFE124
+ 1707 0068 00000000 		.4byte	0
+ 1708 006c 00000000 		.4byte	0
+ 1709              		.section	.debug_line,"",%progbits
+ 1710              	.Ldebug_line0:
+ 1711 0000 F2010000 		.section	.debug_str,"MS",%progbits,1
+ 1711      02005601 
+ 1711      00000201 
+ 1711      FB0E0D00 
+ 1711      01010101 
+ 1712              	.LASF18:
+ 1713 0000 45585444 		.ascii	"EXTDriver\000"
+ 1713      72697665 
+ 1713      7200
+ 1714              	.LASF33:
+ 1715 000a 6368616E 		.ascii	"channel\000"
+ 1715      6E656C00 
+ 1716              	.LASF45:
+ 1717 0012 6578745F 		.ascii	"ext_lld_init\000"
+ 1717      6C6C645F 
+ 1717      696E6974 
+ 1717      00
+ 1718              	.LASF19:
+ 1719 001f 73746174 		.ascii	"state\000"
+ 1719      6500
+ 1720              	.LASF17:
+ 1721 0025 65787473 		.ascii	"extstate_t\000"
+ 1721      74617465 
+ 1721      5F7400
+ 1722              	.LASF24:
+ 1723 0030 45585443 		.ascii	"EXTChannelConfig\000"
+ 1723      68616E6E 
+ 1723      656C436F 
+ 1723      6E666967 
+ 1723      00
+ 1724              	.LASF14:
+ 1725 0041 4558545F 		.ascii	"EXT_UNINIT\000"
+ 1725      554E494E 
+ 1725      495400
+ 1726              	.LASF31:
+ 1727 004c 65787453 		.ascii	"extStop\000"
+ 1727      746F7000 
+ 1728              	.LASF27:
+ 1729 0054 65787449 		.ascii	"extInit\000"
+ 1729      6E697400 
+ 1730              	.LASF34:
+ 1731 005c 65787443 		.ascii	"extChannelDisable\000"
+ 1731      68616E6E 
+ 1731      656C4469 
+ 1731      7361626C 
+ 1731      6500
+ 1732              	.LASF21:
+ 1733 006e 65787063 		.ascii	"expchannel_t\000"
+ 1733      68616E6E 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 32
+
+
+ 1733      656C5F74 
+ 1733      00
+ 1734              	.LASF29:
+ 1735 007b 65787453 		.ascii	"extStart\000"
+ 1735      74617274 
+ 1735      00
+ 1736              	.LASF46:
+ 1737 0084 6578745F 		.ascii	"ext_lld_channel_disable\000"
+ 1737      6C6C645F 
+ 1737      6368616E 
+ 1737      6E656C5F 
+ 1737      64697361 
+ 1738              	.LASF10:
+ 1739 009c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1739      206C6F6E 
+ 1739      6720756E 
+ 1739      7369676E 
+ 1739      65642069 
+ 1740              	.LASF2:
+ 1741 00b3 756E7369 		.ascii	"unsigned char\000"
+ 1741      676E6564 
+ 1741      20636861 
+ 1741      7200
+ 1742              	.LASF36:
+ 1743 00c1 65787463 		.ascii	"extcp\000"
+ 1743      7000
+ 1744              	.LASF8:
+ 1745 00c7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1745      20756E73 
+ 1745      69676E65 
+ 1745      6420696E 
+ 1745      7400
+ 1746              	.LASF4:
+ 1747 00d9 73686F72 		.ascii	"short unsigned int\000"
+ 1747      7420756E 
+ 1747      7369676E 
+ 1747      65642069 
+ 1747      6E7400
+ 1748              	.LASF44:
+ 1749 00ec 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1749      52784275 
+ 1749      66666572 
+ 1749      00
+ 1750              	.LASF20:
+ 1751 00f9 636F6E66 		.ascii	"config\000"
+ 1751      696700
+ 1752              	.LASF26:
+ 1753 0100 45585443 		.ascii	"EXTConfig\000"
+ 1753      6F6E6669 
+ 1753      6700
+ 1754              	.LASF43:
+ 1755 010a 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace\\DCM_test_3\000"
+ 1755      68696269 
+ 1755      53747564 
+ 1755      696F5C77 
+ 1755      6F726B73 
+ 1756              	.LASF40:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 33
+
+
+ 1757 012e 6578745F 		.ascii	"ext_lld_channel_enable\000"
+ 1757      6C6C645F 
+ 1757      6368616E 
+ 1757      6E656C5F 
+ 1757      656E6162 
+ 1758              	.LASF16:
+ 1759 0145 4558545F 		.ascii	"EXT_ACTIVE\000"
+ 1759      41435449 
+ 1759      564500
+ 1760              	.LASF0:
+ 1761 0150 756E7369 		.ascii	"unsigned int\000"
+ 1761      676E6564 
+ 1761      20696E74 
+ 1761      00
+ 1762              	.LASF30:
+ 1763 015d 65787470 		.ascii	"extp\000"
+ 1763      00
+ 1764              	.LASF13:
+ 1765 0162 63686172 		.ascii	"char\000"
+ 1765      00
+ 1766              	.LASF22:
+ 1767 0167 65787463 		.ascii	"extcallback_t\000"
+ 1767      616C6C62 
+ 1767      61636B5F 
+ 1767      7400
+ 1768              	.LASF23:
+ 1769 0175 6D6F6465 		.ascii	"mode\000"
+ 1769      00
+ 1770              	.LASF39:
+ 1771 017a 6578745F 		.ascii	"ext_lld_stop\000"
+ 1771      6C6C645F 
+ 1771      73746F70 
+ 1771      00
+ 1772              	.LASF35:
+ 1773 0187 65787453 		.ascii	"extSetChannelModeI\000"
+ 1773      65744368 
+ 1773      616E6E65 
+ 1773      6C4D6F64 
+ 1773      654900
+ 1774              	.LASF37:
+ 1775 019a 6F6C6463 		.ascii	"oldcp\000"
+ 1775      7000
+ 1776              	.LASF6:
+ 1777 01a0 696E7433 		.ascii	"int32_t\000"
+ 1777      325F7400 
+ 1778              	.LASF12:
+ 1779 01a8 73697A65 		.ascii	"sizetype\000"
+ 1779      74797065 
+ 1779      00
+ 1780              	.LASF9:
+ 1781 01b1 6C6F6E67 		.ascii	"long long int\000"
+ 1781      206C6F6E 
+ 1781      6720696E 
+ 1781      7400
+ 1782              	.LASF42:
+ 1783 01bf 2E2E2F2E 		.ascii	"../../chibios/os/hal/src/ext.c\000"
+ 1783      2E2F6368 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 34
+
+
+ 1783      6962696F 
+ 1783      732F6F73 
+ 1783      2F68616C 
+ 1784              	.LASF41:
+ 1785 01de 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 1785      4320342E 
+ 1785      372E3420 
+ 1785      32303134 
+ 1785      30343031 
+ 1786 0211 616E6368 		.ascii	"anch revision 209195]\000"
+ 1786      20726576 
+ 1786      6973696F 
+ 1786      6E203230 
+ 1786      39313935 
+ 1787              	.LASF25:
+ 1788 0227 6368616E 		.ascii	"channels\000"
+ 1788      6E656C73 
+ 1788      00
+ 1789              	.LASF32:
+ 1790 0230 65787443 		.ascii	"extChannelEnable\000"
+ 1790      68616E6E 
+ 1790      656C456E 
+ 1790      61626C65 
+ 1790      00
+ 1791              	.LASF3:
+ 1792 0241 73686F72 		.ascii	"short int\000"
+ 1792      7420696E 
+ 1792      7400
+ 1793              	.LASF28:
+ 1794 024b 6578744F 		.ascii	"extObjectInit\000"
+ 1794      626A6563 
+ 1794      74496E69 
+ 1794      7400
+ 1795              	.LASF7:
+ 1796 0259 75696E74 		.ascii	"uint32_t\000"
+ 1796      33325F74 
+ 1796      00
+ 1797              	.LASF5:
+ 1798 0262 6C6F6E67 		.ascii	"long int\000"
+ 1798      20696E74 
+ 1798      00
+ 1799              	.LASF1:
+ 1800 026b 7369676E 		.ascii	"signed char\000"
+ 1800      65642063 
+ 1800      68617200 
+ 1801              	.LASF11:
+ 1802 0277 5F426F6F 		.ascii	"_Bool\000"
+ 1802      6C00
+ 1803              	.LASF38:
+ 1804 027d 6578745F 		.ascii	"ext_lld_start\000"
+ 1804      6C6C645F 
+ 1804      73746172 
+ 1804      7400
+ 1805              	.LASF15:
+ 1806 028b 4558545F 		.ascii	"EXT_STOP\000"
+ 1806      53544F50 
+ 1806      00
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 35
+
+
+ 1807              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s 			page 36
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ext.c
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:19     .text.extInit:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:25     .text.extInit:00000000 extInit
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:41     .text.extObjectInit:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:47     .text.extObjectInit:00000000 extObjectInit
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:68     .text.extStart:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:74     .text.extStart:00000000 extStart
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:124    .text.extStop:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:130    .text.extStop:00000000 extStop
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:178    .text.extChannelEnable:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:184    .text.extChannelEnable:00000000 extChannelEnable
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:224    .text.extChannelDisable:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:230    .text.extChannelDisable:00000000 extChannelDisable
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:270    .text.extSetChannelModeI:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccEruOYc.s:276    .text.extSetChannelModeI:00000000 extSetChannelModeI
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+ext_lld_init
+ext_lld_start
+ext_lld_stop
+ext_lld_channel_enable
+ext_lld_channel_disable

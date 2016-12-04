@@ -1,0 +1,2388 @@
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"pwm.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.pwmInit,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.global	pwmInit
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	pwmInit, %function
+  25              	pwmInit:
+  26              	.LFB118:
+  27              		.file 1 "../../chibios/os/hal/src/pwm.c"
+  28              		.loc 1 68 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              		.loc 1 71 0
+  34              		.loc 1 70 0
+  35 0000 FFF7FEBF 		b	pwm_lld_init
+  36              	.LVL0:
+  37              		.cfi_endproc
+  38              	.LFE118:
+  39              		.size	pwmInit, .-pwmInit
+  40 0004 AFF30080 		.section	.text.pwmObjectInit,"ax",%progbits
+  40      AFF30080 
+  40      AFF30080 
+  41              		.align	2
+  42              		.p2align 4,,15
+  43              		.global	pwmObjectInit
+  44              		.thumb
+  45              		.thumb_func
+  46              		.type	pwmObjectInit, %function
+  47              	pwmObjectInit:
+  48              	.LFB119:
+  49              		.loc 1 80 0
+  50              		.cfi_startproc
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  54              	.LVL1:
+  55              		.loc 1 82 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 2
+
+
+  56 0000 0123     		movs	r3, #1
+  57              		.loc 1 83 0
+  58 0002 0021     		movs	r1, #0
+  59              		.loc 1 82 0
+  60 0004 0370     		strb	r3, [r0, #0]
+  61              		.loc 1 83 0
+  62 0006 4160     		str	r1, [r0, #4]
+  63 0008 7047     		bx	lr
+  64              		.cfi_endproc
+  65              	.LFE119:
+  66              		.size	pwmObjectInit, .-pwmObjectInit
+  67 000a 00BFAFF3 		.section	.text.pwmStart,"ax",%progbits
+  67      0080
+  68              		.align	2
+  69              		.p2align 4,,15
+  70              		.global	pwmStart
+  71              		.thumb
+  72              		.thumb_func
+  73              		.type	pwmStart, %function
+  74              	pwmStart:
+  75              	.LFB120:
+  76              		.loc 1 99 0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80              	.LVL2:
+  81 0000 10B5     		push	{r4, lr}
+  82              	.LCFI0:
+  83              		.cfi_def_cfa_offset 8
+  84              		.cfi_offset 4, -8
+  85              		.cfi_offset 14, -4
+  86              	.LBB2:
+  87              		.loc 1 103 0
+  88 0002 2023     		movs	r3, #32
+  89              	.LVL3:
+  90              	.LBE2:
+  91              		.loc 1 99 0
+  92 0004 0446     		mov	r4, r0
+  93              	.LBB3:
+  94              		.loc 1 103 0
+  95              	@ 103 "../../chibios/os/hal/src/pwm.c" 1
+  96 0006 83F31188 		msr     BASEPRI, r3
+  97              	@ 0 "" 2
+  98              	.LVL4:
+  99              		.thumb
+ 100              	.LBE3:
+ 101              		.loc 1 107 0
+ 102 000a 8B88     		ldrh	r3, [r1, #4]
+ 103              	.LVL5:
+ 104              		.loc 1 106 0
+ 105 000c 4160     		str	r1, [r0, #4]
+ 106              		.loc 1 107 0
+ 107 000e 0381     		strh	r3, [r0, #8]	@ movhi
+ 108              		.loc 1 108 0
+ 109 0010 FFF7FEFF 		bl	pwm_lld_start
+ 110              	.LVL6:
+ 111              		.loc 1 109 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 3
+
+
+ 112 0014 0220     		movs	r0, #2
+ 113 0016 2070     		strb	r0, [r4, #0]
+ 114              	.LBB4:
+ 115              		.loc 1 110 0
+ 116 0018 0023     		movs	r3, #0
+ 117              	.LVL7:
+ 118              	@ 110 "../../chibios/os/hal/src/pwm.c" 1
+ 119 001a 83F31188 		msr     BASEPRI, r3
+ 120              	@ 0 "" 2
+ 121              	.LVL8:
+ 122              		.thumb
+ 123 001e 10BD     		pop	{r4, pc}
+ 124              	.LBE4:
+ 125              		.cfi_endproc
+ 126              	.LFE120:
+ 127              		.size	pwmStart, .-pwmStart
+ 128              		.section	.text.pwmStop,"ax",%progbits
+ 129              		.align	2
+ 130              		.p2align 4,,15
+ 131              		.global	pwmStop
+ 132              		.thumb
+ 133              		.thumb_func
+ 134              		.type	pwmStop, %function
+ 135              	pwmStop:
+ 136              	.LFB121:
+ 137              		.loc 1 120 0
+ 138              		.cfi_startproc
+ 139              		@ args = 0, pretend = 0, frame = 0
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+ 141              	.LVL9:
+ 142 0000 10B5     		push	{r4, lr}
+ 143              	.LCFI1:
+ 144              		.cfi_def_cfa_offset 8
+ 145              		.cfi_offset 4, -8
+ 146              		.cfi_offset 14, -4
+ 147              	.LBB5:
+ 148              		.loc 1 124 0
+ 149 0002 2023     		movs	r3, #32
+ 150              	.LVL10:
+ 151              	.LBE5:
+ 152              		.loc 1 120 0
+ 153 0004 0446     		mov	r4, r0
+ 154              	.LBB6:
+ 155              		.loc 1 124 0
+ 156              	@ 124 "../../chibios/os/hal/src/pwm.c" 1
+ 157 0006 83F31188 		msr     BASEPRI, r3
+ 158              	@ 0 "" 2
+ 159              	.LVL11:
+ 160              		.thumb
+ 161              	.LBE6:
+ 162              		.loc 1 127 0
+ 163 000a FFF7FEFF 		bl	pwm_lld_stop
+ 164              	.LVL12:
+ 165              		.loc 1 128 0
+ 166 000e 0123     		movs	r3, #1
+ 167 0010 2370     		strb	r3, [r4, #0]
+ 168              	.LBB7:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 4
+
+
+ 169              		.loc 1 129 0
+ 170 0012 0023     		movs	r3, #0
+ 171              	.LVL13:
+ 172              	@ 129 "../../chibios/os/hal/src/pwm.c" 1
+ 173 0014 83F31188 		msr     BASEPRI, r3
+ 174              	@ 0 "" 2
+ 175              	.LVL14:
+ 176              		.thumb
+ 177 0018 10BD     		pop	{r4, pc}
+ 178              	.LBE7:
+ 179              		.cfi_endproc
+ 180              	.LFE121:
+ 181              		.size	pwmStop, .-pwmStop
+ 182 001a 00BFAFF3 		.section	.text.pwmChangePeriod,"ax",%progbits
+ 182      0080
+ 183              		.align	2
+ 184              		.p2align 4,,15
+ 185              		.global	pwmChangePeriod
+ 186              		.thumb
+ 187              		.thumb_func
+ 188              		.type	pwmChangePeriod, %function
+ 189              	pwmChangePeriod:
+ 190              	.LFB122:
+ 191              		.loc 1 147 0
+ 192              		.cfi_startproc
+ 193              		@ args = 0, pretend = 0, frame = 0
+ 194              		@ frame_needed = 0, uses_anonymous_args = 0
+ 195              		@ link register save eliminated.
+ 196              	.LVL15:
+ 197              	.LBB8:
+ 198              		.loc 1 151 0
+ 199 0000 2023     		movs	r3, #32
+ 200              	.LVL16:
+ 201              	@ 151 "../../chibios/os/hal/src/pwm.c" 1
+ 202 0002 83F31188 		msr     BASEPRI, r3
+ 203              	@ 0 "" 2
+ 204              	.LVL17:
+ 205              		.thumb
+ 206              	.LBE8:
+ 207              		.loc 1 154 0
+ 208 0006 0369     		ldr	r3, [r0, #16]
+ 209              	.LVL18:
+ 210 0008 0181     		strh	r1, [r0, #8]	@ movhi
+ 211 000a 0139     		subs	r1, r1, #1
+ 212              	.LVL19:
+ 213 000c 88B2     		uxth	r0, r1
+ 214              	.LVL20:
+ 215 000e D862     		str	r0, [r3, #44]
+ 216              	.LBB9:
+ 217              		.loc 1 155 0
+ 218 0010 0023     		movs	r3, #0
+ 219              	.LVL21:
+ 220              	@ 155 "../../chibios/os/hal/src/pwm.c" 1
+ 221 0012 83F31188 		msr     BASEPRI, r3
+ 222              	@ 0 "" 2
+ 223              	.LVL22:
+ 224              		.thumb
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 5
+
+
+ 225 0016 7047     		bx	lr
+ 226              	.LBE9:
+ 227              		.cfi_endproc
+ 228              	.LFE122:
+ 229              		.size	pwmChangePeriod, .-pwmChangePeriod
+ 230 0018 AFF30080 		.section	.text.pwmEnableChannel,"ax",%progbits
+ 230      AFF30080 
+ 231              		.align	2
+ 232              		.p2align 4,,15
+ 233              		.global	pwmEnableChannel
+ 234              		.thumb
+ 235              		.thumb_func
+ 236              		.type	pwmEnableChannel, %function
+ 237              	pwmEnableChannel:
+ 238              	.LFB123:
+ 239              		.loc 1 174 0
+ 240              		.cfi_startproc
+ 241              		@ args = 0, pretend = 0, frame = 0
+ 242              		@ frame_needed = 0, uses_anonymous_args = 0
+ 243              	.LVL23:
+ 244 0000 08B5     		push	{r3, lr}
+ 245              	.LCFI2:
+ 246              		.cfi_def_cfa_offset 8
+ 247              		.cfi_offset 3, -8
+ 248              		.cfi_offset 14, -4
+ 249              	.LBB10:
+ 250              		.loc 1 179 0
+ 251 0002 2023     		movs	r3, #32
+ 252              	.LVL24:
+ 253              	@ 179 "../../chibios/os/hal/src/pwm.c" 1
+ 254 0004 83F31188 		msr     BASEPRI, r3
+ 255              	@ 0 "" 2
+ 256              	.LVL25:
+ 257              		.thumb
+ 258              	.LBE10:
+ 259              		.loc 1 182 0
+ 260 0008 FFF7FEFF 		bl	pwm_lld_enable_channel
+ 261              	.LVL26:
+ 262              	.LBB11:
+ 263              		.loc 1 183 0
+ 264 000c 0023     		movs	r3, #0
+ 265              	.LVL27:
+ 266              	@ 183 "../../chibios/os/hal/src/pwm.c" 1
+ 267 000e 83F31188 		msr     BASEPRI, r3
+ 268              	@ 0 "" 2
+ 269              	.LVL28:
+ 270              		.thumb
+ 271 0012 08BD     		pop	{r3, pc}
+ 272              	.LBE11:
+ 273              		.cfi_endproc
+ 274              	.LFE123:
+ 275              		.size	pwmEnableChannel, .-pwmEnableChannel
+ 276 0014 AFF30080 		.section	.text.pwmDisableChannel,"ax",%progbits
+ 276      AFF30080 
+ 276      AFF30080 
+ 277              		.align	2
+ 278              		.p2align 4,,15
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 6
+
+
+ 279              		.global	pwmDisableChannel
+ 280              		.thumb
+ 281              		.thumb_func
+ 282              		.type	pwmDisableChannel, %function
+ 283              	pwmDisableChannel:
+ 284              	.LFB124:
+ 285              		.loc 1 200 0
+ 286              		.cfi_startproc
+ 287              		@ args = 0, pretend = 0, frame = 0
+ 288              		@ frame_needed = 0, uses_anonymous_args = 0
+ 289              	.LVL29:
+ 290 0000 08B5     		push	{r3, lr}
+ 291              	.LCFI3:
+ 292              		.cfi_def_cfa_offset 8
+ 293              		.cfi_offset 3, -8
+ 294              		.cfi_offset 14, -4
+ 295              	.LBB12:
+ 296              		.loc 1 205 0
+ 297 0002 2023     		movs	r3, #32
+ 298              	.LVL30:
+ 299              	@ 205 "../../chibios/os/hal/src/pwm.c" 1
+ 300 0004 83F31188 		msr     BASEPRI, r3
+ 301              	@ 0 "" 2
+ 302              	.LVL31:
+ 303              		.thumb
+ 304              	.LBE12:
+ 305              		.loc 1 208 0
+ 306 0008 FFF7FEFF 		bl	pwm_lld_disable_channel
+ 307              	.LVL32:
+ 308              	.LBB13:
+ 309              		.loc 1 209 0
+ 310 000c 0023     		movs	r3, #0
+ 311              	.LVL33:
+ 312              	@ 209 "../../chibios/os/hal/src/pwm.c" 1
+ 313 000e 83F31188 		msr     BASEPRI, r3
+ 314              	@ 0 "" 2
+ 315              	.LVL34:
+ 316              		.thumb
+ 317 0012 08BD     		pop	{r3, pc}
+ 318              	.LBE13:
+ 319              		.cfi_endproc
+ 320              	.LFE124:
+ 321              		.size	pwmDisableChannel, .-pwmDisableChannel
+ 322 0014 AFF30080 		.text
+ 322      AFF30080 
+ 322      AFF30080 
+ 323              	.Letext0:
+ 324              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 325              		.file 3 "../../chibios/os/hal/include/pwm.h"
+ 326              		.file 4 "../../chibios/os/hal/platforms/STM32/TIMv1/pwm_lld.h"
+ 327              		.file 5 "../../chibios/os/hal/platforms/STM32/TIMv1/stm32_tim.h"
+ 328              		.file 6 "../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4.h"
+ 329              		.section	.debug_info,"",%progbits
+ 330              	.Ldebug_info0:
+ 331 0000 F7060000 		.4byte	0x6f7
+ 332 0004 0200     		.2byte	0x2
+ 333 0006 00000000 		.4byte	.Ldebug_abbrev0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 7
+
+
+ 334 000a 04       		.byte	0x4
+ 335 000b 01       		.uleb128 0x1
+ 336 000c D4010000 		.4byte	.LASF61
+ 337 0010 01       		.byte	0x1
+ 338 0011 6A000000 		.4byte	.LASF62
+ 339 0015 EE000000 		.4byte	.LASF63
+ 340 0019 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 341 001d 00000000 		.4byte	0
+ 342 0021 00000000 		.4byte	0
+ 343 0025 00000000 		.4byte	.Ldebug_line0
+ 344 0029 02       		.uleb128 0x2
+ 345 002a 04       		.byte	0x4
+ 346 002b 05       		.byte	0x5
+ 347 002c 696E7400 		.ascii	"int\000"
+ 348 0030 03       		.uleb128 0x3
+ 349 0031 04       		.byte	0x4
+ 350 0032 07       		.byte	0x7
+ 351 0033 B9010000 		.4byte	.LASF0
+ 352 0037 03       		.uleb128 0x3
+ 353 0038 01       		.byte	0x1
+ 354 0039 06       		.byte	0x6
+ 355 003a 8D010000 		.4byte	.LASF1
+ 356 003e 04       		.uleb128 0x4
+ 357 003f A7000000 		.4byte	.LASF4
+ 358 0043 02       		.byte	0x2
+ 359 0044 2A       		.byte	0x2a
+ 360 0045 49000000 		.4byte	0x49
+ 361 0049 03       		.uleb128 0x3
+ 362 004a 01       		.byte	0x1
+ 363 004b 08       		.byte	0x8
+ 364 004c 56010000 		.4byte	.LASF2
+ 365 0050 03       		.uleb128 0x3
+ 366 0051 02       		.byte	0x2
+ 367 0052 05       		.byte	0x5
+ 368 0053 29000000 		.4byte	.LASF3
+ 369 0057 04       		.uleb128 0x4
+ 370 0058 C6010000 		.4byte	.LASF5
+ 371 005c 02       		.byte	0x2
+ 372 005d 36       		.byte	0x36
+ 373 005e 62000000 		.4byte	0x62
+ 374 0062 03       		.uleb128 0x3
+ 375 0063 02       		.byte	0x2
+ 376 0064 07       		.byte	0x7
+ 377 0065 22020000 		.4byte	.LASF6
+ 378 0069 04       		.uleb128 0x4
+ 379 006a 5D020000 		.4byte	.LASF7
+ 380 006e 02       		.byte	0x2
+ 381 006f 4F       		.byte	0x4f
+ 382 0070 74000000 		.4byte	0x74
+ 383 0074 03       		.uleb128 0x3
+ 384 0075 04       		.byte	0x4
+ 385 0076 05       		.byte	0x5
+ 386 0077 DD000000 		.4byte	.LASF8
+ 387 007b 04       		.uleb128 0x4
+ 388 007c B0010000 		.4byte	.LASF9
+ 389 0080 02       		.byte	0x2
+ 390 0081 50       		.byte	0x50
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 8
+
+
+ 391 0082 86000000 		.4byte	0x86
+ 392 0086 03       		.uleb128 0x3
+ 393 0087 04       		.byte	0x4
+ 394 0088 07       		.byte	0x7
+ 395 0089 88020000 		.4byte	.LASF10
+ 396 008d 03       		.uleb128 0x3
+ 397 008e 08       		.byte	0x8
+ 398 008f 05       		.byte	0x5
+ 399 0090 CF000000 		.4byte	.LASF11
+ 400 0094 03       		.uleb128 0x3
+ 401 0095 08       		.byte	0x8
+ 402 0096 07       		.byte	0x7
+ 403 0097 99010000 		.4byte	.LASF12
+ 404 009b 03       		.uleb128 0x3
+ 405 009c 01       		.byte	0x1
+ 406 009d 02       		.byte	0x2
+ 407 009e 6A020000 		.4byte	.LASF13
+ 408 00a2 05       		.uleb128 0x5
+ 409 00a3 7B000000 		.4byte	0x7b
+ 410 00a7 03       		.uleb128 0x3
+ 411 00a8 04       		.byte	0x4
+ 412 00a9 07       		.byte	0x7
+ 413 00aa 3C000000 		.4byte	.LASF14
+ 414 00ae 03       		.uleb128 0x3
+ 415 00af 01       		.byte	0x1
+ 416 00b0 08       		.byte	0x8
+ 417 00b1 42020000 		.4byte	.LASF15
+ 418 00b5 06       		.uleb128 0x6
+ 419 00b6 7B000000 		.4byte	0x7b
+ 420 00ba C5000000 		.4byte	0xc5
+ 421 00be 07       		.uleb128 0x7
+ 422 00bf A7000000 		.4byte	0xa7
+ 423 00c3 03       		.byte	0x3
+ 424 00c4 00       		.byte	0
+ 425 00c5 05       		.uleb128 0x5
+ 426 00c6 69000000 		.4byte	0x69
+ 427 00ca 08       		.uleb128 0x8
+ 428 00cb 01       		.byte	0x1
+ 429 00cc 03       		.byte	0x3
+ 430 00cd 55       		.byte	0x55
+ 431 00ce E5000000 		.4byte	0xe5
+ 432 00d2 09       		.uleb128 0x9
+ 433 00d3 4B010000 		.4byte	.LASF16
+ 434 00d7 00       		.sleb128 0
+ 435 00d8 09       		.uleb128 0x9
+ 436 00d9 AA020000 		.4byte	.LASF17
+ 437 00dd 01       		.sleb128 1
+ 438 00de 09       		.uleb128 0x9
+ 439 00df A0020000 		.4byte	.LASF18
+ 440 00e3 02       		.sleb128 2
+ 441 00e4 00       		.byte	0
+ 442 00e5 04       		.uleb128 0x4
+ 443 00e6 F7020000 		.4byte	.LASF19
+ 444 00ea 03       		.byte	0x3
+ 445 00eb 59       		.byte	0x59
+ 446 00ec CA000000 		.4byte	0xca
+ 447 00f0 04       		.uleb128 0x4
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 9
+
+
+ 448 00f1 53020000 		.4byte	.LASF20
+ 449 00f5 03       		.byte	0x3
+ 450 00f6 5E       		.byte	0x5e
+ 451 00f7 FB000000 		.4byte	0xfb
+ 452 00fb 0A       		.uleb128 0xa
+ 453 00fc 53020000 		.4byte	.LASF20
+ 454 0100 14       		.byte	0x14
+ 455 0101 04       		.byte	0x4
+ 456 0102 6F01     		.2byte	0x16f
+ 457 0104 54010000 		.4byte	0x154
+ 458 0108 0B       		.uleb128 0xb
+ 459 0109 17000000 		.4byte	.LASF21
+ 460 010d 04       		.byte	0x4
+ 461 010e 7301     		.2byte	0x173
+ 462 0110 E5000000 		.4byte	0xe5
+ 463 0114 02       		.byte	0x2
+ 464 0115 23       		.byte	0x23
+ 465 0116 00       		.uleb128 0
+ 466 0117 0B       		.uleb128 0xb
+ 467 0118 92000000 		.4byte	.LASF22
+ 468 011c 04       		.byte	0x4
+ 469 011d 7701     		.2byte	0x177
+ 470 011f B2030000 		.4byte	0x3b2
+ 471 0123 02       		.byte	0x2
+ 472 0124 23       		.byte	0x23
+ 473 0125 04       		.uleb128 0x4
+ 474 0126 0B       		.uleb128 0xb
+ 475 0127 1C010000 		.4byte	.LASF23
+ 476 012b 04       		.byte	0x4
+ 477 012c 7B01     		.2byte	0x17b
+ 478 012e E3020000 		.4byte	0x2e3
+ 479 0132 02       		.byte	0x2
+ 480 0133 23       		.byte	0x23
+ 481 0134 08       		.uleb128 0x8
+ 482 0135 0B       		.uleb128 0xb
+ 483 0136 9A020000 		.4byte	.LASF24
+ 484 013a 04       		.byte	0x4
+ 485 013b 8301     		.2byte	0x183
+ 486 013d 7B000000 		.4byte	0x7b
+ 487 0141 02       		.byte	0x2
+ 488 0142 23       		.byte	0x23
+ 489 0143 0C       		.uleb128 0xc
+ 490 0144 0C       		.uleb128 0xc
+ 491 0145 74696D00 		.ascii	"tim\000"
+ 492 0149 04       		.byte	0x4
+ 493 014a 8701     		.2byte	0x187
+ 494 014c BD030000 		.4byte	0x3bd
+ 495 0150 02       		.byte	0x2
+ 496 0151 23       		.byte	0x23
+ 497 0152 10       		.uleb128 0x10
+ 498 0153 00       		.byte	0
+ 499 0154 04       		.uleb128 0x4
+ 500 0155 02030000 		.4byte	.LASF25
+ 501 0159 03       		.byte	0x3
+ 502 015a 65       		.byte	0x65
+ 503 015b 5F010000 		.4byte	0x15f
+ 504 015f 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 10
+
+
+ 505 0160 04       		.byte	0x4
+ 506 0161 65010000 		.4byte	0x165
+ 507 0165 0E       		.uleb128 0xe
+ 508 0166 01       		.byte	0x1
+ 509 0167 71010000 		.4byte	0x171
+ 510 016b 0F       		.uleb128 0xf
+ 511 016c 71010000 		.4byte	0x171
+ 512 0170 00       		.byte	0
+ 513 0171 0D       		.uleb128 0xd
+ 514 0172 04       		.byte	0x4
+ 515 0173 F0000000 		.4byte	0xf0
+ 516 0177 10       		.uleb128 0x10
+ 517 0178 60       		.byte	0x60
+ 518 0179 05       		.byte	0x5
+ 519 017a 9E01     		.2byte	0x19e
+ 520 017c BA020000 		.4byte	0x2ba
+ 521 0180 0C       		.uleb128 0xc
+ 522 0181 43523100 		.ascii	"CR1\000"
+ 523 0185 05       		.byte	0x5
+ 524 0186 9F01     		.2byte	0x19f
+ 525 0188 A2000000 		.4byte	0xa2
+ 526 018c 02       		.byte	0x2
+ 527 018d 23       		.byte	0x23
+ 528 018e 00       		.uleb128 0
+ 529 018f 0C       		.uleb128 0xc
+ 530 0190 43523200 		.ascii	"CR2\000"
+ 531 0194 05       		.byte	0x5
+ 532 0195 A001     		.2byte	0x1a0
+ 533 0197 A2000000 		.4byte	0xa2
+ 534 019b 02       		.byte	0x2
+ 535 019c 23       		.byte	0x23
+ 536 019d 04       		.uleb128 0x4
+ 537 019e 0B       		.uleb128 0xb
+ 538 019f 46010000 		.4byte	.LASF26
+ 539 01a3 05       		.byte	0x5
+ 540 01a4 A101     		.2byte	0x1a1
+ 541 01a6 A2000000 		.4byte	0xa2
+ 542 01aa 02       		.byte	0x2
+ 543 01ab 23       		.byte	0x23
+ 544 01ac 08       		.uleb128 0x8
+ 545 01ad 0B       		.uleb128 0xb
+ 546 01ae 1D020000 		.4byte	.LASF27
+ 547 01b2 05       		.byte	0x5
+ 548 01b3 A201     		.2byte	0x1a2
+ 549 01b5 A2000000 		.4byte	0xa2
+ 550 01b9 02       		.byte	0x2
+ 551 01ba 23       		.byte	0x23
+ 552 01bb 0C       		.uleb128 0xc
+ 553 01bc 0C       		.uleb128 0xc
+ 554 01bd 535200   		.ascii	"SR\000"
+ 555 01c0 05       		.byte	0x5
+ 556 01c1 A301     		.2byte	0x1a3
+ 557 01c3 A2000000 		.4byte	0xa2
+ 558 01c7 02       		.byte	0x2
+ 559 01c8 23       		.byte	0x23
+ 560 01c9 10       		.uleb128 0x10
+ 561 01ca 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 11
+
+
+ 562 01cb 45475200 		.ascii	"EGR\000"
+ 563 01cf 05       		.byte	0x5
+ 564 01d0 A401     		.2byte	0x1a4
+ 565 01d2 A2000000 		.4byte	0xa2
+ 566 01d6 02       		.byte	0x2
+ 567 01d7 23       		.byte	0x23
+ 568 01d8 14       		.uleb128 0x14
+ 569 01d9 0B       		.uleb128 0xb
+ 570 01da 23010000 		.4byte	.LASF28
+ 571 01de 05       		.byte	0x5
+ 572 01df A501     		.2byte	0x1a5
+ 573 01e1 A2000000 		.4byte	0xa2
+ 574 01e5 02       		.byte	0x2
+ 575 01e6 23       		.byte	0x23
+ 576 01e7 18       		.uleb128 0x18
+ 577 01e8 0B       		.uleb128 0xb
+ 578 01e9 1D000000 		.4byte	.LASF29
+ 579 01ed 05       		.byte	0x5
+ 580 01ee A601     		.2byte	0x1a6
+ 581 01f0 A2000000 		.4byte	0xa2
+ 582 01f4 02       		.byte	0x2
+ 583 01f5 23       		.byte	0x23
+ 584 01f6 1C       		.uleb128 0x1c
+ 585 01f7 0B       		.uleb128 0xb
+ 586 01f8 00000000 		.4byte	.LASF30
+ 587 01fc 05       		.byte	0x5
+ 588 01fd A701     		.2byte	0x1a7
+ 589 01ff A2000000 		.4byte	0xa2
+ 590 0203 02       		.byte	0x2
+ 591 0204 23       		.byte	0x23
+ 592 0205 20       		.uleb128 0x20
+ 593 0206 0C       		.uleb128 0xc
+ 594 0207 434E5400 		.ascii	"CNT\000"
+ 595 020b 05       		.byte	0x5
+ 596 020c A801     		.2byte	0x1a8
+ 597 020e A2000000 		.4byte	0xa2
+ 598 0212 02       		.byte	0x2
+ 599 0213 23       		.byte	0x23
+ 600 0214 24       		.uleb128 0x24
+ 601 0215 0C       		.uleb128 0xc
+ 602 0216 50534300 		.ascii	"PSC\000"
+ 603 021a 05       		.byte	0x5
+ 604 021b A901     		.2byte	0x1a9
+ 605 021d A2000000 		.4byte	0xa2
+ 606 0221 02       		.byte	0x2
+ 607 0222 23       		.byte	0x23
+ 608 0223 28       		.uleb128 0x28
+ 609 0224 0C       		.uleb128 0xc
+ 610 0225 41525200 		.ascii	"ARR\000"
+ 611 0229 05       		.byte	0x5
+ 612 022a AA01     		.2byte	0x1aa
+ 613 022c A2000000 		.4byte	0xa2
+ 614 0230 02       		.byte	0x2
+ 615 0231 23       		.byte	0x23
+ 616 0232 2C       		.uleb128 0x2c
+ 617 0233 0C       		.uleb128 0xc
+ 618 0234 52435200 		.ascii	"RCR\000"
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 12
+
+
+ 619 0238 05       		.byte	0x5
+ 620 0239 AB01     		.2byte	0x1ab
+ 621 023b A2000000 		.4byte	0xa2
+ 622 023f 02       		.byte	0x2
+ 623 0240 23       		.byte	0x23
+ 624 0241 30       		.uleb128 0x30
+ 625 0242 0C       		.uleb128 0xc
+ 626 0243 43435200 		.ascii	"CCR\000"
+ 627 0247 05       		.byte	0x5
+ 628 0248 AC01     		.2byte	0x1ac
+ 629 024a BA020000 		.4byte	0x2ba
+ 630 024e 02       		.byte	0x2
+ 631 024f 23       		.byte	0x23
+ 632 0250 34       		.uleb128 0x34
+ 633 0251 0B       		.uleb128 0xb
+ 634 0252 CF010000 		.4byte	.LASF31
+ 635 0256 05       		.byte	0x5
+ 636 0257 AD01     		.2byte	0x1ad
+ 637 0259 A2000000 		.4byte	0xa2
+ 638 025d 02       		.byte	0x2
+ 639 025e 23       		.byte	0x23
+ 640 025f 44       		.uleb128 0x44
+ 641 0260 0C       		.uleb128 0xc
+ 642 0261 44435200 		.ascii	"DCR\000"
+ 643 0265 05       		.byte	0x5
+ 644 0266 AE01     		.2byte	0x1ae
+ 645 0268 A2000000 		.4byte	0xa2
+ 646 026c 02       		.byte	0x2
+ 647 026d 23       		.byte	0x23
+ 648 026e 48       		.uleb128 0x48
+ 649 026f 0B       		.uleb128 0xb
+ 650 0270 12000000 		.4byte	.LASF32
+ 651 0274 05       		.byte	0x5
+ 652 0275 AF01     		.2byte	0x1af
+ 653 0277 A2000000 		.4byte	0xa2
+ 654 027b 02       		.byte	0x2
+ 655 027c 23       		.byte	0x23
+ 656 027d 4C       		.uleb128 0x4c
+ 657 027e 0C       		.uleb128 0xc
+ 658 027f 4F5200   		.ascii	"OR\000"
+ 659 0282 05       		.byte	0x5
+ 660 0283 B001     		.2byte	0x1b0
+ 661 0285 A2000000 		.4byte	0xa2
+ 662 0289 02       		.byte	0x2
+ 663 028a 23       		.byte	0x23
+ 664 028b 50       		.uleb128 0x50
+ 665 028c 0B       		.uleb128 0xb
+ 666 028d 23000000 		.4byte	.LASF33
+ 667 0291 05       		.byte	0x5
+ 668 0292 B101     		.2byte	0x1b1
+ 669 0294 A2000000 		.4byte	0xa2
+ 670 0298 02       		.byte	0x2
+ 671 0299 23       		.byte	0x23
+ 672 029a 54       		.uleb128 0x54
+ 673 029b 0B       		.uleb128 0xb
+ 674 029c 12010000 		.4byte	.LASF34
+ 675 02a0 05       		.byte	0x5
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 13
+
+
+ 676 02a1 B201     		.2byte	0x1b2
+ 677 02a3 A2000000 		.4byte	0xa2
+ 678 02a7 02       		.byte	0x2
+ 679 02a8 23       		.byte	0x23
+ 680 02a9 58       		.uleb128 0x58
+ 681 02aa 0B       		.uleb128 0xb
+ 682 02ab 17010000 		.4byte	.LASF35
+ 683 02af 05       		.byte	0x5
+ 684 02b0 B301     		.2byte	0x1b3
+ 685 02b2 A2000000 		.4byte	0xa2
+ 686 02b6 02       		.byte	0x2
+ 687 02b7 23       		.byte	0x23
+ 688 02b8 5C       		.uleb128 0x5c
+ 689 02b9 00       		.byte	0
+ 690 02ba 05       		.uleb128 0x5
+ 691 02bb B5000000 		.4byte	0xb5
+ 692 02bf 11       		.uleb128 0x11
+ 693 02c0 47020000 		.4byte	.LASF36
+ 694 02c4 05       		.byte	0x5
+ 695 02c5 B401     		.2byte	0x1b4
+ 696 02c7 77010000 		.4byte	0x177
+ 697 02cb 11       		.uleb128 0x11
+ 698 02cc DB020000 		.4byte	.LASF37
+ 699 02d0 04       		.byte	0x4
+ 700 02d1 2001     		.2byte	0x120
+ 701 02d3 7B000000 		.4byte	0x7b
+ 702 02d7 11       		.uleb128 0x11
+ 703 02d8 5D000000 		.4byte	.LASF38
+ 704 02dc 04       		.byte	0x4
+ 705 02dd 2501     		.2byte	0x125
+ 706 02df 3E000000 		.4byte	0x3e
+ 707 02e3 11       		.uleb128 0x11
+ 708 02e4 33000000 		.4byte	.LASF39
+ 709 02e8 04       		.byte	0x4
+ 710 02e9 2A01     		.2byte	0x12a
+ 711 02eb 57000000 		.4byte	0x57
+ 712 02ef 10       		.uleb128 0x10
+ 713 02f0 08       		.byte	0x8
+ 714 02f1 04       		.byte	0x4
+ 715 02f2 2F01     		.2byte	0x12f
+ 716 02f4 17030000 		.4byte	0x317
+ 717 02f8 0B       		.uleb128 0xb
+ 718 02f9 65020000 		.4byte	.LASF40
+ 719 02fd 04       		.byte	0x4
+ 720 02fe 3301     		.2byte	0x133
+ 721 0300 CB020000 		.4byte	0x2cb
+ 722 0304 02       		.byte	0x2
+ 723 0305 23       		.byte	0x23
+ 724 0306 00       		.uleb128 0
+ 725 0307 0B       		.uleb128 0xb
+ 726 0308 10030000 		.4byte	.LASF41
+ 727 030c 04       		.byte	0x4
+ 728 030d 3901     		.2byte	0x139
+ 729 030f 54010000 		.4byte	0x154
+ 730 0313 02       		.byte	0x2
+ 731 0314 23       		.byte	0x23
+ 732 0315 04       		.uleb128 0x4
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 14
+
+
+ 733 0316 00       		.byte	0
+ 734 0317 11       		.uleb128 0x11
+ 735 0318 CA020000 		.4byte	.LASF42
+ 736 031c 04       		.byte	0x4
+ 737 031d 3B01     		.2byte	0x13b
+ 738 031f EF020000 		.4byte	0x2ef
+ 739 0323 10       		.uleb128 0x10
+ 740 0324 38       		.byte	0x38
+ 741 0325 04       		.byte	0x4
+ 742 0326 4001     		.2byte	0x140
+ 743 0328 96030000 		.4byte	0x396
+ 744 032c 0B       		.uleb128 0xb
+ 745 032d C0020000 		.4byte	.LASF43
+ 746 0331 04       		.byte	0x4
+ 747 0332 4601     		.2byte	0x146
+ 748 0334 7B000000 		.4byte	0x7b
+ 749 0338 02       		.byte	0x2
+ 750 0339 23       		.byte	0x23
+ 751 033a 00       		.uleb128 0
+ 752 033b 0B       		.uleb128 0xb
+ 753 033c 1C010000 		.4byte	.LASF23
+ 754 0340 04       		.byte	0x4
+ 755 0341 4C01     		.2byte	0x14c
+ 756 0343 E3020000 		.4byte	0x2e3
+ 757 0347 02       		.byte	0x2
+ 758 0348 23       		.byte	0x23
+ 759 0349 04       		.uleb128 0x4
+ 760 034a 0B       		.uleb128 0xb
+ 761 034b 10030000 		.4byte	.LASF41
+ 762 034f 04       		.byte	0x4
+ 763 0350 5201     		.2byte	0x152
+ 764 0352 54010000 		.4byte	0x154
+ 765 0356 02       		.byte	0x2
+ 766 0357 23       		.byte	0x23
+ 767 0358 08       		.uleb128 0x8
+ 768 0359 0B       		.uleb128 0xb
+ 769 035a 89000000 		.4byte	.LASF44
+ 770 035e 04       		.byte	0x4
+ 771 035f 5601     		.2byte	0x156
+ 772 0361 96030000 		.4byte	0x396
+ 773 0365 02       		.byte	0x2
+ 774 0366 23       		.byte	0x23
+ 775 0367 0C       		.uleb128 0xc
+ 776 0368 0C       		.uleb128 0xc
+ 777 0369 63723200 		.ascii	"cr2\000"
+ 778 036d 04       		.byte	0x4
+ 779 036e 5C01     		.2byte	0x15c
+ 780 0370 7B000000 		.4byte	0x7b
+ 781 0374 02       		.byte	0x2
+ 782 0375 23       		.byte	0x23
+ 783 0376 2C       		.uleb128 0x2c
+ 784 0377 0B       		.uleb128 0xb
+ 785 0378 E5020000 		.4byte	.LASF45
+ 786 037c 04       		.byte	0x4
+ 787 037d 6201     		.2byte	0x162
+ 788 037f 7B000000 		.4byte	0x7b
+ 789 0383 02       		.byte	0x2
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 15
+
+
+ 790 0384 23       		.byte	0x23
+ 791 0385 30       		.uleb128 0x30
+ 792 0386 0B       		.uleb128 0xb
+ 793 0387 B3020000 		.4byte	.LASF46
+ 794 038b 04       		.byte	0x4
+ 795 038c 6901     		.2byte	0x169
+ 796 038e 7B000000 		.4byte	0x7b
+ 797 0392 02       		.byte	0x2
+ 798 0393 23       		.byte	0x23
+ 799 0394 34       		.uleb128 0x34
+ 800 0395 00       		.byte	0
+ 801 0396 06       		.uleb128 0x6
+ 802 0397 17030000 		.4byte	0x317
+ 803 039b A6030000 		.4byte	0x3a6
+ 804 039f 07       		.uleb128 0x7
+ 805 03a0 A7000000 		.4byte	0xa7
+ 806 03a4 03       		.byte	0x3
+ 807 03a5 00       		.byte	0
+ 808 03a6 11       		.uleb128 0x11
+ 809 03a7 37010000 		.4byte	.LASF47
+ 810 03ab 04       		.byte	0x4
+ 811 03ac 6A01     		.2byte	0x16a
+ 812 03ae 23030000 		.4byte	0x323
+ 813 03b2 0D       		.uleb128 0xd
+ 814 03b3 04       		.byte	0x4
+ 815 03b4 B8030000 		.4byte	0x3b8
+ 816 03b8 12       		.uleb128 0x12
+ 817 03b9 A6030000 		.4byte	0x3a6
+ 818 03bd 0D       		.uleb128 0xd
+ 819 03be 04       		.byte	0x4
+ 820 03bf BF020000 		.4byte	0x2bf
+ 821 03c3 13       		.uleb128 0x13
+ 822 03c4 01       		.byte	0x1
+ 823 03c5 E6000000 		.4byte	.LASF48
+ 824 03c9 01       		.byte	0x1
+ 825 03ca 44       		.byte	0x44
+ 826 03cb 01       		.byte	0x1
+ 827 03cc 00000000 		.4byte	.LFB118
+ 828 03d0 04000000 		.4byte	.LFE118
+ 829 03d4 02       		.byte	0x2
+ 830 03d5 7D       		.byte	0x7d
+ 831 03d6 00       		.sleb128 0
+ 832 03d7 01       		.byte	0x1
+ 833 03d8 E7030000 		.4byte	0x3e7
+ 834 03dc 14       		.uleb128 0x14
+ 835 03dd 04000000 		.4byte	.LVL0
+ 836 03e1 01       		.byte	0x1
+ 837 03e2 90060000 		.4byte	0x690
+ 838 03e6 00       		.byte	0
+ 839 03e7 13       		.uleb128 0x13
+ 840 03e8 01       		.byte	0x1
+ 841 03e9 99000000 		.4byte	.LASF49
+ 842 03ed 01       		.byte	0x1
+ 843 03ee 50       		.byte	0x50
+ 844 03ef 01       		.byte	0x1
+ 845 03f0 00000000 		.4byte	.LFB119
+ 846 03f4 0A000000 		.4byte	.LFE119
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 16
+
+
+ 847 03f8 02       		.byte	0x2
+ 848 03f9 7D       		.byte	0x7d
+ 849 03fa 00       		.sleb128 0
+ 850 03fb 01       		.byte	0x1
+ 851 03fc 0E040000 		.4byte	0x40e
+ 852 0400 15       		.uleb128 0x15
+ 853 0401 41010000 		.4byte	.LASF51
+ 854 0405 01       		.byte	0x1
+ 855 0406 50       		.byte	0x50
+ 856 0407 71010000 		.4byte	0x171
+ 857 040b 01       		.byte	0x1
+ 858 040c 50       		.byte	0x50
+ 859 040d 00       		.byte	0
+ 860 040e 16       		.uleb128 0x16
+ 861 040f 01       		.byte	0x1
+ 862 0410 C6000000 		.4byte	.LASF50
+ 863 0414 01       		.byte	0x1
+ 864 0415 63       		.byte	0x63
+ 865 0416 01       		.byte	0x1
+ 866 0417 00000000 		.4byte	.LFB120
+ 867 041b 20000000 		.4byte	.LFE120
+ 868 041f 00000000 		.4byte	.LLST0
+ 869 0423 01       		.byte	0x1
+ 870 0424 8D040000 		.4byte	0x48d
+ 871 0428 17       		.uleb128 0x17
+ 872 0429 41010000 		.4byte	.LASF51
+ 873 042d 01       		.byte	0x1
+ 874 042e 63       		.byte	0x63
+ 875 042f 71010000 		.4byte	0x171
+ 876 0433 20000000 		.4byte	.LLST1
+ 877 0437 17       		.uleb128 0x17
+ 878 0438 92000000 		.4byte	.LASF22
+ 879 043c 01       		.byte	0x1
+ 880 043d 63       		.byte	0x63
+ 881 043e B2030000 		.4byte	0x3b2
+ 882 0442 3E000000 		.4byte	.LLST2
+ 883 0446 18       		.uleb128 0x18
+ 884 0447 00000000 		.4byte	.Ldebug_ranges0+0
+ 885 044b 5F040000 		.4byte	0x45f
+ 886 044f 19       		.uleb128 0x19
+ 887 0450 746D7000 		.ascii	"tmp\000"
+ 888 0454 01       		.byte	0x1
+ 889 0455 67       		.byte	0x67
+ 890 0456 7B000000 		.4byte	0x7b
+ 891 045a 5F000000 		.4byte	.LLST3
+ 892 045e 00       		.byte	0
+ 893 045f 1A       		.uleb128 0x1a
+ 894 0460 18000000 		.4byte	.LBB4
+ 895 0464 20000000 		.4byte	.LBE4
+ 896 0468 7C040000 		.4byte	0x47c
+ 897 046c 19       		.uleb128 0x19
+ 898 046d 746D7000 		.ascii	"tmp\000"
+ 899 0471 01       		.byte	0x1
+ 900 0472 6E       		.byte	0x6e
+ 901 0473 7B000000 		.4byte	0x7b
+ 902 0477 72000000 		.4byte	.LLST4
+ 903 047b 00       		.byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 17
+
+
+ 904 047c 1B       		.uleb128 0x1b
+ 905 047d 14000000 		.4byte	.LVL6
+ 906 0481 9B060000 		.4byte	0x69b
+ 907 0485 1C       		.uleb128 0x1c
+ 908 0486 01       		.byte	0x1
+ 909 0487 50       		.byte	0x50
+ 910 0488 02       		.byte	0x2
+ 911 0489 74       		.byte	0x74
+ 912 048a 00       		.sleb128 0
+ 913 048b 00       		.byte	0
+ 914 048c 00       		.byte	0
+ 915 048d 16       		.uleb128 0x16
+ 916 048e 01       		.byte	0x1
+ 917 048f B8020000 		.4byte	.LASF52
+ 918 0493 01       		.byte	0x1
+ 919 0494 78       		.byte	0x78
+ 920 0495 01       		.byte	0x1
+ 921 0496 00000000 		.4byte	.LFB121
+ 922 049a 1A000000 		.4byte	.LFE121
+ 923 049e 85000000 		.4byte	.LLST5
+ 924 04a2 01       		.byte	0x1
+ 925 04a3 FD040000 		.4byte	0x4fd
+ 926 04a7 17       		.uleb128 0x17
+ 927 04a8 41010000 		.4byte	.LASF51
+ 928 04ac 01       		.byte	0x1
+ 929 04ad 78       		.byte	0x78
+ 930 04ae 71010000 		.4byte	0x171
+ 931 04b2 A5000000 		.4byte	.LLST6
+ 932 04b6 18       		.uleb128 0x18
+ 933 04b7 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 934 04bb CF040000 		.4byte	0x4cf
+ 935 04bf 19       		.uleb128 0x19
+ 936 04c0 746D7000 		.ascii	"tmp\000"
+ 937 04c4 01       		.byte	0x1
+ 938 04c5 7C       		.byte	0x7c
+ 939 04c6 7B000000 		.4byte	0x7b
+ 940 04ca C3000000 		.4byte	.LLST7
+ 941 04ce 00       		.byte	0
+ 942 04cf 1A       		.uleb128 0x1a
+ 943 04d0 12000000 		.4byte	.LBB7
+ 944 04d4 1A000000 		.4byte	.LBE7
+ 945 04d8 EC040000 		.4byte	0x4ec
+ 946 04dc 19       		.uleb128 0x19
+ 947 04dd 746D7000 		.ascii	"tmp\000"
+ 948 04e1 01       		.byte	0x1
+ 949 04e2 81       		.byte	0x81
+ 950 04e3 7B000000 		.4byte	0x7b
+ 951 04e7 D6000000 		.4byte	.LLST8
+ 952 04eb 00       		.byte	0
+ 953 04ec 1B       		.uleb128 0x1b
+ 954 04ed 0E000000 		.4byte	.LVL12
+ 955 04f1 B0060000 		.4byte	0x6b0
+ 956 04f5 1C       		.uleb128 0x1c
+ 957 04f6 01       		.byte	0x1
+ 958 04f7 50       		.byte	0x50
+ 959 04f8 02       		.byte	0x2
+ 960 04f9 74       		.byte	0x74
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 18
+
+
+ 961 04fa 00       		.sleb128 0
+ 962 04fb 00       		.byte	0
+ 963 04fc 00       		.byte	0
+ 964 04fd 13       		.uleb128 0x13
+ 965 04fe 01       		.byte	0x1
+ 966 04ff 78020000 		.4byte	.LASF53
+ 967 0503 01       		.byte	0x1
+ 968 0504 93       		.byte	0x93
+ 969 0505 01       		.byte	0x1
+ 970 0506 00000000 		.4byte	.LFB122
+ 971 050a 18000000 		.4byte	.LFE122
+ 972 050e 02       		.byte	0x2
+ 973 050f 7D       		.byte	0x7d
+ 974 0510 00       		.sleb128 0
+ 975 0511 01       		.byte	0x1
+ 976 0512 6B050000 		.4byte	0x56b
+ 977 0516 17       		.uleb128 0x17
+ 978 0517 41010000 		.4byte	.LASF51
+ 979 051b 01       		.byte	0x1
+ 980 051c 93       		.byte	0x93
+ 981 051d 71010000 		.4byte	0x171
+ 982 0521 E9000000 		.4byte	.LLST9
+ 983 0525 17       		.uleb128 0x17
+ 984 0526 1C010000 		.4byte	.LASF23
+ 985 052a 01       		.byte	0x1
+ 986 052b 93       		.byte	0x93
+ 987 052c E3020000 		.4byte	0x2e3
+ 988 0530 0A010000 		.4byte	.LLST10
+ 989 0534 1A       		.uleb128 0x1a
+ 990 0535 00000000 		.4byte	.LBB8
+ 991 0539 06000000 		.4byte	.LBE8
+ 992 053d 51050000 		.4byte	0x551
+ 993 0541 19       		.uleb128 0x19
+ 994 0542 746D7000 		.ascii	"tmp\000"
+ 995 0546 01       		.byte	0x1
+ 996 0547 97       		.byte	0x97
+ 997 0548 7B000000 		.4byte	0x7b
+ 998 054c 38010000 		.4byte	.LLST11
+ 999 0550 00       		.byte	0
+ 1000 0551 1D       		.uleb128 0x1d
+ 1001 0552 10000000 		.4byte	.LBB9
+ 1002 0556 18000000 		.4byte	.LBE9
+ 1003 055a 19       		.uleb128 0x19
+ 1004 055b 746D7000 		.ascii	"tmp\000"
+ 1005 055f 01       		.byte	0x1
+ 1006 0560 9B       		.byte	0x9b
+ 1007 0561 7B000000 		.4byte	0x7b
+ 1008 0565 4B010000 		.4byte	.LLST12
+ 1009 0569 00       		.byte	0
+ 1010 056a 00       		.byte	0
+ 1011 056b 16       		.uleb128 0x16
+ 1012 056c 01       		.byte	0x1
+ 1013 056d AF000000 		.4byte	.LASF54
+ 1014 0571 01       		.byte	0x1
+ 1015 0572 AC       		.byte	0xac
+ 1016 0573 01       		.byte	0x1
+ 1017 0574 00000000 		.4byte	.LFB123
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 19
+
+
+ 1018 0578 14000000 		.4byte	.LFE123
+ 1019 057c 5E010000 		.4byte	.LLST13
+ 1020 0580 01       		.byte	0x1
+ 1021 0581 FE050000 		.4byte	0x5fe
+ 1022 0585 17       		.uleb128 0x17
+ 1023 0586 41010000 		.4byte	.LASF51
+ 1024 058a 01       		.byte	0x1
+ 1025 058b AC       		.byte	0xac
+ 1026 058c 71010000 		.4byte	0x171
+ 1027 0590 7E010000 		.4byte	.LLST14
+ 1028 0594 17       		.uleb128 0x17
+ 1029 0595 70020000 		.4byte	.LASF55
+ 1030 0599 01       		.byte	0x1
+ 1031 059a AD       		.byte	0xad
+ 1032 059b D7020000 		.4byte	0x2d7
+ 1033 059f 9F010000 		.4byte	.LLST15
+ 1034 05a3 17       		.uleb128 0x17
+ 1035 05a4 C0000000 		.4byte	.LASF56
+ 1036 05a8 01       		.byte	0x1
+ 1037 05a9 AE       		.byte	0xae
+ 1038 05aa E3020000 		.4byte	0x2e3
+ 1039 05ae C0010000 		.4byte	.LLST16
+ 1040 05b2 1A       		.uleb128 0x1a
+ 1041 05b3 02000000 		.4byte	.LBB10
+ 1042 05b7 08000000 		.4byte	.LBE10
+ 1043 05bb CF050000 		.4byte	0x5cf
+ 1044 05bf 19       		.uleb128 0x19
+ 1045 05c0 746D7000 		.ascii	"tmp\000"
+ 1046 05c4 01       		.byte	0x1
+ 1047 05c5 B3       		.byte	0xb3
+ 1048 05c6 7B000000 		.4byte	0x7b
+ 1049 05ca E1010000 		.4byte	.LLST17
+ 1050 05ce 00       		.byte	0
+ 1051 05cf 1A       		.uleb128 0x1a
+ 1052 05d0 0C000000 		.4byte	.LBB11
+ 1053 05d4 14000000 		.4byte	.LBE11
+ 1054 05d8 EC050000 		.4byte	0x5ec
+ 1055 05dc 19       		.uleb128 0x19
+ 1056 05dd 746D7000 		.ascii	"tmp\000"
+ 1057 05e1 01       		.byte	0x1
+ 1058 05e2 B7       		.byte	0xb7
+ 1059 05e3 7B000000 		.4byte	0x7b
+ 1060 05e7 F4010000 		.4byte	.LLST18
+ 1061 05eb 00       		.byte	0
+ 1062 05ec 1B       		.uleb128 0x1b
+ 1063 05ed 0C000000 		.4byte	.LVL26
+ 1064 05f1 C5060000 		.4byte	0x6c5
+ 1065 05f5 1C       		.uleb128 0x1c
+ 1066 05f6 01       		.byte	0x1
+ 1067 05f7 50       		.byte	0x50
+ 1068 05f8 03       		.byte	0x3
+ 1069 05f9 F3       		.byte	0xf3
+ 1070 05fa 01       		.uleb128 0x1
+ 1071 05fb 50       		.byte	0x50
+ 1072 05fc 00       		.byte	0
+ 1073 05fd 00       		.byte	0
+ 1074 05fe 16       		.uleb128 0x16
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 20
+
+
+ 1075 05ff 01       		.byte	0x1
+ 1076 0600 7B010000 		.4byte	.LASF57
+ 1077 0604 01       		.byte	0x1
+ 1078 0605 C8       		.byte	0xc8
+ 1079 0606 01       		.byte	0x1
+ 1080 0607 00000000 		.4byte	.LFB124
+ 1081 060b 14000000 		.4byte	.LFE124
+ 1082 060f 07020000 		.4byte	.LLST19
+ 1083 0613 01       		.byte	0x1
+ 1084 0614 82060000 		.4byte	0x682
+ 1085 0618 17       		.uleb128 0x17
+ 1086 0619 41010000 		.4byte	.LASF51
+ 1087 061d 01       		.byte	0x1
+ 1088 061e C8       		.byte	0xc8
+ 1089 061f 71010000 		.4byte	0x171
+ 1090 0623 27020000 		.4byte	.LLST20
+ 1091 0627 17       		.uleb128 0x17
+ 1092 0628 70020000 		.4byte	.LASF55
+ 1093 062c 01       		.byte	0x1
+ 1094 062d C8       		.byte	0xc8
+ 1095 062e D7020000 		.4byte	0x2d7
+ 1096 0632 48020000 		.4byte	.LLST21
+ 1097 0636 1A       		.uleb128 0x1a
+ 1098 0637 02000000 		.4byte	.LBB12
+ 1099 063b 08000000 		.4byte	.LBE12
+ 1100 063f 53060000 		.4byte	0x653
+ 1101 0643 19       		.uleb128 0x19
+ 1102 0644 746D7000 		.ascii	"tmp\000"
+ 1103 0648 01       		.byte	0x1
+ 1104 0649 CD       		.byte	0xcd
+ 1105 064a 7B000000 		.4byte	0x7b
+ 1106 064e 69020000 		.4byte	.LLST22
+ 1107 0652 00       		.byte	0
+ 1108 0653 1A       		.uleb128 0x1a
+ 1109 0654 0C000000 		.4byte	.LBB13
+ 1110 0658 14000000 		.4byte	.LBE13
+ 1111 065c 70060000 		.4byte	0x670
+ 1112 0660 19       		.uleb128 0x19
+ 1113 0661 746D7000 		.ascii	"tmp\000"
+ 1114 0665 01       		.byte	0x1
+ 1115 0666 D1       		.byte	0xd1
+ 1116 0667 7B000000 		.4byte	0x7b
+ 1117 066b 7C020000 		.4byte	.LLST23
+ 1118 066f 00       		.byte	0
+ 1119 0670 1B       		.uleb128 0x1b
+ 1120 0671 0C000000 		.4byte	.LVL32
+ 1121 0675 E4060000 		.4byte	0x6e4
+ 1122 0679 1C       		.uleb128 0x1c
+ 1123 067a 01       		.byte	0x1
+ 1124 067b 50       		.byte	0x50
+ 1125 067c 03       		.byte	0x3
+ 1126 067d F3       		.byte	0xf3
+ 1127 067e 01       		.uleb128 0x1
+ 1128 067f 50       		.byte	0x50
+ 1129 0680 00       		.byte	0
+ 1130 0681 00       		.byte	0
+ 1131 0682 1E       		.uleb128 0x1e
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 21
+
+
+ 1132 0683 EA020000 		.4byte	.LASF64
+ 1133 0687 06       		.byte	0x6
+ 1134 0688 9806     		.2byte	0x698
+ 1135 068a C5000000 		.4byte	0xc5
+ 1136 068e 01       		.byte	0x1
+ 1137 068f 01       		.byte	0x1
+ 1138 0690 1F       		.uleb128 0x1f
+ 1139 0691 01       		.byte	0x1
+ 1140 0692 35020000 		.4byte	.LASF65
+ 1141 0696 04       		.byte	0x4
+ 1142 0697 D101     		.2byte	0x1d1
+ 1143 0699 01       		.byte	0x1
+ 1144 069a 01       		.byte	0x1
+ 1145 069b 20       		.uleb128 0x20
+ 1146 069c 01       		.byte	0x1
+ 1147 069d 29010000 		.4byte	.LASF58
+ 1148 06a1 04       		.byte	0x4
+ 1149 06a2 D201     		.2byte	0x1d2
+ 1150 06a4 01       		.byte	0x1
+ 1151 06a5 01       		.byte	0x1
+ 1152 06a6 B0060000 		.4byte	0x6b0
+ 1153 06aa 0F       		.uleb128 0xf
+ 1154 06ab 71010000 		.4byte	0x171
+ 1155 06af 00       		.byte	0
+ 1156 06b0 20       		.uleb128 0x20
+ 1157 06b1 01       		.byte	0x1
+ 1158 06b2 05000000 		.4byte	.LASF59
+ 1159 06b6 04       		.byte	0x4
+ 1160 06b7 D301     		.2byte	0x1d3
+ 1161 06b9 01       		.byte	0x1
+ 1162 06ba 01       		.byte	0x1
+ 1163 06bb C5060000 		.4byte	0x6c5
+ 1164 06bf 0F       		.uleb128 0xf
+ 1165 06c0 71010000 		.4byte	0x171
+ 1166 06c4 00       		.byte	0
+ 1167 06c5 20       		.uleb128 0x20
+ 1168 06c6 01       		.byte	0x1
+ 1169 06c7 64010000 		.4byte	.LASF60
+ 1170 06cb 04       		.byte	0x4
+ 1171 06cc D401     		.2byte	0x1d4
+ 1172 06ce 01       		.byte	0x1
+ 1173 06cf 01       		.byte	0x1
+ 1174 06d0 E4060000 		.4byte	0x6e4
+ 1175 06d4 0F       		.uleb128 0xf
+ 1176 06d5 71010000 		.4byte	0x171
+ 1177 06d9 0F       		.uleb128 0xf
+ 1178 06da D7020000 		.4byte	0x2d7
+ 1179 06de 0F       		.uleb128 0xf
+ 1180 06df E3020000 		.4byte	0x2e3
+ 1181 06e3 00       		.byte	0
+ 1182 06e4 21       		.uleb128 0x21
+ 1183 06e5 01       		.byte	0x1
+ 1184 06e6 45000000 		.4byte	.LASF66
+ 1185 06ea 04       		.byte	0x4
+ 1186 06eb D701     		.2byte	0x1d7
+ 1187 06ed 01       		.byte	0x1
+ 1188 06ee 01       		.byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 22
+
+
+ 1189 06ef 0F       		.uleb128 0xf
+ 1190 06f0 71010000 		.4byte	0x171
+ 1191 06f4 0F       		.uleb128 0xf
+ 1192 06f5 D7020000 		.4byte	0x2d7
+ 1193 06f9 00       		.byte	0
+ 1194 06fa 00       		.byte	0
+ 1195              		.section	.debug_abbrev,"",%progbits
+ 1196              	.Ldebug_abbrev0:
+ 1197 0000 01       		.uleb128 0x1
+ 1198 0001 11       		.uleb128 0x11
+ 1199 0002 01       		.byte	0x1
+ 1200 0003 25       		.uleb128 0x25
+ 1201 0004 0E       		.uleb128 0xe
+ 1202 0005 13       		.uleb128 0x13
+ 1203 0006 0B       		.uleb128 0xb
+ 1204 0007 03       		.uleb128 0x3
+ 1205 0008 0E       		.uleb128 0xe
+ 1206 0009 1B       		.uleb128 0x1b
+ 1207 000a 0E       		.uleb128 0xe
+ 1208 000b 55       		.uleb128 0x55
+ 1209 000c 06       		.uleb128 0x6
+ 1210 000d 11       		.uleb128 0x11
+ 1211 000e 01       		.uleb128 0x1
+ 1212 000f 52       		.uleb128 0x52
+ 1213 0010 01       		.uleb128 0x1
+ 1214 0011 10       		.uleb128 0x10
+ 1215 0012 06       		.uleb128 0x6
+ 1216 0013 00       		.byte	0
+ 1217 0014 00       		.byte	0
+ 1218 0015 02       		.uleb128 0x2
+ 1219 0016 24       		.uleb128 0x24
+ 1220 0017 00       		.byte	0
+ 1221 0018 0B       		.uleb128 0xb
+ 1222 0019 0B       		.uleb128 0xb
+ 1223 001a 3E       		.uleb128 0x3e
+ 1224 001b 0B       		.uleb128 0xb
+ 1225 001c 03       		.uleb128 0x3
+ 1226 001d 08       		.uleb128 0x8
+ 1227 001e 00       		.byte	0
+ 1228 001f 00       		.byte	0
+ 1229 0020 03       		.uleb128 0x3
+ 1230 0021 24       		.uleb128 0x24
+ 1231 0022 00       		.byte	0
+ 1232 0023 0B       		.uleb128 0xb
+ 1233 0024 0B       		.uleb128 0xb
+ 1234 0025 3E       		.uleb128 0x3e
+ 1235 0026 0B       		.uleb128 0xb
+ 1236 0027 03       		.uleb128 0x3
+ 1237 0028 0E       		.uleb128 0xe
+ 1238 0029 00       		.byte	0
+ 1239 002a 00       		.byte	0
+ 1240 002b 04       		.uleb128 0x4
+ 1241 002c 16       		.uleb128 0x16
+ 1242 002d 00       		.byte	0
+ 1243 002e 03       		.uleb128 0x3
+ 1244 002f 0E       		.uleb128 0xe
+ 1245 0030 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 23
+
+
+ 1246 0031 0B       		.uleb128 0xb
+ 1247 0032 3B       		.uleb128 0x3b
+ 1248 0033 0B       		.uleb128 0xb
+ 1249 0034 49       		.uleb128 0x49
+ 1250 0035 13       		.uleb128 0x13
+ 1251 0036 00       		.byte	0
+ 1252 0037 00       		.byte	0
+ 1253 0038 05       		.uleb128 0x5
+ 1254 0039 35       		.uleb128 0x35
+ 1255 003a 00       		.byte	0
+ 1256 003b 49       		.uleb128 0x49
+ 1257 003c 13       		.uleb128 0x13
+ 1258 003d 00       		.byte	0
+ 1259 003e 00       		.byte	0
+ 1260 003f 06       		.uleb128 0x6
+ 1261 0040 01       		.uleb128 0x1
+ 1262 0041 01       		.byte	0x1
+ 1263 0042 49       		.uleb128 0x49
+ 1264 0043 13       		.uleb128 0x13
+ 1265 0044 01       		.uleb128 0x1
+ 1266 0045 13       		.uleb128 0x13
+ 1267 0046 00       		.byte	0
+ 1268 0047 00       		.byte	0
+ 1269 0048 07       		.uleb128 0x7
+ 1270 0049 21       		.uleb128 0x21
+ 1271 004a 00       		.byte	0
+ 1272 004b 49       		.uleb128 0x49
+ 1273 004c 13       		.uleb128 0x13
+ 1274 004d 2F       		.uleb128 0x2f
+ 1275 004e 0B       		.uleb128 0xb
+ 1276 004f 00       		.byte	0
+ 1277 0050 00       		.byte	0
+ 1278 0051 08       		.uleb128 0x8
+ 1279 0052 04       		.uleb128 0x4
+ 1280 0053 01       		.byte	0x1
+ 1281 0054 0B       		.uleb128 0xb
+ 1282 0055 0B       		.uleb128 0xb
+ 1283 0056 3A       		.uleb128 0x3a
+ 1284 0057 0B       		.uleb128 0xb
+ 1285 0058 3B       		.uleb128 0x3b
+ 1286 0059 0B       		.uleb128 0xb
+ 1287 005a 01       		.uleb128 0x1
+ 1288 005b 13       		.uleb128 0x13
+ 1289 005c 00       		.byte	0
+ 1290 005d 00       		.byte	0
+ 1291 005e 09       		.uleb128 0x9
+ 1292 005f 28       		.uleb128 0x28
+ 1293 0060 00       		.byte	0
+ 1294 0061 03       		.uleb128 0x3
+ 1295 0062 0E       		.uleb128 0xe
+ 1296 0063 1C       		.uleb128 0x1c
+ 1297 0064 0D       		.uleb128 0xd
+ 1298 0065 00       		.byte	0
+ 1299 0066 00       		.byte	0
+ 1300 0067 0A       		.uleb128 0xa
+ 1301 0068 13       		.uleb128 0x13
+ 1302 0069 01       		.byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 24
+
+
+ 1303 006a 03       		.uleb128 0x3
+ 1304 006b 0E       		.uleb128 0xe
+ 1305 006c 0B       		.uleb128 0xb
+ 1306 006d 0B       		.uleb128 0xb
+ 1307 006e 3A       		.uleb128 0x3a
+ 1308 006f 0B       		.uleb128 0xb
+ 1309 0070 3B       		.uleb128 0x3b
+ 1310 0071 05       		.uleb128 0x5
+ 1311 0072 01       		.uleb128 0x1
+ 1312 0073 13       		.uleb128 0x13
+ 1313 0074 00       		.byte	0
+ 1314 0075 00       		.byte	0
+ 1315 0076 0B       		.uleb128 0xb
+ 1316 0077 0D       		.uleb128 0xd
+ 1317 0078 00       		.byte	0
+ 1318 0079 03       		.uleb128 0x3
+ 1319 007a 0E       		.uleb128 0xe
+ 1320 007b 3A       		.uleb128 0x3a
+ 1321 007c 0B       		.uleb128 0xb
+ 1322 007d 3B       		.uleb128 0x3b
+ 1323 007e 05       		.uleb128 0x5
+ 1324 007f 49       		.uleb128 0x49
+ 1325 0080 13       		.uleb128 0x13
+ 1326 0081 38       		.uleb128 0x38
+ 1327 0082 0A       		.uleb128 0xa
+ 1328 0083 00       		.byte	0
+ 1329 0084 00       		.byte	0
+ 1330 0085 0C       		.uleb128 0xc
+ 1331 0086 0D       		.uleb128 0xd
+ 1332 0087 00       		.byte	0
+ 1333 0088 03       		.uleb128 0x3
+ 1334 0089 08       		.uleb128 0x8
+ 1335 008a 3A       		.uleb128 0x3a
+ 1336 008b 0B       		.uleb128 0xb
+ 1337 008c 3B       		.uleb128 0x3b
+ 1338 008d 05       		.uleb128 0x5
+ 1339 008e 49       		.uleb128 0x49
+ 1340 008f 13       		.uleb128 0x13
+ 1341 0090 38       		.uleb128 0x38
+ 1342 0091 0A       		.uleb128 0xa
+ 1343 0092 00       		.byte	0
+ 1344 0093 00       		.byte	0
+ 1345 0094 0D       		.uleb128 0xd
+ 1346 0095 0F       		.uleb128 0xf
+ 1347 0096 00       		.byte	0
+ 1348 0097 0B       		.uleb128 0xb
+ 1349 0098 0B       		.uleb128 0xb
+ 1350 0099 49       		.uleb128 0x49
+ 1351 009a 13       		.uleb128 0x13
+ 1352 009b 00       		.byte	0
+ 1353 009c 00       		.byte	0
+ 1354 009d 0E       		.uleb128 0xe
+ 1355 009e 15       		.uleb128 0x15
+ 1356 009f 01       		.byte	0x1
+ 1357 00a0 27       		.uleb128 0x27
+ 1358 00a1 0C       		.uleb128 0xc
+ 1359 00a2 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 25
+
+
+ 1360 00a3 13       		.uleb128 0x13
+ 1361 00a4 00       		.byte	0
+ 1362 00a5 00       		.byte	0
+ 1363 00a6 0F       		.uleb128 0xf
+ 1364 00a7 05       		.uleb128 0x5
+ 1365 00a8 00       		.byte	0
+ 1366 00a9 49       		.uleb128 0x49
+ 1367 00aa 13       		.uleb128 0x13
+ 1368 00ab 00       		.byte	0
+ 1369 00ac 00       		.byte	0
+ 1370 00ad 10       		.uleb128 0x10
+ 1371 00ae 13       		.uleb128 0x13
+ 1372 00af 01       		.byte	0x1
+ 1373 00b0 0B       		.uleb128 0xb
+ 1374 00b1 0B       		.uleb128 0xb
+ 1375 00b2 3A       		.uleb128 0x3a
+ 1376 00b3 0B       		.uleb128 0xb
+ 1377 00b4 3B       		.uleb128 0x3b
+ 1378 00b5 05       		.uleb128 0x5
+ 1379 00b6 01       		.uleb128 0x1
+ 1380 00b7 13       		.uleb128 0x13
+ 1381 00b8 00       		.byte	0
+ 1382 00b9 00       		.byte	0
+ 1383 00ba 11       		.uleb128 0x11
+ 1384 00bb 16       		.uleb128 0x16
+ 1385 00bc 00       		.byte	0
+ 1386 00bd 03       		.uleb128 0x3
+ 1387 00be 0E       		.uleb128 0xe
+ 1388 00bf 3A       		.uleb128 0x3a
+ 1389 00c0 0B       		.uleb128 0xb
+ 1390 00c1 3B       		.uleb128 0x3b
+ 1391 00c2 05       		.uleb128 0x5
+ 1392 00c3 49       		.uleb128 0x49
+ 1393 00c4 13       		.uleb128 0x13
+ 1394 00c5 00       		.byte	0
+ 1395 00c6 00       		.byte	0
+ 1396 00c7 12       		.uleb128 0x12
+ 1397 00c8 26       		.uleb128 0x26
+ 1398 00c9 00       		.byte	0
+ 1399 00ca 49       		.uleb128 0x49
+ 1400 00cb 13       		.uleb128 0x13
+ 1401 00cc 00       		.byte	0
+ 1402 00cd 00       		.byte	0
+ 1403 00ce 13       		.uleb128 0x13
+ 1404 00cf 2E       		.uleb128 0x2e
+ 1405 00d0 01       		.byte	0x1
+ 1406 00d1 3F       		.uleb128 0x3f
+ 1407 00d2 0C       		.uleb128 0xc
+ 1408 00d3 03       		.uleb128 0x3
+ 1409 00d4 0E       		.uleb128 0xe
+ 1410 00d5 3A       		.uleb128 0x3a
+ 1411 00d6 0B       		.uleb128 0xb
+ 1412 00d7 3B       		.uleb128 0x3b
+ 1413 00d8 0B       		.uleb128 0xb
+ 1414 00d9 27       		.uleb128 0x27
+ 1415 00da 0C       		.uleb128 0xc
+ 1416 00db 11       		.uleb128 0x11
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 26
+
+
+ 1417 00dc 01       		.uleb128 0x1
+ 1418 00dd 12       		.uleb128 0x12
+ 1419 00de 01       		.uleb128 0x1
+ 1420 00df 40       		.uleb128 0x40
+ 1421 00e0 0A       		.uleb128 0xa
+ 1422 00e1 9742     		.uleb128 0x2117
+ 1423 00e3 0C       		.uleb128 0xc
+ 1424 00e4 01       		.uleb128 0x1
+ 1425 00e5 13       		.uleb128 0x13
+ 1426 00e6 00       		.byte	0
+ 1427 00e7 00       		.byte	0
+ 1428 00e8 14       		.uleb128 0x14
+ 1429 00e9 898201   		.uleb128 0x4109
+ 1430 00ec 00       		.byte	0
+ 1431 00ed 11       		.uleb128 0x11
+ 1432 00ee 01       		.uleb128 0x1
+ 1433 00ef 9542     		.uleb128 0x2115
+ 1434 00f1 0C       		.uleb128 0xc
+ 1435 00f2 31       		.uleb128 0x31
+ 1436 00f3 13       		.uleb128 0x13
+ 1437 00f4 00       		.byte	0
+ 1438 00f5 00       		.byte	0
+ 1439 00f6 15       		.uleb128 0x15
+ 1440 00f7 05       		.uleb128 0x5
+ 1441 00f8 00       		.byte	0
+ 1442 00f9 03       		.uleb128 0x3
+ 1443 00fa 0E       		.uleb128 0xe
+ 1444 00fb 3A       		.uleb128 0x3a
+ 1445 00fc 0B       		.uleb128 0xb
+ 1446 00fd 3B       		.uleb128 0x3b
+ 1447 00fe 0B       		.uleb128 0xb
+ 1448 00ff 49       		.uleb128 0x49
+ 1449 0100 13       		.uleb128 0x13
+ 1450 0101 02       		.uleb128 0x2
+ 1451 0102 0A       		.uleb128 0xa
+ 1452 0103 00       		.byte	0
+ 1453 0104 00       		.byte	0
+ 1454 0105 16       		.uleb128 0x16
+ 1455 0106 2E       		.uleb128 0x2e
+ 1456 0107 01       		.byte	0x1
+ 1457 0108 3F       		.uleb128 0x3f
+ 1458 0109 0C       		.uleb128 0xc
+ 1459 010a 03       		.uleb128 0x3
+ 1460 010b 0E       		.uleb128 0xe
+ 1461 010c 3A       		.uleb128 0x3a
+ 1462 010d 0B       		.uleb128 0xb
+ 1463 010e 3B       		.uleb128 0x3b
+ 1464 010f 0B       		.uleb128 0xb
+ 1465 0110 27       		.uleb128 0x27
+ 1466 0111 0C       		.uleb128 0xc
+ 1467 0112 11       		.uleb128 0x11
+ 1468 0113 01       		.uleb128 0x1
+ 1469 0114 12       		.uleb128 0x12
+ 1470 0115 01       		.uleb128 0x1
+ 1471 0116 40       		.uleb128 0x40
+ 1472 0117 06       		.uleb128 0x6
+ 1473 0118 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 27
+
+
+ 1474 011a 0C       		.uleb128 0xc
+ 1475 011b 01       		.uleb128 0x1
+ 1476 011c 13       		.uleb128 0x13
+ 1477 011d 00       		.byte	0
+ 1478 011e 00       		.byte	0
+ 1479 011f 17       		.uleb128 0x17
+ 1480 0120 05       		.uleb128 0x5
+ 1481 0121 00       		.byte	0
+ 1482 0122 03       		.uleb128 0x3
+ 1483 0123 0E       		.uleb128 0xe
+ 1484 0124 3A       		.uleb128 0x3a
+ 1485 0125 0B       		.uleb128 0xb
+ 1486 0126 3B       		.uleb128 0x3b
+ 1487 0127 0B       		.uleb128 0xb
+ 1488 0128 49       		.uleb128 0x49
+ 1489 0129 13       		.uleb128 0x13
+ 1490 012a 02       		.uleb128 0x2
+ 1491 012b 06       		.uleb128 0x6
+ 1492 012c 00       		.byte	0
+ 1493 012d 00       		.byte	0
+ 1494 012e 18       		.uleb128 0x18
+ 1495 012f 0B       		.uleb128 0xb
+ 1496 0130 01       		.byte	0x1
+ 1497 0131 55       		.uleb128 0x55
+ 1498 0132 06       		.uleb128 0x6
+ 1499 0133 01       		.uleb128 0x1
+ 1500 0134 13       		.uleb128 0x13
+ 1501 0135 00       		.byte	0
+ 1502 0136 00       		.byte	0
+ 1503 0137 19       		.uleb128 0x19
+ 1504 0138 34       		.uleb128 0x34
+ 1505 0139 00       		.byte	0
+ 1506 013a 03       		.uleb128 0x3
+ 1507 013b 08       		.uleb128 0x8
+ 1508 013c 3A       		.uleb128 0x3a
+ 1509 013d 0B       		.uleb128 0xb
+ 1510 013e 3B       		.uleb128 0x3b
+ 1511 013f 0B       		.uleb128 0xb
+ 1512 0140 49       		.uleb128 0x49
+ 1513 0141 13       		.uleb128 0x13
+ 1514 0142 02       		.uleb128 0x2
+ 1515 0143 06       		.uleb128 0x6
+ 1516 0144 00       		.byte	0
+ 1517 0145 00       		.byte	0
+ 1518 0146 1A       		.uleb128 0x1a
+ 1519 0147 0B       		.uleb128 0xb
+ 1520 0148 01       		.byte	0x1
+ 1521 0149 11       		.uleb128 0x11
+ 1522 014a 01       		.uleb128 0x1
+ 1523 014b 12       		.uleb128 0x12
+ 1524 014c 01       		.uleb128 0x1
+ 1525 014d 01       		.uleb128 0x1
+ 1526 014e 13       		.uleb128 0x13
+ 1527 014f 00       		.byte	0
+ 1528 0150 00       		.byte	0
+ 1529 0151 1B       		.uleb128 0x1b
+ 1530 0152 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 28
+
+
+ 1531 0155 01       		.byte	0x1
+ 1532 0156 11       		.uleb128 0x11
+ 1533 0157 01       		.uleb128 0x1
+ 1534 0158 31       		.uleb128 0x31
+ 1535 0159 13       		.uleb128 0x13
+ 1536 015a 00       		.byte	0
+ 1537 015b 00       		.byte	0
+ 1538 015c 1C       		.uleb128 0x1c
+ 1539 015d 8A8201   		.uleb128 0x410a
+ 1540 0160 00       		.byte	0
+ 1541 0161 02       		.uleb128 0x2
+ 1542 0162 0A       		.uleb128 0xa
+ 1543 0163 9142     		.uleb128 0x2111
+ 1544 0165 0A       		.uleb128 0xa
+ 1545 0166 00       		.byte	0
+ 1546 0167 00       		.byte	0
+ 1547 0168 1D       		.uleb128 0x1d
+ 1548 0169 0B       		.uleb128 0xb
+ 1549 016a 01       		.byte	0x1
+ 1550 016b 11       		.uleb128 0x11
+ 1551 016c 01       		.uleb128 0x1
+ 1552 016d 12       		.uleb128 0x12
+ 1553 016e 01       		.uleb128 0x1
+ 1554 016f 00       		.byte	0
+ 1555 0170 00       		.byte	0
+ 1556 0171 1E       		.uleb128 0x1e
+ 1557 0172 34       		.uleb128 0x34
+ 1558 0173 00       		.byte	0
+ 1559 0174 03       		.uleb128 0x3
+ 1560 0175 0E       		.uleb128 0xe
+ 1561 0176 3A       		.uleb128 0x3a
+ 1562 0177 0B       		.uleb128 0xb
+ 1563 0178 3B       		.uleb128 0x3b
+ 1564 0179 05       		.uleb128 0x5
+ 1565 017a 49       		.uleb128 0x49
+ 1566 017b 13       		.uleb128 0x13
+ 1567 017c 3F       		.uleb128 0x3f
+ 1568 017d 0C       		.uleb128 0xc
+ 1569 017e 3C       		.uleb128 0x3c
+ 1570 017f 0C       		.uleb128 0xc
+ 1571 0180 00       		.byte	0
+ 1572 0181 00       		.byte	0
+ 1573 0182 1F       		.uleb128 0x1f
+ 1574 0183 2E       		.uleb128 0x2e
+ 1575 0184 00       		.byte	0
+ 1576 0185 3F       		.uleb128 0x3f
+ 1577 0186 0C       		.uleb128 0xc
+ 1578 0187 03       		.uleb128 0x3
+ 1579 0188 0E       		.uleb128 0xe
+ 1580 0189 3A       		.uleb128 0x3a
+ 1581 018a 0B       		.uleb128 0xb
+ 1582 018b 3B       		.uleb128 0x3b
+ 1583 018c 05       		.uleb128 0x5
+ 1584 018d 27       		.uleb128 0x27
+ 1585 018e 0C       		.uleb128 0xc
+ 1586 018f 3C       		.uleb128 0x3c
+ 1587 0190 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 29
+
+
+ 1588 0191 00       		.byte	0
+ 1589 0192 00       		.byte	0
+ 1590 0193 20       		.uleb128 0x20
+ 1591 0194 2E       		.uleb128 0x2e
+ 1592 0195 01       		.byte	0x1
+ 1593 0196 3F       		.uleb128 0x3f
+ 1594 0197 0C       		.uleb128 0xc
+ 1595 0198 03       		.uleb128 0x3
+ 1596 0199 0E       		.uleb128 0xe
+ 1597 019a 3A       		.uleb128 0x3a
+ 1598 019b 0B       		.uleb128 0xb
+ 1599 019c 3B       		.uleb128 0x3b
+ 1600 019d 05       		.uleb128 0x5
+ 1601 019e 27       		.uleb128 0x27
+ 1602 019f 0C       		.uleb128 0xc
+ 1603 01a0 3C       		.uleb128 0x3c
+ 1604 01a1 0C       		.uleb128 0xc
+ 1605 01a2 01       		.uleb128 0x1
+ 1606 01a3 13       		.uleb128 0x13
+ 1607 01a4 00       		.byte	0
+ 1608 01a5 00       		.byte	0
+ 1609 01a6 21       		.uleb128 0x21
+ 1610 01a7 2E       		.uleb128 0x2e
+ 1611 01a8 01       		.byte	0x1
+ 1612 01a9 3F       		.uleb128 0x3f
+ 1613 01aa 0C       		.uleb128 0xc
+ 1614 01ab 03       		.uleb128 0x3
+ 1615 01ac 0E       		.uleb128 0xe
+ 1616 01ad 3A       		.uleb128 0x3a
+ 1617 01ae 0B       		.uleb128 0xb
+ 1618 01af 3B       		.uleb128 0x3b
+ 1619 01b0 05       		.uleb128 0x5
+ 1620 01b1 27       		.uleb128 0x27
+ 1621 01b2 0C       		.uleb128 0xc
+ 1622 01b3 3C       		.uleb128 0x3c
+ 1623 01b4 0C       		.uleb128 0xc
+ 1624 01b5 00       		.byte	0
+ 1625 01b6 00       		.byte	0
+ 1626 01b7 00       		.byte	0
+ 1627              		.section	.debug_loc,"",%progbits
+ 1628              	.Ldebug_loc0:
+ 1629              	.LLST0:
+ 1630 0000 00000000 		.4byte	.LFB120
+ 1631 0004 02000000 		.4byte	.LCFI0
+ 1632 0008 0200     		.2byte	0x2
+ 1633 000a 7D       		.byte	0x7d
+ 1634 000b 00       		.sleb128 0
+ 1635 000c 02000000 		.4byte	.LCFI0
+ 1636 0010 20000000 		.4byte	.LFE120
+ 1637 0014 0200     		.2byte	0x2
+ 1638 0016 7D       		.byte	0x7d
+ 1639 0017 08       		.sleb128 8
+ 1640 0018 00000000 		.4byte	0
+ 1641 001c 00000000 		.4byte	0
+ 1642              	.LLST1:
+ 1643 0020 00000000 		.4byte	.LVL2
+ 1644 0024 13000000 		.4byte	.LVL6-1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 30
+
+
+ 1645 0028 0100     		.2byte	0x1
+ 1646 002a 50       		.byte	0x50
+ 1647 002b 13000000 		.4byte	.LVL6-1
+ 1648 002f 20000000 		.4byte	.LFE120
+ 1649 0033 0100     		.2byte	0x1
+ 1650 0035 54       		.byte	0x54
+ 1651 0036 00000000 		.4byte	0
+ 1652 003a 00000000 		.4byte	0
+ 1653              	.LLST2:
+ 1654 003e 00000000 		.4byte	.LVL2
+ 1655 0042 13000000 		.4byte	.LVL6-1
+ 1656 0046 0100     		.2byte	0x1
+ 1657 0048 51       		.byte	0x51
+ 1658 0049 13000000 		.4byte	.LVL6-1
+ 1659 004d 20000000 		.4byte	.LFE120
+ 1660 0051 0400     		.2byte	0x4
+ 1661 0053 F3       		.byte	0xf3
+ 1662 0054 01       		.uleb128 0x1
+ 1663 0055 51       		.byte	0x51
+ 1664 0056 9F       		.byte	0x9f
+ 1665 0057 00000000 		.4byte	0
+ 1666 005b 00000000 		.4byte	0
+ 1667              	.LLST3:
+ 1668 005f 0A000000 		.4byte	.LVL4
+ 1669 0063 0C000000 		.4byte	.LVL5
+ 1670 0067 0100     		.2byte	0x1
+ 1671 0069 53       		.byte	0x53
+ 1672 006a 00000000 		.4byte	0
+ 1673 006e 00000000 		.4byte	0
+ 1674              	.LLST4:
+ 1675 0072 1E000000 		.4byte	.LVL8
+ 1676 0076 20000000 		.4byte	.LFE120
+ 1677 007a 0100     		.2byte	0x1
+ 1678 007c 53       		.byte	0x53
+ 1679 007d 00000000 		.4byte	0
+ 1680 0081 00000000 		.4byte	0
+ 1681              	.LLST5:
+ 1682 0085 00000000 		.4byte	.LFB121
+ 1683 0089 02000000 		.4byte	.LCFI1
+ 1684 008d 0200     		.2byte	0x2
+ 1685 008f 7D       		.byte	0x7d
+ 1686 0090 00       		.sleb128 0
+ 1687 0091 02000000 		.4byte	.LCFI1
+ 1688 0095 1A000000 		.4byte	.LFE121
+ 1689 0099 0200     		.2byte	0x2
+ 1690 009b 7D       		.byte	0x7d
+ 1691 009c 08       		.sleb128 8
+ 1692 009d 00000000 		.4byte	0
+ 1693 00a1 00000000 		.4byte	0
+ 1694              	.LLST6:
+ 1695 00a5 00000000 		.4byte	.LVL9
+ 1696 00a9 0D000000 		.4byte	.LVL12-1
+ 1697 00ad 0100     		.2byte	0x1
+ 1698 00af 50       		.byte	0x50
+ 1699 00b0 0D000000 		.4byte	.LVL12-1
+ 1700 00b4 1A000000 		.4byte	.LFE121
+ 1701 00b8 0100     		.2byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 31
+
+
+ 1702 00ba 54       		.byte	0x54
+ 1703 00bb 00000000 		.4byte	0
+ 1704 00bf 00000000 		.4byte	0
+ 1705              	.LLST7:
+ 1706 00c3 0A000000 		.4byte	.LVL11
+ 1707 00c7 0D000000 		.4byte	.LVL12-1
+ 1708 00cb 0100     		.2byte	0x1
+ 1709 00cd 53       		.byte	0x53
+ 1710 00ce 00000000 		.4byte	0
+ 1711 00d2 00000000 		.4byte	0
+ 1712              	.LLST8:
+ 1713 00d6 18000000 		.4byte	.LVL14
+ 1714 00da 1A000000 		.4byte	.LFE121
+ 1715 00de 0100     		.2byte	0x1
+ 1716 00e0 53       		.byte	0x53
+ 1717 00e1 00000000 		.4byte	0
+ 1718 00e5 00000000 		.4byte	0
+ 1719              	.LLST9:
+ 1720 00e9 00000000 		.4byte	.LVL15
+ 1721 00ed 0E000000 		.4byte	.LVL20
+ 1722 00f1 0100     		.2byte	0x1
+ 1723 00f3 50       		.byte	0x50
+ 1724 00f4 0E000000 		.4byte	.LVL20
+ 1725 00f8 18000000 		.4byte	.LFE122
+ 1726 00fc 0400     		.2byte	0x4
+ 1727 00fe F3       		.byte	0xf3
+ 1728 00ff 01       		.uleb128 0x1
+ 1729 0100 50       		.byte	0x50
+ 1730 0101 9F       		.byte	0x9f
+ 1731 0102 00000000 		.4byte	0
+ 1732 0106 00000000 		.4byte	0
+ 1733              	.LLST10:
+ 1734 010a 00000000 		.4byte	.LVL15
+ 1735 010e 0C000000 		.4byte	.LVL19
+ 1736 0112 0100     		.2byte	0x1
+ 1737 0114 51       		.byte	0x51
+ 1738 0115 0C000000 		.4byte	.LVL19
+ 1739 0119 0E000000 		.4byte	.LVL20
+ 1740 011d 0200     		.2byte	0x2
+ 1741 011f 70       		.byte	0x70
+ 1742 0120 08       		.sleb128 8
+ 1743 0121 0E000000 		.4byte	.LVL20
+ 1744 0125 18000000 		.4byte	.LFE122
+ 1745 0129 0500     		.2byte	0x5
+ 1746 012b F3       		.byte	0xf3
+ 1747 012c 01       		.uleb128 0x1
+ 1748 012d 50       		.byte	0x50
+ 1749 012e 23       		.byte	0x23
+ 1750 012f 08       		.uleb128 0x8
+ 1751 0130 00000000 		.4byte	0
+ 1752 0134 00000000 		.4byte	0
+ 1753              	.LLST11:
+ 1754 0138 06000000 		.4byte	.LVL17
+ 1755 013c 08000000 		.4byte	.LVL18
+ 1756 0140 0100     		.2byte	0x1
+ 1757 0142 53       		.byte	0x53
+ 1758 0143 00000000 		.4byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 32
+
+
+ 1759 0147 00000000 		.4byte	0
+ 1760              	.LLST12:
+ 1761 014b 16000000 		.4byte	.LVL22
+ 1762 014f 18000000 		.4byte	.LFE122
+ 1763 0153 0100     		.2byte	0x1
+ 1764 0155 53       		.byte	0x53
+ 1765 0156 00000000 		.4byte	0
+ 1766 015a 00000000 		.4byte	0
+ 1767              	.LLST13:
+ 1768 015e 00000000 		.4byte	.LFB123
+ 1769 0162 02000000 		.4byte	.LCFI2
+ 1770 0166 0200     		.2byte	0x2
+ 1771 0168 7D       		.byte	0x7d
+ 1772 0169 00       		.sleb128 0
+ 1773 016a 02000000 		.4byte	.LCFI2
+ 1774 016e 14000000 		.4byte	.LFE123
+ 1775 0172 0200     		.2byte	0x2
+ 1776 0174 7D       		.byte	0x7d
+ 1777 0175 08       		.sleb128 8
+ 1778 0176 00000000 		.4byte	0
+ 1779 017a 00000000 		.4byte	0
+ 1780              	.LLST14:
+ 1781 017e 00000000 		.4byte	.LVL23
+ 1782 0182 0B000000 		.4byte	.LVL26-1
+ 1783 0186 0100     		.2byte	0x1
+ 1784 0188 50       		.byte	0x50
+ 1785 0189 0B000000 		.4byte	.LVL26-1
+ 1786 018d 14000000 		.4byte	.LFE123
+ 1787 0191 0400     		.2byte	0x4
+ 1788 0193 F3       		.byte	0xf3
+ 1789 0194 01       		.uleb128 0x1
+ 1790 0195 50       		.byte	0x50
+ 1791 0196 9F       		.byte	0x9f
+ 1792 0197 00000000 		.4byte	0
+ 1793 019b 00000000 		.4byte	0
+ 1794              	.LLST15:
+ 1795 019f 00000000 		.4byte	.LVL23
+ 1796 01a3 0B000000 		.4byte	.LVL26-1
+ 1797 01a7 0100     		.2byte	0x1
+ 1798 01a9 51       		.byte	0x51
+ 1799 01aa 0B000000 		.4byte	.LVL26-1
+ 1800 01ae 14000000 		.4byte	.LFE123
+ 1801 01b2 0400     		.2byte	0x4
+ 1802 01b4 F3       		.byte	0xf3
+ 1803 01b5 01       		.uleb128 0x1
+ 1804 01b6 51       		.byte	0x51
+ 1805 01b7 9F       		.byte	0x9f
+ 1806 01b8 00000000 		.4byte	0
+ 1807 01bc 00000000 		.4byte	0
+ 1808              	.LLST16:
+ 1809 01c0 00000000 		.4byte	.LVL23
+ 1810 01c4 0B000000 		.4byte	.LVL26-1
+ 1811 01c8 0100     		.2byte	0x1
+ 1812 01ca 52       		.byte	0x52
+ 1813 01cb 0B000000 		.4byte	.LVL26-1
+ 1814 01cf 14000000 		.4byte	.LFE123
+ 1815 01d3 0400     		.2byte	0x4
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 33
+
+
+ 1816 01d5 F3       		.byte	0xf3
+ 1817 01d6 01       		.uleb128 0x1
+ 1818 01d7 52       		.byte	0x52
+ 1819 01d8 9F       		.byte	0x9f
+ 1820 01d9 00000000 		.4byte	0
+ 1821 01dd 00000000 		.4byte	0
+ 1822              	.LLST17:
+ 1823 01e1 08000000 		.4byte	.LVL25
+ 1824 01e5 0B000000 		.4byte	.LVL26-1
+ 1825 01e9 0100     		.2byte	0x1
+ 1826 01eb 53       		.byte	0x53
+ 1827 01ec 00000000 		.4byte	0
+ 1828 01f0 00000000 		.4byte	0
+ 1829              	.LLST18:
+ 1830 01f4 12000000 		.4byte	.LVL28
+ 1831 01f8 14000000 		.4byte	.LFE123
+ 1832 01fc 0100     		.2byte	0x1
+ 1833 01fe 53       		.byte	0x53
+ 1834 01ff 00000000 		.4byte	0
+ 1835 0203 00000000 		.4byte	0
+ 1836              	.LLST19:
+ 1837 0207 00000000 		.4byte	.LFB124
+ 1838 020b 02000000 		.4byte	.LCFI3
+ 1839 020f 0200     		.2byte	0x2
+ 1840 0211 7D       		.byte	0x7d
+ 1841 0212 00       		.sleb128 0
+ 1842 0213 02000000 		.4byte	.LCFI3
+ 1843 0217 14000000 		.4byte	.LFE124
+ 1844 021b 0200     		.2byte	0x2
+ 1845 021d 7D       		.byte	0x7d
+ 1846 021e 08       		.sleb128 8
+ 1847 021f 00000000 		.4byte	0
+ 1848 0223 00000000 		.4byte	0
+ 1849              	.LLST20:
+ 1850 0227 00000000 		.4byte	.LVL29
+ 1851 022b 0B000000 		.4byte	.LVL32-1
+ 1852 022f 0100     		.2byte	0x1
+ 1853 0231 50       		.byte	0x50
+ 1854 0232 0B000000 		.4byte	.LVL32-1
+ 1855 0236 14000000 		.4byte	.LFE124
+ 1856 023a 0400     		.2byte	0x4
+ 1857 023c F3       		.byte	0xf3
+ 1858 023d 01       		.uleb128 0x1
+ 1859 023e 50       		.byte	0x50
+ 1860 023f 9F       		.byte	0x9f
+ 1861 0240 00000000 		.4byte	0
+ 1862 0244 00000000 		.4byte	0
+ 1863              	.LLST21:
+ 1864 0248 00000000 		.4byte	.LVL29
+ 1865 024c 0B000000 		.4byte	.LVL32-1
+ 1866 0250 0100     		.2byte	0x1
+ 1867 0252 51       		.byte	0x51
+ 1868 0253 0B000000 		.4byte	.LVL32-1
+ 1869 0257 14000000 		.4byte	.LFE124
+ 1870 025b 0400     		.2byte	0x4
+ 1871 025d F3       		.byte	0xf3
+ 1872 025e 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 34
+
+
+ 1873 025f 51       		.byte	0x51
+ 1874 0260 9F       		.byte	0x9f
+ 1875 0261 00000000 		.4byte	0
+ 1876 0265 00000000 		.4byte	0
+ 1877              	.LLST22:
+ 1878 0269 08000000 		.4byte	.LVL31
+ 1879 026d 0B000000 		.4byte	.LVL32-1
+ 1880 0271 0100     		.2byte	0x1
+ 1881 0273 53       		.byte	0x53
+ 1882 0274 00000000 		.4byte	0
+ 1883 0278 00000000 		.4byte	0
+ 1884              	.LLST23:
+ 1885 027c 12000000 		.4byte	.LVL34
+ 1886 0280 14000000 		.4byte	.LFE124
+ 1887 0284 0100     		.2byte	0x1
+ 1888 0286 53       		.byte	0x53
+ 1889 0287 00000000 		.4byte	0
+ 1890 028b 00000000 		.4byte	0
+ 1891              		.section	.debug_aranges,"",%progbits
+ 1892 0000 4C000000 		.4byte	0x4c
+ 1893 0004 0200     		.2byte	0x2
+ 1894 0006 00000000 		.4byte	.Ldebug_info0
+ 1895 000a 04       		.byte	0x4
+ 1896 000b 00       		.byte	0
+ 1897 000c 0000     		.2byte	0
+ 1898 000e 0000     		.2byte	0
+ 1899 0010 00000000 		.4byte	.LFB118
+ 1900 0014 04000000 		.4byte	.LFE118-.LFB118
+ 1901 0018 00000000 		.4byte	.LFB119
+ 1902 001c 0A000000 		.4byte	.LFE119-.LFB119
+ 1903 0020 00000000 		.4byte	.LFB120
+ 1904 0024 20000000 		.4byte	.LFE120-.LFB120
+ 1905 0028 00000000 		.4byte	.LFB121
+ 1906 002c 1A000000 		.4byte	.LFE121-.LFB121
+ 1907 0030 00000000 		.4byte	.LFB122
+ 1908 0034 18000000 		.4byte	.LFE122-.LFB122
+ 1909 0038 00000000 		.4byte	.LFB123
+ 1910 003c 14000000 		.4byte	.LFE123-.LFB123
+ 1911 0040 00000000 		.4byte	.LFB124
+ 1912 0044 14000000 		.4byte	.LFE124-.LFB124
+ 1913 0048 00000000 		.4byte	0
+ 1914 004c 00000000 		.4byte	0
+ 1915              		.section	.debug_ranges,"",%progbits
+ 1916              	.Ldebug_ranges0:
+ 1917 0000 02000000 		.4byte	.LBB2
+ 1918 0004 04000000 		.4byte	.LBE2
+ 1919 0008 06000000 		.4byte	.LBB3
+ 1920 000c 0A000000 		.4byte	.LBE3
+ 1921 0010 00000000 		.4byte	0
+ 1922 0014 00000000 		.4byte	0
+ 1923 0018 02000000 		.4byte	.LBB5
+ 1924 001c 04000000 		.4byte	.LBE5
+ 1925 0020 06000000 		.4byte	.LBB6
+ 1926 0024 0A000000 		.4byte	.LBE6
+ 1927 0028 00000000 		.4byte	0
+ 1928 002c 00000000 		.4byte	0
+ 1929 0030 00000000 		.4byte	.LFB118
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 35
+
+
+ 1930 0034 04000000 		.4byte	.LFE118
+ 1931 0038 00000000 		.4byte	.LFB119
+ 1932 003c 0A000000 		.4byte	.LFE119
+ 1933 0040 00000000 		.4byte	.LFB120
+ 1934 0044 20000000 		.4byte	.LFE120
+ 1935 0048 00000000 		.4byte	.LFB121
+ 1936 004c 1A000000 		.4byte	.LFE121
+ 1937 0050 00000000 		.4byte	.LFB122
+ 1938 0054 18000000 		.4byte	.LFE122
+ 1939 0058 00000000 		.4byte	.LFB123
+ 1940 005c 14000000 		.4byte	.LFE123
+ 1941 0060 00000000 		.4byte	.LFB124
+ 1942 0064 14000000 		.4byte	.LFE124
+ 1943 0068 00000000 		.4byte	0
+ 1944 006c 00000000 		.4byte	0
+ 1945              		.section	.debug_line,"",%progbits
+ 1946              	.Ldebug_line0:
+ 1947 0000 FF010000 		.section	.debug_str,"MS",%progbits,1
+ 1947      02006B01 
+ 1947      00000201 
+ 1947      FB0E0D00 
+ 1947      01010101 
+ 1948              	.LASF30:
+ 1949 0000 43434552 		.ascii	"CCER\000"
+ 1949      00
+ 1950              	.LASF59:
+ 1951 0005 70776D5F 		.ascii	"pwm_lld_stop\000"
+ 1951      6C6C645F 
+ 1951      73746F70 
+ 1951      00
+ 1952              	.LASF32:
+ 1953 0012 444D4152 		.ascii	"DMAR\000"
+ 1953      00
+ 1954              	.LASF21:
+ 1955 0017 73746174 		.ascii	"state\000"
+ 1955      6500
+ 1956              	.LASF29:
+ 1957 001d 43434D52 		.ascii	"CCMR2\000"
+ 1957      3200
+ 1958              	.LASF33:
+ 1959 0023 43434D52 		.ascii	"CCMR3\000"
+ 1959      3300
+ 1960              	.LASF3:
+ 1961 0029 73686F72 		.ascii	"short int\000"
+ 1961      7420696E 
+ 1961      7400
+ 1962              	.LASF39:
+ 1963 0033 70776D63 		.ascii	"pwmcnt_t\000"
+ 1963      6E745F74 
+ 1963      00
+ 1964              	.LASF14:
+ 1965 003c 73697A65 		.ascii	"sizetype\000"
+ 1965      74797065 
+ 1965      00
+ 1966              	.LASF66:
+ 1967 0045 70776D5F 		.ascii	"pwm_lld_disable_channel\000"
+ 1967      6C6C645F 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 36
+
+
+ 1967      64697361 
+ 1967      626C655F 
+ 1967      6368616E 
+ 1968              	.LASF38:
+ 1969 005d 70776D63 		.ascii	"pwmchannel_t\000"
+ 1969      68616E6E 
+ 1969      656C5F74 
+ 1969      00
+ 1970              	.LASF62:
+ 1971 006a 2E2E2F2E 		.ascii	"../../chibios/os/hal/src/pwm.c\000"
+ 1971      2E2F6368 
+ 1971      6962696F 
+ 1971      732F6F73 
+ 1971      2F68616C 
+ 1972              	.LASF44:
+ 1973 0089 6368616E 		.ascii	"channels\000"
+ 1973      6E656C73 
+ 1973      00
+ 1974              	.LASF22:
+ 1975 0092 636F6E66 		.ascii	"config\000"
+ 1975      696700
+ 1976              	.LASF49:
+ 1977 0099 70776D4F 		.ascii	"pwmObjectInit\000"
+ 1977      626A6563 
+ 1977      74496E69 
+ 1977      7400
+ 1978              	.LASF4:
+ 1979 00a7 75696E74 		.ascii	"uint8_t\000"
+ 1979      385F7400 
+ 1980              	.LASF54:
+ 1981 00af 70776D45 		.ascii	"pwmEnableChannel\000"
+ 1981      6E61626C 
+ 1981      65436861 
+ 1981      6E6E656C 
+ 1981      00
+ 1982              	.LASF56:
+ 1983 00c0 77696474 		.ascii	"width\000"
+ 1983      6800
+ 1984              	.LASF50:
+ 1985 00c6 70776D53 		.ascii	"pwmStart\000"
+ 1985      74617274 
+ 1985      00
+ 1986              	.LASF11:
+ 1987 00cf 6C6F6E67 		.ascii	"long long int\000"
+ 1987      206C6F6E 
+ 1987      6720696E 
+ 1987      7400
+ 1988              	.LASF8:
+ 1989 00dd 6C6F6E67 		.ascii	"long int\000"
+ 1989      20696E74 
+ 1989      00
+ 1990              	.LASF48:
+ 1991 00e6 70776D49 		.ascii	"pwmInit\000"
+ 1991      6E697400 
+ 1992              	.LASF63:
+ 1993 00ee 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace\\DCM_test_3\000"
+ 1993      68696269 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 37
+
+
+ 1993      53747564 
+ 1993      696F5C77 
+ 1993      6F726B73 
+ 1994              	.LASF34:
+ 1995 0112 43435235 		.ascii	"CCR5\000"
+ 1995      00
+ 1996              	.LASF35:
+ 1997 0117 43435236 		.ascii	"CCR6\000"
+ 1997      00
+ 1998              	.LASF23:
+ 1999 011c 70657269 		.ascii	"period\000"
+ 1999      6F6400
+ 2000              	.LASF28:
+ 2001 0123 43434D52 		.ascii	"CCMR1\000"
+ 2001      3100
+ 2002              	.LASF58:
+ 2003 0129 70776D5F 		.ascii	"pwm_lld_start\000"
+ 2003      6C6C645F 
+ 2003      73746172 
+ 2003      7400
+ 2004              	.LASF47:
+ 2005 0137 50574D43 		.ascii	"PWMConfig\000"
+ 2005      6F6E6669 
+ 2005      6700
+ 2006              	.LASF51:
+ 2007 0141 70776D70 		.ascii	"pwmp\000"
+ 2007      00
+ 2008              	.LASF26:
+ 2009 0146 534D4352 		.ascii	"SMCR\000"
+ 2009      00
+ 2010              	.LASF16:
+ 2011 014b 50574D5F 		.ascii	"PWM_UNINIT\000"
+ 2011      554E494E 
+ 2011      495400
+ 2012              	.LASF2:
+ 2013 0156 756E7369 		.ascii	"unsigned char\000"
+ 2013      676E6564 
+ 2013      20636861 
+ 2013      7200
+ 2014              	.LASF60:
+ 2015 0164 70776D5F 		.ascii	"pwm_lld_enable_channel\000"
+ 2015      6C6C645F 
+ 2015      656E6162 
+ 2015      6C655F63 
+ 2015      68616E6E 
+ 2016              	.LASF57:
+ 2017 017b 70776D44 		.ascii	"pwmDisableChannel\000"
+ 2017      69736162 
+ 2017      6C654368 
+ 2017      616E6E65 
+ 2017      6C00
+ 2018              	.LASF1:
+ 2019 018d 7369676E 		.ascii	"signed char\000"
+ 2019      65642063 
+ 2019      68617200 
+ 2020              	.LASF12:
+ 2021 0199 6C6F6E67 		.ascii	"long long unsigned int\000"
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 38
+
+
+ 2021      206C6F6E 
+ 2021      6720756E 
+ 2021      7369676E 
+ 2021      65642069 
+ 2022              	.LASF9:
+ 2023 01b0 75696E74 		.ascii	"uint32_t\000"
+ 2023      33325F74 
+ 2023      00
+ 2024              	.LASF0:
+ 2025 01b9 756E7369 		.ascii	"unsigned int\000"
+ 2025      676E6564 
+ 2025      20696E74 
+ 2025      00
+ 2026              	.LASF5:
+ 2027 01c6 75696E74 		.ascii	"uint16_t\000"
+ 2027      31365F74 
+ 2027      00
+ 2028              	.LASF31:
+ 2029 01cf 42445452 		.ascii	"BDTR\000"
+ 2029      00
+ 2030              	.LASF61:
+ 2031 01d4 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 2031      4320342E 
+ 2031      372E3420 
+ 2031      32303134 
+ 2031      30343031 
+ 2032 0207 616E6368 		.ascii	"anch revision 209195]\000"
+ 2032      20726576 
+ 2032      6973696F 
+ 2032      6E203230 
+ 2032      39313935 
+ 2033              	.LASF27:
+ 2034 021d 44494552 		.ascii	"DIER\000"
+ 2034      00
+ 2035              	.LASF6:
+ 2036 0222 73686F72 		.ascii	"short unsigned int\000"
+ 2036      7420756E 
+ 2036      7369676E 
+ 2036      65642069 
+ 2036      6E7400
+ 2037              	.LASF65:
+ 2038 0235 70776D5F 		.ascii	"pwm_lld_init\000"
+ 2038      6C6C645F 
+ 2038      696E6974 
+ 2038      00
+ 2039              	.LASF15:
+ 2040 0242 63686172 		.ascii	"char\000"
+ 2040      00
+ 2041              	.LASF36:
+ 2042 0247 73746D33 		.ascii	"stm32_tim_t\000"
+ 2042      325F7469 
+ 2042      6D5F7400 
+ 2043              	.LASF20:
+ 2044 0253 50574D44 		.ascii	"PWMDriver\000"
+ 2044      72697665 
+ 2044      7200
+ 2045              	.LASF7:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 39
+
+
+ 2046 025d 696E7433 		.ascii	"int32_t\000"
+ 2046      325F7400 
+ 2047              	.LASF40:
+ 2048 0265 6D6F6465 		.ascii	"mode\000"
+ 2048      00
+ 2049              	.LASF13:
+ 2050 026a 5F426F6F 		.ascii	"_Bool\000"
+ 2050      6C00
+ 2051              	.LASF55:
+ 2052 0270 6368616E 		.ascii	"channel\000"
+ 2052      6E656C00 
+ 2053              	.LASF53:
+ 2054 0278 70776D43 		.ascii	"pwmChangePeriod\000"
+ 2054      68616E67 
+ 2054      65506572 
+ 2054      696F6400 
+ 2055              	.LASF10:
+ 2056 0288 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2056      20756E73 
+ 2056      69676E65 
+ 2056      6420696E 
+ 2056      7400
+ 2057              	.LASF24:
+ 2058 029a 636C6F63 		.ascii	"clock\000"
+ 2058      6B00
+ 2059              	.LASF18:
+ 2060 02a0 50574D5F 		.ascii	"PWM_READY\000"
+ 2060      52454144 
+ 2060      5900
+ 2061              	.LASF17:
+ 2062 02aa 50574D5F 		.ascii	"PWM_STOP\000"
+ 2062      53544F50 
+ 2062      00
+ 2063              	.LASF46:
+ 2064 02b3 64696572 		.ascii	"dier\000"
+ 2064      00
+ 2065              	.LASF52:
+ 2066 02b8 70776D53 		.ascii	"pwmStop\000"
+ 2066      746F7000 
+ 2067              	.LASF43:
+ 2068 02c0 66726571 		.ascii	"frequency\000"
+ 2068      75656E63 
+ 2068      7900
+ 2069              	.LASF42:
+ 2070 02ca 50574D43 		.ascii	"PWMChannelConfig\000"
+ 2070      68616E6E 
+ 2070      656C436F 
+ 2070      6E666967 
+ 2070      00
+ 2071              	.LASF37:
+ 2072 02db 70776D6D 		.ascii	"pwmmode_t\000"
+ 2072      6F64655F 
+ 2072      7400
+ 2073              	.LASF45:
+ 2074 02e5 62647472 		.ascii	"bdtr\000"
+ 2074      00
+ 2075              	.LASF64:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 40
+
+
+ 2076 02ea 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2076      52784275 
+ 2076      66666572 
+ 2076      00
+ 2077              	.LASF19:
+ 2078 02f7 70776D73 		.ascii	"pwmstate_t\000"
+ 2078      74617465 
+ 2078      5F7400
+ 2079              	.LASF25:
+ 2080 0302 70776D63 		.ascii	"pwmcallback_t\000"
+ 2080      616C6C62 
+ 2080      61636B5F 
+ 2080      7400
+ 2081              	.LASF41:
+ 2082 0310 63616C6C 		.ascii	"callback\000"
+ 2082      6261636B 
+ 2082      00
+ 2083              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s 			page 41
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 pwm.c
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:19     .text.pwmInit:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:25     .text.pwmInit:00000000 pwmInit
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:41     .text.pwmObjectInit:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:47     .text.pwmObjectInit:00000000 pwmObjectInit
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:68     .text.pwmStart:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:74     .text.pwmStart:00000000 pwmStart
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:129    .text.pwmStop:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:135    .text.pwmStop:00000000 pwmStop
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:183    .text.pwmChangePeriod:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:189    .text.pwmChangePeriod:00000000 pwmChangePeriod
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:231    .text.pwmEnableChannel:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:237    .text.pwmEnableChannel:00000000 pwmEnableChannel
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:277    .text.pwmDisableChannel:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccSStDNH.s:283    .text.pwmDisableChannel:00000000 pwmDisableChannel
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+pwm_lld_init
+pwm_lld_start
+pwm_lld_stop
+pwm_lld_enable_channel
+pwm_lld_disable_channel

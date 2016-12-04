@@ -1,0 +1,1557 @@
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"DP_Math_Vector2f.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	__aeabi_fmul
+  19              		.global	__aeabi_fadd
+  20              		.section	.text.pythagorous2,"ax",%progbits
+  21              		.align	2
+  22              		.p2align 4,,15
+  23              		.global	pythagorous2
+  24              		.thumb
+  25              		.thumb_func
+  26              		.type	pythagorous2, %function
+  27              	pythagorous2:
+  28              	.LFB7:
+  29              		.file 1 "DP_Math_Vector2f.c"
+  30              		.loc 1 13 0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              	.LVL0:
+  35 0000 38B5     		push	{r3, r4, r5, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 16
+  38              		.cfi_offset 3, -16
+  39              		.cfi_offset 4, -12
+  40              		.cfi_offset 5, -8
+  41              		.cfi_offset 14, -4
+  42              		.loc 1 13 0
+  43 0002 0D46     		mov	r5, r1
+  44              		.loc 1 15 0
+  45 0004 0146     		mov	r1, r0
+  46              	.LVL1:
+  47 0006 FFF7FEFF 		bl	__aeabi_fmul
+  48              	.LVL2:
+  49 000a 2946     		mov	r1, r5
+  50 000c 0446     		mov	r4, r0
+  51 000e 2846     		mov	r0, r5
+  52 0010 FFF7FEFF 		bl	__aeabi_fmul
+  53              	.LVL3:
+  54 0014 0146     		mov	r1, r0
+  55 0016 2046     		mov	r0, r4
+  56 0018 FFF7FEFF 		bl	__aeabi_fadd
+  57              	.LVL4:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 2
+
+
+  58              		.loc 1 16 0
+  59 001c BDE83840 		pop	{r3, r4, r5, lr}
+  60              		.loc 1 15 0
+  61 0020 FFF7FEBF 		b	sqrtf
+  62              	.LVL5:
+  63              		.cfi_endproc
+  64              	.LFE7:
+  65              		.size	pythagorous2, .-pythagorous2
+  66 0024 AFF30080 		.section	.text.Vector2f_Lenght,"ax",%progbits
+  66      AFF30080 
+  66      AFF30080 
+  67              		.align	2
+  68              		.p2align 4,,15
+  69              		.global	Vector2f_Lenght
+  70              		.thumb
+  71              		.thumb_func
+  72              		.type	Vector2f_Lenght, %function
+  73              	Vector2f_Lenght:
+  74              	.LFB8:
+  75              		.loc 1 20 0
+  76              		.cfi_startproc
+  77              		@ args = 0, pretend = 0, frame = 8
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              		@ link register save eliminated.
+  80 0000 82B0     		sub	sp, sp, #8
+  81              	.LCFI1:
+  82              		.cfi_def_cfa_offset 8
+  83              		.loc 1 20 0
+  84 0002 02AB     		add	r3, sp, #8
+  85 0004 03E90300 		stmdb	r3, {r0, r1}
+  86              		.loc 1 21 0
+  87 0008 0098     		ldr	r0, [sp, #0]	@ float
+  88 000a 0199     		ldr	r1, [sp, #4]	@ float
+  89              		.loc 1 22 0
+  90 000c 02B0     		add	sp, sp, #8
+  91              		.loc 1 21 0
+  92 000e FFF7FEBF 		b	pythagorous2
+  93              	.LVL6:
+  94              		.cfi_endproc
+  95              	.LFE8:
+  96              		.size	Vector2f_Lenght, .-Vector2f_Lenght
+  97              		.global	__aeabi_fdiv
+  98 0012 00BFAFF3 		.section	.text.Vector2f_normalize,"ax",%progbits
+  98      0080AFF3 
+  98      0080AFF3 
+  98      0080
+  99              		.align	2
+ 100              		.p2align 4,,15
+ 101              		.global	Vector2f_normalize
+ 102              		.thumb
+ 103              		.thumb_func
+ 104              		.type	Vector2f_normalize, %function
+ 105              	Vector2f_normalize:
+ 106              	.LFB9:
+ 107              		.loc 1 27 0
+ 108              		.cfi_startproc
+ 109              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 3
+
+
+ 110              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111              	.LVL7:
+ 112 0000 38B5     		push	{r3, r4, r5, lr}
+ 113              	.LCFI2:
+ 114              		.cfi_def_cfa_offset 16
+ 115              		.cfi_offset 3, -16
+ 116              		.cfi_offset 4, -12
+ 117              		.cfi_offset 5, -8
+ 118              		.cfi_offset 14, -4
+ 119              	.LBB4:
+ 120              	.LBB5:
+ 121              		.loc 1 21 0
+ 122 0002 4168     		ldr	r1, [r0, #4]	@ float
+ 123              	.LBE5:
+ 124              	.LBE4:
+ 125              		.loc 1 27 0
+ 126 0004 0446     		mov	r4, r0
+ 127              	.LVL8:
+ 128              	.LBB8:
+ 129              	.LBB6:
+ 130              		.loc 1 21 0
+ 131 0006 0068     		ldr	r0, [r0, #0]	@ float
+ 132              	.LVL9:
+ 133 0008 FFF7FEFF 		bl	pythagorous2
+ 134              	.LVL10:
+ 135              	.LBE6:
+ 136              	.LBE8:
+ 137              		.loc 1 29 0
+ 138 000c 0146     		mov	r1, r0
+ 139              	.LBB9:
+ 140              	.LBB7:
+ 141              		.loc 1 21 0
+ 142 000e 0546     		mov	r5, r0
+ 143              	.LBE7:
+ 144              	.LBE9:
+ 145              		.loc 1 29 0
+ 146 0010 2068     		ldr	r0, [r4, #0]	@ float
+ 147 0012 FFF7FEFF 		bl	__aeabi_fdiv
+ 148              	.LVL11:
+ 149              		.loc 1 30 0
+ 150 0016 2946     		mov	r1, r5
+ 151              		.loc 1 29 0
+ 152 0018 2060     		str	r0, [r4, #0]	@ float
+ 153              		.loc 1 30 0
+ 154 001a 6068     		ldr	r0, [r4, #4]	@ float
+ 155 001c FFF7FEFF 		bl	__aeabi_fdiv
+ 156              	.LVL12:
+ 157 0020 6060     		str	r0, [r4, #4]	@ float
+ 158 0022 38BD     		pop	{r3, r4, r5, pc}
+ 159              		.cfi_endproc
+ 160              	.LFE9:
+ 161              		.size	Vector2f_normalize, .-Vector2f_normalize
+ 162 0024 AFF30080 		.section	.text.Vector2f_isinf,"ax",%progbits
+ 162      AFF30080 
+ 162      AFF30080 
+ 163              		.align	2
+ 164              		.p2align 4,,15
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 4
+
+
+ 165              		.global	Vector2f_isinf
+ 166              		.thumb
+ 167              		.thumb_func
+ 168              		.type	Vector2f_isinf, %function
+ 169              	Vector2f_isinf:
+ 170              	.LFB10:
+ 171              		.loc 1 34 0
+ 172              		.cfi_startproc
+ 173              		@ args = 0, pretend = 0, frame = 8
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 175 0000 00B5     		push	{lr}
+ 176              	.LCFI3:
+ 177              		.cfi_def_cfa_offset 4
+ 178              		.cfi_offset 14, -4
+ 179 0002 83B0     		sub	sp, sp, #12
+ 180              	.LCFI4:
+ 181              		.cfi_def_cfa_offset 16
+ 182              		.loc 1 34 0
+ 183 0004 02AB     		add	r3, sp, #8
+ 184 0006 03E90300 		stmdb	r3, {r0, r1}
+ 185              		.loc 1 35 0
+ 186 000a 0098     		ldr	r0, [sp, #0]	@ float
+ 187 000c FFF7FEFF 		bl	__fpclassifyf
+ 188              	.LVL13:
+ 189 0010 0128     		cmp	r0, #1
+ 190 0012 05D0     		beq	.L5
+ 191              		.loc 1 35 0 is_stmt 0 discriminator 2
+ 192 0014 0198     		ldr	r0, [sp, #4]	@ float
+ 193 0016 FFF7FEFF 		bl	__fpclassifyf
+ 194              	.LVL14:
+ 195 001a 411E     		subs	r1, r0, #1
+ 196 001c 4842     		rsbs	r0, r1, #0
+ 197 001e 4841     		adcs	r0, r0, r1
+ 198              	.L5:
+ 199              		.loc 1 36 0 is_stmt 1 discriminator 4
+ 200 0020 03B0     		add	sp, sp, #12
+ 201 0022 00BD     		pop	{pc}
+ 202              		.cfi_endproc
+ 203              	.LFE10:
+ 204              		.size	Vector2f_isinf, .-Vector2f_isinf
+ 205 0024 AFF30080 		.section	.text.Vector2f_dot_prod,"ax",%progbits
+ 205      AFF30080 
+ 205      AFF30080 
+ 206              		.align	2
+ 207              		.p2align 4,,15
+ 208              		.global	Vector2f_dot_prod
+ 209              		.thumb
+ 210              		.thumb_func
+ 211              		.type	Vector2f_dot_prod, %function
+ 212              	Vector2f_dot_prod:
+ 213              	.LFB11:
+ 214              		.loc 1 39 0
+ 215              		.cfi_startproc
+ 216              		@ args = 0, pretend = 0, frame = 16
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218 0000 30B5     		push	{r4, r5, lr}
+ 219              	.LCFI5:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 5
+
+
+ 220              		.cfi_def_cfa_offset 12
+ 221              		.cfi_offset 4, -12
+ 222              		.cfi_offset 5, -8
+ 223              		.cfi_offset 14, -4
+ 224 0002 85B0     		sub	sp, sp, #20
+ 225              	.LCFI6:
+ 226              		.cfi_def_cfa_offset 32
+ 227              		.loc 1 39 0
+ 228 0004 04AD     		add	r5, sp, #16
+ 229 0006 05E90300 		stmdb	r5, {r0, r1}
+ 230 000a 8DE80C00 		stmia	sp, {r2, r3}
+ 231              		.loc 1 40 0
+ 232 000e 0298     		ldr	r0, [sp, #8]	@ float
+ 233 0010 0099     		ldr	r1, [sp, #0]	@ float
+ 234 0012 FFF7FEFF 		bl	__aeabi_fmul
+ 235              	.LVL15:
+ 236 0016 0199     		ldr	r1, [sp, #4]	@ float
+ 237 0018 0446     		mov	r4, r0
+ 238 001a 0398     		ldr	r0, [sp, #12]	@ float
+ 239 001c FFF7FEFF 		bl	__aeabi_fmul
+ 240              	.LVL16:
+ 241 0020 0146     		mov	r1, r0
+ 242 0022 2046     		mov	r0, r4
+ 243 0024 FFF7FEFF 		bl	__aeabi_fadd
+ 244              	.LVL17:
+ 245              		.loc 1 41 0
+ 246 0028 05B0     		add	sp, sp, #20
+ 247 002a 30BD     		pop	{r4, r5, pc}
+ 248              		.cfi_endproc
+ 249              	.LFE11:
+ 250              		.size	Vector2f_dot_prod, .-Vector2f_dot_prod
+ 251              		.global	__aeabi_fsub
+ 252 002c AFF30080 		.section	.text.Vector2f_Cross_prod,"ax",%progbits
+ 253              		.align	2
+ 254              		.p2align 4,,15
+ 255              		.global	Vector2f_Cross_prod
+ 256              		.thumb
+ 257              		.thumb_func
+ 258              		.type	Vector2f_Cross_prod, %function
+ 259              	Vector2f_Cross_prod:
+ 260              	.LFB12:
+ 261              		.loc 1 44 0
+ 262              		.cfi_startproc
+ 263              		@ args = 0, pretend = 0, frame = 16
+ 264              		@ frame_needed = 0, uses_anonymous_args = 0
+ 265 0000 30B5     		push	{r4, r5, lr}
+ 266              	.LCFI7:
+ 267              		.cfi_def_cfa_offset 12
+ 268              		.cfi_offset 4, -12
+ 269              		.cfi_offset 5, -8
+ 270              		.cfi_offset 14, -4
+ 271 0002 85B0     		sub	sp, sp, #20
+ 272              	.LCFI8:
+ 273              		.cfi_def_cfa_offset 32
+ 274              		.loc 1 44 0
+ 275 0004 04AD     		add	r5, sp, #16
+ 276 0006 05E90300 		stmdb	r5, {r0, r1}
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 6
+
+
+ 277 000a 8DE80C00 		stmia	sp, {r2, r3}
+ 278              		.loc 1 45 0
+ 279 000e 0298     		ldr	r0, [sp, #8]	@ float
+ 280 0010 0199     		ldr	r1, [sp, #4]	@ float
+ 281 0012 FFF7FEFF 		bl	__aeabi_fmul
+ 282              	.LVL18:
+ 283 0016 0099     		ldr	r1, [sp, #0]	@ float
+ 284 0018 0446     		mov	r4, r0
+ 285 001a 0398     		ldr	r0, [sp, #12]	@ float
+ 286 001c FFF7FEFF 		bl	__aeabi_fmul
+ 287              	.LVL19:
+ 288 0020 0146     		mov	r1, r0
+ 289 0022 2046     		mov	r0, r4
+ 290 0024 FFF7FEFF 		bl	__aeabi_fsub
+ 291              	.LVL20:
+ 292              		.loc 1 46 0
+ 293 0028 05B0     		add	sp, sp, #20
+ 294 002a 30BD     		pop	{r4, r5, pc}
+ 295              		.cfi_endproc
+ 296              	.LFE12:
+ 297              		.size	Vector2f_Cross_prod, .-Vector2f_Cross_prod
+ 298 002c AFF30080 		.text
+ 299              	.Letext0:
+ 300              		.file 2 "DP_Math_Vector2f.h"
+ 301              		.file 3 "../../chibios/os/ports/GCC/ARMCMx/chtypes.h"
+ 302              		.file 4 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 303              		.section	.debug_info,"",%progbits
+ 304              	.Ldebug_info0:
+ 305 0000 BF020000 		.4byte	0x2bf
+ 306 0004 0200     		.2byte	0x2
+ 307 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 308 000a 04       		.byte	0x4
+ 309 000b 01       		.uleb128 0x1
+ 310 000c 96000000 		.4byte	.LASF17
+ 311 0010 01       		.byte	0x1
+ 312 0011 3B010000 		.4byte	.LASF18
+ 313 0015 33000000 		.4byte	.LASF19
+ 314 0019 20000000 		.4byte	.Ldebug_ranges0+0x20
+ 315 001d 00000000 		.4byte	0
+ 316 0021 00000000 		.4byte	0
+ 317 0025 00000000 		.4byte	.Ldebug_line0
+ 318 0029 02       		.uleb128 0x2
+ 319 002a 04       		.byte	0x4
+ 320 002b 04       		.byte	0x4
+ 321 002c 57000000 		.4byte	.LASF0
+ 322 0030 03       		.uleb128 0x3
+ 323 0031 04       		.byte	0x4
+ 324 0032 05       		.byte	0x5
+ 325 0033 696E7400 		.ascii	"int\000"
+ 326 0037 02       		.uleb128 0x2
+ 327 0038 04       		.byte	0x4
+ 328 0039 07       		.byte	0x7
+ 329 003a 03010000 		.4byte	.LASF1
+ 330 003e 02       		.uleb128 0x2
+ 331 003f 01       		.byte	0x1
+ 332 0040 06       		.byte	0x6
+ 333 0041 B6010000 		.4byte	.LASF2
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 7
+
+
+ 334 0045 02       		.uleb128 0x2
+ 335 0046 01       		.byte	0x1
+ 336 0047 08       		.byte	0x8
+ 337 0048 5D000000 		.4byte	.LASF3
+ 338 004c 02       		.uleb128 0x2
+ 339 004d 02       		.byte	0x2
+ 340 004e 05       		.byte	0x5
+ 341 004f 7C010000 		.4byte	.LASF4
+ 342 0053 02       		.uleb128 0x2
+ 343 0054 02       		.byte	0x2
+ 344 0055 07       		.byte	0x7
+ 345 0056 83000000 		.4byte	.LASF5
+ 346 005a 02       		.uleb128 0x2
+ 347 005b 04       		.byte	0x4
+ 348 005c 05       		.byte	0x5
+ 349 005d A1010000 		.4byte	.LASF6
+ 350 0061 02       		.uleb128 0x2
+ 351 0062 04       		.byte	0x4
+ 352 0063 07       		.byte	0x7
+ 353 0064 71000000 		.4byte	.LASF7
+ 354 0068 02       		.uleb128 0x2
+ 355 0069 08       		.byte	0x8
+ 356 006a 05       		.byte	0x5
+ 357 006b 69010000 		.4byte	.LASF8
+ 358 006f 02       		.uleb128 0x2
+ 359 0070 08       		.byte	0x8
+ 360 0071 07       		.byte	0x7
+ 361 0072 10010000 		.4byte	.LASF9
+ 362 0076 04       		.uleb128 0x4
+ 363 0077 2C000000 		.4byte	.LASF13
+ 364 007b 03       		.byte	0x3
+ 365 007c 2B       		.byte	0x2b
+ 366 007d 81000000 		.4byte	0x81
+ 367 0081 02       		.uleb128 0x2
+ 368 0082 01       		.byte	0x1
+ 369 0083 02       		.byte	0x2
+ 370 0084 C2010000 		.4byte	.LASF10
+ 371 0088 02       		.uleb128 0x2
+ 372 0089 04       		.byte	0x4
+ 373 008a 07       		.byte	0x7
+ 374 008b 60010000 		.4byte	.LASF11
+ 375 008f 02       		.uleb128 0x2
+ 376 0090 01       		.byte	0x1
+ 377 0091 08       		.byte	0x8
+ 378 0092 77010000 		.4byte	.LASF12
+ 379 0096 05       		.uleb128 0x5
+ 380 0097 99010000 		.4byte	.LASF27
+ 381 009b 08       		.byte	0x8
+ 382 009c 02       		.byte	0x2
+ 383 009d 0C       		.byte	0xc
+ 384 009e BB000000 		.4byte	0xbb
+ 385 00a2 06       		.uleb128 0x6
+ 386 00a3 7800     		.ascii	"x\000"
+ 387 00a5 02       		.byte	0x2
+ 388 00a6 0D       		.byte	0xd
+ 389 00a7 29000000 		.4byte	0x29
+ 390 00ab 02       		.byte	0x2
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 8
+
+
+ 391 00ac 23       		.byte	0x23
+ 392 00ad 00       		.uleb128 0
+ 393 00ae 06       		.uleb128 0x6
+ 394 00af 7900     		.ascii	"y\000"
+ 395 00b1 02       		.byte	0x2
+ 396 00b2 0E       		.byte	0xe
+ 397 00b3 29000000 		.4byte	0x29
+ 398 00b7 02       		.byte	0x2
+ 399 00b8 23       		.byte	0x23
+ 400 00b9 04       		.uleb128 0x4
+ 401 00ba 00       		.byte	0
+ 402 00bb 04       		.uleb128 0x4
+ 403 00bc 00000000 		.4byte	.LASF14
+ 404 00c0 02       		.byte	0x2
+ 405 00c1 0F       		.byte	0xf
+ 406 00c2 96000000 		.4byte	0x96
+ 407 00c6 02       		.uleb128 0x2
+ 408 00c7 08       		.byte	0x8
+ 409 00c8 04       		.byte	0x4
+ 410 00c9 DF000000 		.4byte	.LASF15
+ 411 00cd 02       		.uleb128 0x2
+ 412 00ce 08       		.byte	0x8
+ 413 00cf 04       		.byte	0x4
+ 414 00d0 AA010000 		.4byte	.LASF16
+ 415 00d4 07       		.uleb128 0x7
+ 416 00d5 01       		.byte	0x1
+ 417 00d6 F3000000 		.4byte	.LASF25
+ 418 00da 01       		.byte	0x1
+ 419 00db 13       		.byte	0x13
+ 420 00dc 01       		.byte	0x1
+ 421 00dd 29000000 		.4byte	0x29
+ 422 00e1 01       		.byte	0x1
+ 423 00e2 F0000000 		.4byte	0xf0
+ 424 00e6 08       		.uleb128 0x8
+ 425 00e7 7600     		.ascii	"v\000"
+ 426 00e9 01       		.byte	0x1
+ 427 00ea 13       		.byte	0x13
+ 428 00eb BB000000 		.4byte	0xbb
+ 429 00ef 00       		.byte	0
+ 430 00f0 09       		.uleb128 0x9
+ 431 00f1 01       		.byte	0x1
+ 432 00f2 E6000000 		.4byte	.LASF20
+ 433 00f6 01       		.byte	0x1
+ 434 00f7 0D       		.byte	0xd
+ 435 00f8 01       		.byte	0x1
+ 436 00f9 29000000 		.4byte	0x29
+ 437 00fd 00000000 		.4byte	.LFB7
+ 438 0101 24000000 		.4byte	.LFE7
+ 439 0105 00000000 		.4byte	.LLST0
+ 440 0109 01       		.byte	0x1
+ 441 010a 33010000 		.4byte	0x133
+ 442 010e 0A       		.uleb128 0xa
+ 443 010f 6100     		.ascii	"a\000"
+ 444 0111 01       		.byte	0x1
+ 445 0112 0D       		.byte	0xd
+ 446 0113 29000000 		.4byte	0x29
+ 447 0117 20000000 		.4byte	.LLST1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 9
+
+
+ 448 011b 0A       		.uleb128 0xa
+ 449 011c 6200     		.ascii	"b\000"
+ 450 011e 01       		.byte	0x1
+ 451 011f 0D       		.byte	0xd
+ 452 0120 29000000 		.4byte	0x29
+ 453 0124 43000000 		.4byte	.LLST2
+ 454 0128 0B       		.uleb128 0xb
+ 455 0129 24000000 		.4byte	.LVL5
+ 456 012d 01       		.byte	0x1
+ 457 012e 95020000 		.4byte	0x295
+ 458 0132 00       		.byte	0
+ 459 0133 0C       		.uleb128 0xc
+ 460 0134 D4000000 		.4byte	0xd4
+ 461 0138 00000000 		.4byte	.LFB8
+ 462 013c 12000000 		.4byte	.LFE8
+ 463 0140 61000000 		.4byte	.LLST3
+ 464 0144 01       		.byte	0x1
+ 465 0145 6F010000 		.4byte	0x16f
+ 466 0149 0D       		.uleb128 0xd
+ 467 014a E6000000 		.4byte	0xe6
+ 468 014e 02       		.byte	0x2
+ 469 014f 91       		.byte	0x91
+ 470 0150 78       		.sleb128 -8
+ 471 0151 0E       		.uleb128 0xe
+ 472 0152 12000000 		.4byte	.LVL6
+ 473 0156 01       		.byte	0x1
+ 474 0157 F0000000 		.4byte	0xf0
+ 475 015b 0F       		.uleb128 0xf
+ 476 015c 01       		.byte	0x1
+ 477 015d 51       		.byte	0x51
+ 478 015e 05       		.byte	0x5
+ 479 015f 91       		.byte	0x91
+ 480 0160 7C       		.sleb128 -4
+ 481 0161 F6       		.byte	0xf6
+ 482 0162 04       		.byte	0x4
+ 483 0163 29       		.uleb128 0x29
+ 484 0164 0F       		.uleb128 0xf
+ 485 0165 01       		.byte	0x1
+ 486 0166 50       		.byte	0x50
+ 487 0167 05       		.byte	0x5
+ 488 0168 7D       		.byte	0x7d
+ 489 0169 00       		.sleb128 0
+ 490 016a F6       		.byte	0xf6
+ 491 016b 04       		.byte	0x4
+ 492 016c 29       		.uleb128 0x29
+ 493 016d 00       		.byte	0
+ 494 016e 00       		.byte	0
+ 495 016f 10       		.uleb128 0x10
+ 496 0170 01       		.byte	0x1
+ 497 0171 86010000 		.4byte	.LASF28
+ 498 0175 01       		.byte	0x1
+ 499 0176 1A       		.byte	0x1a
+ 500 0177 01       		.byte	0x1
+ 501 0178 00000000 		.4byte	.LFB9
+ 502 017c 24000000 		.4byte	.LFE9
+ 503 0180 81000000 		.4byte	.LLST4
+ 504 0184 01       		.byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 10
+
+
+ 505 0185 C4010000 		.4byte	0x1c4
+ 506 0189 0A       		.uleb128 0xa
+ 507 018a 7600     		.ascii	"v\000"
+ 508 018c 01       		.byte	0x1
+ 509 018d 1A       		.byte	0x1a
+ 510 018e C4010000 		.4byte	0x1c4
+ 511 0192 A1000000 		.4byte	.LLST5
+ 512 0196 11       		.uleb128 0x11
+ 513 0197 6600     		.ascii	"f\000"
+ 514 0199 01       		.byte	0x1
+ 515 019a 1C       		.byte	0x1c
+ 516 019b 29000000 		.4byte	0x29
+ 517 019f 01       		.byte	0x1
+ 518 01a0 55       		.byte	0x55
+ 519 01a1 12       		.uleb128 0x12
+ 520 01a2 D4000000 		.4byte	0xd4
+ 521 01a6 02000000 		.4byte	.LBB4
+ 522 01aa 00000000 		.4byte	.Ldebug_ranges0+0
+ 523 01ae 01       		.byte	0x1
+ 524 01af 1C       		.byte	0x1c
+ 525 01b0 13       		.uleb128 0x13
+ 526 01b1 E6000000 		.4byte	0xe6
+ 527 01b5 BF000000 		.4byte	.LLST6
+ 528 01b9 14       		.uleb128 0x14
+ 529 01ba 0C000000 		.4byte	.LVL10
+ 530 01be F0000000 		.4byte	0xf0
+ 531 01c2 00       		.byte	0
+ 532 01c3 00       		.byte	0
+ 533 01c4 15       		.uleb128 0x15
+ 534 01c5 04       		.byte	0x4
+ 535 01c6 BB000000 		.4byte	0xbb
+ 536 01ca 16       		.uleb128 0x16
+ 537 01cb 01       		.byte	0x1
+ 538 01cc 1D000000 		.4byte	.LASF21
+ 539 01d0 01       		.byte	0x1
+ 540 01d1 21       		.byte	0x21
+ 541 01d2 01       		.byte	0x1
+ 542 01d3 76000000 		.4byte	0x76
+ 543 01d7 00000000 		.4byte	.LFB10
+ 544 01db 24000000 		.4byte	.LFE10
+ 545 01df E8000000 		.4byte	.LLST7
+ 546 01e3 01       		.byte	0x1
+ 547 01e4 1F020000 		.4byte	0x21f
+ 548 01e8 17       		.uleb128 0x17
+ 549 01e9 7600     		.ascii	"v\000"
+ 550 01eb 01       		.byte	0x1
+ 551 01ec 21       		.byte	0x21
+ 552 01ed BB000000 		.4byte	0xbb
+ 553 01f1 02       		.byte	0x2
+ 554 01f2 91       		.byte	0x91
+ 555 01f3 70       		.sleb128 -16
+ 556 01f4 18       		.uleb128 0x18
+ 557 01f5 10000000 		.4byte	.LVL13
+ 558 01f9 AE020000 		.4byte	0x2ae
+ 559 01fd 0B020000 		.4byte	0x20b
+ 560 0201 0F       		.uleb128 0xf
+ 561 0202 01       		.byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 11
+
+
+ 562 0203 50       		.byte	0x50
+ 563 0204 05       		.byte	0x5
+ 564 0205 7D       		.byte	0x7d
+ 565 0206 00       		.sleb128 0
+ 566 0207 F6       		.byte	0xf6
+ 567 0208 04       		.byte	0x4
+ 568 0209 29       		.uleb128 0x29
+ 569 020a 00       		.byte	0
+ 570 020b 19       		.uleb128 0x19
+ 571 020c 1A000000 		.4byte	.LVL14
+ 572 0210 AE020000 		.4byte	0x2ae
+ 573 0214 0F       		.uleb128 0xf
+ 574 0215 01       		.byte	0x1
+ 575 0216 50       		.byte	0x50
+ 576 0217 05       		.byte	0x5
+ 577 0218 91       		.byte	0x91
+ 578 0219 74       		.sleb128 -12
+ 579 021a F6       		.byte	0xf6
+ 580 021b 04       		.byte	0x4
+ 581 021c 29       		.uleb128 0x29
+ 582 021d 00       		.byte	0
+ 583 021e 00       		.byte	0
+ 584 021f 09       		.uleb128 0x9
+ 585 0220 01       		.byte	0x1
+ 586 0221 4E010000 		.4byte	.LASF22
+ 587 0225 01       		.byte	0x1
+ 588 0226 26       		.byte	0x26
+ 589 0227 01       		.byte	0x1
+ 590 0228 29000000 		.4byte	0x29
+ 591 022c 00000000 		.4byte	.LFB11
+ 592 0230 2C000000 		.4byte	.LFE11
+ 593 0234 14010000 		.4byte	.LLST8
+ 594 0238 01       		.byte	0x1
+ 595 0239 5A020000 		.4byte	0x25a
+ 596 023d 1A       		.uleb128 0x1a
+ 597 023e 09000000 		.4byte	.LASF23
+ 598 0242 01       		.byte	0x1
+ 599 0243 26       		.byte	0x26
+ 600 0244 BB000000 		.4byte	0xbb
+ 601 0248 02       		.byte	0x2
+ 602 0249 91       		.byte	0x91
+ 603 024a 68       		.sleb128 -24
+ 604 024b 17       		.uleb128 0x17
+ 605 024c 73656300 		.ascii	"sec\000"
+ 606 0250 01       		.byte	0x1
+ 607 0251 26       		.byte	0x26
+ 608 0252 BB000000 		.4byte	0xbb
+ 609 0256 02       		.byte	0x2
+ 610 0257 91       		.byte	0x91
+ 611 0258 60       		.sleb128 -32
+ 612 0259 00       		.byte	0
+ 613 025a 09       		.uleb128 0x9
+ 614 025b 01       		.byte	0x1
+ 615 025c 27010000 		.4byte	.LASF24
+ 616 0260 01       		.byte	0x1
+ 617 0261 2B       		.byte	0x2b
+ 618 0262 01       		.byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 12
+
+
+ 619 0263 29000000 		.4byte	0x29
+ 620 0267 00000000 		.4byte	.LFB12
+ 621 026b 2C000000 		.4byte	.LFE12
+ 622 026f 40010000 		.4byte	.LLST9
+ 623 0273 01       		.byte	0x1
+ 624 0274 95020000 		.4byte	0x295
+ 625 0278 1A       		.uleb128 0x1a
+ 626 0279 09000000 		.4byte	.LASF23
+ 627 027d 01       		.byte	0x1
+ 628 027e 2B       		.byte	0x2b
+ 629 027f BB000000 		.4byte	0xbb
+ 630 0283 02       		.byte	0x2
+ 631 0284 91       		.byte	0x91
+ 632 0285 68       		.sleb128 -24
+ 633 0286 17       		.uleb128 0x17
+ 634 0287 73656300 		.ascii	"sec\000"
+ 635 028b 01       		.byte	0x1
+ 636 028c 2B       		.byte	0x2b
+ 637 028d BB000000 		.4byte	0xbb
+ 638 0291 02       		.byte	0x2
+ 639 0292 91       		.byte	0x91
+ 640 0293 60       		.sleb128 -32
+ 641 0294 00       		.byte	0
+ 642 0295 1B       		.uleb128 0x1b
+ 643 0296 01       		.byte	0x1
+ 644 0297 6B000000 		.4byte	.LASF26
+ 645 029b 04       		.byte	0x4
+ 646 029c 3501     		.2byte	0x135
+ 647 029e 01       		.byte	0x1
+ 648 029f 29000000 		.4byte	0x29
+ 649 02a3 01       		.byte	0x1
+ 650 02a4 AE020000 		.4byte	0x2ae
+ 651 02a8 1C       		.uleb128 0x1c
+ 652 02a9 29000000 		.4byte	0x29
+ 653 02ad 00       		.byte	0
+ 654 02ae 1D       		.uleb128 0x1d
+ 655 02af 01       		.byte	0x1
+ 656 02b0 0F000000 		.4byte	.LASF29
+ 657 02b4 04       		.byte	0x4
+ 658 02b5 B0       		.byte	0xb0
+ 659 02b6 01       		.byte	0x1
+ 660 02b7 30000000 		.4byte	0x30
+ 661 02bb 01       		.byte	0x1
+ 662 02bc 1C       		.uleb128 0x1c
+ 663 02bd 29000000 		.4byte	0x29
+ 664 02c1 00       		.byte	0
+ 665 02c2 00       		.byte	0
+ 666              		.section	.debug_abbrev,"",%progbits
+ 667              	.Ldebug_abbrev0:
+ 668 0000 01       		.uleb128 0x1
+ 669 0001 11       		.uleb128 0x11
+ 670 0002 01       		.byte	0x1
+ 671 0003 25       		.uleb128 0x25
+ 672 0004 0E       		.uleb128 0xe
+ 673 0005 13       		.uleb128 0x13
+ 674 0006 0B       		.uleb128 0xb
+ 675 0007 03       		.uleb128 0x3
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 13
+
+
+ 676 0008 0E       		.uleb128 0xe
+ 677 0009 1B       		.uleb128 0x1b
+ 678 000a 0E       		.uleb128 0xe
+ 679 000b 55       		.uleb128 0x55
+ 680 000c 06       		.uleb128 0x6
+ 681 000d 11       		.uleb128 0x11
+ 682 000e 01       		.uleb128 0x1
+ 683 000f 52       		.uleb128 0x52
+ 684 0010 01       		.uleb128 0x1
+ 685 0011 10       		.uleb128 0x10
+ 686 0012 06       		.uleb128 0x6
+ 687 0013 00       		.byte	0
+ 688 0014 00       		.byte	0
+ 689 0015 02       		.uleb128 0x2
+ 690 0016 24       		.uleb128 0x24
+ 691 0017 00       		.byte	0
+ 692 0018 0B       		.uleb128 0xb
+ 693 0019 0B       		.uleb128 0xb
+ 694 001a 3E       		.uleb128 0x3e
+ 695 001b 0B       		.uleb128 0xb
+ 696 001c 03       		.uleb128 0x3
+ 697 001d 0E       		.uleb128 0xe
+ 698 001e 00       		.byte	0
+ 699 001f 00       		.byte	0
+ 700 0020 03       		.uleb128 0x3
+ 701 0021 24       		.uleb128 0x24
+ 702 0022 00       		.byte	0
+ 703 0023 0B       		.uleb128 0xb
+ 704 0024 0B       		.uleb128 0xb
+ 705 0025 3E       		.uleb128 0x3e
+ 706 0026 0B       		.uleb128 0xb
+ 707 0027 03       		.uleb128 0x3
+ 708 0028 08       		.uleb128 0x8
+ 709 0029 00       		.byte	0
+ 710 002a 00       		.byte	0
+ 711 002b 04       		.uleb128 0x4
+ 712 002c 16       		.uleb128 0x16
+ 713 002d 00       		.byte	0
+ 714 002e 03       		.uleb128 0x3
+ 715 002f 0E       		.uleb128 0xe
+ 716 0030 3A       		.uleb128 0x3a
+ 717 0031 0B       		.uleb128 0xb
+ 718 0032 3B       		.uleb128 0x3b
+ 719 0033 0B       		.uleb128 0xb
+ 720 0034 49       		.uleb128 0x49
+ 721 0035 13       		.uleb128 0x13
+ 722 0036 00       		.byte	0
+ 723 0037 00       		.byte	0
+ 724 0038 05       		.uleb128 0x5
+ 725 0039 13       		.uleb128 0x13
+ 726 003a 01       		.byte	0x1
+ 727 003b 03       		.uleb128 0x3
+ 728 003c 0E       		.uleb128 0xe
+ 729 003d 0B       		.uleb128 0xb
+ 730 003e 0B       		.uleb128 0xb
+ 731 003f 3A       		.uleb128 0x3a
+ 732 0040 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 14
+
+
+ 733 0041 3B       		.uleb128 0x3b
+ 734 0042 0B       		.uleb128 0xb
+ 735 0043 01       		.uleb128 0x1
+ 736 0044 13       		.uleb128 0x13
+ 737 0045 00       		.byte	0
+ 738 0046 00       		.byte	0
+ 739 0047 06       		.uleb128 0x6
+ 740 0048 0D       		.uleb128 0xd
+ 741 0049 00       		.byte	0
+ 742 004a 03       		.uleb128 0x3
+ 743 004b 08       		.uleb128 0x8
+ 744 004c 3A       		.uleb128 0x3a
+ 745 004d 0B       		.uleb128 0xb
+ 746 004e 3B       		.uleb128 0x3b
+ 747 004f 0B       		.uleb128 0xb
+ 748 0050 49       		.uleb128 0x49
+ 749 0051 13       		.uleb128 0x13
+ 750 0052 38       		.uleb128 0x38
+ 751 0053 0A       		.uleb128 0xa
+ 752 0054 00       		.byte	0
+ 753 0055 00       		.byte	0
+ 754 0056 07       		.uleb128 0x7
+ 755 0057 2E       		.uleb128 0x2e
+ 756 0058 01       		.byte	0x1
+ 757 0059 3F       		.uleb128 0x3f
+ 758 005a 0C       		.uleb128 0xc
+ 759 005b 03       		.uleb128 0x3
+ 760 005c 0E       		.uleb128 0xe
+ 761 005d 3A       		.uleb128 0x3a
+ 762 005e 0B       		.uleb128 0xb
+ 763 005f 3B       		.uleb128 0x3b
+ 764 0060 0B       		.uleb128 0xb
+ 765 0061 27       		.uleb128 0x27
+ 766 0062 0C       		.uleb128 0xc
+ 767 0063 49       		.uleb128 0x49
+ 768 0064 13       		.uleb128 0x13
+ 769 0065 20       		.uleb128 0x20
+ 770 0066 0B       		.uleb128 0xb
+ 771 0067 01       		.uleb128 0x1
+ 772 0068 13       		.uleb128 0x13
+ 773 0069 00       		.byte	0
+ 774 006a 00       		.byte	0
+ 775 006b 08       		.uleb128 0x8
+ 776 006c 05       		.uleb128 0x5
+ 777 006d 00       		.byte	0
+ 778 006e 03       		.uleb128 0x3
+ 779 006f 08       		.uleb128 0x8
+ 780 0070 3A       		.uleb128 0x3a
+ 781 0071 0B       		.uleb128 0xb
+ 782 0072 3B       		.uleb128 0x3b
+ 783 0073 0B       		.uleb128 0xb
+ 784 0074 49       		.uleb128 0x49
+ 785 0075 13       		.uleb128 0x13
+ 786 0076 00       		.byte	0
+ 787 0077 00       		.byte	0
+ 788 0078 09       		.uleb128 0x9
+ 789 0079 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 15
+
+
+ 790 007a 01       		.byte	0x1
+ 791 007b 3F       		.uleb128 0x3f
+ 792 007c 0C       		.uleb128 0xc
+ 793 007d 03       		.uleb128 0x3
+ 794 007e 0E       		.uleb128 0xe
+ 795 007f 3A       		.uleb128 0x3a
+ 796 0080 0B       		.uleb128 0xb
+ 797 0081 3B       		.uleb128 0x3b
+ 798 0082 0B       		.uleb128 0xb
+ 799 0083 27       		.uleb128 0x27
+ 800 0084 0C       		.uleb128 0xc
+ 801 0085 49       		.uleb128 0x49
+ 802 0086 13       		.uleb128 0x13
+ 803 0087 11       		.uleb128 0x11
+ 804 0088 01       		.uleb128 0x1
+ 805 0089 12       		.uleb128 0x12
+ 806 008a 01       		.uleb128 0x1
+ 807 008b 40       		.uleb128 0x40
+ 808 008c 06       		.uleb128 0x6
+ 809 008d 9642     		.uleb128 0x2116
+ 810 008f 0C       		.uleb128 0xc
+ 811 0090 01       		.uleb128 0x1
+ 812 0091 13       		.uleb128 0x13
+ 813 0092 00       		.byte	0
+ 814 0093 00       		.byte	0
+ 815 0094 0A       		.uleb128 0xa
+ 816 0095 05       		.uleb128 0x5
+ 817 0096 00       		.byte	0
+ 818 0097 03       		.uleb128 0x3
+ 819 0098 08       		.uleb128 0x8
+ 820 0099 3A       		.uleb128 0x3a
+ 821 009a 0B       		.uleb128 0xb
+ 822 009b 3B       		.uleb128 0x3b
+ 823 009c 0B       		.uleb128 0xb
+ 824 009d 49       		.uleb128 0x49
+ 825 009e 13       		.uleb128 0x13
+ 826 009f 02       		.uleb128 0x2
+ 827 00a0 06       		.uleb128 0x6
+ 828 00a1 00       		.byte	0
+ 829 00a2 00       		.byte	0
+ 830 00a3 0B       		.uleb128 0xb
+ 831 00a4 898201   		.uleb128 0x4109
+ 832 00a7 00       		.byte	0
+ 833 00a8 11       		.uleb128 0x11
+ 834 00a9 01       		.uleb128 0x1
+ 835 00aa 9542     		.uleb128 0x2115
+ 836 00ac 0C       		.uleb128 0xc
+ 837 00ad 31       		.uleb128 0x31
+ 838 00ae 13       		.uleb128 0x13
+ 839 00af 00       		.byte	0
+ 840 00b0 00       		.byte	0
+ 841 00b1 0C       		.uleb128 0xc
+ 842 00b2 2E       		.uleb128 0x2e
+ 843 00b3 01       		.byte	0x1
+ 844 00b4 31       		.uleb128 0x31
+ 845 00b5 13       		.uleb128 0x13
+ 846 00b6 11       		.uleb128 0x11
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 16
+
+
+ 847 00b7 01       		.uleb128 0x1
+ 848 00b8 12       		.uleb128 0x12
+ 849 00b9 01       		.uleb128 0x1
+ 850 00ba 40       		.uleb128 0x40
+ 851 00bb 06       		.uleb128 0x6
+ 852 00bc 9742     		.uleb128 0x2117
+ 853 00be 0C       		.uleb128 0xc
+ 854 00bf 01       		.uleb128 0x1
+ 855 00c0 13       		.uleb128 0x13
+ 856 00c1 00       		.byte	0
+ 857 00c2 00       		.byte	0
+ 858 00c3 0D       		.uleb128 0xd
+ 859 00c4 05       		.uleb128 0x5
+ 860 00c5 00       		.byte	0
+ 861 00c6 31       		.uleb128 0x31
+ 862 00c7 13       		.uleb128 0x13
+ 863 00c8 02       		.uleb128 0x2
+ 864 00c9 0A       		.uleb128 0xa
+ 865 00ca 00       		.byte	0
+ 866 00cb 00       		.byte	0
+ 867 00cc 0E       		.uleb128 0xe
+ 868 00cd 898201   		.uleb128 0x4109
+ 869 00d0 01       		.byte	0x1
+ 870 00d1 11       		.uleb128 0x11
+ 871 00d2 01       		.uleb128 0x1
+ 872 00d3 9542     		.uleb128 0x2115
+ 873 00d5 0C       		.uleb128 0xc
+ 874 00d6 31       		.uleb128 0x31
+ 875 00d7 13       		.uleb128 0x13
+ 876 00d8 00       		.byte	0
+ 877 00d9 00       		.byte	0
+ 878 00da 0F       		.uleb128 0xf
+ 879 00db 8A8201   		.uleb128 0x410a
+ 880 00de 00       		.byte	0
+ 881 00df 02       		.uleb128 0x2
+ 882 00e0 0A       		.uleb128 0xa
+ 883 00e1 9142     		.uleb128 0x2111
+ 884 00e3 0A       		.uleb128 0xa
+ 885 00e4 00       		.byte	0
+ 886 00e5 00       		.byte	0
+ 887 00e6 10       		.uleb128 0x10
+ 888 00e7 2E       		.uleb128 0x2e
+ 889 00e8 01       		.byte	0x1
+ 890 00e9 3F       		.uleb128 0x3f
+ 891 00ea 0C       		.uleb128 0xc
+ 892 00eb 03       		.uleb128 0x3
+ 893 00ec 0E       		.uleb128 0xe
+ 894 00ed 3A       		.uleb128 0x3a
+ 895 00ee 0B       		.uleb128 0xb
+ 896 00ef 3B       		.uleb128 0x3b
+ 897 00f0 0B       		.uleb128 0xb
+ 898 00f1 27       		.uleb128 0x27
+ 899 00f2 0C       		.uleb128 0xc
+ 900 00f3 11       		.uleb128 0x11
+ 901 00f4 01       		.uleb128 0x1
+ 902 00f5 12       		.uleb128 0x12
+ 903 00f6 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 17
+
+
+ 904 00f7 40       		.uleb128 0x40
+ 905 00f8 06       		.uleb128 0x6
+ 906 00f9 9642     		.uleb128 0x2116
+ 907 00fb 0C       		.uleb128 0xc
+ 908 00fc 01       		.uleb128 0x1
+ 909 00fd 13       		.uleb128 0x13
+ 910 00fe 00       		.byte	0
+ 911 00ff 00       		.byte	0
+ 912 0100 11       		.uleb128 0x11
+ 913 0101 34       		.uleb128 0x34
+ 914 0102 00       		.byte	0
+ 915 0103 03       		.uleb128 0x3
+ 916 0104 08       		.uleb128 0x8
+ 917 0105 3A       		.uleb128 0x3a
+ 918 0106 0B       		.uleb128 0xb
+ 919 0107 3B       		.uleb128 0x3b
+ 920 0108 0B       		.uleb128 0xb
+ 921 0109 49       		.uleb128 0x49
+ 922 010a 13       		.uleb128 0x13
+ 923 010b 02       		.uleb128 0x2
+ 924 010c 0A       		.uleb128 0xa
+ 925 010d 00       		.byte	0
+ 926 010e 00       		.byte	0
+ 927 010f 12       		.uleb128 0x12
+ 928 0110 1D       		.uleb128 0x1d
+ 929 0111 01       		.byte	0x1
+ 930 0112 31       		.uleb128 0x31
+ 931 0113 13       		.uleb128 0x13
+ 932 0114 52       		.uleb128 0x52
+ 933 0115 01       		.uleb128 0x1
+ 934 0116 55       		.uleb128 0x55
+ 935 0117 06       		.uleb128 0x6
+ 936 0118 58       		.uleb128 0x58
+ 937 0119 0B       		.uleb128 0xb
+ 938 011a 59       		.uleb128 0x59
+ 939 011b 0B       		.uleb128 0xb
+ 940 011c 00       		.byte	0
+ 941 011d 00       		.byte	0
+ 942 011e 13       		.uleb128 0x13
+ 943 011f 05       		.uleb128 0x5
+ 944 0120 00       		.byte	0
+ 945 0121 31       		.uleb128 0x31
+ 946 0122 13       		.uleb128 0x13
+ 947 0123 02       		.uleb128 0x2
+ 948 0124 06       		.uleb128 0x6
+ 949 0125 00       		.byte	0
+ 950 0126 00       		.byte	0
+ 951 0127 14       		.uleb128 0x14
+ 952 0128 898201   		.uleb128 0x4109
+ 953 012b 00       		.byte	0
+ 954 012c 11       		.uleb128 0x11
+ 955 012d 01       		.uleb128 0x1
+ 956 012e 31       		.uleb128 0x31
+ 957 012f 13       		.uleb128 0x13
+ 958 0130 00       		.byte	0
+ 959 0131 00       		.byte	0
+ 960 0132 15       		.uleb128 0x15
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 18
+
+
+ 961 0133 0F       		.uleb128 0xf
+ 962 0134 00       		.byte	0
+ 963 0135 0B       		.uleb128 0xb
+ 964 0136 0B       		.uleb128 0xb
+ 965 0137 49       		.uleb128 0x49
+ 966 0138 13       		.uleb128 0x13
+ 967 0139 00       		.byte	0
+ 968 013a 00       		.byte	0
+ 969 013b 16       		.uleb128 0x16
+ 970 013c 2E       		.uleb128 0x2e
+ 971 013d 01       		.byte	0x1
+ 972 013e 3F       		.uleb128 0x3f
+ 973 013f 0C       		.uleb128 0xc
+ 974 0140 03       		.uleb128 0x3
+ 975 0141 0E       		.uleb128 0xe
+ 976 0142 3A       		.uleb128 0x3a
+ 977 0143 0B       		.uleb128 0xb
+ 978 0144 3B       		.uleb128 0x3b
+ 979 0145 0B       		.uleb128 0xb
+ 980 0146 27       		.uleb128 0x27
+ 981 0147 0C       		.uleb128 0xc
+ 982 0148 49       		.uleb128 0x49
+ 983 0149 13       		.uleb128 0x13
+ 984 014a 11       		.uleb128 0x11
+ 985 014b 01       		.uleb128 0x1
+ 986 014c 12       		.uleb128 0x12
+ 987 014d 01       		.uleb128 0x1
+ 988 014e 40       		.uleb128 0x40
+ 989 014f 06       		.uleb128 0x6
+ 990 0150 9742     		.uleb128 0x2117
+ 991 0152 0C       		.uleb128 0xc
+ 992 0153 01       		.uleb128 0x1
+ 993 0154 13       		.uleb128 0x13
+ 994 0155 00       		.byte	0
+ 995 0156 00       		.byte	0
+ 996 0157 17       		.uleb128 0x17
+ 997 0158 05       		.uleb128 0x5
+ 998 0159 00       		.byte	0
+ 999 015a 03       		.uleb128 0x3
+ 1000 015b 08       		.uleb128 0x8
+ 1001 015c 3A       		.uleb128 0x3a
+ 1002 015d 0B       		.uleb128 0xb
+ 1003 015e 3B       		.uleb128 0x3b
+ 1004 015f 0B       		.uleb128 0xb
+ 1005 0160 49       		.uleb128 0x49
+ 1006 0161 13       		.uleb128 0x13
+ 1007 0162 02       		.uleb128 0x2
+ 1008 0163 0A       		.uleb128 0xa
+ 1009 0164 00       		.byte	0
+ 1010 0165 00       		.byte	0
+ 1011 0166 18       		.uleb128 0x18
+ 1012 0167 898201   		.uleb128 0x4109
+ 1013 016a 01       		.byte	0x1
+ 1014 016b 11       		.uleb128 0x11
+ 1015 016c 01       		.uleb128 0x1
+ 1016 016d 31       		.uleb128 0x31
+ 1017 016e 13       		.uleb128 0x13
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 19
+
+
+ 1018 016f 01       		.uleb128 0x1
+ 1019 0170 13       		.uleb128 0x13
+ 1020 0171 00       		.byte	0
+ 1021 0172 00       		.byte	0
+ 1022 0173 19       		.uleb128 0x19
+ 1023 0174 898201   		.uleb128 0x4109
+ 1024 0177 01       		.byte	0x1
+ 1025 0178 11       		.uleb128 0x11
+ 1026 0179 01       		.uleb128 0x1
+ 1027 017a 31       		.uleb128 0x31
+ 1028 017b 13       		.uleb128 0x13
+ 1029 017c 00       		.byte	0
+ 1030 017d 00       		.byte	0
+ 1031 017e 1A       		.uleb128 0x1a
+ 1032 017f 05       		.uleb128 0x5
+ 1033 0180 00       		.byte	0
+ 1034 0181 03       		.uleb128 0x3
+ 1035 0182 0E       		.uleb128 0xe
+ 1036 0183 3A       		.uleb128 0x3a
+ 1037 0184 0B       		.uleb128 0xb
+ 1038 0185 3B       		.uleb128 0x3b
+ 1039 0186 0B       		.uleb128 0xb
+ 1040 0187 49       		.uleb128 0x49
+ 1041 0188 13       		.uleb128 0x13
+ 1042 0189 02       		.uleb128 0x2
+ 1043 018a 0A       		.uleb128 0xa
+ 1044 018b 00       		.byte	0
+ 1045 018c 00       		.byte	0
+ 1046 018d 1B       		.uleb128 0x1b
+ 1047 018e 2E       		.uleb128 0x2e
+ 1048 018f 01       		.byte	0x1
+ 1049 0190 3F       		.uleb128 0x3f
+ 1050 0191 0C       		.uleb128 0xc
+ 1051 0192 03       		.uleb128 0x3
+ 1052 0193 0E       		.uleb128 0xe
+ 1053 0194 3A       		.uleb128 0x3a
+ 1054 0195 0B       		.uleb128 0xb
+ 1055 0196 3B       		.uleb128 0x3b
+ 1056 0197 05       		.uleb128 0x5
+ 1057 0198 27       		.uleb128 0x27
+ 1058 0199 0C       		.uleb128 0xc
+ 1059 019a 49       		.uleb128 0x49
+ 1060 019b 13       		.uleb128 0x13
+ 1061 019c 3C       		.uleb128 0x3c
+ 1062 019d 0C       		.uleb128 0xc
+ 1063 019e 01       		.uleb128 0x1
+ 1064 019f 13       		.uleb128 0x13
+ 1065 01a0 00       		.byte	0
+ 1066 01a1 00       		.byte	0
+ 1067 01a2 1C       		.uleb128 0x1c
+ 1068 01a3 05       		.uleb128 0x5
+ 1069 01a4 00       		.byte	0
+ 1070 01a5 49       		.uleb128 0x49
+ 1071 01a6 13       		.uleb128 0x13
+ 1072 01a7 00       		.byte	0
+ 1073 01a8 00       		.byte	0
+ 1074 01a9 1D       		.uleb128 0x1d
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 20
+
+
+ 1075 01aa 2E       		.uleb128 0x2e
+ 1076 01ab 01       		.byte	0x1
+ 1077 01ac 3F       		.uleb128 0x3f
+ 1078 01ad 0C       		.uleb128 0xc
+ 1079 01ae 03       		.uleb128 0x3
+ 1080 01af 0E       		.uleb128 0xe
+ 1081 01b0 3A       		.uleb128 0x3a
+ 1082 01b1 0B       		.uleb128 0xb
+ 1083 01b2 3B       		.uleb128 0x3b
+ 1084 01b3 0B       		.uleb128 0xb
+ 1085 01b4 27       		.uleb128 0x27
+ 1086 01b5 0C       		.uleb128 0xc
+ 1087 01b6 49       		.uleb128 0x49
+ 1088 01b7 13       		.uleb128 0x13
+ 1089 01b8 3C       		.uleb128 0x3c
+ 1090 01b9 0C       		.uleb128 0xc
+ 1091 01ba 00       		.byte	0
+ 1092 01bb 00       		.byte	0
+ 1093 01bc 00       		.byte	0
+ 1094              		.section	.debug_loc,"",%progbits
+ 1095              	.Ldebug_loc0:
+ 1096              	.LLST0:
+ 1097 0000 00000000 		.4byte	.LFB7
+ 1098 0004 02000000 		.4byte	.LCFI0
+ 1099 0008 0200     		.2byte	0x2
+ 1100 000a 7D       		.byte	0x7d
+ 1101 000b 00       		.sleb128 0
+ 1102 000c 02000000 		.4byte	.LCFI0
+ 1103 0010 24000000 		.4byte	.LFE7
+ 1104 0014 0200     		.2byte	0x2
+ 1105 0016 7D       		.byte	0x7d
+ 1106 0017 10       		.sleb128 16
+ 1107 0018 00000000 		.4byte	0
+ 1108 001c 00000000 		.4byte	0
+ 1109              	.LLST1:
+ 1110 0020 00000000 		.4byte	.LVL0
+ 1111 0024 09000000 		.4byte	.LVL2-1
+ 1112 0028 0100     		.2byte	0x1
+ 1113 002a 50       		.byte	0x50
+ 1114 002b 09000000 		.4byte	.LVL2-1
+ 1115 002f 24000000 		.4byte	.LFE7
+ 1116 0033 0600     		.2byte	0x6
+ 1117 0035 F3       		.byte	0xf3
+ 1118 0036 03       		.uleb128 0x3
+ 1119 0037 F5       		.byte	0xf5
+ 1120 0038 00       		.uleb128 0
+ 1121 0039 29       		.uleb128 0x29
+ 1122 003a 9F       		.byte	0x9f
+ 1123 003b 00000000 		.4byte	0
+ 1124 003f 00000000 		.4byte	0
+ 1125              	.LLST2:
+ 1126 0043 00000000 		.4byte	.LVL0
+ 1127 0047 06000000 		.4byte	.LVL1
+ 1128 004b 0100     		.2byte	0x1
+ 1129 004d 51       		.byte	0x51
+ 1130 004e 06000000 		.4byte	.LVL1
+ 1131 0052 24000000 		.4byte	.LFE7
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 21
+
+
+ 1132 0056 0100     		.2byte	0x1
+ 1133 0058 55       		.byte	0x55
+ 1134 0059 00000000 		.4byte	0
+ 1135 005d 00000000 		.4byte	0
+ 1136              	.LLST3:
+ 1137 0061 00000000 		.4byte	.LFB8
+ 1138 0065 02000000 		.4byte	.LCFI1
+ 1139 0069 0200     		.2byte	0x2
+ 1140 006b 7D       		.byte	0x7d
+ 1141 006c 00       		.sleb128 0
+ 1142 006d 02000000 		.4byte	.LCFI1
+ 1143 0071 12000000 		.4byte	.LFE8
+ 1144 0075 0200     		.2byte	0x2
+ 1145 0077 7D       		.byte	0x7d
+ 1146 0078 08       		.sleb128 8
+ 1147 0079 00000000 		.4byte	0
+ 1148 007d 00000000 		.4byte	0
+ 1149              	.LLST4:
+ 1150 0081 00000000 		.4byte	.LFB9
+ 1151 0085 02000000 		.4byte	.LCFI2
+ 1152 0089 0200     		.2byte	0x2
+ 1153 008b 7D       		.byte	0x7d
+ 1154 008c 00       		.sleb128 0
+ 1155 008d 02000000 		.4byte	.LCFI2
+ 1156 0091 24000000 		.4byte	.LFE9
+ 1157 0095 0200     		.2byte	0x2
+ 1158 0097 7D       		.byte	0x7d
+ 1159 0098 10       		.sleb128 16
+ 1160 0099 00000000 		.4byte	0
+ 1161 009d 00000000 		.4byte	0
+ 1162              	.LLST5:
+ 1163 00a1 00000000 		.4byte	.LVL7
+ 1164 00a5 08000000 		.4byte	.LVL9
+ 1165 00a9 0100     		.2byte	0x1
+ 1166 00ab 50       		.byte	0x50
+ 1167 00ac 08000000 		.4byte	.LVL9
+ 1168 00b0 24000000 		.4byte	.LFE9
+ 1169 00b4 0100     		.2byte	0x1
+ 1170 00b6 54       		.byte	0x54
+ 1171 00b7 00000000 		.4byte	0
+ 1172 00bb 00000000 		.4byte	0
+ 1173              	.LLST6:
+ 1174 00bf 06000000 		.4byte	.LVL8
+ 1175 00c3 08000000 		.4byte	.LVL9
+ 1176 00c7 0700     		.2byte	0x7
+ 1177 00c9 70       		.byte	0x70
+ 1178 00ca 00       		.sleb128 0
+ 1179 00cb 93       		.byte	0x93
+ 1180 00cc 04       		.uleb128 0x4
+ 1181 00cd 51       		.byte	0x51
+ 1182 00ce 93       		.byte	0x93
+ 1183 00cf 04       		.uleb128 0x4
+ 1184 00d0 08000000 		.4byte	.LVL9
+ 1185 00d4 0B000000 		.4byte	.LVL10-1
+ 1186 00d8 0600     		.2byte	0x6
+ 1187 00da 50       		.byte	0x50
+ 1188 00db 93       		.byte	0x93
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 22
+
+
+ 1189 00dc 04       		.uleb128 0x4
+ 1190 00dd 51       		.byte	0x51
+ 1191 00de 93       		.byte	0x93
+ 1192 00df 04       		.uleb128 0x4
+ 1193 00e0 00000000 		.4byte	0
+ 1194 00e4 00000000 		.4byte	0
+ 1195              	.LLST7:
+ 1196 00e8 00000000 		.4byte	.LFB10
+ 1197 00ec 02000000 		.4byte	.LCFI3
+ 1198 00f0 0200     		.2byte	0x2
+ 1199 00f2 7D       		.byte	0x7d
+ 1200 00f3 00       		.sleb128 0
+ 1201 00f4 02000000 		.4byte	.LCFI3
+ 1202 00f8 04000000 		.4byte	.LCFI4
+ 1203 00fc 0200     		.2byte	0x2
+ 1204 00fe 7D       		.byte	0x7d
+ 1205 00ff 04       		.sleb128 4
+ 1206 0100 04000000 		.4byte	.LCFI4
+ 1207 0104 24000000 		.4byte	.LFE10
+ 1208 0108 0200     		.2byte	0x2
+ 1209 010a 7D       		.byte	0x7d
+ 1210 010b 10       		.sleb128 16
+ 1211 010c 00000000 		.4byte	0
+ 1212 0110 00000000 		.4byte	0
+ 1213              	.LLST8:
+ 1214 0114 00000000 		.4byte	.LFB11
+ 1215 0118 02000000 		.4byte	.LCFI5
+ 1216 011c 0200     		.2byte	0x2
+ 1217 011e 7D       		.byte	0x7d
+ 1218 011f 00       		.sleb128 0
+ 1219 0120 02000000 		.4byte	.LCFI5
+ 1220 0124 04000000 		.4byte	.LCFI6
+ 1221 0128 0200     		.2byte	0x2
+ 1222 012a 7D       		.byte	0x7d
+ 1223 012b 0C       		.sleb128 12
+ 1224 012c 04000000 		.4byte	.LCFI6
+ 1225 0130 2C000000 		.4byte	.LFE11
+ 1226 0134 0200     		.2byte	0x2
+ 1227 0136 7D       		.byte	0x7d
+ 1228 0137 20       		.sleb128 32
+ 1229 0138 00000000 		.4byte	0
+ 1230 013c 00000000 		.4byte	0
+ 1231              	.LLST9:
+ 1232 0140 00000000 		.4byte	.LFB12
+ 1233 0144 02000000 		.4byte	.LCFI7
+ 1234 0148 0200     		.2byte	0x2
+ 1235 014a 7D       		.byte	0x7d
+ 1236 014b 00       		.sleb128 0
+ 1237 014c 02000000 		.4byte	.LCFI7
+ 1238 0150 04000000 		.4byte	.LCFI8
+ 1239 0154 0200     		.2byte	0x2
+ 1240 0156 7D       		.byte	0x7d
+ 1241 0157 0C       		.sleb128 12
+ 1242 0158 04000000 		.4byte	.LCFI8
+ 1243 015c 2C000000 		.4byte	.LFE12
+ 1244 0160 0200     		.2byte	0x2
+ 1245 0162 7D       		.byte	0x7d
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 23
+
+
+ 1246 0163 20       		.sleb128 32
+ 1247 0164 00000000 		.4byte	0
+ 1248 0168 00000000 		.4byte	0
+ 1249              		.section	.debug_aranges,"",%progbits
+ 1250 0000 44000000 		.4byte	0x44
+ 1251 0004 0200     		.2byte	0x2
+ 1252 0006 00000000 		.4byte	.Ldebug_info0
+ 1253 000a 04       		.byte	0x4
+ 1254 000b 00       		.byte	0
+ 1255 000c 0000     		.2byte	0
+ 1256 000e 0000     		.2byte	0
+ 1257 0010 00000000 		.4byte	.LFB7
+ 1258 0014 24000000 		.4byte	.LFE7-.LFB7
+ 1259 0018 00000000 		.4byte	.LFB8
+ 1260 001c 12000000 		.4byte	.LFE8-.LFB8
+ 1261 0020 00000000 		.4byte	.LFB9
+ 1262 0024 24000000 		.4byte	.LFE9-.LFB9
+ 1263 0028 00000000 		.4byte	.LFB10
+ 1264 002c 24000000 		.4byte	.LFE10-.LFB10
+ 1265 0030 00000000 		.4byte	.LFB11
+ 1266 0034 2C000000 		.4byte	.LFE11-.LFB11
+ 1267 0038 00000000 		.4byte	.LFB12
+ 1268 003c 2C000000 		.4byte	.LFE12-.LFB12
+ 1269 0040 00000000 		.4byte	0
+ 1270 0044 00000000 		.4byte	0
+ 1271              		.section	.debug_ranges,"",%progbits
+ 1272              	.Ldebug_ranges0:
+ 1273 0000 02000000 		.4byte	.LBB4
+ 1274 0004 04000000 		.4byte	.LBE4
+ 1275 0008 06000000 		.4byte	.LBB8
+ 1276 000c 0C000000 		.4byte	.LBE8
+ 1277 0010 0E000000 		.4byte	.LBB9
+ 1278 0014 10000000 		.4byte	.LBE9
+ 1279 0018 00000000 		.4byte	0
+ 1280 001c 00000000 		.4byte	0
+ 1281 0020 00000000 		.4byte	.LFB7
+ 1282 0024 24000000 		.4byte	.LFE7
+ 1283 0028 00000000 		.4byte	.LFB8
+ 1284 002c 12000000 		.4byte	.LFE8
+ 1285 0030 00000000 		.4byte	.LFB9
+ 1286 0034 24000000 		.4byte	.LFE9
+ 1287 0038 00000000 		.4byte	.LFB10
+ 1288 003c 24000000 		.4byte	.LFE10
+ 1289 0040 00000000 		.4byte	.LFB11
+ 1290 0044 2C000000 		.4byte	.LFE11
+ 1291 0048 00000000 		.4byte	.LFB12
+ 1292 004c 2C000000 		.4byte	.LFE12
+ 1293 0050 00000000 		.4byte	0
+ 1294 0054 00000000 		.4byte	0
+ 1295              		.section	.debug_line,"",%progbits
+ 1296              	.Ldebug_line0:
+ 1297 0000 7F010000 		.section	.debug_str,"MS",%progbits,1
+ 1297      0200F400 
+ 1297      00000201 
+ 1297      FB0E0D00 
+ 1297      01010101 
+ 1298              	.LASF14:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 24
+
+
+ 1299 0000 56656374 		.ascii	"Vector2f\000"
+ 1299      6F723266 
+ 1299      00
+ 1300              	.LASF23:
+ 1301 0009 66697273 		.ascii	"first\000"
+ 1301      7400
+ 1302              	.LASF29:
+ 1303 000f 5F5F6670 		.ascii	"__fpclassifyf\000"
+ 1303      636C6173 
+ 1303      73696679 
+ 1303      6600
+ 1304              	.LASF21:
+ 1305 001d 56656374 		.ascii	"Vector2f_isinf\000"
+ 1305      6F723266 
+ 1305      5F697369 
+ 1305      6E6600
+ 1306              	.LASF13:
+ 1307 002c 626F6F6C 		.ascii	"bool_t\000"
+ 1307      5F7400
+ 1308              	.LASF19:
+ 1309 0033 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace\\DCM_test_3\000"
+ 1309      68696269 
+ 1309      53747564 
+ 1309      696F5C77 
+ 1309      6F726B73 
+ 1310              	.LASF0:
+ 1311 0057 666C6F61 		.ascii	"float\000"
+ 1311      7400
+ 1312              	.LASF3:
+ 1313 005d 756E7369 		.ascii	"unsigned char\000"
+ 1313      676E6564 
+ 1313      20636861 
+ 1313      7200
+ 1314              	.LASF26:
+ 1315 006b 73717274 		.ascii	"sqrtf\000"
+ 1315      6600
+ 1316              	.LASF7:
+ 1317 0071 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1317      20756E73 
+ 1317      69676E65 
+ 1317      6420696E 
+ 1317      7400
+ 1318              	.LASF5:
+ 1319 0083 73686F72 		.ascii	"short unsigned int\000"
+ 1319      7420756E 
+ 1319      7369676E 
+ 1319      65642069 
+ 1319      6E7400
+ 1320              	.LASF17:
+ 1321 0096 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 1321      4320342E 
+ 1321      372E3420 
+ 1321      32303134 
+ 1321      30343031 
+ 1322 00c9 616E6368 		.ascii	"anch revision 209195]\000"
+ 1322      20726576 
+ 1322      6973696F 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 25
+
+
+ 1322      6E203230 
+ 1322      39313935 
+ 1323              	.LASF15:
+ 1324 00df 646F7562 		.ascii	"double\000"
+ 1324      6C6500
+ 1325              	.LASF20:
+ 1326 00e6 70797468 		.ascii	"pythagorous2\000"
+ 1326      61676F72 
+ 1326      6F757332 
+ 1326      00
+ 1327              	.LASF25:
+ 1328 00f3 56656374 		.ascii	"Vector2f_Lenght\000"
+ 1328      6F723266 
+ 1328      5F4C656E 
+ 1328      67687400 
+ 1329              	.LASF1:
+ 1330 0103 756E7369 		.ascii	"unsigned int\000"
+ 1330      676E6564 
+ 1330      20696E74 
+ 1330      00
+ 1331              	.LASF9:
+ 1332 0110 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1332      206C6F6E 
+ 1332      6720756E 
+ 1332      7369676E 
+ 1332      65642069 
+ 1333              	.LASF24:
+ 1334 0127 56656374 		.ascii	"Vector2f_Cross_prod\000"
+ 1334      6F723266 
+ 1334      5F43726F 
+ 1334      73735F70 
+ 1334      726F6400 
+ 1335              	.LASF18:
+ 1336 013b 44505F4D 		.ascii	"DP_Math_Vector2f.c\000"
+ 1336      6174685F 
+ 1336      56656374 
+ 1336      6F723266 
+ 1336      2E6300
+ 1337              	.LASF22:
+ 1338 014e 56656374 		.ascii	"Vector2f_dot_prod\000"
+ 1338      6F723266 
+ 1338      5F646F74 
+ 1338      5F70726F 
+ 1338      6400
+ 1339              	.LASF11:
+ 1340 0160 73697A65 		.ascii	"sizetype\000"
+ 1340      74797065 
+ 1340      00
+ 1341              	.LASF8:
+ 1342 0169 6C6F6E67 		.ascii	"long long int\000"
+ 1342      206C6F6E 
+ 1342      6720696E 
+ 1342      7400
+ 1343              	.LASF12:
+ 1344 0177 63686172 		.ascii	"char\000"
+ 1344      00
+ 1345              	.LASF4:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 26
+
+
+ 1346 017c 73686F72 		.ascii	"short int\000"
+ 1346      7420696E 
+ 1346      7400
+ 1347              	.LASF28:
+ 1348 0186 56656374 		.ascii	"Vector2f_normalize\000"
+ 1348      6F723266 
+ 1348      5F6E6F72 
+ 1348      6D616C69 
+ 1348      7A6500
+ 1349              	.LASF27:
+ 1350 0199 56454354 		.ascii	"VECTOR1\000"
+ 1350      4F523100 
+ 1351              	.LASF6:
+ 1352 01a1 6C6F6E67 		.ascii	"long int\000"
+ 1352      20696E74 
+ 1352      00
+ 1353              	.LASF16:
+ 1354 01aa 6C6F6E67 		.ascii	"long double\000"
+ 1354      20646F75 
+ 1354      626C6500 
+ 1355              	.LASF2:
+ 1356 01b6 7369676E 		.ascii	"signed char\000"
+ 1356      65642063 
+ 1356      68617200 
+ 1357              	.LASF10:
+ 1358 01c2 5F426F6F 		.ascii	"_Bool\000"
+ 1358      6C00
+ 1359              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s 			page 27
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 DP_Math_Vector2f.c
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:21     .text.pythagorous2:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:27     .text.pythagorous2:00000000 pythagorous2
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:67     .text.Vector2f_Lenght:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:73     .text.Vector2f_Lenght:00000000 Vector2f_Lenght
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:99     .text.Vector2f_normalize:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:105    .text.Vector2f_normalize:00000000 Vector2f_normalize
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:163    .text.Vector2f_isinf:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:169    .text.Vector2f_isinf:00000000 Vector2f_isinf
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:206    .text.Vector2f_dot_prod:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:212    .text.Vector2f_dot_prod:00000000 Vector2f_dot_prod
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:253    .text.Vector2f_Cross_prod:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccxk9lOd.s:259    .text.Vector2f_Cross_prod:00000000 Vector2f_Cross_prod
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+__aeabi_fmul
+__aeabi_fadd
+sqrtf
+__aeabi_fdiv
+__fpclassifyf
+__aeabi_fsub

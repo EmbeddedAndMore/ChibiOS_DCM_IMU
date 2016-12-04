@@ -1,0 +1,5328 @@
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"pwm_lld.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.pwm_lld_serve_interrupt,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	pwm_lld_serve_interrupt, %function
+  24              	pwm_lld_serve_interrupt:
+  25              	.LFB118:
+  26              		.file 1 "../../chibios/os/hal/platforms/STM32/TIMv1/pwm_lld.c"
+  27              		.loc 1 112 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32 0000 38B5     		push	{r3, r4, r5, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 3, -16
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 14, -4
+  39              		.loc 1 115 0
+  40 0002 0369     		ldr	r3, [r0, #16]
+  41 0004 1A69     		ldr	r2, [r3, #16]
+  42              	.LVL1:
+  43              		.loc 1 116 0
+  44 0006 DC68     		ldr	r4, [r3, #12]
+  45 0008 1440     		ands	r4, r4, r2
+  46 000a A4B2     		uxth	r4, r4
+  47              	.LVL2:
+  48              		.loc 1 117 0
+  49 000c E1B2     		uxtb	r1, r4
+  50              		.loc 1 118 0
+  51 000e 04F00202 		and	r2, r4, #2
+  52              		.loc 1 117 0
+  53 0012 C943     		mvns	r1, r1
+  54              		.loc 1 118 0
+  55 0014 92B2     		uxth	r2, r2
+  56              		.loc 1 112 0
+  57 0016 0546     		mov	r5, r0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 2
+
+
+  58              		.loc 1 117 0
+  59 0018 1961     		str	r1, [r3, #16]
+  60              		.loc 1 118 0
+  61 001a 0ABB     		cbnz	r2, .L23
+  62              	.LVL3:
+  63              	.L2:
+  64              		.loc 1 120 0
+  65 001c 04F00400 		and	r0, r4, #4
+  66 0020 82B2     		uxth	r2, r0
+  67 0022 C2B9     		cbnz	r2, .L24
+  68              	.L3:
+  69              		.loc 1 122 0
+  70 0024 04F00800 		and	r0, r4, #8
+  71 0028 82B2     		uxth	r2, r0
+  72 002a 7AB9     		cbnz	r2, .L25
+  73              	.L4:
+  74              		.loc 1 124 0
+  75 002c 04F01000 		and	r0, r4, #16
+  76 0030 82B2     		uxth	r2, r0
+  77 0032 32B9     		cbnz	r2, .L26
+  78              	.L5:
+  79              		.loc 1 126 0
+  80 0034 E307     		lsls	r3, r4, #31
+  81 0036 03D5     		bpl	.L1
+  82              		.loc 1 127 0
+  83 0038 6A68     		ldr	r2, [r5, #4]
+  84 003a 2846     		mov	r0, r5
+  85 003c 9368     		ldr	r3, [r2, #8]
+  86 003e 9847     		blx	r3
+  87              	.LVL4:
+  88              	.L1:
+  89 0040 38BD     		pop	{r3, r4, r5, pc}
+  90              	.L26:
+  91              		.loc 1 125 0
+  92 0042 6B68     		ldr	r3, [r5, #4]
+  93 0044 2846     		mov	r0, r5
+  94 0046 996A     		ldr	r1, [r3, #40]
+  95 0048 8847     		blx	r1
+  96              	.LVL5:
+  97 004a F3E7     		b	.L5
+  98              	.L25:
+  99              		.loc 1 123 0
+ 100 004c 6B68     		ldr	r3, [r5, #4]
+ 101 004e 2846     		mov	r0, r5
+ 102 0050 196A     		ldr	r1, [r3, #32]
+ 103 0052 8847     		blx	r1
+ 104              	.LVL6:
+ 105 0054 EAE7     		b	.L4
+ 106              	.L24:
+ 107              		.loc 1 121 0
+ 108 0056 6B68     		ldr	r3, [r5, #4]
+ 109 0058 2846     		mov	r0, r5
+ 110 005a 9969     		ldr	r1, [r3, #24]
+ 111 005c 8847     		blx	r1
+ 112              	.LVL7:
+ 113 005e E1E7     		b	.L3
+ 114              	.LVL8:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 3
+
+
+ 115              	.L23:
+ 116              		.loc 1 119 0
+ 117 0060 4368     		ldr	r3, [r0, #4]
+ 118 0062 1969     		ldr	r1, [r3, #16]
+ 119 0064 8847     		blx	r1
+ 120              	.LVL9:
+ 121 0066 D9E7     		b	.L2
+ 122              		.cfi_endproc
+ 123              	.LFE118:
+ 124              		.size	pwm_lld_serve_interrupt, .-pwm_lld_serve_interrupt
+ 125 0068 AFF30080 		.section	.text.VectorA4,"ax",%progbits
+ 125      AFF30080 
+ 126              		.align	2
+ 127              		.p2align 4,,15
+ 128              		.global	VectorA4
+ 129              		.thumb
+ 130              		.thumb_func
+ 131              		.type	VectorA4, %function
+ 132              	VectorA4:
+ 133              	.LFB119:
+ 134              		.loc 1 147 0
+ 135              		.cfi_startproc
+ 136              		@ args = 0, pretend = 0, frame = 0
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138              		.loc 1 152 0
+ 139 0000 40F20000 		movw	r0, #:lower16:.LANCHOR0
+ 140 0004 C0F20000 		movt	r0, #:upper16:.LANCHOR0
+ 141              		.loc 1 147 0
+ 142 0008 08B5     		push	{r3, lr}
+ 143              	.LCFI1:
+ 144              		.cfi_def_cfa_offset 8
+ 145              		.cfi_offset 3, -8
+ 146              		.cfi_offset 14, -4
+ 147              		.loc 1 151 0
+ 148 000a 0023     		movs	r3, #0
+ 149              		.loc 1 152 0
+ 150 000c 4268     		ldr	r2, [r0, #4]
+ 151              		.loc 1 151 0
+ 152 000e C4F20103 		movt	r3, 16385
+ 153 0012 6FF00101 		mvn	r1, #1
+ 154 0016 1961     		str	r1, [r3, #16]
+ 155              		.loc 1 152 0
+ 156 0018 9368     		ldr	r3, [r2, #8]
+ 157 001a 9847     		blx	r3
+ 158              	.LVL10:
+ 159              		.loc 1 155 0
+ 160 001c BDE80840 		pop	{r3, lr}
+ 161              		.loc 1 154 0
+ 162 0020 FFF7FEBF 		b	_port_irq_epilogue
+ 163              	.LVL11:
+ 164              		.cfi_endproc
+ 165              	.LFE119:
+ 166              		.size	VectorA4, .-VectorA4
+ 167 0024 AFF30080 		.section	.text.VectorAC,"ax",%progbits
+ 167      AFF30080 
+ 167      AFF30080 
+ 168              		.align	2
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 4
+
+
+ 169              		.p2align 4,,15
+ 170              		.global	VectorAC
+ 171              		.thumb
+ 172              		.thumb_func
+ 173              		.type	VectorAC, %function
+ 174              	VectorAC:
+ 175              	.LFB120:
+ 176              		.loc 1 168 0
+ 177              		.cfi_startproc
+ 178              		@ args = 0, pretend = 0, frame = 0
+ 179              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180              		.loc 1 173 0
+ 181 0000 0023     		movs	r3, #0
+ 182 0002 C4F20103 		movt	r3, 16385
+ 183              		.loc 1 168 0
+ 184 0006 10B5     		push	{r4, lr}
+ 185              	.LCFI2:
+ 186              		.cfi_def_cfa_offset 8
+ 187              		.cfi_offset 4, -8
+ 188              		.cfi_offset 14, -4
+ 189              		.loc 1 173 0
+ 190 0008 1A69     		ldr	r2, [r3, #16]
+ 191 000a DC68     		ldr	r4, [r3, #12]
+ 192 000c 1440     		ands	r4, r4, r2
+ 193 000e A4B2     		uxth	r4, r4
+ 194              	.LVL12:
+ 195              		.loc 1 174 0
+ 196 0010 E1B2     		uxtb	r1, r4
+ 197              		.loc 1 175 0
+ 198 0012 04F00200 		and	r0, r4, #2
+ 199              		.loc 1 174 0
+ 200 0016 C943     		mvns	r1, r1
+ 201              		.loc 1 175 0
+ 202 0018 82B2     		uxth	r2, r0
+ 203              		.loc 1 174 0
+ 204 001a 1961     		str	r1, [r3, #16]
+ 205              		.loc 1 175 0
+ 206 001c 002A     		cmp	r2, #0
+ 207 001e 1DD1     		bne	.L45
+ 208              	.L29:
+ 209              		.loc 1 177 0
+ 210 0020 04F00400 		and	r0, r4, #4
+ 211 0024 82B2     		uxth	r2, r0
+ 212 0026 A2B9     		cbnz	r2, .L46
+ 213              	.L30:
+ 214              		.loc 1 179 0
+ 215 0028 04F00800 		and	r0, r4, #8
+ 216 002c 82B2     		uxth	r2, r0
+ 217 002e 5AB9     		cbnz	r2, .L47
+ 218              	.L31:
+ 219              		.loc 1 181 0
+ 220 0030 04F01004 		and	r4, r4, #16
+ 221              	.LVL13:
+ 222 0034 A4B2     		uxth	r4, r4
+ 223 0036 1CB1     		cbz	r4, .L32
+ 224              		.loc 1 182 0
+ 225 0038 0B48     		ldr	r0, .L48
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 5
+
+
+ 226 003a 4268     		ldr	r2, [r0, #4]
+ 227 003c 936A     		ldr	r3, [r2, #40]
+ 228 003e 9847     		blx	r3
+ 229              	.LVL14:
+ 230              	.L32:
+ 231              		.loc 1 185 0
+ 232 0040 BDE81040 		pop	{r4, lr}
+ 233              		.loc 1 184 0
+ 234 0044 FFF7FEBF 		b	_port_irq_epilogue
+ 235              	.LVL15:
+ 236              	.L47:
+ 237              		.loc 1 180 0
+ 238 0048 0748     		ldr	r0, .L48
+ 239 004a 4368     		ldr	r3, [r0, #4]
+ 240 004c 196A     		ldr	r1, [r3, #32]
+ 241 004e 8847     		blx	r1
+ 242              	.LVL16:
+ 243 0050 EEE7     		b	.L31
+ 244              	.L46:
+ 245              		.loc 1 178 0
+ 246 0052 0548     		ldr	r0, .L48
+ 247 0054 4368     		ldr	r3, [r0, #4]
+ 248 0056 9969     		ldr	r1, [r3, #24]
+ 249 0058 8847     		blx	r1
+ 250              	.LVL17:
+ 251 005a E5E7     		b	.L30
+ 252              	.L45:
+ 253              		.loc 1 176 0
+ 254 005c 0248     		ldr	r0, .L48
+ 255 005e 4368     		ldr	r3, [r0, #4]
+ 256 0060 1969     		ldr	r1, [r3, #16]
+ 257 0062 8847     		blx	r1
+ 258              	.LVL18:
+ 259 0064 DCE7     		b	.L29
+ 260              	.L49:
+ 261 0066 00BF     		.align	2
+ 262              	.L48:
+ 263 0068 00000000 		.word	.LANCHOR0
+ 264              		.cfi_endproc
+ 265              	.LFE120:
+ 266              		.size	VectorAC, .-VectorAC
+ 267 006c AFF30080 		.section	.text.VectorB0,"ax",%progbits
+ 268              		.align	2
+ 269              		.p2align 4,,15
+ 270              		.global	VectorB0
+ 271              		.thumb
+ 272              		.thumb_func
+ 273              		.type	VectorB0, %function
+ 274              	VectorB0:
+ 275              	.LFB121:
+ 276              		.loc 1 197 0
+ 277              		.cfi_startproc
+ 278              		@ args = 0, pretend = 0, frame = 0
+ 279              		@ frame_needed = 0, uses_anonymous_args = 0
+ 280 0000 08B5     		push	{r3, lr}
+ 281              	.LCFI3:
+ 282              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 6
+
+
+ 283              		.cfi_offset 3, -8
+ 284              		.cfi_offset 14, -4
+ 285              		.loc 1 201 0
+ 286 0002 40F20000 		movw	r0, #:lower16:.LANCHOR1
+ 287 0006 C0F20000 		movt	r0, #:upper16:.LANCHOR1
+ 288 000a FFF7FEFF 		bl	pwm_lld_serve_interrupt
+ 289              	.LVL19:
+ 290              		.loc 1 204 0
+ 291 000e BDE80840 		pop	{r3, lr}
+ 292              		.loc 1 203 0
+ 293 0012 FFF7FEBF 		b	_port_irq_epilogue
+ 294              	.LVL20:
+ 295              		.cfi_endproc
+ 296              	.LFE121:
+ 297              		.size	VectorB0, .-VectorB0
+ 298 0016 00BFAFF3 		.section	.text.VectorB4,"ax",%progbits
+ 298      0080AFF3 
+ 298      0080
+ 299              		.align	2
+ 300              		.p2align 4,,15
+ 301              		.global	VectorB4
+ 302              		.thumb
+ 303              		.thumb_func
+ 304              		.type	VectorB4, %function
+ 305              	VectorB4:
+ 306              	.LFB122:
+ 307              		.loc 1 216 0
+ 308              		.cfi_startproc
+ 309              		@ args = 0, pretend = 0, frame = 0
+ 310              		@ frame_needed = 0, uses_anonymous_args = 0
+ 311 0000 08B5     		push	{r3, lr}
+ 312              	.LCFI4:
+ 313              		.cfi_def_cfa_offset 8
+ 314              		.cfi_offset 3, -8
+ 315              		.cfi_offset 14, -4
+ 316              		.loc 1 220 0
+ 317 0002 40F20000 		movw	r0, #:lower16:.LANCHOR2
+ 318 0006 C0F20000 		movt	r0, #:upper16:.LANCHOR2
+ 319 000a FFF7FEFF 		bl	pwm_lld_serve_interrupt
+ 320              	.LVL21:
+ 321              		.loc 1 223 0
+ 322 000e BDE80840 		pop	{r3, lr}
+ 323              		.loc 1 222 0
+ 324 0012 FFF7FEBF 		b	_port_irq_epilogue
+ 325              	.LVL22:
+ 326              		.cfi_endproc
+ 327              	.LFE122:
+ 328              		.size	VectorB4, .-VectorB4
+ 329 0016 00BFAFF3 		.section	.text.VectorB8,"ax",%progbits
+ 329      0080AFF3 
+ 329      0080
+ 330              		.align	2
+ 331              		.p2align 4,,15
+ 332              		.global	VectorB8
+ 333              		.thumb
+ 334              		.thumb_func
+ 335              		.type	VectorB8, %function
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 7
+
+
+ 336              	VectorB8:
+ 337              	.LFB123:
+ 338              		.loc 1 235 0
+ 339              		.cfi_startproc
+ 340              		@ args = 0, pretend = 0, frame = 0
+ 341              		@ frame_needed = 0, uses_anonymous_args = 0
+ 342 0000 08B5     		push	{r3, lr}
+ 343              	.LCFI5:
+ 344              		.cfi_def_cfa_offset 8
+ 345              		.cfi_offset 3, -8
+ 346              		.cfi_offset 14, -4
+ 347              		.loc 1 239 0
+ 348 0002 40F20000 		movw	r0, #:lower16:.LANCHOR3
+ 349 0006 C0F20000 		movt	r0, #:upper16:.LANCHOR3
+ 350 000a FFF7FEFF 		bl	pwm_lld_serve_interrupt
+ 351              	.LVL23:
+ 352              		.loc 1 242 0
+ 353 000e BDE80840 		pop	{r3, lr}
+ 354              		.loc 1 241 0
+ 355 0012 FFF7FEBF 		b	_port_irq_epilogue
+ 356              	.LVL24:
+ 357              		.cfi_endproc
+ 358              	.LFE123:
+ 359              		.size	VectorB8, .-VectorB8
+ 360 0016 00BFAFF3 		.section	.text.Vector108,"ax",%progbits
+ 360      0080AFF3 
+ 360      0080
+ 361              		.align	2
+ 362              		.p2align 4,,15
+ 363              		.global	Vector108
+ 364              		.thumb
+ 365              		.thumb_func
+ 366              		.type	Vector108, %function
+ 367              	Vector108:
+ 368              	.LFB124:
+ 369              		.loc 1 254 0
+ 370              		.cfi_startproc
+ 371              		@ args = 0, pretend = 0, frame = 0
+ 372              		@ frame_needed = 0, uses_anonymous_args = 0
+ 373 0000 08B5     		push	{r3, lr}
+ 374              	.LCFI6:
+ 375              		.cfi_def_cfa_offset 8
+ 376              		.cfi_offset 3, -8
+ 377              		.cfi_offset 14, -4
+ 378              		.loc 1 258 0
+ 379 0002 40F20000 		movw	r0, #:lower16:.LANCHOR4
+ 380 0006 C0F20000 		movt	r0, #:upper16:.LANCHOR4
+ 381 000a FFF7FEFF 		bl	pwm_lld_serve_interrupt
+ 382              	.LVL25:
+ 383              		.loc 1 261 0
+ 384 000e BDE80840 		pop	{r3, lr}
+ 385              		.loc 1 260 0
+ 386 0012 FFF7FEBF 		b	_port_irq_epilogue
+ 387              	.LVL26:
+ 388              		.cfi_endproc
+ 389              	.LFE124:
+ 390              		.size	Vector108, .-Vector108
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 8
+
+
+ 391 0016 00BFAFF3 		.section	.text.VectorF0,"ax",%progbits
+ 391      0080AFF3 
+ 391      0080
+ 392              		.align	2
+ 393              		.p2align 4,,15
+ 394              		.global	VectorF0
+ 395              		.thumb
+ 396              		.thumb_func
+ 397              		.type	VectorF0, %function
+ 398              	VectorF0:
+ 399              	.LFB125:
+ 400              		.loc 1 276 0
+ 401              		.cfi_startproc
+ 402              		@ args = 0, pretend = 0, frame = 0
+ 403              		@ frame_needed = 0, uses_anonymous_args = 0
+ 404              		.loc 1 281 0
+ 405 0000 40F20000 		movw	r0, #:lower16:.LANCHOR5
+ 406 0004 C0F20000 		movt	r0, #:upper16:.LANCHOR5
+ 407              		.loc 1 276 0
+ 408 0008 08B5     		push	{r3, lr}
+ 409              	.LCFI7:
+ 410              		.cfi_def_cfa_offset 8
+ 411              		.cfi_offset 3, -8
+ 412              		.cfi_offset 14, -4
+ 413              		.loc 1 280 0
+ 414 000a 4FF48063 		mov	r3, #1024
+ 415              		.loc 1 281 0
+ 416 000e 4268     		ldr	r2, [r0, #4]
+ 417              		.loc 1 280 0
+ 418 0010 C4F20103 		movt	r3, 16385
+ 419 0014 6FF00101 		mvn	r1, #1
+ 420 0018 1961     		str	r1, [r3, #16]
+ 421              		.loc 1 281 0
+ 422 001a 9368     		ldr	r3, [r2, #8]
+ 423 001c 9847     		blx	r3
+ 424              	.LVL27:
+ 425              		.loc 1 284 0
+ 426 001e BDE80840 		pop	{r3, lr}
+ 427              		.loc 1 283 0
+ 428 0022 FFF7FEBF 		b	_port_irq_epilogue
+ 429              	.LVL28:
+ 430              		.cfi_endproc
+ 431              	.LFE125:
+ 432              		.size	VectorF0, .-VectorF0
+ 433 0026 00BFAFF3 		.section	.text.VectorF8,"ax",%progbits
+ 433      0080AFF3 
+ 433      0080
+ 434              		.align	2
+ 435              		.p2align 4,,15
+ 436              		.global	VectorF8
+ 437              		.thumb
+ 438              		.thumb_func
+ 439              		.type	VectorF8, %function
+ 440              	VectorF8:
+ 441              	.LFB126:
+ 442              		.loc 1 297 0
+ 443              		.cfi_startproc
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 9
+
+
+ 444              		@ args = 0, pretend = 0, frame = 0
+ 445              		@ frame_needed = 0, uses_anonymous_args = 0
+ 446              		.loc 1 302 0
+ 447 0000 4FF48063 		mov	r3, #1024
+ 448 0004 C4F20103 		movt	r3, 16385
+ 449              		.loc 1 297 0
+ 450 0008 10B5     		push	{r4, lr}
+ 451              	.LCFI8:
+ 452              		.cfi_def_cfa_offset 8
+ 453              		.cfi_offset 4, -8
+ 454              		.cfi_offset 14, -4
+ 455              		.loc 1 302 0
+ 456 000a 1A69     		ldr	r2, [r3, #16]
+ 457 000c DC68     		ldr	r4, [r3, #12]
+ 458 000e 1440     		ands	r4, r4, r2
+ 459 0010 A4B2     		uxth	r4, r4
+ 460              	.LVL29:
+ 461              		.loc 1 303 0
+ 462 0012 E1B2     		uxtb	r1, r4
+ 463              		.loc 1 304 0
+ 464 0014 04F00200 		and	r0, r4, #2
+ 465              		.loc 1 303 0
+ 466 0018 C943     		mvns	r1, r1
+ 467              		.loc 1 304 0
+ 468 001a 82B2     		uxth	r2, r0
+ 469              		.loc 1 303 0
+ 470 001c 1961     		str	r1, [r3, #16]
+ 471              		.loc 1 304 0
+ 472 001e 002A     		cmp	r2, #0
+ 473 0020 1DD1     		bne	.L72
+ 474              	.L56:
+ 475              		.loc 1 306 0
+ 476 0022 04F00400 		and	r0, r4, #4
+ 477 0026 82B2     		uxth	r2, r0
+ 478 0028 A2B9     		cbnz	r2, .L73
+ 479              	.L57:
+ 480              		.loc 1 308 0
+ 481 002a 04F00800 		and	r0, r4, #8
+ 482 002e 82B2     		uxth	r2, r0
+ 483 0030 5AB9     		cbnz	r2, .L74
+ 484              	.L58:
+ 485              		.loc 1 310 0
+ 486 0032 04F01004 		and	r4, r4, #16
+ 487              	.LVL30:
+ 488 0036 A4B2     		uxth	r4, r4
+ 489 0038 1CB1     		cbz	r4, .L59
+ 490              		.loc 1 311 0
+ 491 003a 0B48     		ldr	r0, .L75
+ 492 003c 4268     		ldr	r2, [r0, #4]
+ 493 003e 936A     		ldr	r3, [r2, #40]
+ 494 0040 9847     		blx	r3
+ 495              	.LVL31:
+ 496              	.L59:
+ 497              		.loc 1 314 0
+ 498 0042 BDE81040 		pop	{r4, lr}
+ 499              		.loc 1 313 0
+ 500 0046 FFF7FEBF 		b	_port_irq_epilogue
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 10
+
+
+ 501              	.LVL32:
+ 502              	.L74:
+ 503              		.loc 1 309 0
+ 504 004a 0748     		ldr	r0, .L75
+ 505 004c 4368     		ldr	r3, [r0, #4]
+ 506 004e 196A     		ldr	r1, [r3, #32]
+ 507 0050 8847     		blx	r1
+ 508              	.LVL33:
+ 509 0052 EEE7     		b	.L58
+ 510              	.L73:
+ 511              		.loc 1 307 0
+ 512 0054 0448     		ldr	r0, .L75
+ 513 0056 4368     		ldr	r3, [r0, #4]
+ 514 0058 9969     		ldr	r1, [r3, #24]
+ 515 005a 8847     		blx	r1
+ 516              	.LVL34:
+ 517 005c E5E7     		b	.L57
+ 518              	.L72:
+ 519              		.loc 1 305 0
+ 520 005e 0248     		ldr	r0, .L75
+ 521 0060 4368     		ldr	r3, [r0, #4]
+ 522 0062 1969     		ldr	r1, [r3, #16]
+ 523 0064 8847     		blx	r1
+ 524              	.LVL35:
+ 525 0066 DCE7     		b	.L56
+ 526              	.L76:
+ 527              		.align	2
+ 528              	.L75:
+ 529 0068 00000000 		.word	.LANCHOR5
+ 530              		.cfi_endproc
+ 531              	.LFE126:
+ 532              		.size	VectorF8, .-VectorF8
+ 533 006c AFF30080 		.section	.text.VectorA0,"ax",%progbits
+ 534              		.align	2
+ 535              		.p2align 4,,15
+ 536              		.global	VectorA0
+ 537              		.thumb
+ 538              		.thumb_func
+ 539              		.type	VectorA0, %function
+ 540              	VectorA0:
+ 541              	.LFB127:
+ 542              		.loc 1 326 0
+ 543              		.cfi_startproc
+ 544              		@ args = 0, pretend = 0, frame = 0
+ 545              		@ frame_needed = 0, uses_anonymous_args = 0
+ 546 0000 08B5     		push	{r3, lr}
+ 547              	.LCFI9:
+ 548              		.cfi_def_cfa_offset 8
+ 549              		.cfi_offset 3, -8
+ 550              		.cfi_offset 14, -4
+ 551              		.loc 1 330 0
+ 552 0002 40F20000 		movw	r0, #:lower16:.LANCHOR6
+ 553 0006 C0F20000 		movt	r0, #:upper16:.LANCHOR6
+ 554 000a FFF7FEFF 		bl	pwm_lld_serve_interrupt
+ 555              	.LVL36:
+ 556              		.loc 1 333 0
+ 557 000e BDE80840 		pop	{r3, lr}
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 11
+
+
+ 558              		.loc 1 332 0
+ 559 0012 FFF7FEBF 		b	_port_irq_epilogue
+ 560              	.LVL37:
+ 561              		.cfi_endproc
+ 562              	.LFE127:
+ 563              		.size	VectorA0, .-VectorA0
+ 564 0016 00BFAFF3 		.section	.text.pwm_lld_init,"ax",%progbits
+ 564      0080AFF3 
+ 564      0080
+ 565              		.align	2
+ 566              		.p2align 4,,15
+ 567              		.global	pwm_lld_init
+ 568              		.thumb
+ 569              		.thumb_func
+ 570              		.type	pwm_lld_init, %function
+ 571              	pwm_lld_init:
+ 572              	.LFB128:
+ 573              		.loc 1 345 0
+ 574              		.cfi_startproc
+ 575              		@ args = 0, pretend = 0, frame = 0
+ 576              		@ frame_needed = 0, uses_anonymous_args = 0
+ 577 0000 70B5     		push	{r4, r5, r6, lr}
+ 578              	.LCFI10:
+ 579              		.cfi_def_cfa_offset 16
+ 580              		.cfi_offset 4, -16
+ 581              		.cfi_offset 5, -12
+ 582              		.cfi_offset 6, -8
+ 583              		.cfi_offset 14, -4
+ 584              		.loc 1 349 0
+ 585 0002 40F20004 		movw	r4, #:lower16:.LANCHOR0
+ 586 0006 C0F20004 		movt	r4, #:upper16:.LANCHOR0
+ 587 000a 2046     		mov	r0, r4
+ 588              		.loc 1 355 0
+ 589 000c 40F20006 		movw	r6, #:lower16:.LANCHOR1
+ 590              		.loc 1 349 0
+ 591 0010 FFF7FEFF 		bl	pwmObjectInit
+ 592              	.LVL38:
+ 593              		.loc 1 355 0
+ 594 0014 C0F20006 		movt	r6, #:upper16:.LANCHOR1
+ 595              		.loc 1 350 0
+ 596 0018 0023     		movs	r3, #0
+ 597              		.loc 1 361 0
+ 598 001a 40F20005 		movw	r5, #:lower16:.LANCHOR2
+ 599              		.loc 1 350 0
+ 600 001e C4F20103 		movt	r3, 16385
+ 601              		.loc 1 355 0
+ 602 0022 3046     		mov	r0, r6
+ 603              		.loc 1 361 0
+ 604 0024 C0F20005 		movt	r5, #:upper16:.LANCHOR2
+ 605              		.loc 1 350 0
+ 606 0028 2361     		str	r3, [r4, #16]
+ 607              		.loc 1 355 0
+ 608 002a FFF7FEFF 		bl	pwmObjectInit
+ 609              	.LVL39:
+ 610              		.loc 1 367 0
+ 611 002e 40F20004 		movw	r4, #:lower16:.LANCHOR3
+ 612              		.loc 1 356 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 12
+
+
+ 613 0032 4FF08041 		mov	r1, #1073741824
+ 614              		.loc 1 361 0
+ 615 0036 2846     		mov	r0, r5
+ 616              		.loc 1 356 0
+ 617 0038 3161     		str	r1, [r6, #16]
+ 618              		.loc 1 367 0
+ 619 003a C0F20004 		movt	r4, #:upper16:.LANCHOR3
+ 620              		.loc 1 361 0
+ 621 003e FFF7FEFF 		bl	pwmObjectInit
+ 622              	.LVL40:
+ 623              		.loc 1 362 0
+ 624 0042 4FF48062 		mov	r2, #1024
+ 625 0046 C4F20002 		movt	r2, 16384
+ 626              		.loc 1 367 0
+ 627 004a 2046     		mov	r0, r4
+ 628              		.loc 1 373 0
+ 629 004c 40F20006 		movw	r6, #:lower16:.LANCHOR4
+ 630              		.loc 1 362 0
+ 631 0050 2A61     		str	r2, [r5, #16]
+ 632              		.loc 1 373 0
+ 633 0052 C0F20006 		movt	r6, #:upper16:.LANCHOR4
+ 634              		.loc 1 367 0
+ 635 0056 FFF7FEFF 		bl	pwmObjectInit
+ 636              	.LVL41:
+ 637              		.loc 1 368 0
+ 638 005a 4FF40063 		mov	r3, #2048
+ 639 005e C4F20003 		movt	r3, 16384
+ 640              		.loc 1 373 0
+ 641 0062 3046     		mov	r0, r6
+ 642              		.loc 1 379 0
+ 643 0064 40F20005 		movw	r5, #:lower16:.LANCHOR5
+ 644              		.loc 1 368 0
+ 645 0068 2361     		str	r3, [r4, #16]
+ 646              		.loc 1 379 0
+ 647 006a C0F20005 		movt	r5, #:upper16:.LANCHOR5
+ 648              		.loc 1 373 0
+ 649 006e FFF7FEFF 		bl	pwmObjectInit
+ 650              	.LVL42:
+ 651              		.loc 1 374 0
+ 652 0072 4FF44061 		mov	r1, #3072
+ 653 0076 C4F20001 		movt	r1, 16384
+ 654              		.loc 1 379 0
+ 655 007a 2846     		mov	r0, r5
+ 656              		.loc 1 385 0
+ 657 007c 40F20004 		movw	r4, #:lower16:.LANCHOR6
+ 658 0080 C0F20004 		movt	r4, #:upper16:.LANCHOR6
+ 659              		.loc 1 374 0
+ 660 0084 3161     		str	r1, [r6, #16]
+ 661              		.loc 1 379 0
+ 662 0086 FFF7FEFF 		bl	pwmObjectInit
+ 663              	.LVL43:
+ 664              		.loc 1 380 0
+ 665 008a 4FF48062 		mov	r2, #1024
+ 666 008e C4F20102 		movt	r2, 16385
+ 667              		.loc 1 385 0
+ 668 0092 2046     		mov	r0, r4
+ 669              		.loc 1 380 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 13
+
+
+ 670 0094 2A61     		str	r2, [r5, #16]
+ 671              		.loc 1 385 0
+ 672 0096 FFF7FEFF 		bl	pwmObjectInit
+ 673              	.LVL44:
+ 674              		.loc 1 386 0
+ 675 009a 4FF48040 		mov	r0, #16384
+ 676 009e C4F20100 		movt	r0, 16385
+ 677 00a2 2061     		str	r0, [r4, #16]
+ 678 00a4 70BD     		pop	{r4, r5, r6, pc}
+ 679              		.cfi_endproc
+ 680              	.LFE128:
+ 681              		.size	pwm_lld_init, .-pwm_lld_init
+ 682 00a6 00BFAFF3 		.section	.text.pwm_lld_start,"ax",%progbits
+ 682      0080AFF3 
+ 682      0080
+ 683              		.align	2
+ 684              		.p2align 4,,15
+ 685              		.global	pwm_lld_start
+ 686              		.thumb
+ 687              		.thumb_func
+ 688              		.type	pwm_lld_start, %function
+ 689              	pwm_lld_start:
+ 690              	.LFB129:
+ 691              		.loc 1 399 0
+ 692              		.cfi_startproc
+ 693              		@ args = 0, pretend = 0, frame = 0
+ 694              		@ frame_needed = 0, uses_anonymous_args = 0
+ 695              	.LVL45:
+ 696              		.loc 1 403 0
+ 697 0000 0378     		ldrb	r3, [r0, #0]	@ zero_extendqisi2
+ 698 0002 012B     		cmp	r3, #1
+ 699              		.loc 1 399 0
+ 700 0004 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 701              	.LCFI11:
+ 702              		.cfi_def_cfa_offset 24
+ 703              		.cfi_offset 4, -24
+ 704              		.cfi_offset 5, -20
+ 705              		.cfi_offset 6, -16
+ 706              		.cfi_offset 7, -12
+ 707              		.cfi_offset 8, -8
+ 708              		.cfi_offset 14, -4
+ 709              		.loc 1 399 0
+ 710 0008 0446     		mov	r4, r0
+ 711              		.loc 1 403 0
+ 712 000a 00F08D80 		beq	.L134
+ 713              		.loc 1 492 0
+ 714 000e 4168     		ldr	r1, [r0, #4]
+ 715              		.loc 1 491 0
+ 716 0010 0369     		ldr	r3, [r0, #16]
+ 717              		.loc 1 492 0
+ 718 0012 486B     		ldr	r0, [r1, #52]
+ 719              	.LVL46:
+ 720 0014 A74E     		ldr	r6, .L152
+ 721              		.loc 1 491 0
+ 722 0016 0022     		movs	r2, #0
+ 723              		.loc 1 492 0
+ 724 0018 20F0FF05 		bic	r5, r0, #255
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 14
+
+
+ 725              		.loc 1 491 0
+ 726 001c 1A60     		str	r2, [r3, #0]
+ 727              		.loc 1 492 0
+ 728 001e DD60     		str	r5, [r3, #12]
+ 729              		.loc 1 494 0
+ 730 0020 1A61     		str	r2, [r3, #16]
+ 731              		.loc 1 495 0
+ 732 0022 5A63     		str	r2, [r3, #52]
+ 733              		.loc 1 496 0
+ 734 0024 9A63     		str	r2, [r3, #56]
+ 735              		.loc 1 497 0
+ 736 0026 DA63     		str	r2, [r3, #60]
+ 737              		.loc 1 498 0
+ 738 0028 1A64     		str	r2, [r3, #64]
+ 739              		.loc 1 499 0
+ 740 002a 5A62     		str	r2, [r3, #36]
+ 741              	.L89:
+ 742              	.LVL47:
+ 743              		.loc 1 503 0
+ 744 002c E768     		ldr	r7, [r4, #12]
+ 745 002e 0A68     		ldr	r2, [r1, #0]
+ 746              		.loc 1 508 0
+ 747 0030 B4F80880 		ldrh	r8, [r4, #8]
+ 748              		.loc 1 513 0
+ 749 0034 CD68     		ldr	r5, [r1, #12]
+ 750              		.loc 1 503 0
+ 751 0036 B7FBF2FC 		udiv	ip, r7, r2
+ 752 003a 0CF1FF30 		add	r0, ip, #-1
+ 753              	.LVL48:
+ 754              		.loc 1 507 0
+ 755 003e 80B2     		uxth	r0, r0
+ 756              	.LVL49:
+ 757 0040 9862     		str	r0, [r3, #40]
+ 758              		.loc 1 508 0
+ 759 0042 08F1FF37 		add	r7, r8, #-1
+ 760              		.loc 1 513 0
+ 761 0046 05F00F02 		and	r2, r5, #15
+ 762              		.loc 1 509 0
+ 763 004a C86A     		ldr	r0, [r1, #44]
+ 764              		.loc 1 508 0
+ 765 004c BFB2     		uxth	r7, r7
+ 766              		.loc 1 513 0
+ 767 004e 012A     		cmp	r2, #1
+ 768              		.loc 1 508 0
+ 769 0050 DF62     		str	r7, [r3, #44]
+ 770              		.loc 1 509 0
+ 771 0052 5860     		str	r0, [r3, #4]
+ 772              	.LVL50:
+ 773              		.loc 1 513 0
+ 774 0054 03D0     		beq	.L90
+ 775              		.loc 1 512 0
+ 776 0056 022A     		cmp	r2, #2
+ 777 0058 0CBF     		ite	eq
+ 778 005a 0322     		moveq	r2, #3
+ 779 005c 0022     		movne	r2, #0
+ 780              	.L90:
+ 781              	.LVL51:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 15
+
+
+ 782              		.loc 1 521 0
+ 783 005e D1F814C0 		ldr	ip, [r1, #20]
+ 784 0062 0CF00F07 		and	r7, ip, #15
+ 785 0066 012F     		cmp	r7, #1
+ 786 0068 2BD0     		beq	.L94
+ 787 006a 022F     		cmp	r7, #2
+ 788 006c 27D0     		beq	.L135
+ 789              		.loc 1 529 0
+ 790 006e CF69     		ldr	r7, [r1, #28]
+ 791 0070 07F00F00 		and	r0, r7, #15
+ 792 0074 0128     		cmp	r0, #1
+ 793 0076 2BD0     		beq	.L97
+ 794              	.LVL52:
+ 795              	.L138:
+ 796 0078 0228     		cmp	r0, #2
+ 797 007a 50D0     		beq	.L136
+ 798              	.LVL53:
+ 799              		.loc 1 537 0
+ 800 007c 486A     		ldr	r0, [r1, #36]
+ 801 007e 00F00F00 		and	r0, r0, #15
+ 802 0082 0128     		cmp	r0, #1
+ 803 0084 2BD0     		beq	.L100
+ 804              	.LVL54:
+ 805              	.L139:
+ 806 0086 0228     		cmp	r0, #2
+ 807 0088 44D0     		beq	.L137
+ 808              	.LVL55:
+ 809              		.loc 1 553 0
+ 810 008a B442     		cmp	r4, r6
+ 811 008c 2BD0     		beq	.L102
+ 812              	.LVL56:
+ 813              	.L140:
+ 814              		.loc 1 553 0 is_stmt 0 discriminator 1
+ 815 008e 8A48     		ldr	r0, .L152+4
+ 816 0090 8442     		cmp	r4, r0
+ 817 0092 28D0     		beq	.L102
+ 818              	.LVL57:
+ 819              	.L103:
+ 820              		.loc 1 583 0 is_stmt 1
+ 821 0094 0120     		movs	r0, #1
+ 822              		.loc 1 582 0
+ 823 0096 1A62     		str	r2, [r3, #32]
+ 824              		.loc 1 583 0
+ 825 0098 5861     		str	r0, [r3, #20]
+ 826              		.loc 1 584 0
+ 827 009a D868     		ldr	r0, [r3, #12]
+ 828 009c 8C68     		ldr	r4, [r1, #8]
+ 829              		.loc 1 588 0
+ 830 009e 0A6B     		ldr	r2, [r1, #48]
+ 831              	.LVL58:
+ 832              		.loc 1 584 0
+ 833 00a0 002C     		cmp	r4, #0
+ 834 00a2 0CBF     		ite	eq
+ 835 00a4 0146     		moveq	r1, r0
+ 836 00a6 40F00101 		orrne	r1, r0, #1
+ 837              	.LVL59:
+ 838 00aa D960     		str	r1, [r3, #12]
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 16
+
+
+ 839              		.loc 1 588 0
+ 840 00ac 42F40040 		orr	r0, r2, #32768
+ 841              		.loc 1 594 0
+ 842 00b0 8521     		movs	r1, #133
+ 843              		.loc 1 585 0
+ 844 00b2 0022     		movs	r2, #0
+ 845 00b4 1A61     		str	r2, [r3, #16]
+ 846              		.loc 1 588 0
+ 847 00b6 5864     		str	r0, [r3, #68]
+ 848              		.loc 1 594 0
+ 849 00b8 1960     		str	r1, [r3, #0]
+ 850 00ba BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 851              	.LVL60:
+ 852              	.L135:
+ 853              		.loc 1 523 0
+ 854 00be 42F02002 		orr	r2, r2, #32
+ 855              	.LVL61:
+ 856              	.L94:
+ 857              		.loc 1 529 0
+ 858 00c2 CF69     		ldr	r7, [r1, #28]
+ 859 00c4 07F00F00 		and	r0, r7, #15
+ 860 00c8 0128     		cmp	r0, #1
+ 861              		.loc 1 525 0
+ 862 00ca 42F01002 		orr	r2, r2, #16
+ 863              	.LVL62:
+ 864              		.loc 1 529 0
+ 865 00ce D3D1     		bne	.L138
+ 866              	.LVL63:
+ 867              	.L97:
+ 868              		.loc 1 533 0
+ 869 00d0 42F48072 		orr	r2, r2, #256
+ 870              	.LVL64:
+ 871              	.L144:
+ 872              		.loc 1 537 0
+ 873 00d4 486A     		ldr	r0, [r1, #36]
+ 874 00d6 00F00F00 		and	r0, r0, #15
+ 875 00da 0128     		cmp	r0, #1
+ 876 00dc D3D1     		bne	.L139
+ 877              	.LVL65:
+ 878              	.L100:
+ 879              		.loc 1 541 0
+ 880 00de 42F48052 		orr	r2, r2, #4096
+ 881              	.LVL66:
+ 882              	.L143:
+ 883              		.loc 1 553 0
+ 884 00e2 B442     		cmp	r4, r6
+ 885 00e4 D3D1     		bne	.L140
+ 886              	.LVL67:
+ 887              	.L102:
+ 888              		.loc 1 555 0
+ 889 00e6 05F0F005 		and	r5, r5, #240
+ 890 00ea 102D     		cmp	r5, #16
+ 891 00ec 3CD0     		beq	.L105
+ 892 00ee 202D     		cmp	r5, #32
+ 893 00f0 38D0     		beq	.L141
+ 894              	.L104:
+ 895              	.LVL68:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 17
+
+
+ 896              		.loc 1 563 0
+ 897 00f2 0CF0F004 		and	r4, ip, #240
+ 898              	.LVL69:
+ 899 00f6 102C     		cmp	r4, #16
+ 900 00f8 3BD0     		beq	.L108
+ 901 00fa 202C     		cmp	r4, #32
+ 902 00fc 37D0     		beq	.L142
+ 903              	.LVL70:
+ 904              	.L107:
+ 905              		.loc 1 571 0
+ 906 00fe 07F0F007 		and	r7, r7, #240
+ 907 0102 102F     		cmp	r7, #16
+ 908 0104 03D0     		beq	.L110
+ 909 0106 202F     		cmp	r7, #32
+ 910 0108 C4D1     		bne	.L103
+ 911              		.loc 1 573 0
+ 912 010a 42F40062 		orr	r2, r2, #2048
+ 913              	.LVL71:
+ 914              	.L110:
+ 915              		.loc 1 575 0
+ 916 010e 42F48062 		orr	r2, r2, #1024
+ 917              	.LVL72:
+ 918 0112 BFE7     		b	.L103
+ 919              	.LVL73:
+ 920              	.L137:
+ 921              		.loc 1 539 0
+ 922 0114 42F40052 		orr	r2, r2, #8192
+ 923              	.LVL74:
+ 924              		.loc 1 541 0
+ 925 0118 42F48052 		orr	r2, r2, #4096
+ 926              	.LVL75:
+ 927 011c E1E7     		b	.L143
+ 928              	.LVL76:
+ 929              	.L136:
+ 930              		.loc 1 531 0
+ 931 011e 42F40072 		orr	r2, r2, #512
+ 932              	.LVL77:
+ 933              		.loc 1 533 0
+ 934 0122 42F48072 		orr	r2, r2, #256
+ 935              	.LVL78:
+ 936 0126 D5E7     		b	.L144
+ 937              	.LVL79:
+ 938              	.L134:
+ 939              		.loc 1 406 0
+ 940 0128 624E     		ldr	r6, .L152
+ 941 012a B042     		cmp	r0, r6
+ 942 012c 3CD0     		beq	.L145
+ 943              		.loc 1 421 0
+ 944 012e 634F     		ldr	r7, .L152+8
+ 945 0130 B842     		cmp	r0, r7
+ 946 0132 55D0     		beq	.L146
+ 947              		.loc 1 430 0
+ 948 0134 6249     		ldr	r1, .L152+12
+ 949 0136 8842     		cmp	r0, r1
+ 950 0138 6AD0     		beq	.L147
+ 951              		.loc 1 439 0
+ 952 013a 624B     		ldr	r3, .L152+16
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 18
+
+
+ 953 013c 9842     		cmp	r0, r3
+ 954 013e 7FD0     		beq	.L148
+ 955              		.loc 1 449 0
+ 956 0140 6148     		ldr	r0, .L152+20
+ 957              	.LVL80:
+ 958 0142 8442     		cmp	r4, r0
+ 959 0144 18D0     		beq	.L149
+ 960              	.L88:
+ 961              		.loc 1 458 0
+ 962 0146 5C4B     		ldr	r3, .L152+4
+ 963 0148 9C42     		cmp	r4, r3
+ 964 014a 00F08780 		beq	.L150
+ 965              	.L85:
+ 966              		.loc 1 473 0
+ 967 014e 5F48     		ldr	r0, .L152+24
+ 968 0150 8442     		cmp	r4, r0
+ 969 0152 00F09F80 		beq	.L151
+ 970              	.L87:
+ 971              		.loc 1 484 0
+ 972 0156 2369     		ldr	r3, [r4, #16]
+ 973 0158 6168     		ldr	r1, [r4, #4]
+ 974 015a 46F66800 		movw	r0, #26728
+ 975 015e 9861     		str	r0, [r3, #24]
+ 976              		.loc 1 486 0
+ 977 0160 D861     		str	r0, [r3, #28]
+ 978 0162 63E7     		b	.L89
+ 979              	.LVL81:
+ 980              	.L141:
+ 981              		.loc 1 557 0
+ 982 0164 42F00802 		orr	r2, r2, #8
+ 983              	.LVL82:
+ 984              	.L105:
+ 985              		.loc 1 559 0
+ 986 0168 42F00402 		orr	r2, r2, #4
+ 987              	.LVL83:
+ 988 016c C1E7     		b	.L104
+ 989              	.LVL84:
+ 990              	.L142:
+ 991              		.loc 1 565 0
+ 992 016e 42F08002 		orr	r2, r2, #128
+ 993              	.LVL85:
+ 994              	.L108:
+ 995              		.loc 1 567 0
+ 996 0172 42F04002 		orr	r2, r2, #64
+ 997              	.LVL86:
+ 998 0176 C2E7     		b	.L107
+ 999              	.LVL87:
+ 1000              	.L149:
+ 1001              		.loc 1 450 0
+ 1002 0178 4FF46055 		mov	r5, #14336
+ 1003 017c C4F20205 		movt	r5, 16386
+ 1004              		.loc 1 452 0
+ 1005 0180 3220     		movs	r0, #50
+ 1006              		.loc 1 450 0
+ 1007 0182 2A6C     		ldr	r2, [r5, #64]
+ 1008 0184 42F00807 		orr	r7, r2, #8
+ 1009 0188 2F64     		str	r7, [r5, #64]
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 19
+
+
+ 1010              		.loc 1 451 0
+ 1011 018a 296A     		ldr	r1, [r5, #32]
+ 1012 018c 41F00803 		orr	r3, r1, #8
+ 1013 0190 2B62     		str	r3, [r5, #32]
+ 1014              	.L132:
+ 1015 0192 0023     		movs	r3, #0
+ 1016 0194 2B62     		str	r3, [r5, #32]
+ 1017              		.loc 1 454 0
+ 1018 0196 4FF43D45 		mov	r5, #48384
+ 1019              		.loc 1 452 0
+ 1020 019a 7021     		movs	r1, #112
+ 1021              		.loc 1 454 0
+ 1022 019c C0F20155 		movt	r5, 1281
+ 1023              		.loc 1 452 0
+ 1024 01a0 FFF7FEFF 		bl	nvicEnableVector
+ 1025              	.LVL88:
+ 1026              		.loc 1 454 0
+ 1027 01a4 E560     		str	r5, [r4, #12]
+ 1028 01a6 D6E7     		b	.L87
+ 1029              	.LVL89:
+ 1030              	.L145:
+ 1031              		.loc 1 407 0
+ 1032 01a8 4FF46053 		mov	r3, #14336
+ 1033 01ac C4F20203 		movt	r3, 16386
+ 1034              		.loc 1 409 0
+ 1035 01b0 7021     		movs	r1, #112
+ 1036              		.loc 1 407 0
+ 1037 01b2 586C     		ldr	r0, [r3, #68]
+ 1038              	.LVL90:
+ 1039 01b4 40F00102 		orr	r2, r0, #1
+ 1040 01b8 5A64     		str	r2, [r3, #68]
+ 1041              		.loc 1 408 0
+ 1042 01ba 5D6A     		ldr	r5, [r3, #36]
+ 1043 01bc 0022     		movs	r2, #0
+ 1044 01be 45F00107 		orr	r7, r5, #1
+ 1045 01c2 5F62     		str	r7, [r3, #36]
+ 1046              		.loc 1 409 0
+ 1047 01c4 1920     		movs	r0, #25
+ 1048              		.loc 1 408 0
+ 1049 01c6 5A62     		str	r2, [r3, #36]
+ 1050              		.loc 1 409 0
+ 1051 01c8 FFF7FEFF 		bl	nvicEnableVector
+ 1052              	.LVL91:
+ 1053              		.loc 1 411 0
+ 1054 01cc 7021     		movs	r1, #112
+ 1055 01ce 1B20     		movs	r0, #27
+ 1056 01d0 FFF7FEFF 		bl	nvicEnableVector
+ 1057              	.LVL92:
+ 1058              		.loc 1 416 0
+ 1059 01d4 4FF4F441 		mov	r1, #31232
+ 1060 01d8 C0F60321 		movt	r1, 2563
+ 1061 01dc E160     		str	r1, [r4, #12]
+ 1062 01de B2E7     		b	.L88
+ 1063              	.LVL93:
+ 1064              	.L146:
+ 1065              		.loc 1 422 0
+ 1066 01e0 4FF46051 		mov	r1, #14336
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 20
+
+
+ 1067 01e4 C4F20201 		movt	r1, 16386
+ 1068              		.loc 1 423 0
+ 1069 01e8 0027     		movs	r7, #0
+ 1070              		.loc 1 422 0
+ 1071 01ea 086C     		ldr	r0, [r1, #64]
+ 1072              	.LVL94:
+ 1073 01ec 40F00102 		orr	r2, r0, #1
+ 1074 01f0 0A64     		str	r2, [r1, #64]
+ 1075              		.loc 1 423 0
+ 1076 01f2 0B6A     		ldr	r3, [r1, #32]
+ 1077 01f4 43F00105 		orr	r5, r3, #1
+ 1078 01f8 0D62     		str	r5, [r1, #32]
+ 1079              		.loc 1 424 0
+ 1080 01fa 1C20     		movs	r0, #28
+ 1081              		.loc 1 423 0
+ 1082 01fc 0F62     		str	r7, [r1, #32]
+ 1083              		.loc 1 424 0
+ 1084 01fe 7021     		movs	r1, #112
+ 1085 0200 FFF7FEFF 		bl	nvicEnableVector
+ 1086              	.LVL95:
+ 1087              		.loc 1 426 0
+ 1088 0204 4FF43D41 		mov	r1, #48384
+ 1089 0208 C0F20151 		movt	r1, 1281
+ 1090 020c E160     		str	r1, [r4, #12]
+ 1091 020e 9AE7     		b	.L88
+ 1092              	.LVL96:
+ 1093              	.L147:
+ 1094              		.loc 1 431 0
+ 1095 0210 4FF46057 		mov	r7, #14336
+ 1096 0214 C4F20207 		movt	r7, 16386
+ 1097              		.loc 1 432 0
+ 1098 0218 0025     		movs	r5, #0
+ 1099              		.loc 1 431 0
+ 1100 021a 386C     		ldr	r0, [r7, #64]
+ 1101              	.LVL97:
+ 1102 021c 40F00202 		orr	r2, r0, #2
+ 1103 0220 3A64     		str	r2, [r7, #64]
+ 1104              		.loc 1 432 0
+ 1105 0222 396A     		ldr	r1, [r7, #32]
+ 1106 0224 41F00203 		orr	r3, r1, #2
+ 1107 0228 3B62     		str	r3, [r7, #32]
+ 1108 022a 3D62     		str	r5, [r7, #32]
+ 1109              		.loc 1 435 0
+ 1110 022c 4FF43D47 		mov	r7, #48384
+ 1111              		.loc 1 433 0
+ 1112 0230 1D20     		movs	r0, #29
+ 1113 0232 7021     		movs	r1, #112
+ 1114              		.loc 1 435 0
+ 1115 0234 C0F20157 		movt	r7, 1281
+ 1116              		.loc 1 433 0
+ 1117 0238 FFF7FEFF 		bl	nvicEnableVector
+ 1118              	.LVL98:
+ 1119              		.loc 1 435 0
+ 1120 023c E760     		str	r7, [r4, #12]
+ 1121 023e 86E7     		b	.L85
+ 1122              	.LVL99:
+ 1123              	.L148:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 21
+
+
+ 1124              		.loc 1 440 0
+ 1125 0240 4FF46055 		mov	r5, #14336
+ 1126 0244 C4F20205 		movt	r5, 16386
+ 1127 0248 286C     		ldr	r0, [r5, #64]
+ 1128              	.LVL100:
+ 1129 024a 40F00402 		orr	r2, r0, #4
+ 1130 024e 2A64     		str	r2, [r5, #64]
+ 1131              		.loc 1 441 0
+ 1132 0250 2F6A     		ldr	r7, [r5, #32]
+ 1133 0252 47F00401 		orr	r1, r7, #4
+ 1134 0256 2962     		str	r1, [r5, #32]
+ 1135              		.loc 1 442 0
+ 1136 0258 1E20     		movs	r0, #30
+ 1137 025a 9AE7     		b	.L132
+ 1138              	.L150:
+ 1139              		.loc 1 459 0
+ 1140 025c 4FF46055 		mov	r5, #14336
+ 1141 0260 C4F20205 		movt	r5, 16386
+ 1142              		.loc 1 460 0
+ 1143 0264 0027     		movs	r7, #0
+ 1144              		.loc 1 459 0
+ 1145 0266 686C     		ldr	r0, [r5, #68]
+ 1146 0268 40F00202 		orr	r2, r0, #2
+ 1147 026c 6A64     		str	r2, [r5, #68]
+ 1148              		.loc 1 460 0
+ 1149 026e 696A     		ldr	r1, [r5, #36]
+ 1150 0270 41F00203 		orr	r3, r1, #2
+ 1151 0274 6B62     		str	r3, [r5, #36]
+ 1152              		.loc 1 461 0
+ 1153 0276 2C20     		movs	r0, #44
+ 1154 0278 7021     		movs	r1, #112
+ 1155              		.loc 1 460 0
+ 1156 027a 6F62     		str	r7, [r5, #36]
+ 1157              		.loc 1 461 0
+ 1158 027c FFF7FEFF 		bl	nvicEnableVector
+ 1159              	.LVL101:
+ 1160              		.loc 1 463 0
+ 1161 0280 2E20     		movs	r0, #46
+ 1162              	.L133:
+ 1163              		.loc 1 478 0
+ 1164 0282 4FF4F445 		mov	r5, #31232
+ 1165              		.loc 1 476 0
+ 1166 0286 7021     		movs	r1, #112
+ 1167              		.loc 1 478 0
+ 1168 0288 C0F60325 		movt	r5, 2563
+ 1169              		.loc 1 476 0
+ 1170 028c FFF7FEFF 		bl	nvicEnableVector
+ 1171              	.LVL102:
+ 1172              		.loc 1 478 0
+ 1173 0290 E560     		str	r5, [r4, #12]
+ 1174 0292 60E7     		b	.L87
+ 1175              	.L151:
+ 1176              		.loc 1 474 0
+ 1177 0294 4FF46055 		mov	r5, #14336
+ 1178 0298 C4F20205 		movt	r5, 16386
+ 1179              		.loc 1 476 0
+ 1180 029c 1820     		movs	r0, #24
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 22
+
+
+ 1181              		.loc 1 474 0
+ 1182 029e 6F6C     		ldr	r7, [r5, #68]
+ 1183 02a0 47F48032 		orr	r2, r7, #65536
+ 1184 02a4 6A64     		str	r2, [r5, #68]
+ 1185              		.loc 1 475 0
+ 1186 02a6 696A     		ldr	r1, [r5, #36]
+ 1187 02a8 0027     		movs	r7, #0
+ 1188 02aa 41F48033 		orr	r3, r1, #65536
+ 1189 02ae 6B62     		str	r3, [r5, #36]
+ 1190 02b0 6F62     		str	r7, [r5, #36]
+ 1191 02b2 E6E7     		b	.L133
+ 1192              	.L153:
+ 1193              		.align	2
+ 1194              	.L152:
+ 1195 02b4 00000000 		.word	.LANCHOR0
+ 1196 02b8 00000000 		.word	.LANCHOR5
+ 1197 02bc 00000000 		.word	.LANCHOR1
+ 1198 02c0 00000000 		.word	.LANCHOR2
+ 1199 02c4 00000000 		.word	.LANCHOR3
+ 1200 02c8 00000000 		.word	.LANCHOR4
+ 1201 02cc 00000000 		.word	.LANCHOR6
+ 1202              		.cfi_endproc
+ 1203              	.LFE129:
+ 1204              		.size	pwm_lld_start, .-pwm_lld_start
+ 1205              		.section	.text.pwm_lld_stop,"ax",%progbits
+ 1206              		.align	2
+ 1207              		.p2align 4,,15
+ 1208              		.global	pwm_lld_stop
+ 1209              		.thumb
+ 1210              		.thumb_func
+ 1211              		.type	pwm_lld_stop, %function
+ 1212              	pwm_lld_stop:
+ 1213              	.LFB130:
+ 1214              		.loc 1 605 0
+ 1215              		.cfi_startproc
+ 1216              		@ args = 0, pretend = 0, frame = 0
+ 1217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1218              	.LVL103:
+ 1219              		.loc 1 608 0
+ 1220 0000 0378     		ldrb	r3, [r0, #0]	@ zero_extendqisi2
+ 1221 0002 022B     		cmp	r3, #2
+ 1222              		.loc 1 605 0
+ 1223 0004 10B5     		push	{r4, lr}
+ 1224              	.LCFI12:
+ 1225              		.cfi_def_cfa_offset 8
+ 1226              		.cfi_offset 4, -8
+ 1227              		.cfi_offset 14, -4
+ 1228              		.loc 1 605 0
+ 1229 0006 0446     		mov	r4, r0
+ 1230              		.loc 1 608 0
+ 1231 0008 00D0     		beq	.L165
+ 1232              	.LVL104:
+ 1233              	.L154:
+ 1234 000a 10BD     		pop	{r4, pc}
+ 1235              	.LVL105:
+ 1236              	.L165:
+ 1237              		.loc 1 617 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 23
+
+
+ 1238 000c 3A49     		ldr	r1, .L172
+ 1239              		.loc 1 609 0
+ 1240 000e 0069     		ldr	r0, [r0, #16]
+ 1241              	.LVL106:
+ 1242 0010 0022     		movs	r2, #0
+ 1243              		.loc 1 617 0
+ 1244 0012 8C42     		cmp	r4, r1
+ 1245              		.loc 1 609 0
+ 1246 0014 0260     		str	r2, [r0, #0]
+ 1247              		.loc 1 610 0
+ 1248 0016 C260     		str	r2, [r0, #12]
+ 1249              		.loc 1 611 0
+ 1250 0018 0261     		str	r2, [r0, #16]
+ 1251              		.loc 1 613 0
+ 1252 001a 4264     		str	r2, [r0, #68]
+ 1253              		.loc 1 617 0
+ 1254 001c 1DD0     		beq	.L166
+ 1255              		.loc 1 624 0
+ 1256 001e 374B     		ldr	r3, .L172+4
+ 1257 0020 9C42     		cmp	r4, r3
+ 1258 0022 29D0     		beq	.L167
+ 1259              		.loc 1 630 0
+ 1260 0024 3648     		ldr	r0, .L172+8
+ 1261 0026 8442     		cmp	r4, r0
+ 1262 0028 32D0     		beq	.L168
+ 1263              		.loc 1 636 0
+ 1264 002a 364A     		ldr	r2, .L172+12
+ 1265 002c 9442     		cmp	r4, r2
+ 1266 002e 3BD0     		beq	.L169
+ 1267              		.loc 1 642 0
+ 1268 0030 3549     		ldr	r1, .L172+16
+ 1269 0032 8C42     		cmp	r4, r1
+ 1270 0034 44D0     		beq	.L170
+ 1271              	.L164:
+ 1272              		.loc 1 648 0
+ 1273 0036 354A     		ldr	r2, .L172+20
+ 1274 0038 9442     		cmp	r4, r2
+ 1275 003a 4DD0     		beq	.L171
+ 1276              	.L161:
+ 1277              		.loc 1 655 0
+ 1278 003c 344B     		ldr	r3, .L172+24
+ 1279 003e 9C42     		cmp	r4, r3
+ 1280 0040 E3D1     		bne	.L154
+ 1281              		.loc 1 656 0
+ 1282 0042 1820     		movs	r0, #24
+ 1283 0044 FFF7FEFF 		bl	nvicDisableVector
+ 1284              	.LVL107:
+ 1285              		.loc 1 657 0
+ 1286 0048 4FF46050 		mov	r0, #14336
+ 1287 004c C4F20200 		movt	r0, 16386
+ 1288 0050 416C     		ldr	r1, [r0, #68]
+ 1289 0052 21F48032 		bic	r2, r1, #65536
+ 1290 0056 4264     		str	r2, [r0, #68]
+ 1291 0058 D7E7     		b	.L154
+ 1292              	.L166:
+ 1293              		.loc 1 618 0
+ 1294 005a 1920     		movs	r0, #25
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 24
+
+
+ 1295 005c FFF7FEFF 		bl	nvicDisableVector
+ 1296              	.LVL108:
+ 1297              		.loc 1 619 0
+ 1298 0060 1B20     		movs	r0, #27
+ 1299 0062 FFF7FEFF 		bl	nvicDisableVector
+ 1300              	.LVL109:
+ 1301              		.loc 1 620 0
+ 1302 0066 4FF46053 		mov	r3, #14336
+ 1303 006a C4F20203 		movt	r3, 16386
+ 1304 006e 586C     		ldr	r0, [r3, #68]
+ 1305 0070 20F00101 		bic	r1, r0, #1
+ 1306 0074 5964     		str	r1, [r3, #68]
+ 1307 0076 DEE7     		b	.L164
+ 1308              	.L167:
+ 1309              		.loc 1 625 0
+ 1310 0078 1C20     		movs	r0, #28
+ 1311 007a FFF7FEFF 		bl	nvicDisableVector
+ 1312              	.LVL110:
+ 1313              		.loc 1 626 0
+ 1314 007e 4FF46050 		mov	r0, #14336
+ 1315 0082 C4F20200 		movt	r0, 16386
+ 1316 0086 016C     		ldr	r1, [r0, #64]
+ 1317 0088 21F00102 		bic	r2, r1, #1
+ 1318 008c 0264     		str	r2, [r0, #64]
+ 1319 008e D2E7     		b	.L164
+ 1320              	.L168:
+ 1321              		.loc 1 631 0
+ 1322 0090 1D20     		movs	r0, #29
+ 1323 0092 FFF7FEFF 		bl	nvicDisableVector
+ 1324              	.LVL111:
+ 1325              		.loc 1 632 0
+ 1326 0096 4FF46051 		mov	r1, #14336
+ 1327 009a C4F20201 		movt	r1, 16386
+ 1328 009e 0A6C     		ldr	r2, [r1, #64]
+ 1329 00a0 22F00203 		bic	r3, r2, #2
+ 1330 00a4 0B64     		str	r3, [r1, #64]
+ 1331 00a6 C9E7     		b	.L161
+ 1332              	.L169:
+ 1333              		.loc 1 637 0
+ 1334 00a8 1E20     		movs	r0, #30
+ 1335 00aa FFF7FEFF 		bl	nvicDisableVector
+ 1336              	.LVL112:
+ 1337              		.loc 1 638 0
+ 1338 00ae 4FF46051 		mov	r1, #14336
+ 1339 00b2 C4F20201 		movt	r1, 16386
+ 1340 00b6 0B6C     		ldr	r3, [r1, #64]
+ 1341 00b8 23F00400 		bic	r0, r3, #4
+ 1342 00bc 0864     		str	r0, [r1, #64]
+ 1343 00be 10BD     		pop	{r4, pc}
+ 1344              	.L170:
+ 1345              		.loc 1 643 0
+ 1346 00c0 3220     		movs	r0, #50
+ 1347 00c2 FFF7FEFF 		bl	nvicDisableVector
+ 1348              	.LVL113:
+ 1349              		.loc 1 644 0
+ 1350 00c6 4FF46053 		mov	r3, #14336
+ 1351 00ca C4F20203 		movt	r3, 16386
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 25
+
+
+ 1352 00ce 186C     		ldr	r0, [r3, #64]
+ 1353 00d0 20F00802 		bic	r2, r0, #8
+ 1354 00d4 1A64     		str	r2, [r3, #64]
+ 1355 00d6 10BD     		pop	{r4, pc}
+ 1356              	.L171:
+ 1357              		.loc 1 649 0
+ 1358 00d8 2C20     		movs	r0, #44
+ 1359 00da FFF7FEFF 		bl	nvicDisableVector
+ 1360              	.LVL114:
+ 1361              		.loc 1 650 0
+ 1362 00de 2E20     		movs	r0, #46
+ 1363 00e0 FFF7FEFF 		bl	nvicDisableVector
+ 1364              	.LVL115:
+ 1365              		.loc 1 651 0
+ 1366 00e4 4FF46053 		mov	r3, #14336
+ 1367 00e8 C4F20203 		movt	r3, 16386
+ 1368 00ec 586C     		ldr	r0, [r3, #68]
+ 1369 00ee 20F00201 		bic	r1, r0, #2
+ 1370 00f2 5964     		str	r1, [r3, #68]
+ 1371 00f4 10BD     		pop	{r4, pc}
+ 1372              	.L173:
+ 1373 00f6 00BF     		.align	2
+ 1374              	.L172:
+ 1375 00f8 00000000 		.word	.LANCHOR0
+ 1376 00fc 00000000 		.word	.LANCHOR1
+ 1377 0100 00000000 		.word	.LANCHOR2
+ 1378 0104 00000000 		.word	.LANCHOR3
+ 1379 0108 00000000 		.word	.LANCHOR4
+ 1380 010c 00000000 		.word	.LANCHOR5
+ 1381 0110 00000000 		.word	.LANCHOR6
+ 1382              		.cfi_endproc
+ 1383              	.LFE130:
+ 1384              		.size	pwm_lld_stop, .-pwm_lld_stop
+ 1385 0114 AFF30080 		.section	.text.pwm_lld_enable_channel,"ax",%progbits
+ 1385      AFF30080 
+ 1385      AFF30080 
+ 1386              		.align	2
+ 1387              		.p2align 4,,15
+ 1388              		.global	pwm_lld_enable_channel
+ 1389              		.thumb
+ 1390              		.thumb_func
+ 1391              		.type	pwm_lld_enable_channel, %function
+ 1392              	pwm_lld_enable_channel:
+ 1393              	.LFB131:
+ 1394              		.loc 1 677 0
+ 1395              		.cfi_startproc
+ 1396              		@ args = 0, pretend = 0, frame = 0
+ 1397              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1398              		@ link register save eliminated.
+ 1399              	.LVL116:
+ 1400 0000 10B4     		push	{r4}
+ 1401              	.LCFI13:
+ 1402              		.cfi_def_cfa_offset 4
+ 1403              		.cfi_offset 4, -4
+ 1404              		.loc 1 682 0
+ 1405 0002 4468     		ldr	r4, [r0, #4]
+ 1406              		.loc 1 679 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 26
+
+
+ 1407 0004 0369     		ldr	r3, [r0, #16]
+ 1408              		.loc 1 682 0
+ 1409 0006 04EBC100 		add	r0, r4, r1, lsl #3
+ 1410              	.LVL117:
+ 1411              		.loc 1 679 0
+ 1412 000a 01F10C04 		add	r4, r1, #12
+ 1413 000e 03EB8404 		add	r4, r3, r4, lsl #2
+ 1414              		.loc 1 682 0
+ 1415 0012 0069     		ldr	r0, [r0, #16]
+ 1416              		.loc 1 679 0
+ 1417 0014 6260     		str	r2, [r4, #4]
+ 1418              		.loc 1 682 0
+ 1419 0016 48B1     		cbz	r0, .L174
+ 1420              	.LBB2:
+ 1421              		.loc 1 686 0
+ 1422 0018 0220     		movs	r0, #2
+ 1423              		.loc 1 683 0
+ 1424 001a DA68     		ldr	r2, [r3, #12]
+ 1425              	.LVL118:
+ 1426              		.loc 1 686 0
+ 1427 001c 00FA01F1 		lsl	r1, r0, r1
+ 1428              	.LVL119:
+ 1429 0020 1142     		tst	r1, r2
+ 1430 0022 03D1     		bne	.L174
+ 1431              		.loc 1 687 0
+ 1432 0024 0A43     		orrs	r2, r2, r1
+ 1433              	.LVL120:
+ 1434              		.loc 1 688 0
+ 1435 0026 C843     		mvns	r0, r1
+ 1436              		.loc 1 687 0
+ 1437 0028 DA60     		str	r2, [r3, #12]
+ 1438              		.loc 1 688 0
+ 1439 002a 1861     		str	r0, [r3, #16]
+ 1440              	.L174:
+ 1441              	.LBE2:
+ 1442              		.loc 1 691 0
+ 1443 002c 10BC     		pop	{r4}
+ 1444 002e 7047     		bx	lr
+ 1445              		.cfi_endproc
+ 1446              	.LFE131:
+ 1447              		.size	pwm_lld_enable_channel, .-pwm_lld_enable_channel
+ 1448              		.section	.text.pwm_lld_disable_channel,"ax",%progbits
+ 1449              		.align	2
+ 1450              		.p2align 4,,15
+ 1451              		.global	pwm_lld_disable_channel
+ 1452              		.thumb
+ 1453              		.thumb_func
+ 1454              		.type	pwm_lld_disable_channel, %function
+ 1455              	pwm_lld_disable_channel:
+ 1456              	.LFB132:
+ 1457              		.loc 1 705 0
+ 1458              		.cfi_startproc
+ 1459              		@ args = 0, pretend = 0, frame = 0
+ 1460              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1461              		@ link register save eliminated.
+ 1462              	.LVL121:
+ 1463              		.loc 1 707 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 27
+
+
+ 1464 0000 0369     		ldr	r3, [r0, #16]
+ 1465 0002 01F10C02 		add	r2, r1, #12
+ 1466 0006 03EB8202 		add	r2, r3, r2, lsl #2
+ 1467 000a 0020     		movs	r0, #0
+ 1468              	.LVL122:
+ 1469 000c 5060     		str	r0, [r2, #4]
+ 1470              		.loc 1 708 0
+ 1471 000e DA68     		ldr	r2, [r3, #12]
+ 1472 0010 0220     		movs	r0, #2
+ 1473 0012 00FA01F1 		lsl	r1, r0, r1
+ 1474              	.LVL123:
+ 1475 0016 22EA0102 		bic	r2, r2, r1
+ 1476 001a DA60     		str	r2, [r3, #12]
+ 1477 001c 7047     		bx	lr
+ 1478              		.cfi_endproc
+ 1479              	.LFE132:
+ 1480              		.size	pwm_lld_disable_channel, .-pwm_lld_disable_channel
+ 1481              		.global	PWMD9
+ 1482              		.global	PWMD8
+ 1483              		.global	PWMD5
+ 1484              		.global	PWMD4
+ 1485              		.global	PWMD3
+ 1486              		.global	PWMD2
+ 1487              		.global	PWMD1
+ 1488 001e 00BF     		.section	.bss.PWMD1,"aw",%nobits
+ 1489              		.align	2
+ 1490              		.set	.LANCHOR0,. + 0
+ 1491              		.type	PWMD1, %object
+ 1492              		.size	PWMD1, 20
+ 1493              	PWMD1:
+ 1494 0000 00000000 		.space	20
+ 1494      00000000 
+ 1494      00000000 
+ 1494      00000000 
+ 1494      00000000 
+ 1495              		.section	.bss.PWMD2,"aw",%nobits
+ 1496              		.align	2
+ 1497              		.set	.LANCHOR1,. + 0
+ 1498              		.type	PWMD2, %object
+ 1499              		.size	PWMD2, 20
+ 1500              	PWMD2:
+ 1501 0000 00000000 		.space	20
+ 1501      00000000 
+ 1501      00000000 
+ 1501      00000000 
+ 1501      00000000 
+ 1502              		.section	.bss.PWMD3,"aw",%nobits
+ 1503              		.align	2
+ 1504              		.set	.LANCHOR2,. + 0
+ 1505              		.type	PWMD3, %object
+ 1506              		.size	PWMD3, 20
+ 1507              	PWMD3:
+ 1508 0000 00000000 		.space	20
+ 1508      00000000 
+ 1508      00000000 
+ 1508      00000000 
+ 1508      00000000 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 28
+
+
+ 1509              		.section	.bss.PWMD4,"aw",%nobits
+ 1510              		.align	2
+ 1511              		.set	.LANCHOR3,. + 0
+ 1512              		.type	PWMD4, %object
+ 1513              		.size	PWMD4, 20
+ 1514              	PWMD4:
+ 1515 0000 00000000 		.space	20
+ 1515      00000000 
+ 1515      00000000 
+ 1515      00000000 
+ 1515      00000000 
+ 1516              		.section	.bss.PWMD5,"aw",%nobits
+ 1517              		.align	2
+ 1518              		.set	.LANCHOR4,. + 0
+ 1519              		.type	PWMD5, %object
+ 1520              		.size	PWMD5, 20
+ 1521              	PWMD5:
+ 1522 0000 00000000 		.space	20
+ 1522      00000000 
+ 1522      00000000 
+ 1522      00000000 
+ 1522      00000000 
+ 1523              		.section	.bss.PWMD8,"aw",%nobits
+ 1524              		.align	2
+ 1525              		.set	.LANCHOR5,. + 0
+ 1526              		.type	PWMD8, %object
+ 1527              		.size	PWMD8, 20
+ 1528              	PWMD8:
+ 1529 0000 00000000 		.space	20
+ 1529      00000000 
+ 1529      00000000 
+ 1529      00000000 
+ 1529      00000000 
+ 1530              		.section	.bss.PWMD9,"aw",%nobits
+ 1531              		.align	2
+ 1532              		.set	.LANCHOR6,. + 0
+ 1533              		.type	PWMD9, %object
+ 1534              		.size	PWMD9, 20
+ 1535              	PWMD9:
+ 1536 0000 00000000 		.space	20
+ 1536      00000000 
+ 1536      00000000 
+ 1536      00000000 
+ 1536      00000000 
+ 1537              		.text
+ 1538              	.Letext0:
+ 1539              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 1540              		.file 3 "../../chibios/os/hal/platforms/STM32F4xx/stm32f4xx.h"
+ 1541              		.file 4 "../../chibios/os/hal/include/pwm.h"
+ 1542              		.file 5 "../../chibios/os/hal/platforms/STM32/TIMv1/pwm_lld.h"
+ 1543              		.file 6 "../../chibios/os/hal/platforms/STM32/TIMv1/stm32_tim.h"
+ 1544              		.file 7 "../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4.h"
+ 1545              		.file 8 "../../chibios/os/ports/common/ARMCMx/nvic.h"
+ 1546              		.file 9 "../../chibios/os/ports/GCC/ARMCMx/chcore_v7m.h"
+ 1547              		.section	.debug_info,"",%progbits
+ 1548              	.Ldebug_info0:
+ 1549 0000 C10C0000 		.4byte	0xcc1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 29
+
+
+ 1550 0004 0200     		.2byte	0x2
+ 1551 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1552 000a 04       		.byte	0x4
+ 1553 000b 01       		.uleb128 0x1
+ 1554 000c 6F020000 		.4byte	.LASF106
+ 1555 0010 01       		.byte	0x1
+ 1556 0011 4C000000 		.4byte	.LASF107
+ 1557 0015 AB030000 		.4byte	.LASF108
+ 1558 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1559 001d 00000000 		.4byte	0
+ 1560 0021 00000000 		.4byte	0
+ 1561 0025 00000000 		.4byte	.Ldebug_line0
+ 1562 0029 02       		.uleb128 0x2
+ 1563 002a 04       		.byte	0x4
+ 1564 002b 07       		.byte	0x7
+ 1565 002c C4010000 		.4byte	.LASF0
+ 1566 0030 03       		.uleb128 0x3
+ 1567 0031 04       		.byte	0x4
+ 1568 0032 05       		.byte	0x5
+ 1569 0033 696E7400 		.ascii	"int\000"
+ 1570 0037 02       		.uleb128 0x2
+ 1571 0038 01       		.byte	0x1
+ 1572 0039 06       		.byte	0x6
+ 1573 003a 0D010000 		.4byte	.LASF1
+ 1574 003e 04       		.uleb128 0x4
+ 1575 003f 6A040000 		.4byte	.LASF4
+ 1576 0043 02       		.byte	0x2
+ 1577 0044 2A       		.byte	0x2a
+ 1578 0045 49000000 		.4byte	0x49
+ 1579 0049 02       		.uleb128 0x2
+ 1580 004a 01       		.byte	0x1
+ 1581 004b 08       		.byte	0x8
+ 1582 004c 45030000 		.4byte	.LASF2
+ 1583 0050 02       		.uleb128 0x2
+ 1584 0051 02       		.byte	0x2
+ 1585 0052 05       		.byte	0x5
+ 1586 0053 60030000 		.4byte	.LASF3
+ 1587 0057 04       		.uleb128 0x4
+ 1588 0058 86010000 		.4byte	.LASF5
+ 1589 005c 02       		.byte	0x2
+ 1590 005d 36       		.byte	0x36
+ 1591 005e 62000000 		.4byte	0x62
+ 1592 0062 02       		.uleb128 0x2
+ 1593 0063 02       		.byte	0x2
+ 1594 0064 07       		.byte	0x7
+ 1595 0065 31040000 		.4byte	.LASF6
+ 1596 0069 04       		.uleb128 0x4
+ 1597 006a 3D030000 		.4byte	.LASF7
+ 1598 006e 02       		.byte	0x2
+ 1599 006f 4F       		.byte	0x4f
+ 1600 0070 74000000 		.4byte	0x74
+ 1601 0074 02       		.uleb128 0x2
+ 1602 0075 04       		.byte	0x4
+ 1603 0076 05       		.byte	0x5
+ 1604 0077 53010000 		.4byte	.LASF8
+ 1605 007b 04       		.uleb128 0x4
+ 1606 007c CF030000 		.4byte	.LASF9
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 30
+
+
+ 1607 0080 02       		.byte	0x2
+ 1608 0081 50       		.byte	0x50
+ 1609 0082 86000000 		.4byte	0x86
+ 1610 0086 02       		.uleb128 0x2
+ 1611 0087 04       		.byte	0x4
+ 1612 0088 07       		.byte	0x7
+ 1613 0089 E3010000 		.4byte	.LASF10
+ 1614 008d 02       		.uleb128 0x2
+ 1615 008e 08       		.byte	0x8
+ 1616 008f 05       		.byte	0x5
+ 1617 0090 78010000 		.4byte	.LASF11
+ 1618 0094 02       		.uleb128 0x2
+ 1619 0095 08       		.byte	0x8
+ 1620 0096 07       		.byte	0x7
+ 1621 0097 91000000 		.4byte	.LASF12
+ 1622 009b 02       		.uleb128 0x2
+ 1623 009c 01       		.byte	0x1
+ 1624 009d 02       		.byte	0x2
+ 1625 009e 37030000 		.4byte	.LASF13
+ 1626 00a2 05       		.uleb128 0x5
+ 1627 00a3 7B000000 		.4byte	0x7b
+ 1628 00a7 02       		.uleb128 0x2
+ 1629 00a8 04       		.byte	0x4
+ 1630 00a9 07       		.byte	0x7
+ 1631 00aa 66020000 		.4byte	.LASF14
+ 1632 00ae 02       		.uleb128 0x2
+ 1633 00af 01       		.byte	0x1
+ 1634 00b0 08       		.byte	0x8
+ 1635 00b1 02040000 		.4byte	.LASF15
+ 1636 00b5 06       		.uleb128 0x6
+ 1637 00b6 7B000000 		.4byte	0x7b
+ 1638 00ba C5000000 		.4byte	0xc5
+ 1639 00be 07       		.uleb128 0x7
+ 1640 00bf A7000000 		.4byte	0xa7
+ 1641 00c3 01       		.byte	0x1
+ 1642 00c4 00       		.byte	0
+ 1643 00c5 06       		.uleb128 0x6
+ 1644 00c6 7B000000 		.4byte	0x7b
+ 1645 00ca D5000000 		.4byte	0xd5
+ 1646 00ce 07       		.uleb128 0x7
+ 1647 00cf A7000000 		.4byte	0xa7
+ 1648 00d3 03       		.byte	0x3
+ 1649 00d4 00       		.byte	0
+ 1650 00d5 05       		.uleb128 0x5
+ 1651 00d6 69000000 		.4byte	0x69
+ 1652 00da 08       		.uleb128 0x8
+ 1653 00db 90       		.byte	0x90
+ 1654 00dc 03       		.byte	0x3
+ 1655 00dd 5804     		.2byte	0x458
+ 1656 00df C7020000 		.4byte	0x2c7
+ 1657 00e3 09       		.uleb128 0x9
+ 1658 00e4 435200   		.ascii	"CR\000"
+ 1659 00e7 03       		.byte	0x3
+ 1660 00e8 5A04     		.2byte	0x45a
+ 1661 00ea A2000000 		.4byte	0xa2
+ 1662 00ee 02       		.byte	0x2
+ 1663 00ef 23       		.byte	0x23
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 31
+
+
+ 1664 00f0 00       		.uleb128 0
+ 1665 00f1 0A       		.uleb128 0xa
+ 1666 00f2 8F010000 		.4byte	.LASF16
+ 1667 00f6 03       		.byte	0x3
+ 1668 00f7 5B04     		.2byte	0x45b
+ 1669 00f9 A2000000 		.4byte	0xa2
+ 1670 00fd 02       		.byte	0x2
+ 1671 00fe 23       		.byte	0x23
+ 1672 00ff 04       		.uleb128 0x4
+ 1673 0100 0A       		.uleb128 0xa
+ 1674 0101 98040000 		.4byte	.LASF17
+ 1675 0105 03       		.byte	0x3
+ 1676 0106 5C04     		.2byte	0x45c
+ 1677 0108 A2000000 		.4byte	0xa2
+ 1678 010c 02       		.byte	0x2
+ 1679 010d 23       		.byte	0x23
+ 1680 010e 08       		.uleb128 0x8
+ 1681 010f 09       		.uleb128 0x9
+ 1682 0110 43495200 		.ascii	"CIR\000"
+ 1683 0114 03       		.byte	0x3
+ 1684 0115 5D04     		.2byte	0x45d
+ 1685 0117 A2000000 		.4byte	0xa2
+ 1686 011b 02       		.byte	0x2
+ 1687 011c 23       		.byte	0x23
+ 1688 011d 0C       		.uleb128 0xc
+ 1689 011e 0A       		.uleb128 0xa
+ 1690 011f 19010000 		.4byte	.LASF18
+ 1691 0123 03       		.byte	0x3
+ 1692 0124 5E04     		.2byte	0x45e
+ 1693 0126 A2000000 		.4byte	0xa2
+ 1694 012a 02       		.byte	0x2
+ 1695 012b 23       		.byte	0x23
+ 1696 012c 10       		.uleb128 0x10
+ 1697 012d 0A       		.uleb128 0xa
+ 1698 012e 18040000 		.4byte	.LASF19
+ 1699 0132 03       		.byte	0x3
+ 1700 0133 5F04     		.2byte	0x45f
+ 1701 0135 A2000000 		.4byte	0xa2
+ 1702 0139 02       		.byte	0x2
+ 1703 013a 23       		.byte	0x23
+ 1704 013b 14       		.uleb128 0x14
+ 1705 013c 0A       		.uleb128 0xa
+ 1706 013d 17020000 		.4byte	.LASF20
+ 1707 0141 03       		.byte	0x3
+ 1708 0142 6004     		.2byte	0x460
+ 1709 0144 A2000000 		.4byte	0xa2
+ 1710 0148 02       		.byte	0x2
+ 1711 0149 23       		.byte	0x23
+ 1712 014a 18       		.uleb128 0x18
+ 1713 014b 0A       		.uleb128 0xa
+ 1714 014c F1020000 		.4byte	.LASF21
+ 1715 0150 03       		.byte	0x3
+ 1716 0151 6104     		.2byte	0x461
+ 1717 0153 7B000000 		.4byte	0x7b
+ 1718 0157 02       		.byte	0x2
+ 1719 0158 23       		.byte	0x23
+ 1720 0159 1C       		.uleb128 0x1c
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 32
+
+
+ 1721 015a 0A       		.uleb128 0xa
+ 1722 015b CF020000 		.4byte	.LASF22
+ 1723 015f 03       		.byte	0x3
+ 1724 0160 6204     		.2byte	0x462
+ 1725 0162 A2000000 		.4byte	0xa2
+ 1726 0166 02       		.byte	0x2
+ 1727 0167 23       		.byte	0x23
+ 1728 0168 20       		.uleb128 0x20
+ 1729 0169 0A       		.uleb128 0xa
+ 1730 016a 6A010000 		.4byte	.LASF23
+ 1731 016e 03       		.byte	0x3
+ 1732 016f 6304     		.2byte	0x463
+ 1733 0171 A2000000 		.4byte	0xa2
+ 1734 0175 02       		.byte	0x2
+ 1735 0176 23       		.byte	0x23
+ 1736 0177 24       		.uleb128 0x24
+ 1737 0178 0A       		.uleb128 0xa
+ 1738 0179 FB020000 		.4byte	.LASF24
+ 1739 017d 03       		.byte	0x3
+ 1740 017e 6404     		.2byte	0x464
+ 1741 0180 B5000000 		.4byte	0xb5
+ 1742 0184 02       		.byte	0x2
+ 1743 0185 23       		.byte	0x23
+ 1744 0186 28       		.uleb128 0x28
+ 1745 0187 0A       		.uleb128 0xa
+ 1746 0188 90040000 		.4byte	.LASF25
+ 1747 018c 03       		.byte	0x3
+ 1748 018d 6504     		.2byte	0x465
+ 1749 018f A2000000 		.4byte	0xa2
+ 1750 0193 02       		.byte	0x2
+ 1751 0194 23       		.byte	0x23
+ 1752 0195 30       		.uleb128 0x30
+ 1753 0196 0A       		.uleb128 0xa
+ 1754 0197 29040000 		.4byte	.LASF26
+ 1755 019b 03       		.byte	0x3
+ 1756 019c 6604     		.2byte	0x466
+ 1757 019e A2000000 		.4byte	0xa2
+ 1758 01a2 02       		.byte	0x2
+ 1759 01a3 23       		.byte	0x23
+ 1760 01a4 34       		.uleb128 0x34
+ 1761 01a5 0A       		.uleb128 0xa
+ 1762 01a6 8D030000 		.4byte	.LASF27
+ 1763 01aa 03       		.byte	0x3
+ 1764 01ab 6704     		.2byte	0x467
+ 1765 01ad A2000000 		.4byte	0xa2
+ 1766 01b1 02       		.byte	0x2
+ 1767 01b2 23       		.byte	0x23
+ 1768 01b3 38       		.uleb128 0x38
+ 1769 01b4 0A       		.uleb128 0xa
+ 1770 01b5 05030000 		.4byte	.LASF28
+ 1771 01b9 03       		.byte	0x3
+ 1772 01ba 6804     		.2byte	0x468
+ 1773 01bc 7B000000 		.4byte	0x7b
+ 1774 01c0 02       		.byte	0x2
+ 1775 01c1 23       		.byte	0x23
+ 1776 01c2 3C       		.uleb128 0x3c
+ 1777 01c3 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 33
+
+
+ 1778 01c4 21040000 		.4byte	.LASF29
+ 1779 01c8 03       		.byte	0x3
+ 1780 01c9 6904     		.2byte	0x469
+ 1781 01cb A2000000 		.4byte	0xa2
+ 1782 01cf 02       		.byte	0x2
+ 1783 01d0 23       		.byte	0x23
+ 1784 01d1 40       		.uleb128 0x40
+ 1785 01d2 0A       		.uleb128 0xa
+ 1786 01d3 7D030000 		.4byte	.LASF30
+ 1787 01d7 03       		.byte	0x3
+ 1788 01d8 6A04     		.2byte	0x46a
+ 1789 01da A2000000 		.4byte	0xa2
+ 1790 01de 02       		.byte	0x2
+ 1791 01df 23       		.byte	0x23
+ 1792 01e0 44       		.uleb128 0x44
+ 1793 01e1 0A       		.uleb128 0xa
+ 1794 01e2 0F030000 		.4byte	.LASF31
+ 1795 01e6 03       		.byte	0x3
+ 1796 01e7 6B04     		.2byte	0x46b
+ 1797 01e9 B5000000 		.4byte	0xb5
+ 1798 01ed 02       		.byte	0x2
+ 1799 01ee 23       		.byte	0x23
+ 1800 01ef 48       		.uleb128 0x48
+ 1801 01f0 0A       		.uleb128 0xa
+ 1802 01f1 D4000000 		.4byte	.LASF32
+ 1803 01f5 03       		.byte	0x3
+ 1804 01f6 6C04     		.2byte	0x46c
+ 1805 01f8 A2000000 		.4byte	0xa2
+ 1806 01fc 02       		.byte	0x2
+ 1807 01fd 23       		.byte	0x23
+ 1808 01fe 50       		.uleb128 0x50
+ 1809 01ff 0A       		.uleb128 0xa
+ 1810 0200 C5020000 		.4byte	.LASF33
+ 1811 0204 03       		.byte	0x3
+ 1812 0205 6D04     		.2byte	0x46d
+ 1813 0207 A2000000 		.4byte	0xa2
+ 1814 020b 02       		.byte	0x2
+ 1815 020c 23       		.byte	0x23
+ 1816 020d 54       		.uleb128 0x54
+ 1817 020e 0A       		.uleb128 0xa
+ 1818 020f 6A030000 		.4byte	.LASF34
+ 1819 0213 03       		.byte	0x3
+ 1820 0214 6E04     		.2byte	0x46e
+ 1821 0216 A2000000 		.4byte	0xa2
+ 1822 021a 02       		.byte	0x2
+ 1823 021b 23       		.byte	0x23
+ 1824 021c 58       		.uleb128 0x58
+ 1825 021d 0A       		.uleb128 0xa
+ 1826 021e 19030000 		.4byte	.LASF35
+ 1827 0222 03       		.byte	0x3
+ 1828 0223 6F04     		.2byte	0x46f
+ 1829 0225 7B000000 		.4byte	0x7b
+ 1830 0229 02       		.byte	0x2
+ 1831 022a 23       		.byte	0x23
+ 1832 022b 5C       		.uleb128 0x5c
+ 1833 022c 0A       		.uleb128 0xa
+ 1834 022d 0D000000 		.4byte	.LASF36
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 34
+
+
+ 1835 0231 03       		.byte	0x3
+ 1836 0232 7004     		.2byte	0x470
+ 1837 0234 A2000000 		.4byte	0xa2
+ 1838 0238 02       		.byte	0x2
+ 1839 0239 23       		.byte	0x23
+ 1840 023a 60       		.uleb128 0x60
+ 1841 023b 0A       		.uleb128 0xa
+ 1842 023c 52020000 		.4byte	.LASF37
+ 1843 0240 03       		.byte	0x3
+ 1844 0241 7104     		.2byte	0x471
+ 1845 0243 A2000000 		.4byte	0xa2
+ 1846 0247 02       		.byte	0x2
+ 1847 0248 23       		.byte	0x23
+ 1848 0249 64       		.uleb128 0x64
+ 1849 024a 0A       		.uleb128 0xa
+ 1850 024b 23030000 		.4byte	.LASF38
+ 1851 024f 03       		.byte	0x3
+ 1852 0250 7204     		.2byte	0x472
+ 1853 0252 B5000000 		.4byte	0xb5
+ 1854 0256 02       		.byte	0x2
+ 1855 0257 23       		.byte	0x23
+ 1856 0258 68       		.uleb128 0x68
+ 1857 0259 0A       		.uleb128 0xa
+ 1858 025a 65040000 		.4byte	.LASF39
+ 1859 025e 03       		.byte	0x3
+ 1860 025f 7304     		.2byte	0x473
+ 1861 0261 A2000000 		.4byte	0xa2
+ 1862 0265 02       		.byte	0x2
+ 1863 0266 23       		.byte	0x23
+ 1864 0267 70       		.uleb128 0x70
+ 1865 0268 09       		.uleb128 0x9
+ 1866 0269 43535200 		.ascii	"CSR\000"
+ 1867 026d 03       		.byte	0x3
+ 1868 026e 7404     		.2byte	0x474
+ 1869 0270 A2000000 		.4byte	0xa2
+ 1870 0274 02       		.byte	0x2
+ 1871 0275 23       		.byte	0x23
+ 1872 0276 74       		.uleb128 0x74
+ 1873 0277 0A       		.uleb128 0xa
+ 1874 0278 2D030000 		.4byte	.LASF40
+ 1875 027c 03       		.byte	0x3
+ 1876 027d 7504     		.2byte	0x475
+ 1877 027f B5000000 		.4byte	0xb5
+ 1878 0283 02       		.byte	0x2
+ 1879 0284 23       		.byte	0x23
+ 1880 0285 78       		.uleb128 0x78
+ 1881 0286 0A       		.uleb128 0xa
+ 1882 0287 55040000 		.4byte	.LASF41
+ 1883 028b 03       		.byte	0x3
+ 1884 028c 7604     		.2byte	0x476
+ 1885 028e A2000000 		.4byte	0xa2
+ 1886 0292 03       		.byte	0x3
+ 1887 0293 23       		.byte	0x23
+ 1888 0294 8001     		.uleb128 0x80
+ 1889 0296 0A       		.uleb128 0xa
+ 1890 0297 0C020000 		.4byte	.LASF42
+ 1891 029b 03       		.byte	0x3
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 35
+
+
+ 1892 029c 7704     		.2byte	0x477
+ 1893 029e A2000000 		.4byte	0xa2
+ 1894 02a2 03       		.byte	0x3
+ 1895 02a3 23       		.byte	0x23
+ 1896 02a4 8401     		.uleb128 0x84
+ 1897 02a6 0A       		.uleb128 0xa
+ 1898 02a7 D8020000 		.4byte	.LASF43
+ 1899 02ab 03       		.byte	0x3
+ 1900 02ac 7804     		.2byte	0x478
+ 1901 02ae A2000000 		.4byte	0xa2
+ 1902 02b2 03       		.byte	0x3
+ 1903 02b3 23       		.byte	0x23
+ 1904 02b4 8801     		.uleb128 0x88
+ 1905 02b6 0A       		.uleb128 0xa
+ 1906 02b7 FF000000 		.4byte	.LASF44
+ 1907 02bb 03       		.byte	0x3
+ 1908 02bc 7904     		.2byte	0x479
+ 1909 02be A2000000 		.4byte	0xa2
+ 1910 02c2 03       		.byte	0x3
+ 1911 02c3 23       		.byte	0x23
+ 1912 02c4 8C01     		.uleb128 0x8c
+ 1913 02c6 00       		.byte	0
+ 1914 02c7 0B       		.uleb128 0xb
+ 1915 02c8 F5010000 		.4byte	.LASF45
+ 1916 02cc 03       		.byte	0x3
+ 1917 02cd 7B04     		.2byte	0x47b
+ 1918 02cf DA000000 		.4byte	0xda
+ 1919 02d3 0C       		.uleb128 0xc
+ 1920 02d4 01       		.byte	0x1
+ 1921 02d5 04       		.byte	0x4
+ 1922 02d6 55       		.byte	0x55
+ 1923 02d7 EE020000 		.4byte	0x2ee
+ 1924 02db 0D       		.uleb128 0xd
+ 1925 02dc A3040000 		.4byte	.LASF46
+ 1926 02e0 00       		.sleb128 0
+ 1927 02e1 0D       		.uleb128 0xd
+ 1928 02e2 F9030000 		.4byte	.LASF47
+ 1929 02e6 01       		.sleb128 1
+ 1930 02e7 0D       		.uleb128 0xd
+ 1931 02e8 DE000000 		.4byte	.LASF48
+ 1932 02ec 02       		.sleb128 2
+ 1933 02ed 00       		.byte	0
+ 1934 02ee 04       		.uleb128 0x4
+ 1935 02ef 7C040000 		.4byte	.LASF49
+ 1936 02f3 04       		.byte	0x4
+ 1937 02f4 59       		.byte	0x59
+ 1938 02f5 D3020000 		.4byte	0x2d3
+ 1939 02f9 04       		.uleb128 0x4
+ 1940 02fa 72040000 		.4byte	.LASF50
+ 1941 02fe 04       		.byte	0x4
+ 1942 02ff 5E       		.byte	0x5e
+ 1943 0300 04030000 		.4byte	0x304
+ 1944 0304 0E       		.uleb128 0xe
+ 1945 0305 72040000 		.4byte	.LASF50
+ 1946 0309 14       		.byte	0x14
+ 1947 030a 05       		.byte	0x5
+ 1948 030b 6F01     		.2byte	0x16f
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 36
+
+
+ 1949 030d 5D030000 		.4byte	0x35d
+ 1950 0311 0A       		.uleb128 0xa
+ 1951 0312 44010000 		.4byte	.LASF51
+ 1952 0316 05       		.byte	0x5
+ 1953 0317 7301     		.2byte	0x173
+ 1954 0319 EE020000 		.4byte	0x2ee
+ 1955 031d 02       		.byte	0x2
+ 1956 031e 23       		.byte	0x23
+ 1957 031f 00       		.uleb128 0
+ 1958 0320 0A       		.uleb128 0xa
+ 1959 0321 0C040000 		.4byte	.LASF52
+ 1960 0325 05       		.byte	0x5
+ 1961 0326 7701     		.2byte	0x177
+ 1962 0328 BB050000 		.4byte	0x5bb
+ 1963 032c 02       		.byte	0x2
+ 1964 032d 23       		.byte	0x23
+ 1965 032e 04       		.uleb128 0x4
+ 1966 032f 0A       		.uleb128 0xa
+ 1967 0330 81000000 		.4byte	.LASF53
+ 1968 0334 05       		.byte	0x5
+ 1969 0335 7B01     		.2byte	0x17b
+ 1970 0337 EC040000 		.4byte	0x4ec
+ 1971 033b 02       		.byte	0x2
+ 1972 033c 23       		.byte	0x23
+ 1973 033d 08       		.uleb128 0x8
+ 1974 033e 0A       		.uleb128 0xa
+ 1975 033f 9D040000 		.4byte	.LASF54
+ 1976 0343 05       		.byte	0x5
+ 1977 0344 8301     		.2byte	0x183
+ 1978 0346 7B000000 		.4byte	0x7b
+ 1979 034a 02       		.byte	0x2
+ 1980 034b 23       		.byte	0x23
+ 1981 034c 0C       		.uleb128 0xc
+ 1982 034d 09       		.uleb128 0x9
+ 1983 034e 74696D00 		.ascii	"tim\000"
+ 1984 0352 05       		.byte	0x5
+ 1985 0353 8701     		.2byte	0x187
+ 1986 0355 C6050000 		.4byte	0x5c6
+ 1987 0359 02       		.byte	0x2
+ 1988 035a 23       		.byte	0x23
+ 1989 035b 10       		.uleb128 0x10
+ 1990 035c 00       		.byte	0
+ 1991 035d 04       		.uleb128 0x4
+ 1992 035e E3020000 		.4byte	.LASF55
+ 1993 0362 04       		.byte	0x4
+ 1994 0363 65       		.byte	0x65
+ 1995 0364 68030000 		.4byte	0x368
+ 1996 0368 0F       		.uleb128 0xf
+ 1997 0369 04       		.byte	0x4
+ 1998 036a 6E030000 		.4byte	0x36e
+ 1999 036e 10       		.uleb128 0x10
+ 2000 036f 01       		.byte	0x1
+ 2001 0370 7A030000 		.4byte	0x37a
+ 2002 0374 11       		.uleb128 0x11
+ 2003 0375 7A030000 		.4byte	0x37a
+ 2004 0379 00       		.byte	0
+ 2005 037a 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 37
+
+
+ 2006 037b 04       		.byte	0x4
+ 2007 037c F9020000 		.4byte	0x2f9
+ 2008 0380 08       		.uleb128 0x8
+ 2009 0381 60       		.byte	0x60
+ 2010 0382 06       		.byte	0x6
+ 2011 0383 9E01     		.2byte	0x19e
+ 2012 0385 C3040000 		.4byte	0x4c3
+ 2013 0389 09       		.uleb128 0x9
+ 2014 038a 43523100 		.ascii	"CR1\000"
+ 2015 038e 06       		.byte	0x6
+ 2016 038f 9F01     		.2byte	0x19f
+ 2017 0391 A2000000 		.4byte	0xa2
+ 2018 0395 02       		.byte	0x2
+ 2019 0396 23       		.byte	0x23
+ 2020 0397 00       		.uleb128 0
+ 2021 0398 09       		.uleb128 0x9
+ 2022 0399 43523200 		.ascii	"CR2\000"
+ 2023 039d 06       		.byte	0x6
+ 2024 039e A001     		.2byte	0x1a0
+ 2025 03a0 A2000000 		.4byte	0xa2
+ 2026 03a4 02       		.byte	0x2
+ 2027 03a5 23       		.byte	0x23
+ 2028 03a6 04       		.uleb128 0x4
+ 2029 03a7 0A       		.uleb128 0xa
+ 2030 03a8 07020000 		.4byte	.LASF56
+ 2031 03ac 06       		.byte	0x6
+ 2032 03ad A101     		.2byte	0x1a1
+ 2033 03af A2000000 		.4byte	0xa2
+ 2034 03b3 02       		.byte	0x2
+ 2035 03b4 23       		.byte	0x23
+ 2036 03b5 08       		.uleb128 0x8
+ 2037 03b6 0A       		.uleb128 0xa
+ 2038 03b7 17000000 		.4byte	.LASF57
+ 2039 03bb 06       		.byte	0x6
+ 2040 03bc A201     		.2byte	0x1a2
+ 2041 03be A2000000 		.4byte	0xa2
+ 2042 03c2 02       		.byte	0x2
+ 2043 03c3 23       		.byte	0x23
+ 2044 03c4 0C       		.uleb128 0xc
+ 2045 03c5 09       		.uleb128 0x9
+ 2046 03c6 535200   		.ascii	"SR\000"
+ 2047 03c9 06       		.byte	0x6
+ 2048 03ca A301     		.2byte	0x1a3
+ 2049 03cc A2000000 		.4byte	0xa2
+ 2050 03d0 02       		.byte	0x2
+ 2051 03d1 23       		.byte	0x23
+ 2052 03d2 10       		.uleb128 0x10
+ 2053 03d3 09       		.uleb128 0x9
+ 2054 03d4 45475200 		.ascii	"EGR\000"
+ 2055 03d8 06       		.byte	0x6
+ 2056 03d9 A401     		.2byte	0x1a4
+ 2057 03db A2000000 		.4byte	0xa2
+ 2058 03df 02       		.byte	0x2
+ 2059 03e0 23       		.byte	0x23
+ 2060 03e1 14       		.uleb128 0x14
+ 2061 03e2 0A       		.uleb128 0xa
+ 2062 03e3 F9000000 		.4byte	.LASF58
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 38
+
+
+ 2063 03e7 06       		.byte	0x6
+ 2064 03e8 A501     		.2byte	0x1a5
+ 2065 03ea A2000000 		.4byte	0xa2
+ 2066 03ee 02       		.byte	0x2
+ 2067 03ef 23       		.byte	0x23
+ 2068 03f0 18       		.uleb128 0x18
+ 2069 03f1 0A       		.uleb128 0xa
+ 2070 03f2 46000000 		.4byte	.LASF59
+ 2071 03f6 06       		.byte	0x6
+ 2072 03f7 A601     		.2byte	0x1a6
+ 2073 03f9 A2000000 		.4byte	0xa2
+ 2074 03fd 02       		.byte	0x2
+ 2075 03fe 23       		.byte	0x23
+ 2076 03ff 1C       		.uleb128 0x1c
+ 2077 0400 0A       		.uleb128 0xa
+ 2078 0401 73010000 		.4byte	.LASF60
+ 2079 0405 06       		.byte	0x6
+ 2080 0406 A701     		.2byte	0x1a7
+ 2081 0408 A2000000 		.4byte	0xa2
+ 2082 040c 02       		.byte	0x2
+ 2083 040d 23       		.byte	0x23
+ 2084 040e 20       		.uleb128 0x20
+ 2085 040f 09       		.uleb128 0x9
+ 2086 0410 434E5400 		.ascii	"CNT\000"
+ 2087 0414 06       		.byte	0x6
+ 2088 0415 A801     		.2byte	0x1a8
+ 2089 0417 A2000000 		.4byte	0xa2
+ 2090 041b 02       		.byte	0x2
+ 2091 041c 23       		.byte	0x23
+ 2092 041d 24       		.uleb128 0x24
+ 2093 041e 09       		.uleb128 0x9
+ 2094 041f 50534300 		.ascii	"PSC\000"
+ 2095 0423 06       		.byte	0x6
+ 2096 0424 A901     		.2byte	0x1a9
+ 2097 0426 A2000000 		.4byte	0xa2
+ 2098 042a 02       		.byte	0x2
+ 2099 042b 23       		.byte	0x23
+ 2100 042c 28       		.uleb128 0x28
+ 2101 042d 09       		.uleb128 0x9
+ 2102 042e 41525200 		.ascii	"ARR\000"
+ 2103 0432 06       		.byte	0x6
+ 2104 0433 AA01     		.2byte	0x1aa
+ 2105 0435 A2000000 		.4byte	0xa2
+ 2106 0439 02       		.byte	0x2
+ 2107 043a 23       		.byte	0x23
+ 2108 043b 2C       		.uleb128 0x2c
+ 2109 043c 09       		.uleb128 0x9
+ 2110 043d 52435200 		.ascii	"RCR\000"
+ 2111 0441 06       		.byte	0x6
+ 2112 0442 AB01     		.2byte	0x1ab
+ 2113 0444 A2000000 		.4byte	0xa2
+ 2114 0448 02       		.byte	0x2
+ 2115 0449 23       		.byte	0x23
+ 2116 044a 30       		.uleb128 0x30
+ 2117 044b 09       		.uleb128 0x9
+ 2118 044c 43435200 		.ascii	"CCR\000"
+ 2119 0450 06       		.byte	0x6
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 39
+
+
+ 2120 0451 AC01     		.2byte	0x1ac
+ 2121 0453 C3040000 		.4byte	0x4c3
+ 2122 0457 02       		.byte	0x2
+ 2123 0458 23       		.byte	0x23
+ 2124 0459 34       		.uleb128 0x34
+ 2125 045a 0A       		.uleb128 0xa
+ 2126 045b C5000000 		.4byte	.LASF61
+ 2127 045f 06       		.byte	0x6
+ 2128 0460 AD01     		.2byte	0x1ad
+ 2129 0462 A2000000 		.4byte	0xa2
+ 2130 0466 02       		.byte	0x2
+ 2131 0467 23       		.byte	0x23
+ 2132 0468 44       		.uleb128 0x44
+ 2133 0469 09       		.uleb128 0x9
+ 2134 046a 44435200 		.ascii	"DCR\000"
+ 2135 046e 06       		.byte	0x6
+ 2136 046f AE01     		.2byte	0x1ae
+ 2137 0471 A2000000 		.4byte	0xa2
+ 2138 0475 02       		.byte	0x2
+ 2139 0476 23       		.byte	0x23
+ 2140 0477 48       		.uleb128 0x48
+ 2141 0478 0A       		.uleb128 0xa
+ 2142 0479 13040000 		.4byte	.LASF62
+ 2143 047d 06       		.byte	0x6
+ 2144 047e AF01     		.2byte	0x1af
+ 2145 0480 A2000000 		.4byte	0xa2
+ 2146 0484 02       		.byte	0x2
+ 2147 0485 23       		.byte	0x23
+ 2148 0486 4C       		.uleb128 0x4c
+ 2149 0487 09       		.uleb128 0x9
+ 2150 0488 4F5200   		.ascii	"OR\000"
+ 2151 048b 06       		.byte	0x6
+ 2152 048c B001     		.2byte	0x1b0
+ 2153 048e A2000000 		.4byte	0xa2
+ 2154 0492 02       		.byte	0x2
+ 2155 0493 23       		.byte	0x23
+ 2156 0494 50       		.uleb128 0x50
+ 2157 0495 0A       		.uleb128 0xa
+ 2158 0496 07010000 		.4byte	.LASF63
+ 2159 049a 06       		.byte	0x6
+ 2160 049b B101     		.2byte	0x1b1
+ 2161 049d A2000000 		.4byte	0xa2
+ 2162 04a1 02       		.byte	0x2
+ 2163 04a2 23       		.byte	0x23
+ 2164 04a3 54       		.uleb128 0x54
+ 2165 04a4 0A       		.uleb128 0xa
+ 2166 04a5 5B040000 		.4byte	.LASF64
+ 2167 04a9 06       		.byte	0x6
+ 2168 04aa B201     		.2byte	0x1b2
+ 2169 04ac A2000000 		.4byte	0xa2
+ 2170 04b0 02       		.byte	0x2
+ 2171 04b1 23       		.byte	0x23
+ 2172 04b2 58       		.uleb128 0x58
+ 2173 04b3 0A       		.uleb128 0xa
+ 2174 04b4 60040000 		.4byte	.LASF65
+ 2175 04b8 06       		.byte	0x6
+ 2176 04b9 B301     		.2byte	0x1b3
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 40
+
+
+ 2177 04bb A2000000 		.4byte	0xa2
+ 2178 04bf 02       		.byte	0x2
+ 2179 04c0 23       		.byte	0x23
+ 2180 04c1 5C       		.uleb128 0x5c
+ 2181 04c2 00       		.byte	0
+ 2182 04c3 05       		.uleb128 0x5
+ 2183 04c4 C5000000 		.4byte	0xc5
+ 2184 04c8 0B       		.uleb128 0xb
+ 2185 04c9 46020000 		.4byte	.LASF66
+ 2186 04cd 06       		.byte	0x6
+ 2187 04ce B401     		.2byte	0x1b4
+ 2188 04d0 80030000 		.4byte	0x380
+ 2189 04d4 0B       		.uleb128 0xb
+ 2190 04d5 22010000 		.4byte	.LASF67
+ 2191 04d9 05       		.byte	0x5
+ 2192 04da 2001     		.2byte	0x120
+ 2193 04dc 7B000000 		.4byte	0x7b
+ 2194 04e0 0B       		.uleb128 0xb
+ 2195 04e1 00000000 		.4byte	.LASF68
+ 2196 04e5 05       		.byte	0x5
+ 2197 04e6 2501     		.2byte	0x125
+ 2198 04e8 3E000000 		.4byte	0x3e
+ 2199 04ec 0B       		.uleb128 0xb
+ 2200 04ed 87040000 		.4byte	.LASF69
+ 2201 04f1 05       		.byte	0x5
+ 2202 04f2 2A01     		.2byte	0x12a
+ 2203 04f4 57000000 		.4byte	0x57
+ 2204 04f8 08       		.uleb128 0x8
+ 2205 04f9 08       		.byte	0x8
+ 2206 04fa 05       		.byte	0x5
+ 2207 04fb 2F01     		.2byte	0x12f
+ 2208 04fd 20050000 		.4byte	0x520
+ 2209 0501 0A       		.uleb128 0xa
+ 2210 0502 07040000 		.4byte	.LASF70
+ 2211 0506 05       		.byte	0x5
+ 2212 0507 3301     		.2byte	0x133
+ 2213 0509 D4040000 		.4byte	0x4d4
+ 2214 050d 02       		.byte	0x2
+ 2215 050e 23       		.byte	0x23
+ 2216 050f 00       		.uleb128 0
+ 2217 0510 0A       		.uleb128 0xa
+ 2218 0511 33020000 		.4byte	.LASF71
+ 2219 0515 05       		.byte	0x5
+ 2220 0516 3901     		.2byte	0x139
+ 2221 0518 5D030000 		.4byte	0x35d
+ 2222 051c 02       		.byte	0x2
+ 2223 051d 23       		.byte	0x23
+ 2224 051e 04       		.uleb128 0x4
+ 2225 051f 00       		.byte	0
+ 2226 0520 0B       		.uleb128 0xb
+ 2227 0521 44040000 		.4byte	.LASF72
+ 2228 0525 05       		.byte	0x5
+ 2229 0526 3B01     		.2byte	0x13b
+ 2230 0528 F8040000 		.4byte	0x4f8
+ 2231 052c 08       		.uleb128 0x8
+ 2232 052d 38       		.byte	0x38
+ 2233 052e 05       		.byte	0x5
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 41
+
+
+ 2234 052f 4001     		.2byte	0x140
+ 2235 0531 9F050000 		.4byte	0x59f
+ 2236 0535 0A       		.uleb128 0xa
+ 2237 0536 CA000000 		.4byte	.LASF73
+ 2238 053a 05       		.byte	0x5
+ 2239 053b 4601     		.2byte	0x146
+ 2240 053d 7B000000 		.4byte	0x7b
+ 2241 0541 02       		.byte	0x2
+ 2242 0542 23       		.byte	0x23
+ 2243 0543 00       		.uleb128 0
+ 2244 0544 0A       		.uleb128 0xa
+ 2245 0545 81000000 		.4byte	.LASF53
+ 2246 0549 05       		.byte	0x5
+ 2247 054a 4C01     		.2byte	0x14c
+ 2248 054c EC040000 		.4byte	0x4ec
+ 2249 0550 02       		.byte	0x2
+ 2250 0551 23       		.byte	0x23
+ 2251 0552 04       		.uleb128 0x4
+ 2252 0553 0A       		.uleb128 0xa
+ 2253 0554 33020000 		.4byte	.LASF71
+ 2254 0558 05       		.byte	0x5
+ 2255 0559 5201     		.2byte	0x152
+ 2256 055b 5D030000 		.4byte	0x35d
+ 2257 055f 02       		.byte	0x2
+ 2258 0560 23       		.byte	0x23
+ 2259 0561 08       		.uleb128 0x8
+ 2260 0562 0A       		.uleb128 0xa
+ 2261 0563 4A010000 		.4byte	.LASF74
+ 2262 0567 05       		.byte	0x5
+ 2263 0568 5601     		.2byte	0x156
+ 2264 056a 9F050000 		.4byte	0x59f
+ 2265 056e 02       		.byte	0x2
+ 2266 056f 23       		.byte	0x23
+ 2267 0570 0C       		.uleb128 0xc
+ 2268 0571 09       		.uleb128 0x9
+ 2269 0572 63723200 		.ascii	"cr2\000"
+ 2270 0576 05       		.byte	0x5
+ 2271 0577 5C01     		.2byte	0x15c
+ 2272 0579 7B000000 		.4byte	0x7b
+ 2273 057d 02       		.byte	0x2
+ 2274 057e 23       		.byte	0x23
+ 2275 057f 2C       		.uleb128 0x2c
+ 2276 0580 0A       		.uleb128 0xa
+ 2277 0581 A8000000 		.4byte	.LASF75
+ 2278 0585 05       		.byte	0x5
+ 2279 0586 6201     		.2byte	0x162
+ 2280 0588 7B000000 		.4byte	0x7b
+ 2281 058c 02       		.byte	0x2
+ 2282 058d 23       		.byte	0x23
+ 2283 058e 30       		.uleb128 0x30
+ 2284 058f 0A       		.uleb128 0xa
+ 2285 0590 BC040000 		.4byte	.LASF76
+ 2286 0594 05       		.byte	0x5
+ 2287 0595 6901     		.2byte	0x169
+ 2288 0597 7B000000 		.4byte	0x7b
+ 2289 059b 02       		.byte	0x2
+ 2290 059c 23       		.byte	0x23
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 42
+
+
+ 2291 059d 34       		.uleb128 0x34
+ 2292 059e 00       		.byte	0
+ 2293 059f 06       		.uleb128 0x6
+ 2294 05a0 20050000 		.4byte	0x520
+ 2295 05a4 AF050000 		.4byte	0x5af
+ 2296 05a8 07       		.uleb128 0x7
+ 2297 05a9 A7000000 		.4byte	0xa7
+ 2298 05ad 03       		.byte	0x3
+ 2299 05ae 00       		.byte	0
+ 2300 05af 0B       		.uleb128 0xb
+ 2301 05b0 D8030000 		.4byte	.LASF77
+ 2302 05b4 05       		.byte	0x5
+ 2303 05b5 6A01     		.2byte	0x16a
+ 2304 05b7 2C050000 		.4byte	0x52c
+ 2305 05bb 0F       		.uleb128 0xf
+ 2306 05bc 04       		.byte	0x4
+ 2307 05bd C1050000 		.4byte	0x5c1
+ 2308 05c1 12       		.uleb128 0x12
+ 2309 05c2 AF050000 		.4byte	0x5af
+ 2310 05c6 0F       		.uleb128 0xf
+ 2311 05c7 04       		.byte	0x4
+ 2312 05c8 C8040000 		.4byte	0x4c8
+ 2313 05cc 13       		.uleb128 0x13
+ 2314 05cd 1C000000 		.4byte	.LASF109
+ 2315 05d1 01       		.byte	0x1
+ 2316 05d2 70       		.byte	0x70
+ 2317 05d3 01       		.byte	0x1
+ 2318 05d4 00000000 		.4byte	.LFB118
+ 2319 05d8 68000000 		.4byte	.LFE118
+ 2320 05dc 00000000 		.4byte	.LLST0
+ 2321 05e0 01       		.byte	0x1
+ 2322 05e1 4F060000 		.4byte	0x64f
+ 2323 05e5 14       		.uleb128 0x14
+ 2324 05e6 61020000 		.4byte	.LASF89
+ 2325 05ea 01       		.byte	0x1
+ 2326 05eb 70       		.byte	0x70
+ 2327 05ec 7A030000 		.4byte	0x37a
+ 2328 05f0 20000000 		.4byte	.LLST1
+ 2329 05f4 15       		.uleb128 0x15
+ 2330 05f5 737200   		.ascii	"sr\000"
+ 2331 05f8 01       		.byte	0x1
+ 2332 05f9 71       		.byte	0x71
+ 2333 05fa 57000000 		.4byte	0x57
+ 2334 05fe 54000000 		.4byte	.LLST2
+ 2335 0602 16       		.uleb128 0x16
+ 2336 0603 40000000 		.4byte	.LVL4
+ 2337 0607 12060000 		.4byte	0x612
+ 2338 060b 17       		.uleb128 0x17
+ 2339 060c 01       		.byte	0x1
+ 2340 060d 50       		.byte	0x50
+ 2341 060e 02       		.byte	0x2
+ 2342 060f 75       		.byte	0x75
+ 2343 0610 00       		.sleb128 0
+ 2344 0611 00       		.byte	0
+ 2345 0612 16       		.uleb128 0x16
+ 2346 0613 4A000000 		.4byte	.LVL5
+ 2347 0617 22060000 		.4byte	0x622
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 43
+
+
+ 2348 061b 17       		.uleb128 0x17
+ 2349 061c 01       		.byte	0x1
+ 2350 061d 50       		.byte	0x50
+ 2351 061e 02       		.byte	0x2
+ 2352 061f 75       		.byte	0x75
+ 2353 0620 00       		.sleb128 0
+ 2354 0621 00       		.byte	0
+ 2355 0622 16       		.uleb128 0x16
+ 2356 0623 54000000 		.4byte	.LVL6
+ 2357 0627 32060000 		.4byte	0x632
+ 2358 062b 17       		.uleb128 0x17
+ 2359 062c 01       		.byte	0x1
+ 2360 062d 50       		.byte	0x50
+ 2361 062e 02       		.byte	0x2
+ 2362 062f 75       		.byte	0x75
+ 2363 0630 00       		.sleb128 0
+ 2364 0631 00       		.byte	0
+ 2365 0632 16       		.uleb128 0x16
+ 2366 0633 5E000000 		.4byte	.LVL7
+ 2367 0637 42060000 		.4byte	0x642
+ 2368 063b 17       		.uleb128 0x17
+ 2369 063c 01       		.byte	0x1
+ 2370 063d 50       		.byte	0x50
+ 2371 063e 02       		.byte	0x2
+ 2372 063f 75       		.byte	0x75
+ 2373 0640 00       		.sleb128 0
+ 2374 0641 00       		.byte	0
+ 2375 0642 18       		.uleb128 0x18
+ 2376 0643 66000000 		.4byte	.LVL9
+ 2377 0647 17       		.uleb128 0x17
+ 2378 0648 01       		.byte	0x1
+ 2379 0649 50       		.byte	0x50
+ 2380 064a 02       		.byte	0x2
+ 2381 064b 75       		.byte	0x75
+ 2382 064c 00       		.sleb128 0
+ 2383 064d 00       		.byte	0
+ 2384 064e 00       		.byte	0
+ 2385 064f 19       		.uleb128 0x19
+ 2386 0650 01       		.byte	0x1
+ 2387 0651 3D000000 		.4byte	.LASF78
+ 2388 0655 01       		.byte	0x1
+ 2389 0656 93       		.byte	0x93
+ 2390 0657 01       		.byte	0x1
+ 2391 0658 00000000 		.4byte	.LFB119
+ 2392 065c 24000000 		.4byte	.LFE119
+ 2393 0660 77000000 		.4byte	.LLST3
+ 2394 0664 01       		.byte	0x1
+ 2395 0665 87060000 		.4byte	0x687
+ 2396 0669 16       		.uleb128 0x16
+ 2397 066a 1C000000 		.4byte	.LVL10
+ 2398 066e 7C060000 		.4byte	0x67c
+ 2399 0672 17       		.uleb128 0x17
+ 2400 0673 01       		.byte	0x1
+ 2401 0674 50       		.byte	0x50
+ 2402 0675 05       		.byte	0x5
+ 2403 0676 03       		.byte	0x3
+ 2404 0677 00000000 		.4byte	.LANCHOR0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 44
+
+
+ 2405 067b 00       		.byte	0
+ 2406 067c 1A       		.uleb128 0x1a
+ 2407 067d 24000000 		.4byte	.LVL11
+ 2408 0681 01       		.byte	0x1
+ 2409 0682 7A0C0000 		.4byte	0xc7a
+ 2410 0686 00       		.byte	0
+ 2411 0687 19       		.uleb128 0x19
+ 2412 0688 01       		.byte	0x1
+ 2413 0689 88000000 		.4byte	.LASF79
+ 2414 068d 01       		.byte	0x1
+ 2415 068e A8       		.byte	0xa8
+ 2416 068f 01       		.byte	0x1
+ 2417 0690 00000000 		.4byte	.LFB120
+ 2418 0694 6C000000 		.4byte	.LFE120
+ 2419 0698 97000000 		.4byte	.LLST4
+ 2420 069c 01       		.byte	0x1
+ 2421 069d 02070000 		.4byte	0x702
+ 2422 06a1 15       		.uleb128 0x15
+ 2423 06a2 737200   		.ascii	"sr\000"
+ 2424 06a5 01       		.byte	0x1
+ 2425 06a6 A9       		.byte	0xa9
+ 2426 06a7 57000000 		.4byte	0x57
+ 2427 06ab B7000000 		.4byte	.LLST5
+ 2428 06af 16       		.uleb128 0x16
+ 2429 06b0 40000000 		.4byte	.LVL14
+ 2430 06b4 C2060000 		.4byte	0x6c2
+ 2431 06b8 17       		.uleb128 0x17
+ 2432 06b9 01       		.byte	0x1
+ 2433 06ba 50       		.byte	0x50
+ 2434 06bb 05       		.byte	0x5
+ 2435 06bc 03       		.byte	0x3
+ 2436 06bd 00000000 		.4byte	.LANCHOR0
+ 2437 06c1 00       		.byte	0
+ 2438 06c2 1A       		.uleb128 0x1a
+ 2439 06c3 48000000 		.4byte	.LVL15
+ 2440 06c7 01       		.byte	0x1
+ 2441 06c8 7A0C0000 		.4byte	0xc7a
+ 2442 06cc 16       		.uleb128 0x16
+ 2443 06cd 50000000 		.4byte	.LVL16
+ 2444 06d1 DF060000 		.4byte	0x6df
+ 2445 06d5 17       		.uleb128 0x17
+ 2446 06d6 01       		.byte	0x1
+ 2447 06d7 50       		.byte	0x50
+ 2448 06d8 05       		.byte	0x5
+ 2449 06d9 03       		.byte	0x3
+ 2450 06da 00000000 		.4byte	.LANCHOR0
+ 2451 06de 00       		.byte	0
+ 2452 06df 16       		.uleb128 0x16
+ 2453 06e0 5A000000 		.4byte	.LVL17
+ 2454 06e4 F2060000 		.4byte	0x6f2
+ 2455 06e8 17       		.uleb128 0x17
+ 2456 06e9 01       		.byte	0x1
+ 2457 06ea 50       		.byte	0x50
+ 2458 06eb 05       		.byte	0x5
+ 2459 06ec 03       		.byte	0x3
+ 2460 06ed 00000000 		.4byte	.LANCHOR0
+ 2461 06f1 00       		.byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 45
+
+
+ 2462 06f2 18       		.uleb128 0x18
+ 2463 06f3 64000000 		.4byte	.LVL18
+ 2464 06f7 17       		.uleb128 0x17
+ 2465 06f8 01       		.byte	0x1
+ 2466 06f9 50       		.byte	0x50
+ 2467 06fa 05       		.byte	0x5
+ 2468 06fb 03       		.byte	0x3
+ 2469 06fc 00000000 		.4byte	.LANCHOR0
+ 2470 0700 00       		.byte	0
+ 2471 0701 00       		.byte	0
+ 2472 0702 19       		.uleb128 0x19
+ 2473 0703 01       		.byte	0x1
+ 2474 0704 2C010000 		.4byte	.LASF80
+ 2475 0708 01       		.byte	0x1
+ 2476 0709 C5       		.byte	0xc5
+ 2477 070a 01       		.byte	0x1
+ 2478 070b 00000000 		.4byte	.LFB121
+ 2479 070f 16000000 		.4byte	.LFE121
+ 2480 0713 DF000000 		.4byte	.LLST6
+ 2481 0717 01       		.byte	0x1
+ 2482 0718 3E070000 		.4byte	0x73e
+ 2483 071c 1B       		.uleb128 0x1b
+ 2484 071d 0E000000 		.4byte	.LVL19
+ 2485 0721 CC050000 		.4byte	0x5cc
+ 2486 0725 33070000 		.4byte	0x733
+ 2487 0729 17       		.uleb128 0x17
+ 2488 072a 01       		.byte	0x1
+ 2489 072b 50       		.byte	0x50
+ 2490 072c 05       		.byte	0x5
+ 2491 072d 03       		.byte	0x3
+ 2492 072e 00000000 		.4byte	.LANCHOR1
+ 2493 0732 00       		.byte	0
+ 2494 0733 1A       		.uleb128 0x1a
+ 2495 0734 16000000 		.4byte	.LVL20
+ 2496 0738 01       		.byte	0x1
+ 2497 0739 7A0C0000 		.4byte	0xc7a
+ 2498 073d 00       		.byte	0
+ 2499 073e 19       		.uleb128 0x19
+ 2500 073f 01       		.byte	0x1
+ 2501 0740 35010000 		.4byte	.LASF81
+ 2502 0744 01       		.byte	0x1
+ 2503 0745 D8       		.byte	0xd8
+ 2504 0746 01       		.byte	0x1
+ 2505 0747 00000000 		.4byte	.LFB122
+ 2506 074b 16000000 		.4byte	.LFE122
+ 2507 074f FF000000 		.4byte	.LLST7
+ 2508 0753 01       		.byte	0x1
+ 2509 0754 7A070000 		.4byte	0x77a
+ 2510 0758 1B       		.uleb128 0x1b
+ 2511 0759 0E000000 		.4byte	.LVL21
+ 2512 075d CC050000 		.4byte	0x5cc
+ 2513 0761 6F070000 		.4byte	0x76f
+ 2514 0765 17       		.uleb128 0x17
+ 2515 0766 01       		.byte	0x1
+ 2516 0767 50       		.byte	0x50
+ 2517 0768 05       		.byte	0x5
+ 2518 0769 03       		.byte	0x3
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 46
+
+
+ 2519 076a 00000000 		.4byte	.LANCHOR2
+ 2520 076e 00       		.byte	0
+ 2521 076f 1A       		.uleb128 0x1a
+ 2522 0770 16000000 		.4byte	.LVL22
+ 2523 0774 01       		.byte	0x1
+ 2524 0775 7A0C0000 		.4byte	0xc7a
+ 2525 0779 00       		.byte	0
+ 2526 077a 19       		.uleb128 0x19
+ 2527 077b 01       		.byte	0x1
+ 2528 077c AF010000 		.4byte	.LASF82
+ 2529 0780 01       		.byte	0x1
+ 2530 0781 EB       		.byte	0xeb
+ 2531 0782 01       		.byte	0x1
+ 2532 0783 00000000 		.4byte	.LFB123
+ 2533 0787 16000000 		.4byte	.LFE123
+ 2534 078b 1F010000 		.4byte	.LLST8
+ 2535 078f 01       		.byte	0x1
+ 2536 0790 B6070000 		.4byte	0x7b6
+ 2537 0794 1B       		.uleb128 0x1b
+ 2538 0795 0E000000 		.4byte	.LVL23
+ 2539 0799 CC050000 		.4byte	0x5cc
+ 2540 079d AB070000 		.4byte	0x7ab
+ 2541 07a1 17       		.uleb128 0x17
+ 2542 07a2 01       		.byte	0x1
+ 2543 07a3 50       		.byte	0x50
+ 2544 07a4 05       		.byte	0x5
+ 2545 07a5 03       		.byte	0x3
+ 2546 07a6 00000000 		.4byte	.LANCHOR3
+ 2547 07aa 00       		.byte	0
+ 2548 07ab 1A       		.uleb128 0x1a
+ 2549 07ac 16000000 		.4byte	.LVL24
+ 2550 07b0 01       		.byte	0x1
+ 2551 07b1 7A0C0000 		.4byte	0xc7a
+ 2552 07b5 00       		.byte	0
+ 2553 07b6 19       		.uleb128 0x19
+ 2554 07b7 01       		.byte	0x1
+ 2555 07b8 3C020000 		.4byte	.LASF83
+ 2556 07bc 01       		.byte	0x1
+ 2557 07bd FE       		.byte	0xfe
+ 2558 07be 01       		.byte	0x1
+ 2559 07bf 00000000 		.4byte	.LFB124
+ 2560 07c3 16000000 		.4byte	.LFE124
+ 2561 07c7 3F010000 		.4byte	.LLST9
+ 2562 07cb 01       		.byte	0x1
+ 2563 07cc F2070000 		.4byte	0x7f2
+ 2564 07d0 1B       		.uleb128 0x1b
+ 2565 07d1 0E000000 		.4byte	.LVL25
+ 2566 07d5 CC050000 		.4byte	0x5cc
+ 2567 07d9 E7070000 		.4byte	0x7e7
+ 2568 07dd 17       		.uleb128 0x17
+ 2569 07de 01       		.byte	0x1
+ 2570 07df 50       		.byte	0x50
+ 2571 07e0 05       		.byte	0x5
+ 2572 07e1 03       		.byte	0x3
+ 2573 07e2 00000000 		.4byte	.LANCHOR4
+ 2574 07e6 00       		.byte	0
+ 2575 07e7 1A       		.uleb128 0x1a
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 47
+
+
+ 2576 07e8 16000000 		.4byte	.LVL26
+ 2577 07ec 01       		.byte	0x1
+ 2578 07ed 7A0C0000 		.4byte	0xc7a
+ 2579 07f1 00       		.byte	0
+ 2580 07f2 1C       		.uleb128 0x1c
+ 2581 07f3 01       		.byte	0x1
+ 2582 07f4 74030000 		.4byte	.LASF84
+ 2583 07f8 01       		.byte	0x1
+ 2584 07f9 1401     		.2byte	0x114
+ 2585 07fb 01       		.byte	0x1
+ 2586 07fc 00000000 		.4byte	.LFB125
+ 2587 0800 26000000 		.4byte	.LFE125
+ 2588 0804 5F010000 		.4byte	.LLST10
+ 2589 0808 01       		.byte	0x1
+ 2590 0809 2B080000 		.4byte	0x82b
+ 2591 080d 16       		.uleb128 0x16
+ 2592 080e 1E000000 		.4byte	.LVL27
+ 2593 0812 20080000 		.4byte	0x820
+ 2594 0816 17       		.uleb128 0x17
+ 2595 0817 01       		.byte	0x1
+ 2596 0818 50       		.byte	0x50
+ 2597 0819 05       		.byte	0x5
+ 2598 081a 03       		.byte	0x3
+ 2599 081b 00000000 		.4byte	.LANCHOR5
+ 2600 081f 00       		.byte	0
+ 2601 0820 1A       		.uleb128 0x1a
+ 2602 0821 26000000 		.4byte	.LVL28
+ 2603 0825 01       		.byte	0x1
+ 2604 0826 7A0C0000 		.4byte	0xc7a
+ 2605 082a 00       		.byte	0
+ 2606 082b 1C       		.uleb128 0x1c
+ 2607 082c 01       		.byte	0x1
+ 2608 082d 95030000 		.4byte	.LASF85
+ 2609 0831 01       		.byte	0x1
+ 2610 0832 2901     		.2byte	0x129
+ 2611 0834 01       		.byte	0x1
+ 2612 0835 00000000 		.4byte	.LFB126
+ 2613 0839 6C000000 		.4byte	.LFE126
+ 2614 083d 7F010000 		.4byte	.LLST11
+ 2615 0841 01       		.byte	0x1
+ 2616 0842 A8080000 		.4byte	0x8a8
+ 2617 0846 1D       		.uleb128 0x1d
+ 2618 0847 737200   		.ascii	"sr\000"
+ 2619 084a 01       		.byte	0x1
+ 2620 084b 2A01     		.2byte	0x12a
+ 2621 084d 57000000 		.4byte	0x57
+ 2622 0851 9F010000 		.4byte	.LLST12
+ 2623 0855 16       		.uleb128 0x16
+ 2624 0856 42000000 		.4byte	.LVL31
+ 2625 085a 68080000 		.4byte	0x868
+ 2626 085e 17       		.uleb128 0x17
+ 2627 085f 01       		.byte	0x1
+ 2628 0860 50       		.byte	0x50
+ 2629 0861 05       		.byte	0x5
+ 2630 0862 03       		.byte	0x3
+ 2631 0863 00000000 		.4byte	.LANCHOR5
+ 2632 0867 00       		.byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 48
+
+
+ 2633 0868 1A       		.uleb128 0x1a
+ 2634 0869 4A000000 		.4byte	.LVL32
+ 2635 086d 01       		.byte	0x1
+ 2636 086e 7A0C0000 		.4byte	0xc7a
+ 2637 0872 16       		.uleb128 0x16
+ 2638 0873 52000000 		.4byte	.LVL33
+ 2639 0877 85080000 		.4byte	0x885
+ 2640 087b 17       		.uleb128 0x17
+ 2641 087c 01       		.byte	0x1
+ 2642 087d 50       		.byte	0x50
+ 2643 087e 05       		.byte	0x5
+ 2644 087f 03       		.byte	0x3
+ 2645 0880 00000000 		.4byte	.LANCHOR5
+ 2646 0884 00       		.byte	0
+ 2647 0885 16       		.uleb128 0x16
+ 2648 0886 5C000000 		.4byte	.LVL34
+ 2649 088a 98080000 		.4byte	0x898
+ 2650 088e 17       		.uleb128 0x17
+ 2651 088f 01       		.byte	0x1
+ 2652 0890 50       		.byte	0x50
+ 2653 0891 05       		.byte	0x5
+ 2654 0892 03       		.byte	0x3
+ 2655 0893 00000000 		.4byte	.LANCHOR5
+ 2656 0897 00       		.byte	0
+ 2657 0898 18       		.uleb128 0x18
+ 2658 0899 66000000 		.4byte	.LVL35
+ 2659 089d 17       		.uleb128 0x17
+ 2660 089e 01       		.byte	0x1
+ 2661 089f 50       		.byte	0x50
+ 2662 08a0 05       		.byte	0x5
+ 2663 08a1 03       		.byte	0x3
+ 2664 08a2 00000000 		.4byte	.LANCHOR5
+ 2665 08a6 00       		.byte	0
+ 2666 08a7 00       		.byte	0
+ 2667 08a8 1C       		.uleb128 0x1c
+ 2668 08a9 01       		.byte	0x1
+ 2669 08aa 34000000 		.4byte	.LASF86
+ 2670 08ae 01       		.byte	0x1
+ 2671 08af 4601     		.2byte	0x146
+ 2672 08b1 01       		.byte	0x1
+ 2673 08b2 00000000 		.4byte	.LFB127
+ 2674 08b6 16000000 		.4byte	.LFE127
+ 2675 08ba C7010000 		.4byte	.LLST13
+ 2676 08be 01       		.byte	0x1
+ 2677 08bf E5080000 		.4byte	0x8e5
+ 2678 08c3 1B       		.uleb128 0x1b
+ 2679 08c4 0E000000 		.4byte	.LVL36
+ 2680 08c8 CC050000 		.4byte	0x5cc
+ 2681 08cc DA080000 		.4byte	0x8da
+ 2682 08d0 17       		.uleb128 0x17
+ 2683 08d1 01       		.byte	0x1
+ 2684 08d2 50       		.byte	0x50
+ 2685 08d3 05       		.byte	0x5
+ 2686 08d4 03       		.byte	0x3
+ 2687 08d5 00000000 		.4byte	.LANCHOR6
+ 2688 08d9 00       		.byte	0
+ 2689 08da 1A       		.uleb128 0x1a
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 49
+
+
+ 2690 08db 16000000 		.4byte	.LVL37
+ 2691 08df 01       		.byte	0x1
+ 2692 08e0 7A0C0000 		.4byte	0xc7a
+ 2693 08e4 00       		.byte	0
+ 2694 08e5 1C       		.uleb128 0x1c
+ 2695 08e6 01       		.byte	0x1
+ 2696 08e7 B8020000 		.4byte	.LASF87
+ 2697 08eb 01       		.byte	0x1
+ 2698 08ec 5901     		.2byte	0x159
+ 2699 08ee 01       		.byte	0x1
+ 2700 08ef 00000000 		.4byte	.LFB128
+ 2701 08f3 A6000000 		.4byte	.LFE128
+ 2702 08f7 E7010000 		.4byte	.LLST14
+ 2703 08fb 01       		.byte	0x1
+ 2704 08fc 89090000 		.4byte	0x989
+ 2705 0900 1B       		.uleb128 0x1b
+ 2706 0901 14000000 		.4byte	.LVL38
+ 2707 0905 850C0000 		.4byte	0xc85
+ 2708 0909 14090000 		.4byte	0x914
+ 2709 090d 17       		.uleb128 0x17
+ 2710 090e 01       		.byte	0x1
+ 2711 090f 50       		.byte	0x50
+ 2712 0910 02       		.byte	0x2
+ 2713 0911 74       		.byte	0x74
+ 2714 0912 00       		.sleb128 0
+ 2715 0913 00       		.byte	0
+ 2716 0914 1B       		.uleb128 0x1b
+ 2717 0915 2E000000 		.4byte	.LVL39
+ 2718 0919 850C0000 		.4byte	0xc85
+ 2719 091d 28090000 		.4byte	0x928
+ 2720 0921 17       		.uleb128 0x17
+ 2721 0922 01       		.byte	0x1
+ 2722 0923 50       		.byte	0x50
+ 2723 0924 02       		.byte	0x2
+ 2724 0925 76       		.byte	0x76
+ 2725 0926 00       		.sleb128 0
+ 2726 0927 00       		.byte	0
+ 2727 0928 1B       		.uleb128 0x1b
+ 2728 0929 42000000 		.4byte	.LVL40
+ 2729 092d 850C0000 		.4byte	0xc85
+ 2730 0931 3C090000 		.4byte	0x93c
+ 2731 0935 17       		.uleb128 0x17
+ 2732 0936 01       		.byte	0x1
+ 2733 0937 50       		.byte	0x50
+ 2734 0938 02       		.byte	0x2
+ 2735 0939 75       		.byte	0x75
+ 2736 093a 00       		.sleb128 0
+ 2737 093b 00       		.byte	0
+ 2738 093c 1B       		.uleb128 0x1b
+ 2739 093d 5A000000 		.4byte	.LVL41
+ 2740 0941 850C0000 		.4byte	0xc85
+ 2741 0945 50090000 		.4byte	0x950
+ 2742 0949 17       		.uleb128 0x17
+ 2743 094a 01       		.byte	0x1
+ 2744 094b 50       		.byte	0x50
+ 2745 094c 02       		.byte	0x2
+ 2746 094d 74       		.byte	0x74
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 50
+
+
+ 2747 094e 00       		.sleb128 0
+ 2748 094f 00       		.byte	0
+ 2749 0950 1B       		.uleb128 0x1b
+ 2750 0951 72000000 		.4byte	.LVL42
+ 2751 0955 850C0000 		.4byte	0xc85
+ 2752 0959 64090000 		.4byte	0x964
+ 2753 095d 17       		.uleb128 0x17
+ 2754 095e 01       		.byte	0x1
+ 2755 095f 50       		.byte	0x50
+ 2756 0960 02       		.byte	0x2
+ 2757 0961 76       		.byte	0x76
+ 2758 0962 00       		.sleb128 0
+ 2759 0963 00       		.byte	0
+ 2760 0964 1B       		.uleb128 0x1b
+ 2761 0965 8A000000 		.4byte	.LVL43
+ 2762 0969 850C0000 		.4byte	0xc85
+ 2763 096d 78090000 		.4byte	0x978
+ 2764 0971 17       		.uleb128 0x17
+ 2765 0972 01       		.byte	0x1
+ 2766 0973 50       		.byte	0x50
+ 2767 0974 02       		.byte	0x2
+ 2768 0975 75       		.byte	0x75
+ 2769 0976 00       		.sleb128 0
+ 2770 0977 00       		.byte	0
+ 2771 0978 1E       		.uleb128 0x1e
+ 2772 0979 9A000000 		.4byte	.LVL44
+ 2773 097d 850C0000 		.4byte	0xc85
+ 2774 0981 17       		.uleb128 0x17
+ 2775 0982 01       		.byte	0x1
+ 2776 0983 50       		.byte	0x50
+ 2777 0984 02       		.byte	0x2
+ 2778 0985 74       		.byte	0x74
+ 2779 0986 00       		.sleb128 0
+ 2780 0987 00       		.byte	0
+ 2781 0988 00       		.byte	0
+ 2782 0989 1C       		.uleb128 0x1c
+ 2783 098a 01       		.byte	0x1
+ 2784 098b 5C010000 		.4byte	.LASF88
+ 2785 098f 01       		.byte	0x1
+ 2786 0990 8F01     		.2byte	0x18f
+ 2787 0992 01       		.byte	0x1
+ 2788 0993 00000000 		.4byte	.LFB129
+ 2789 0997 D0020000 		.4byte	.LFE129
+ 2790 099b 07020000 		.4byte	.LLST15
+ 2791 099f 01       		.byte	0x1
+ 2792 09a0 770A0000 		.4byte	0xa77
+ 2793 09a4 1F       		.uleb128 0x1f
+ 2794 09a5 61020000 		.4byte	.LASF89
+ 2795 09a9 01       		.byte	0x1
+ 2796 09aa 8F01     		.2byte	0x18f
+ 2797 09ac 7A030000 		.4byte	0x37a
+ 2798 09b0 27020000 		.4byte	.LLST16
+ 2799 09b4 1D       		.uleb128 0x1d
+ 2800 09b5 70736300 		.ascii	"psc\000"
+ 2801 09b9 01       		.byte	0x1
+ 2802 09ba 9001     		.2byte	0x190
+ 2803 09bc 7B000000 		.4byte	0x7b
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 51
+
+
+ 2804 09c0 FE020000 		.4byte	.LLST17
+ 2805 09c4 20       		.uleb128 0x20
+ 2806 09c5 5C020000 		.4byte	.LASF90
+ 2807 09c9 01       		.byte	0x1
+ 2808 09ca 9101     		.2byte	0x191
+ 2809 09cc 57000000 		.4byte	0x57
+ 2810 09d0 EA030000 		.4byte	.LLST18
+ 2811 09d4 1B       		.uleb128 0x1b
+ 2812 09d5 A4010000 		.4byte	.LVL88
+ 2813 09d9 990C0000 		.4byte	0xc99
+ 2814 09dd E8090000 		.4byte	0x9e8
+ 2815 09e1 17       		.uleb128 0x17
+ 2816 09e2 01       		.byte	0x1
+ 2817 09e3 51       		.byte	0x51
+ 2818 09e4 02       		.byte	0x2
+ 2819 09e5 08       		.byte	0x8
+ 2820 09e6 70       		.byte	0x70
+ 2821 09e7 00       		.byte	0
+ 2822 09e8 1B       		.uleb128 0x1b
+ 2823 09e9 CC010000 		.4byte	.LVL91
+ 2824 09ed 990C0000 		.4byte	0xc99
+ 2825 09f1 010A0000 		.4byte	0xa01
+ 2826 09f5 17       		.uleb128 0x17
+ 2827 09f6 01       		.byte	0x1
+ 2828 09f7 51       		.byte	0x51
+ 2829 09f8 02       		.byte	0x2
+ 2830 09f9 08       		.byte	0x8
+ 2831 09fa 70       		.byte	0x70
+ 2832 09fb 17       		.uleb128 0x17
+ 2833 09fc 01       		.byte	0x1
+ 2834 09fd 50       		.byte	0x50
+ 2835 09fe 01       		.byte	0x1
+ 2836 09ff 49       		.byte	0x49
+ 2837 0a00 00       		.byte	0
+ 2838 0a01 1B       		.uleb128 0x1b
+ 2839 0a02 D4010000 		.4byte	.LVL92
+ 2840 0a06 990C0000 		.4byte	0xc99
+ 2841 0a0a 1A0A0000 		.4byte	0xa1a
+ 2842 0a0e 17       		.uleb128 0x17
+ 2843 0a0f 01       		.byte	0x1
+ 2844 0a10 51       		.byte	0x51
+ 2845 0a11 02       		.byte	0x2
+ 2846 0a12 08       		.byte	0x8
+ 2847 0a13 70       		.byte	0x70
+ 2848 0a14 17       		.uleb128 0x17
+ 2849 0a15 01       		.byte	0x1
+ 2850 0a16 50       		.byte	0x50
+ 2851 0a17 01       		.byte	0x1
+ 2852 0a18 4B       		.byte	0x4b
+ 2853 0a19 00       		.byte	0
+ 2854 0a1a 1B       		.uleb128 0x1b
+ 2855 0a1b 04020000 		.4byte	.LVL95
+ 2856 0a1f 990C0000 		.4byte	0xc99
+ 2857 0a23 330A0000 		.4byte	0xa33
+ 2858 0a27 17       		.uleb128 0x17
+ 2859 0a28 01       		.byte	0x1
+ 2860 0a29 51       		.byte	0x51
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 52
+
+
+ 2861 0a2a 02       		.byte	0x2
+ 2862 0a2b 08       		.byte	0x8
+ 2863 0a2c 70       		.byte	0x70
+ 2864 0a2d 17       		.uleb128 0x17
+ 2865 0a2e 01       		.byte	0x1
+ 2866 0a2f 50       		.byte	0x50
+ 2867 0a30 01       		.byte	0x1
+ 2868 0a31 4C       		.byte	0x4c
+ 2869 0a32 00       		.byte	0
+ 2870 0a33 1B       		.uleb128 0x1b
+ 2871 0a34 3C020000 		.4byte	.LVL98
+ 2872 0a38 990C0000 		.4byte	0xc99
+ 2873 0a3c 4C0A0000 		.4byte	0xa4c
+ 2874 0a40 17       		.uleb128 0x17
+ 2875 0a41 01       		.byte	0x1
+ 2876 0a42 51       		.byte	0x51
+ 2877 0a43 02       		.byte	0x2
+ 2878 0a44 08       		.byte	0x8
+ 2879 0a45 70       		.byte	0x70
+ 2880 0a46 17       		.uleb128 0x17
+ 2881 0a47 01       		.byte	0x1
+ 2882 0a48 50       		.byte	0x50
+ 2883 0a49 01       		.byte	0x1
+ 2884 0a4a 4D       		.byte	0x4d
+ 2885 0a4b 00       		.byte	0
+ 2886 0a4c 1B       		.uleb128 0x1b
+ 2887 0a4d 80020000 		.4byte	.LVL101
+ 2888 0a51 990C0000 		.4byte	0xc99
+ 2889 0a55 660A0000 		.4byte	0xa66
+ 2890 0a59 17       		.uleb128 0x17
+ 2891 0a5a 01       		.byte	0x1
+ 2892 0a5b 51       		.byte	0x51
+ 2893 0a5c 02       		.byte	0x2
+ 2894 0a5d 08       		.byte	0x8
+ 2895 0a5e 70       		.byte	0x70
+ 2896 0a5f 17       		.uleb128 0x17
+ 2897 0a60 01       		.byte	0x1
+ 2898 0a61 50       		.byte	0x50
+ 2899 0a62 02       		.byte	0x2
+ 2900 0a63 08       		.byte	0x8
+ 2901 0a64 2C       		.byte	0x2c
+ 2902 0a65 00       		.byte	0
+ 2903 0a66 1E       		.uleb128 0x1e
+ 2904 0a67 90020000 		.4byte	.LVL102
+ 2905 0a6b 990C0000 		.4byte	0xc99
+ 2906 0a6f 17       		.uleb128 0x17
+ 2907 0a70 01       		.byte	0x1
+ 2908 0a71 51       		.byte	0x51
+ 2909 0a72 02       		.byte	0x2
+ 2910 0a73 08       		.byte	0x8
+ 2911 0a74 70       		.byte	0x70
+ 2912 0a75 00       		.byte	0
+ 2913 0a76 00       		.byte	0
+ 2914 0a77 1C       		.uleb128 0x1c
+ 2915 0a78 01       		.byte	0x1
+ 2916 0a79 9E030000 		.4byte	.LASF91
+ 2917 0a7d 01       		.byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 53
+
+
+ 2918 0a7e 5D02     		.2byte	0x25d
+ 2919 0a80 01       		.byte	0x1
+ 2920 0a81 00000000 		.4byte	.LFB130
+ 2921 0a85 14010000 		.4byte	.LFE130
+ 2922 0a89 6F040000 		.4byte	.LLST19
+ 2923 0a8d 01       		.byte	0x1
+ 2924 0a8e 4D0B0000 		.4byte	0xb4d
+ 2925 0a92 1F       		.uleb128 0x1f
+ 2926 0a93 61020000 		.4byte	.LASF89
+ 2927 0a97 01       		.byte	0x1
+ 2928 0a98 5D02     		.2byte	0x25d
+ 2929 0a9a 7A030000 		.4byte	0x37a
+ 2930 0a9e 8F040000 		.4byte	.LLST20
+ 2931 0aa2 1B       		.uleb128 0x1b
+ 2932 0aa3 48000000 		.4byte	.LVL107
+ 2933 0aa7 B30C0000 		.4byte	0xcb3
+ 2934 0aab B50A0000 		.4byte	0xab5
+ 2935 0aaf 17       		.uleb128 0x17
+ 2936 0ab0 01       		.byte	0x1
+ 2937 0ab1 50       		.byte	0x50
+ 2938 0ab2 01       		.byte	0x1
+ 2939 0ab3 48       		.byte	0x48
+ 2940 0ab4 00       		.byte	0
+ 2941 0ab5 1B       		.uleb128 0x1b
+ 2942 0ab6 60000000 		.4byte	.LVL108
+ 2943 0aba B30C0000 		.4byte	0xcb3
+ 2944 0abe C80A0000 		.4byte	0xac8
+ 2945 0ac2 17       		.uleb128 0x17
+ 2946 0ac3 01       		.byte	0x1
+ 2947 0ac4 50       		.byte	0x50
+ 2948 0ac5 01       		.byte	0x1
+ 2949 0ac6 49       		.byte	0x49
+ 2950 0ac7 00       		.byte	0
+ 2951 0ac8 1B       		.uleb128 0x1b
+ 2952 0ac9 66000000 		.4byte	.LVL109
+ 2953 0acd B30C0000 		.4byte	0xcb3
+ 2954 0ad1 DB0A0000 		.4byte	0xadb
+ 2955 0ad5 17       		.uleb128 0x17
+ 2956 0ad6 01       		.byte	0x1
+ 2957 0ad7 50       		.byte	0x50
+ 2958 0ad8 01       		.byte	0x1
+ 2959 0ad9 4B       		.byte	0x4b
+ 2960 0ada 00       		.byte	0
+ 2961 0adb 1B       		.uleb128 0x1b
+ 2962 0adc 7E000000 		.4byte	.LVL110
+ 2963 0ae0 B30C0000 		.4byte	0xcb3
+ 2964 0ae4 EE0A0000 		.4byte	0xaee
+ 2965 0ae8 17       		.uleb128 0x17
+ 2966 0ae9 01       		.byte	0x1
+ 2967 0aea 50       		.byte	0x50
+ 2968 0aeb 01       		.byte	0x1
+ 2969 0aec 4C       		.byte	0x4c
+ 2970 0aed 00       		.byte	0
+ 2971 0aee 1B       		.uleb128 0x1b
+ 2972 0aef 96000000 		.4byte	.LVL111
+ 2973 0af3 B30C0000 		.4byte	0xcb3
+ 2974 0af7 010B0000 		.4byte	0xb01
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 54
+
+
+ 2975 0afb 17       		.uleb128 0x17
+ 2976 0afc 01       		.byte	0x1
+ 2977 0afd 50       		.byte	0x50
+ 2978 0afe 01       		.byte	0x1
+ 2979 0aff 4D       		.byte	0x4d
+ 2980 0b00 00       		.byte	0
+ 2981 0b01 1B       		.uleb128 0x1b
+ 2982 0b02 AE000000 		.4byte	.LVL112
+ 2983 0b06 B30C0000 		.4byte	0xcb3
+ 2984 0b0a 140B0000 		.4byte	0xb14
+ 2985 0b0e 17       		.uleb128 0x17
+ 2986 0b0f 01       		.byte	0x1
+ 2987 0b10 50       		.byte	0x50
+ 2988 0b11 01       		.byte	0x1
+ 2989 0b12 4E       		.byte	0x4e
+ 2990 0b13 00       		.byte	0
+ 2991 0b14 1B       		.uleb128 0x1b
+ 2992 0b15 C6000000 		.4byte	.LVL113
+ 2993 0b19 B30C0000 		.4byte	0xcb3
+ 2994 0b1d 280B0000 		.4byte	0xb28
+ 2995 0b21 17       		.uleb128 0x17
+ 2996 0b22 01       		.byte	0x1
+ 2997 0b23 50       		.byte	0x50
+ 2998 0b24 02       		.byte	0x2
+ 2999 0b25 08       		.byte	0x8
+ 3000 0b26 32       		.byte	0x32
+ 3001 0b27 00       		.byte	0
+ 3002 0b28 1B       		.uleb128 0x1b
+ 3003 0b29 DE000000 		.4byte	.LVL114
+ 3004 0b2d B30C0000 		.4byte	0xcb3
+ 3005 0b31 3C0B0000 		.4byte	0xb3c
+ 3006 0b35 17       		.uleb128 0x17
+ 3007 0b36 01       		.byte	0x1
+ 3008 0b37 50       		.byte	0x50
+ 3009 0b38 02       		.byte	0x2
+ 3010 0b39 08       		.byte	0x8
+ 3011 0b3a 2C       		.byte	0x2c
+ 3012 0b3b 00       		.byte	0
+ 3013 0b3c 1E       		.uleb128 0x1e
+ 3014 0b3d E4000000 		.4byte	.LVL115
+ 3015 0b41 B30C0000 		.4byte	0xcb3
+ 3016 0b45 17       		.uleb128 0x17
+ 3017 0b46 01       		.byte	0x1
+ 3018 0b47 50       		.byte	0x50
+ 3019 0b48 02       		.byte	0x2
+ 3020 0b49 08       		.byte	0x8
+ 3021 0b4a 2E       		.byte	0x2e
+ 3022 0b4b 00       		.byte	0
+ 3023 0b4c 00       		.byte	0
+ 3024 0b4d 1C       		.uleb128 0x1c
+ 3025 0b4e 01       		.byte	0x1
+ 3026 0b4f E2030000 		.4byte	.LASF92
+ 3027 0b53 01       		.byte	0x1
+ 3028 0b54 A302     		.2byte	0x2a3
+ 3029 0b56 01       		.byte	0x1
+ 3030 0b57 00000000 		.4byte	.LFB131
+ 3031 0b5b 30000000 		.4byte	.LFE131
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 55
+
+
+ 3032 0b5f C3040000 		.4byte	.LLST21
+ 3033 0b63 01       		.byte	0x1
+ 3034 0b64 B30B0000 		.4byte	0xbb3
+ 3035 0b68 1F       		.uleb128 0x1f
+ 3036 0b69 61020000 		.4byte	.LASF89
+ 3037 0b6d 01       		.byte	0x1
+ 3038 0b6e A302     		.2byte	0x2a3
+ 3039 0b70 7A030000 		.4byte	0x37a
+ 3040 0b74 E3040000 		.4byte	.LLST22
+ 3041 0b78 1F       		.uleb128 0x1f
+ 3042 0b79 85030000 		.4byte	.LASF93
+ 3043 0b7d 01       		.byte	0x1
+ 3044 0b7e A402     		.2byte	0x2a4
+ 3045 0b80 E0040000 		.4byte	0x4e0
+ 3046 0b84 04050000 		.4byte	.LLST23
+ 3047 0b88 1F       		.uleb128 0x1f
+ 3048 0b89 01020000 		.4byte	.LASF94
+ 3049 0b8d 01       		.byte	0x1
+ 3050 0b8e A502     		.2byte	0x2a5
+ 3051 0b90 EC040000 		.4byte	0x4ec
+ 3052 0b94 25050000 		.4byte	.LLST24
+ 3053 0b98 21       		.uleb128 0x21
+ 3054 0b99 18000000 		.4byte	.LBB2
+ 3055 0b9d 2C000000 		.4byte	.LBE2
+ 3056 0ba1 20       		.uleb128 0x20
+ 3057 0ba2 BC040000 		.4byte	.LASF76
+ 3058 0ba6 01       		.byte	0x1
+ 3059 0ba7 AB02     		.2byte	0x2ab
+ 3060 0ba9 7B000000 		.4byte	0x7b
+ 3061 0bad 46050000 		.4byte	.LLST25
+ 3062 0bb1 00       		.byte	0
+ 3063 0bb2 00       		.byte	0
+ 3064 0bb3 22       		.uleb128 0x22
+ 3065 0bb4 01       		.byte	0x1
+ 3066 0bb5 AD000000 		.4byte	.LASF95
+ 3067 0bb9 01       		.byte	0x1
+ 3068 0bba C102     		.2byte	0x2c1
+ 3069 0bbc 01       		.byte	0x1
+ 3070 0bbd 00000000 		.4byte	.LFB132
+ 3071 0bc1 1E000000 		.4byte	.LFE132
+ 3072 0bc5 02       		.byte	0x2
+ 3073 0bc6 7D       		.byte	0x7d
+ 3074 0bc7 00       		.sleb128 0
+ 3075 0bc8 01       		.byte	0x1
+ 3076 0bc9 EE0B0000 		.4byte	0xbee
+ 3077 0bcd 1F       		.uleb128 0x1f
+ 3078 0bce 61020000 		.4byte	.LASF89
+ 3079 0bd2 01       		.byte	0x1
+ 3080 0bd3 C102     		.2byte	0x2c1
+ 3081 0bd5 7A030000 		.4byte	0x37a
+ 3082 0bd9 59050000 		.4byte	.LLST26
+ 3083 0bdd 1F       		.uleb128 0x1f
+ 3084 0bde 85030000 		.4byte	.LASF93
+ 3085 0be2 01       		.byte	0x1
+ 3086 0be3 C102     		.2byte	0x2c1
+ 3087 0be5 E0040000 		.4byte	0x4e0
+ 3088 0be9 7A050000 		.4byte	.LLST27
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 56
+
+
+ 3089 0bed 00       		.byte	0
+ 3090 0bee 23       		.uleb128 0x23
+ 3091 0bef 53030000 		.4byte	.LASF96
+ 3092 0bf3 07       		.byte	0x7
+ 3093 0bf4 9806     		.2byte	0x698
+ 3094 0bf6 D5000000 		.4byte	0xd5
+ 3095 0bfa 01       		.byte	0x1
+ 3096 0bfb 01       		.byte	0x1
+ 3097 0bfc 24       		.uleb128 0x24
+ 3098 0bfd 97010000 		.4byte	.LASF97
+ 3099 0c01 01       		.byte	0x1
+ 3100 0c02 2B       		.byte	0x2b
+ 3101 0c03 F9020000 		.4byte	0x2f9
+ 3102 0c07 01       		.byte	0x1
+ 3103 0c08 05       		.byte	0x5
+ 3104 0c09 03       		.byte	0x3
+ 3105 0c0a 00000000 		.4byte	PWMD1
+ 3106 0c0e 24       		.uleb128 0x24
+ 3107 0c0f 9D010000 		.4byte	.LASF98
+ 3108 0c13 01       		.byte	0x1
+ 3109 0c14 33       		.byte	0x33
+ 3110 0c15 F9020000 		.4byte	0x2f9
+ 3111 0c19 01       		.byte	0x1
+ 3112 0c1a 05       		.byte	0x5
+ 3113 0c1b 03       		.byte	0x3
+ 3114 0c1c 00000000 		.4byte	PWMD2
+ 3115 0c20 24       		.uleb128 0x24
+ 3116 0c21 A3010000 		.4byte	.LASF99
+ 3117 0c25 01       		.byte	0x1
+ 3118 0c26 3B       		.byte	0x3b
+ 3119 0c27 F9020000 		.4byte	0x2f9
+ 3120 0c2b 01       		.byte	0x1
+ 3121 0c2c 05       		.byte	0x5
+ 3122 0c2d 03       		.byte	0x3
+ 3123 0c2e 00000000 		.4byte	PWMD3
+ 3124 0c32 24       		.uleb128 0x24
+ 3125 0c33 A9010000 		.4byte	.LASF100
+ 3126 0c37 01       		.byte	0x1
+ 3127 0c38 43       		.byte	0x43
+ 3128 0c39 F9020000 		.4byte	0x2f9
+ 3129 0c3d 01       		.byte	0x1
+ 3130 0c3e 05       		.byte	0x5
+ 3131 0c3f 03       		.byte	0x3
+ 3132 0c40 00000000 		.4byte	PWMD4
+ 3133 0c44 24       		.uleb128 0x24
+ 3134 0c45 3E010000 		.4byte	.LASF101
+ 3135 0c49 01       		.byte	0x1
+ 3136 0c4a 4B       		.byte	0x4b
+ 3137 0c4b F9020000 		.4byte	0x2f9
+ 3138 0c4f 01       		.byte	0x1
+ 3139 0c50 05       		.byte	0x5
+ 3140 0c51 03       		.byte	0x3
+ 3141 0c52 00000000 		.4byte	PWMD5
+ 3142 0c56 24       		.uleb128 0x24
+ 3143 0c57 B8010000 		.4byte	.LASF102
+ 3144 0c5b 01       		.byte	0x1
+ 3145 0c5c 53       		.byte	0x53
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 57
+
+
+ 3146 0c5d F9020000 		.4byte	0x2f9
+ 3147 0c61 01       		.byte	0x1
+ 3148 0c62 05       		.byte	0x5
+ 3149 0c63 03       		.byte	0x3
+ 3150 0c64 00000000 		.4byte	PWMD8
+ 3151 0c68 24       		.uleb128 0x24
+ 3152 0c69 BE010000 		.4byte	.LASF103
+ 3153 0c6d 01       		.byte	0x1
+ 3154 0c6e 5B       		.byte	0x5b
+ 3155 0c6f F9020000 		.4byte	0x2f9
+ 3156 0c73 01       		.byte	0x1
+ 3157 0c74 05       		.byte	0x5
+ 3158 0c75 03       		.byte	0x3
+ 3159 0c76 00000000 		.4byte	PWMD9
+ 3160 0c7a 25       		.uleb128 0x25
+ 3161 0c7b 01       		.byte	0x1
+ 3162 0c7c 20020000 		.4byte	.LASF110
+ 3163 0c80 09       		.byte	0x9
+ 3164 0c81 0302     		.2byte	0x203
+ 3165 0c83 01       		.byte	0x1
+ 3166 0c84 01       		.byte	0x1
+ 3167 0c85 26       		.uleb128 0x26
+ 3168 0c86 01       		.byte	0x1
+ 3169 0c87 AE040000 		.4byte	.LASF104
+ 3170 0c8b 04       		.byte	0x4
+ 3171 0c8c F3       		.byte	0xf3
+ 3172 0c8d 01       		.byte	0x1
+ 3173 0c8e 01       		.byte	0x1
+ 3174 0c8f 990C0000 		.4byte	0xc99
+ 3175 0c93 11       		.uleb128 0x11
+ 3176 0c94 7A030000 		.4byte	0x37a
+ 3177 0c98 00       		.byte	0
+ 3178 0c99 27       		.uleb128 0x27
+ 3179 0c9a 01       		.byte	0x1
+ 3180 0c9b E8000000 		.4byte	.LASF105
+ 3181 0c9f 08       		.byte	0x8
+ 3182 0ca0 2301     		.2byte	0x123
+ 3183 0ca2 01       		.byte	0x1
+ 3184 0ca3 01       		.byte	0x1
+ 3185 0ca4 B30C0000 		.4byte	0xcb3
+ 3186 0ca8 11       		.uleb128 0x11
+ 3187 0ca9 7B000000 		.4byte	0x7b
+ 3188 0cad 11       		.uleb128 0x11
+ 3189 0cae 7B000000 		.4byte	0x7b
+ 3190 0cb2 00       		.byte	0
+ 3191 0cb3 28       		.uleb128 0x28
+ 3192 0cb4 01       		.byte	0x1
+ 3193 0cb5 D1010000 		.4byte	.LASF111
+ 3194 0cb9 08       		.byte	0x8
+ 3195 0cba 2401     		.2byte	0x124
+ 3196 0cbc 01       		.byte	0x1
+ 3197 0cbd 01       		.byte	0x1
+ 3198 0cbe 11       		.uleb128 0x11
+ 3199 0cbf 7B000000 		.4byte	0x7b
+ 3200 0cc3 00       		.byte	0
+ 3201 0cc4 00       		.byte	0
+ 3202              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 58
+
+
+ 3203              	.Ldebug_abbrev0:
+ 3204 0000 01       		.uleb128 0x1
+ 3205 0001 11       		.uleb128 0x11
+ 3206 0002 01       		.byte	0x1
+ 3207 0003 25       		.uleb128 0x25
+ 3208 0004 0E       		.uleb128 0xe
+ 3209 0005 13       		.uleb128 0x13
+ 3210 0006 0B       		.uleb128 0xb
+ 3211 0007 03       		.uleb128 0x3
+ 3212 0008 0E       		.uleb128 0xe
+ 3213 0009 1B       		.uleb128 0x1b
+ 3214 000a 0E       		.uleb128 0xe
+ 3215 000b 55       		.uleb128 0x55
+ 3216 000c 06       		.uleb128 0x6
+ 3217 000d 11       		.uleb128 0x11
+ 3218 000e 01       		.uleb128 0x1
+ 3219 000f 52       		.uleb128 0x52
+ 3220 0010 01       		.uleb128 0x1
+ 3221 0011 10       		.uleb128 0x10
+ 3222 0012 06       		.uleb128 0x6
+ 3223 0013 00       		.byte	0
+ 3224 0014 00       		.byte	0
+ 3225 0015 02       		.uleb128 0x2
+ 3226 0016 24       		.uleb128 0x24
+ 3227 0017 00       		.byte	0
+ 3228 0018 0B       		.uleb128 0xb
+ 3229 0019 0B       		.uleb128 0xb
+ 3230 001a 3E       		.uleb128 0x3e
+ 3231 001b 0B       		.uleb128 0xb
+ 3232 001c 03       		.uleb128 0x3
+ 3233 001d 0E       		.uleb128 0xe
+ 3234 001e 00       		.byte	0
+ 3235 001f 00       		.byte	0
+ 3236 0020 03       		.uleb128 0x3
+ 3237 0021 24       		.uleb128 0x24
+ 3238 0022 00       		.byte	0
+ 3239 0023 0B       		.uleb128 0xb
+ 3240 0024 0B       		.uleb128 0xb
+ 3241 0025 3E       		.uleb128 0x3e
+ 3242 0026 0B       		.uleb128 0xb
+ 3243 0027 03       		.uleb128 0x3
+ 3244 0028 08       		.uleb128 0x8
+ 3245 0029 00       		.byte	0
+ 3246 002a 00       		.byte	0
+ 3247 002b 04       		.uleb128 0x4
+ 3248 002c 16       		.uleb128 0x16
+ 3249 002d 00       		.byte	0
+ 3250 002e 03       		.uleb128 0x3
+ 3251 002f 0E       		.uleb128 0xe
+ 3252 0030 3A       		.uleb128 0x3a
+ 3253 0031 0B       		.uleb128 0xb
+ 3254 0032 3B       		.uleb128 0x3b
+ 3255 0033 0B       		.uleb128 0xb
+ 3256 0034 49       		.uleb128 0x49
+ 3257 0035 13       		.uleb128 0x13
+ 3258 0036 00       		.byte	0
+ 3259 0037 00       		.byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 59
+
+
+ 3260 0038 05       		.uleb128 0x5
+ 3261 0039 35       		.uleb128 0x35
+ 3262 003a 00       		.byte	0
+ 3263 003b 49       		.uleb128 0x49
+ 3264 003c 13       		.uleb128 0x13
+ 3265 003d 00       		.byte	0
+ 3266 003e 00       		.byte	0
+ 3267 003f 06       		.uleb128 0x6
+ 3268 0040 01       		.uleb128 0x1
+ 3269 0041 01       		.byte	0x1
+ 3270 0042 49       		.uleb128 0x49
+ 3271 0043 13       		.uleb128 0x13
+ 3272 0044 01       		.uleb128 0x1
+ 3273 0045 13       		.uleb128 0x13
+ 3274 0046 00       		.byte	0
+ 3275 0047 00       		.byte	0
+ 3276 0048 07       		.uleb128 0x7
+ 3277 0049 21       		.uleb128 0x21
+ 3278 004a 00       		.byte	0
+ 3279 004b 49       		.uleb128 0x49
+ 3280 004c 13       		.uleb128 0x13
+ 3281 004d 2F       		.uleb128 0x2f
+ 3282 004e 0B       		.uleb128 0xb
+ 3283 004f 00       		.byte	0
+ 3284 0050 00       		.byte	0
+ 3285 0051 08       		.uleb128 0x8
+ 3286 0052 13       		.uleb128 0x13
+ 3287 0053 01       		.byte	0x1
+ 3288 0054 0B       		.uleb128 0xb
+ 3289 0055 0B       		.uleb128 0xb
+ 3290 0056 3A       		.uleb128 0x3a
+ 3291 0057 0B       		.uleb128 0xb
+ 3292 0058 3B       		.uleb128 0x3b
+ 3293 0059 05       		.uleb128 0x5
+ 3294 005a 01       		.uleb128 0x1
+ 3295 005b 13       		.uleb128 0x13
+ 3296 005c 00       		.byte	0
+ 3297 005d 00       		.byte	0
+ 3298 005e 09       		.uleb128 0x9
+ 3299 005f 0D       		.uleb128 0xd
+ 3300 0060 00       		.byte	0
+ 3301 0061 03       		.uleb128 0x3
+ 3302 0062 08       		.uleb128 0x8
+ 3303 0063 3A       		.uleb128 0x3a
+ 3304 0064 0B       		.uleb128 0xb
+ 3305 0065 3B       		.uleb128 0x3b
+ 3306 0066 05       		.uleb128 0x5
+ 3307 0067 49       		.uleb128 0x49
+ 3308 0068 13       		.uleb128 0x13
+ 3309 0069 38       		.uleb128 0x38
+ 3310 006a 0A       		.uleb128 0xa
+ 3311 006b 00       		.byte	0
+ 3312 006c 00       		.byte	0
+ 3313 006d 0A       		.uleb128 0xa
+ 3314 006e 0D       		.uleb128 0xd
+ 3315 006f 00       		.byte	0
+ 3316 0070 03       		.uleb128 0x3
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 60
+
+
+ 3317 0071 0E       		.uleb128 0xe
+ 3318 0072 3A       		.uleb128 0x3a
+ 3319 0073 0B       		.uleb128 0xb
+ 3320 0074 3B       		.uleb128 0x3b
+ 3321 0075 05       		.uleb128 0x5
+ 3322 0076 49       		.uleb128 0x49
+ 3323 0077 13       		.uleb128 0x13
+ 3324 0078 38       		.uleb128 0x38
+ 3325 0079 0A       		.uleb128 0xa
+ 3326 007a 00       		.byte	0
+ 3327 007b 00       		.byte	0
+ 3328 007c 0B       		.uleb128 0xb
+ 3329 007d 16       		.uleb128 0x16
+ 3330 007e 00       		.byte	0
+ 3331 007f 03       		.uleb128 0x3
+ 3332 0080 0E       		.uleb128 0xe
+ 3333 0081 3A       		.uleb128 0x3a
+ 3334 0082 0B       		.uleb128 0xb
+ 3335 0083 3B       		.uleb128 0x3b
+ 3336 0084 05       		.uleb128 0x5
+ 3337 0085 49       		.uleb128 0x49
+ 3338 0086 13       		.uleb128 0x13
+ 3339 0087 00       		.byte	0
+ 3340 0088 00       		.byte	0
+ 3341 0089 0C       		.uleb128 0xc
+ 3342 008a 04       		.uleb128 0x4
+ 3343 008b 01       		.byte	0x1
+ 3344 008c 0B       		.uleb128 0xb
+ 3345 008d 0B       		.uleb128 0xb
+ 3346 008e 3A       		.uleb128 0x3a
+ 3347 008f 0B       		.uleb128 0xb
+ 3348 0090 3B       		.uleb128 0x3b
+ 3349 0091 0B       		.uleb128 0xb
+ 3350 0092 01       		.uleb128 0x1
+ 3351 0093 13       		.uleb128 0x13
+ 3352 0094 00       		.byte	0
+ 3353 0095 00       		.byte	0
+ 3354 0096 0D       		.uleb128 0xd
+ 3355 0097 28       		.uleb128 0x28
+ 3356 0098 00       		.byte	0
+ 3357 0099 03       		.uleb128 0x3
+ 3358 009a 0E       		.uleb128 0xe
+ 3359 009b 1C       		.uleb128 0x1c
+ 3360 009c 0D       		.uleb128 0xd
+ 3361 009d 00       		.byte	0
+ 3362 009e 00       		.byte	0
+ 3363 009f 0E       		.uleb128 0xe
+ 3364 00a0 13       		.uleb128 0x13
+ 3365 00a1 01       		.byte	0x1
+ 3366 00a2 03       		.uleb128 0x3
+ 3367 00a3 0E       		.uleb128 0xe
+ 3368 00a4 0B       		.uleb128 0xb
+ 3369 00a5 0B       		.uleb128 0xb
+ 3370 00a6 3A       		.uleb128 0x3a
+ 3371 00a7 0B       		.uleb128 0xb
+ 3372 00a8 3B       		.uleb128 0x3b
+ 3373 00a9 05       		.uleb128 0x5
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 61
+
+
+ 3374 00aa 01       		.uleb128 0x1
+ 3375 00ab 13       		.uleb128 0x13
+ 3376 00ac 00       		.byte	0
+ 3377 00ad 00       		.byte	0
+ 3378 00ae 0F       		.uleb128 0xf
+ 3379 00af 0F       		.uleb128 0xf
+ 3380 00b0 00       		.byte	0
+ 3381 00b1 0B       		.uleb128 0xb
+ 3382 00b2 0B       		.uleb128 0xb
+ 3383 00b3 49       		.uleb128 0x49
+ 3384 00b4 13       		.uleb128 0x13
+ 3385 00b5 00       		.byte	0
+ 3386 00b6 00       		.byte	0
+ 3387 00b7 10       		.uleb128 0x10
+ 3388 00b8 15       		.uleb128 0x15
+ 3389 00b9 01       		.byte	0x1
+ 3390 00ba 27       		.uleb128 0x27
+ 3391 00bb 0C       		.uleb128 0xc
+ 3392 00bc 01       		.uleb128 0x1
+ 3393 00bd 13       		.uleb128 0x13
+ 3394 00be 00       		.byte	0
+ 3395 00bf 00       		.byte	0
+ 3396 00c0 11       		.uleb128 0x11
+ 3397 00c1 05       		.uleb128 0x5
+ 3398 00c2 00       		.byte	0
+ 3399 00c3 49       		.uleb128 0x49
+ 3400 00c4 13       		.uleb128 0x13
+ 3401 00c5 00       		.byte	0
+ 3402 00c6 00       		.byte	0
+ 3403 00c7 12       		.uleb128 0x12
+ 3404 00c8 26       		.uleb128 0x26
+ 3405 00c9 00       		.byte	0
+ 3406 00ca 49       		.uleb128 0x49
+ 3407 00cb 13       		.uleb128 0x13
+ 3408 00cc 00       		.byte	0
+ 3409 00cd 00       		.byte	0
+ 3410 00ce 13       		.uleb128 0x13
+ 3411 00cf 2E       		.uleb128 0x2e
+ 3412 00d0 01       		.byte	0x1
+ 3413 00d1 03       		.uleb128 0x3
+ 3414 00d2 0E       		.uleb128 0xe
+ 3415 00d3 3A       		.uleb128 0x3a
+ 3416 00d4 0B       		.uleb128 0xb
+ 3417 00d5 3B       		.uleb128 0x3b
+ 3418 00d6 0B       		.uleb128 0xb
+ 3419 00d7 27       		.uleb128 0x27
+ 3420 00d8 0C       		.uleb128 0xc
+ 3421 00d9 11       		.uleb128 0x11
+ 3422 00da 01       		.uleb128 0x1
+ 3423 00db 12       		.uleb128 0x12
+ 3424 00dc 01       		.uleb128 0x1
+ 3425 00dd 40       		.uleb128 0x40
+ 3426 00de 06       		.uleb128 0x6
+ 3427 00df 9742     		.uleb128 0x2117
+ 3428 00e1 0C       		.uleb128 0xc
+ 3429 00e2 01       		.uleb128 0x1
+ 3430 00e3 13       		.uleb128 0x13
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 62
+
+
+ 3431 00e4 00       		.byte	0
+ 3432 00e5 00       		.byte	0
+ 3433 00e6 14       		.uleb128 0x14
+ 3434 00e7 05       		.uleb128 0x5
+ 3435 00e8 00       		.byte	0
+ 3436 00e9 03       		.uleb128 0x3
+ 3437 00ea 0E       		.uleb128 0xe
+ 3438 00eb 3A       		.uleb128 0x3a
+ 3439 00ec 0B       		.uleb128 0xb
+ 3440 00ed 3B       		.uleb128 0x3b
+ 3441 00ee 0B       		.uleb128 0xb
+ 3442 00ef 49       		.uleb128 0x49
+ 3443 00f0 13       		.uleb128 0x13
+ 3444 00f1 02       		.uleb128 0x2
+ 3445 00f2 06       		.uleb128 0x6
+ 3446 00f3 00       		.byte	0
+ 3447 00f4 00       		.byte	0
+ 3448 00f5 15       		.uleb128 0x15
+ 3449 00f6 34       		.uleb128 0x34
+ 3450 00f7 00       		.byte	0
+ 3451 00f8 03       		.uleb128 0x3
+ 3452 00f9 08       		.uleb128 0x8
+ 3453 00fa 3A       		.uleb128 0x3a
+ 3454 00fb 0B       		.uleb128 0xb
+ 3455 00fc 3B       		.uleb128 0x3b
+ 3456 00fd 0B       		.uleb128 0xb
+ 3457 00fe 49       		.uleb128 0x49
+ 3458 00ff 13       		.uleb128 0x13
+ 3459 0100 02       		.uleb128 0x2
+ 3460 0101 06       		.uleb128 0x6
+ 3461 0102 00       		.byte	0
+ 3462 0103 00       		.byte	0
+ 3463 0104 16       		.uleb128 0x16
+ 3464 0105 898201   		.uleb128 0x4109
+ 3465 0108 01       		.byte	0x1
+ 3466 0109 11       		.uleb128 0x11
+ 3467 010a 01       		.uleb128 0x1
+ 3468 010b 01       		.uleb128 0x1
+ 3469 010c 13       		.uleb128 0x13
+ 3470 010d 00       		.byte	0
+ 3471 010e 00       		.byte	0
+ 3472 010f 17       		.uleb128 0x17
+ 3473 0110 8A8201   		.uleb128 0x410a
+ 3474 0113 00       		.byte	0
+ 3475 0114 02       		.uleb128 0x2
+ 3476 0115 0A       		.uleb128 0xa
+ 3477 0116 9142     		.uleb128 0x2111
+ 3478 0118 0A       		.uleb128 0xa
+ 3479 0119 00       		.byte	0
+ 3480 011a 00       		.byte	0
+ 3481 011b 18       		.uleb128 0x18
+ 3482 011c 898201   		.uleb128 0x4109
+ 3483 011f 01       		.byte	0x1
+ 3484 0120 11       		.uleb128 0x11
+ 3485 0121 01       		.uleb128 0x1
+ 3486 0122 00       		.byte	0
+ 3487 0123 00       		.byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 63
+
+
+ 3488 0124 19       		.uleb128 0x19
+ 3489 0125 2E       		.uleb128 0x2e
+ 3490 0126 01       		.byte	0x1
+ 3491 0127 3F       		.uleb128 0x3f
+ 3492 0128 0C       		.uleb128 0xc
+ 3493 0129 03       		.uleb128 0x3
+ 3494 012a 0E       		.uleb128 0xe
+ 3495 012b 3A       		.uleb128 0x3a
+ 3496 012c 0B       		.uleb128 0xb
+ 3497 012d 3B       		.uleb128 0x3b
+ 3498 012e 0B       		.uleb128 0xb
+ 3499 012f 27       		.uleb128 0x27
+ 3500 0130 0C       		.uleb128 0xc
+ 3501 0131 11       		.uleb128 0x11
+ 3502 0132 01       		.uleb128 0x1
+ 3503 0133 12       		.uleb128 0x12
+ 3504 0134 01       		.uleb128 0x1
+ 3505 0135 40       		.uleb128 0x40
+ 3506 0136 06       		.uleb128 0x6
+ 3507 0137 9742     		.uleb128 0x2117
+ 3508 0139 0C       		.uleb128 0xc
+ 3509 013a 01       		.uleb128 0x1
+ 3510 013b 13       		.uleb128 0x13
+ 3511 013c 00       		.byte	0
+ 3512 013d 00       		.byte	0
+ 3513 013e 1A       		.uleb128 0x1a
+ 3514 013f 898201   		.uleb128 0x4109
+ 3515 0142 00       		.byte	0
+ 3516 0143 11       		.uleb128 0x11
+ 3517 0144 01       		.uleb128 0x1
+ 3518 0145 9542     		.uleb128 0x2115
+ 3519 0147 0C       		.uleb128 0xc
+ 3520 0148 31       		.uleb128 0x31
+ 3521 0149 13       		.uleb128 0x13
+ 3522 014a 00       		.byte	0
+ 3523 014b 00       		.byte	0
+ 3524 014c 1B       		.uleb128 0x1b
+ 3525 014d 898201   		.uleb128 0x4109
+ 3526 0150 01       		.byte	0x1
+ 3527 0151 11       		.uleb128 0x11
+ 3528 0152 01       		.uleb128 0x1
+ 3529 0153 31       		.uleb128 0x31
+ 3530 0154 13       		.uleb128 0x13
+ 3531 0155 01       		.uleb128 0x1
+ 3532 0156 13       		.uleb128 0x13
+ 3533 0157 00       		.byte	0
+ 3534 0158 00       		.byte	0
+ 3535 0159 1C       		.uleb128 0x1c
+ 3536 015a 2E       		.uleb128 0x2e
+ 3537 015b 01       		.byte	0x1
+ 3538 015c 3F       		.uleb128 0x3f
+ 3539 015d 0C       		.uleb128 0xc
+ 3540 015e 03       		.uleb128 0x3
+ 3541 015f 0E       		.uleb128 0xe
+ 3542 0160 3A       		.uleb128 0x3a
+ 3543 0161 0B       		.uleb128 0xb
+ 3544 0162 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 64
+
+
+ 3545 0163 05       		.uleb128 0x5
+ 3546 0164 27       		.uleb128 0x27
+ 3547 0165 0C       		.uleb128 0xc
+ 3548 0166 11       		.uleb128 0x11
+ 3549 0167 01       		.uleb128 0x1
+ 3550 0168 12       		.uleb128 0x12
+ 3551 0169 01       		.uleb128 0x1
+ 3552 016a 40       		.uleb128 0x40
+ 3553 016b 06       		.uleb128 0x6
+ 3554 016c 9742     		.uleb128 0x2117
+ 3555 016e 0C       		.uleb128 0xc
+ 3556 016f 01       		.uleb128 0x1
+ 3557 0170 13       		.uleb128 0x13
+ 3558 0171 00       		.byte	0
+ 3559 0172 00       		.byte	0
+ 3560 0173 1D       		.uleb128 0x1d
+ 3561 0174 34       		.uleb128 0x34
+ 3562 0175 00       		.byte	0
+ 3563 0176 03       		.uleb128 0x3
+ 3564 0177 08       		.uleb128 0x8
+ 3565 0178 3A       		.uleb128 0x3a
+ 3566 0179 0B       		.uleb128 0xb
+ 3567 017a 3B       		.uleb128 0x3b
+ 3568 017b 05       		.uleb128 0x5
+ 3569 017c 49       		.uleb128 0x49
+ 3570 017d 13       		.uleb128 0x13
+ 3571 017e 02       		.uleb128 0x2
+ 3572 017f 06       		.uleb128 0x6
+ 3573 0180 00       		.byte	0
+ 3574 0181 00       		.byte	0
+ 3575 0182 1E       		.uleb128 0x1e
+ 3576 0183 898201   		.uleb128 0x4109
+ 3577 0186 01       		.byte	0x1
+ 3578 0187 11       		.uleb128 0x11
+ 3579 0188 01       		.uleb128 0x1
+ 3580 0189 31       		.uleb128 0x31
+ 3581 018a 13       		.uleb128 0x13
+ 3582 018b 00       		.byte	0
+ 3583 018c 00       		.byte	0
+ 3584 018d 1F       		.uleb128 0x1f
+ 3585 018e 05       		.uleb128 0x5
+ 3586 018f 00       		.byte	0
+ 3587 0190 03       		.uleb128 0x3
+ 3588 0191 0E       		.uleb128 0xe
+ 3589 0192 3A       		.uleb128 0x3a
+ 3590 0193 0B       		.uleb128 0xb
+ 3591 0194 3B       		.uleb128 0x3b
+ 3592 0195 05       		.uleb128 0x5
+ 3593 0196 49       		.uleb128 0x49
+ 3594 0197 13       		.uleb128 0x13
+ 3595 0198 02       		.uleb128 0x2
+ 3596 0199 06       		.uleb128 0x6
+ 3597 019a 00       		.byte	0
+ 3598 019b 00       		.byte	0
+ 3599 019c 20       		.uleb128 0x20
+ 3600 019d 34       		.uleb128 0x34
+ 3601 019e 00       		.byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 65
+
+
+ 3602 019f 03       		.uleb128 0x3
+ 3603 01a0 0E       		.uleb128 0xe
+ 3604 01a1 3A       		.uleb128 0x3a
+ 3605 01a2 0B       		.uleb128 0xb
+ 3606 01a3 3B       		.uleb128 0x3b
+ 3607 01a4 05       		.uleb128 0x5
+ 3608 01a5 49       		.uleb128 0x49
+ 3609 01a6 13       		.uleb128 0x13
+ 3610 01a7 02       		.uleb128 0x2
+ 3611 01a8 06       		.uleb128 0x6
+ 3612 01a9 00       		.byte	0
+ 3613 01aa 00       		.byte	0
+ 3614 01ab 21       		.uleb128 0x21
+ 3615 01ac 0B       		.uleb128 0xb
+ 3616 01ad 01       		.byte	0x1
+ 3617 01ae 11       		.uleb128 0x11
+ 3618 01af 01       		.uleb128 0x1
+ 3619 01b0 12       		.uleb128 0x12
+ 3620 01b1 01       		.uleb128 0x1
+ 3621 01b2 00       		.byte	0
+ 3622 01b3 00       		.byte	0
+ 3623 01b4 22       		.uleb128 0x22
+ 3624 01b5 2E       		.uleb128 0x2e
+ 3625 01b6 01       		.byte	0x1
+ 3626 01b7 3F       		.uleb128 0x3f
+ 3627 01b8 0C       		.uleb128 0xc
+ 3628 01b9 03       		.uleb128 0x3
+ 3629 01ba 0E       		.uleb128 0xe
+ 3630 01bb 3A       		.uleb128 0x3a
+ 3631 01bc 0B       		.uleb128 0xb
+ 3632 01bd 3B       		.uleb128 0x3b
+ 3633 01be 05       		.uleb128 0x5
+ 3634 01bf 27       		.uleb128 0x27
+ 3635 01c0 0C       		.uleb128 0xc
+ 3636 01c1 11       		.uleb128 0x11
+ 3637 01c2 01       		.uleb128 0x1
+ 3638 01c3 12       		.uleb128 0x12
+ 3639 01c4 01       		.uleb128 0x1
+ 3640 01c5 40       		.uleb128 0x40
+ 3641 01c6 0A       		.uleb128 0xa
+ 3642 01c7 9742     		.uleb128 0x2117
+ 3643 01c9 0C       		.uleb128 0xc
+ 3644 01ca 01       		.uleb128 0x1
+ 3645 01cb 13       		.uleb128 0x13
+ 3646 01cc 00       		.byte	0
+ 3647 01cd 00       		.byte	0
+ 3648 01ce 23       		.uleb128 0x23
+ 3649 01cf 34       		.uleb128 0x34
+ 3650 01d0 00       		.byte	0
+ 3651 01d1 03       		.uleb128 0x3
+ 3652 01d2 0E       		.uleb128 0xe
+ 3653 01d3 3A       		.uleb128 0x3a
+ 3654 01d4 0B       		.uleb128 0xb
+ 3655 01d5 3B       		.uleb128 0x3b
+ 3656 01d6 05       		.uleb128 0x5
+ 3657 01d7 49       		.uleb128 0x49
+ 3658 01d8 13       		.uleb128 0x13
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 66
+
+
+ 3659 01d9 3F       		.uleb128 0x3f
+ 3660 01da 0C       		.uleb128 0xc
+ 3661 01db 3C       		.uleb128 0x3c
+ 3662 01dc 0C       		.uleb128 0xc
+ 3663 01dd 00       		.byte	0
+ 3664 01de 00       		.byte	0
+ 3665 01df 24       		.uleb128 0x24
+ 3666 01e0 34       		.uleb128 0x34
+ 3667 01e1 00       		.byte	0
+ 3668 01e2 03       		.uleb128 0x3
+ 3669 01e3 0E       		.uleb128 0xe
+ 3670 01e4 3A       		.uleb128 0x3a
+ 3671 01e5 0B       		.uleb128 0xb
+ 3672 01e6 3B       		.uleb128 0x3b
+ 3673 01e7 0B       		.uleb128 0xb
+ 3674 01e8 49       		.uleb128 0x49
+ 3675 01e9 13       		.uleb128 0x13
+ 3676 01ea 3F       		.uleb128 0x3f
+ 3677 01eb 0C       		.uleb128 0xc
+ 3678 01ec 02       		.uleb128 0x2
+ 3679 01ed 0A       		.uleb128 0xa
+ 3680 01ee 00       		.byte	0
+ 3681 01ef 00       		.byte	0
+ 3682 01f0 25       		.uleb128 0x25
+ 3683 01f1 2E       		.uleb128 0x2e
+ 3684 01f2 00       		.byte	0
+ 3685 01f3 3F       		.uleb128 0x3f
+ 3686 01f4 0C       		.uleb128 0xc
+ 3687 01f5 03       		.uleb128 0x3
+ 3688 01f6 0E       		.uleb128 0xe
+ 3689 01f7 3A       		.uleb128 0x3a
+ 3690 01f8 0B       		.uleb128 0xb
+ 3691 01f9 3B       		.uleb128 0x3b
+ 3692 01fa 05       		.uleb128 0x5
+ 3693 01fb 27       		.uleb128 0x27
+ 3694 01fc 0C       		.uleb128 0xc
+ 3695 01fd 3C       		.uleb128 0x3c
+ 3696 01fe 0C       		.uleb128 0xc
+ 3697 01ff 00       		.byte	0
+ 3698 0200 00       		.byte	0
+ 3699 0201 26       		.uleb128 0x26
+ 3700 0202 2E       		.uleb128 0x2e
+ 3701 0203 01       		.byte	0x1
+ 3702 0204 3F       		.uleb128 0x3f
+ 3703 0205 0C       		.uleb128 0xc
+ 3704 0206 03       		.uleb128 0x3
+ 3705 0207 0E       		.uleb128 0xe
+ 3706 0208 3A       		.uleb128 0x3a
+ 3707 0209 0B       		.uleb128 0xb
+ 3708 020a 3B       		.uleb128 0x3b
+ 3709 020b 0B       		.uleb128 0xb
+ 3710 020c 27       		.uleb128 0x27
+ 3711 020d 0C       		.uleb128 0xc
+ 3712 020e 3C       		.uleb128 0x3c
+ 3713 020f 0C       		.uleb128 0xc
+ 3714 0210 01       		.uleb128 0x1
+ 3715 0211 13       		.uleb128 0x13
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 67
+
+
+ 3716 0212 00       		.byte	0
+ 3717 0213 00       		.byte	0
+ 3718 0214 27       		.uleb128 0x27
+ 3719 0215 2E       		.uleb128 0x2e
+ 3720 0216 01       		.byte	0x1
+ 3721 0217 3F       		.uleb128 0x3f
+ 3722 0218 0C       		.uleb128 0xc
+ 3723 0219 03       		.uleb128 0x3
+ 3724 021a 0E       		.uleb128 0xe
+ 3725 021b 3A       		.uleb128 0x3a
+ 3726 021c 0B       		.uleb128 0xb
+ 3727 021d 3B       		.uleb128 0x3b
+ 3728 021e 05       		.uleb128 0x5
+ 3729 021f 27       		.uleb128 0x27
+ 3730 0220 0C       		.uleb128 0xc
+ 3731 0221 3C       		.uleb128 0x3c
+ 3732 0222 0C       		.uleb128 0xc
+ 3733 0223 01       		.uleb128 0x1
+ 3734 0224 13       		.uleb128 0x13
+ 3735 0225 00       		.byte	0
+ 3736 0226 00       		.byte	0
+ 3737 0227 28       		.uleb128 0x28
+ 3738 0228 2E       		.uleb128 0x2e
+ 3739 0229 01       		.byte	0x1
+ 3740 022a 3F       		.uleb128 0x3f
+ 3741 022b 0C       		.uleb128 0xc
+ 3742 022c 03       		.uleb128 0x3
+ 3743 022d 0E       		.uleb128 0xe
+ 3744 022e 3A       		.uleb128 0x3a
+ 3745 022f 0B       		.uleb128 0xb
+ 3746 0230 3B       		.uleb128 0x3b
+ 3747 0231 05       		.uleb128 0x5
+ 3748 0232 27       		.uleb128 0x27
+ 3749 0233 0C       		.uleb128 0xc
+ 3750 0234 3C       		.uleb128 0x3c
+ 3751 0235 0C       		.uleb128 0xc
+ 3752 0236 00       		.byte	0
+ 3753 0237 00       		.byte	0
+ 3754 0238 00       		.byte	0
+ 3755              		.section	.debug_loc,"",%progbits
+ 3756              	.Ldebug_loc0:
+ 3757              	.LLST0:
+ 3758 0000 00000000 		.4byte	.LFB118
+ 3759 0004 02000000 		.4byte	.LCFI0
+ 3760 0008 0200     		.2byte	0x2
+ 3761 000a 7D       		.byte	0x7d
+ 3762 000b 00       		.sleb128 0
+ 3763 000c 02000000 		.4byte	.LCFI0
+ 3764 0010 68000000 		.4byte	.LFE118
+ 3765 0014 0200     		.2byte	0x2
+ 3766 0016 7D       		.byte	0x7d
+ 3767 0017 10       		.sleb128 16
+ 3768 0018 00000000 		.4byte	0
+ 3769 001c 00000000 		.4byte	0
+ 3770              	.LLST1:
+ 3771 0020 00000000 		.4byte	.LVL0
+ 3772 0024 1C000000 		.4byte	.LVL3
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 68
+
+
+ 3773 0028 0100     		.2byte	0x1
+ 3774 002a 50       		.byte	0x50
+ 3775 002b 1C000000 		.4byte	.LVL3
+ 3776 002f 60000000 		.4byte	.LVL8
+ 3777 0033 0100     		.2byte	0x1
+ 3778 0035 55       		.byte	0x55
+ 3779 0036 60000000 		.4byte	.LVL8
+ 3780 003a 65000000 		.4byte	.LVL9-1
+ 3781 003e 0100     		.2byte	0x1
+ 3782 0040 50       		.byte	0x50
+ 3783 0041 65000000 		.4byte	.LVL9-1
+ 3784 0045 68000000 		.4byte	.LFE118
+ 3785 0049 0100     		.2byte	0x1
+ 3786 004b 55       		.byte	0x55
+ 3787 004c 00000000 		.4byte	0
+ 3788 0050 00000000 		.4byte	0
+ 3789              	.LLST2:
+ 3790 0054 06000000 		.4byte	.LVL1
+ 3791 0058 0C000000 		.4byte	.LVL2
+ 3792 005c 0100     		.2byte	0x1
+ 3793 005e 52       		.byte	0x52
+ 3794 005f 0C000000 		.4byte	.LVL2
+ 3795 0063 68000000 		.4byte	.LFE118
+ 3796 0067 0600     		.2byte	0x6
+ 3797 0069 74       		.byte	0x74
+ 3798 006a 00       		.sleb128 0
+ 3799 006b 08       		.byte	0x8
+ 3800 006c FF       		.byte	0xff
+ 3801 006d 1A       		.byte	0x1a
+ 3802 006e 9F       		.byte	0x9f
+ 3803 006f 00000000 		.4byte	0
+ 3804 0073 00000000 		.4byte	0
+ 3805              	.LLST3:
+ 3806 0077 00000000 		.4byte	.LFB119
+ 3807 007b 0A000000 		.4byte	.LCFI1
+ 3808 007f 0200     		.2byte	0x2
+ 3809 0081 7D       		.byte	0x7d
+ 3810 0082 00       		.sleb128 0
+ 3811 0083 0A000000 		.4byte	.LCFI1
+ 3812 0087 24000000 		.4byte	.LFE119
+ 3813 008b 0200     		.2byte	0x2
+ 3814 008d 7D       		.byte	0x7d
+ 3815 008e 08       		.sleb128 8
+ 3816 008f 00000000 		.4byte	0
+ 3817 0093 00000000 		.4byte	0
+ 3818              	.LLST4:
+ 3819 0097 00000000 		.4byte	.LFB120
+ 3820 009b 08000000 		.4byte	.LCFI2
+ 3821 009f 0200     		.2byte	0x2
+ 3822 00a1 7D       		.byte	0x7d
+ 3823 00a2 00       		.sleb128 0
+ 3824 00a3 08000000 		.4byte	.LCFI2
+ 3825 00a7 6C000000 		.4byte	.LFE120
+ 3826 00ab 0200     		.2byte	0x2
+ 3827 00ad 7D       		.byte	0x7d
+ 3828 00ae 08       		.sleb128 8
+ 3829 00af 00000000 		.4byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 69
+
+
+ 3830 00b3 00000000 		.4byte	0
+ 3831              	.LLST5:
+ 3832 00b7 10000000 		.4byte	.LVL12
+ 3833 00bb 34000000 		.4byte	.LVL13
+ 3834 00bf 0600     		.2byte	0x6
+ 3835 00c1 74       		.byte	0x74
+ 3836 00c2 00       		.sleb128 0
+ 3837 00c3 08       		.byte	0x8
+ 3838 00c4 FF       		.byte	0xff
+ 3839 00c5 1A       		.byte	0x1a
+ 3840 00c6 9F       		.byte	0x9f
+ 3841 00c7 48000000 		.4byte	.LVL15
+ 3842 00cb 6C000000 		.4byte	.LFE120
+ 3843 00cf 0600     		.2byte	0x6
+ 3844 00d1 74       		.byte	0x74
+ 3845 00d2 00       		.sleb128 0
+ 3846 00d3 08       		.byte	0x8
+ 3847 00d4 FF       		.byte	0xff
+ 3848 00d5 1A       		.byte	0x1a
+ 3849 00d6 9F       		.byte	0x9f
+ 3850 00d7 00000000 		.4byte	0
+ 3851 00db 00000000 		.4byte	0
+ 3852              	.LLST6:
+ 3853 00df 00000000 		.4byte	.LFB121
+ 3854 00e3 02000000 		.4byte	.LCFI3
+ 3855 00e7 0200     		.2byte	0x2
+ 3856 00e9 7D       		.byte	0x7d
+ 3857 00ea 00       		.sleb128 0
+ 3858 00eb 02000000 		.4byte	.LCFI3
+ 3859 00ef 16000000 		.4byte	.LFE121
+ 3860 00f3 0200     		.2byte	0x2
+ 3861 00f5 7D       		.byte	0x7d
+ 3862 00f6 08       		.sleb128 8
+ 3863 00f7 00000000 		.4byte	0
+ 3864 00fb 00000000 		.4byte	0
+ 3865              	.LLST7:
+ 3866 00ff 00000000 		.4byte	.LFB122
+ 3867 0103 02000000 		.4byte	.LCFI4
+ 3868 0107 0200     		.2byte	0x2
+ 3869 0109 7D       		.byte	0x7d
+ 3870 010a 00       		.sleb128 0
+ 3871 010b 02000000 		.4byte	.LCFI4
+ 3872 010f 16000000 		.4byte	.LFE122
+ 3873 0113 0200     		.2byte	0x2
+ 3874 0115 7D       		.byte	0x7d
+ 3875 0116 08       		.sleb128 8
+ 3876 0117 00000000 		.4byte	0
+ 3877 011b 00000000 		.4byte	0
+ 3878              	.LLST8:
+ 3879 011f 00000000 		.4byte	.LFB123
+ 3880 0123 02000000 		.4byte	.LCFI5
+ 3881 0127 0200     		.2byte	0x2
+ 3882 0129 7D       		.byte	0x7d
+ 3883 012a 00       		.sleb128 0
+ 3884 012b 02000000 		.4byte	.LCFI5
+ 3885 012f 16000000 		.4byte	.LFE123
+ 3886 0133 0200     		.2byte	0x2
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 70
+
+
+ 3887 0135 7D       		.byte	0x7d
+ 3888 0136 08       		.sleb128 8
+ 3889 0137 00000000 		.4byte	0
+ 3890 013b 00000000 		.4byte	0
+ 3891              	.LLST9:
+ 3892 013f 00000000 		.4byte	.LFB124
+ 3893 0143 02000000 		.4byte	.LCFI6
+ 3894 0147 0200     		.2byte	0x2
+ 3895 0149 7D       		.byte	0x7d
+ 3896 014a 00       		.sleb128 0
+ 3897 014b 02000000 		.4byte	.LCFI6
+ 3898 014f 16000000 		.4byte	.LFE124
+ 3899 0153 0200     		.2byte	0x2
+ 3900 0155 7D       		.byte	0x7d
+ 3901 0156 08       		.sleb128 8
+ 3902 0157 00000000 		.4byte	0
+ 3903 015b 00000000 		.4byte	0
+ 3904              	.LLST10:
+ 3905 015f 00000000 		.4byte	.LFB125
+ 3906 0163 0A000000 		.4byte	.LCFI7
+ 3907 0167 0200     		.2byte	0x2
+ 3908 0169 7D       		.byte	0x7d
+ 3909 016a 00       		.sleb128 0
+ 3910 016b 0A000000 		.4byte	.LCFI7
+ 3911 016f 26000000 		.4byte	.LFE125
+ 3912 0173 0200     		.2byte	0x2
+ 3913 0175 7D       		.byte	0x7d
+ 3914 0176 08       		.sleb128 8
+ 3915 0177 00000000 		.4byte	0
+ 3916 017b 00000000 		.4byte	0
+ 3917              	.LLST11:
+ 3918 017f 00000000 		.4byte	.LFB126
+ 3919 0183 0A000000 		.4byte	.LCFI8
+ 3920 0187 0200     		.2byte	0x2
+ 3921 0189 7D       		.byte	0x7d
+ 3922 018a 00       		.sleb128 0
+ 3923 018b 0A000000 		.4byte	.LCFI8
+ 3924 018f 6C000000 		.4byte	.LFE126
+ 3925 0193 0200     		.2byte	0x2
+ 3926 0195 7D       		.byte	0x7d
+ 3927 0196 08       		.sleb128 8
+ 3928 0197 00000000 		.4byte	0
+ 3929 019b 00000000 		.4byte	0
+ 3930              	.LLST12:
+ 3931 019f 12000000 		.4byte	.LVL29
+ 3932 01a3 36000000 		.4byte	.LVL30
+ 3933 01a7 0600     		.2byte	0x6
+ 3934 01a9 74       		.byte	0x74
+ 3935 01aa 00       		.sleb128 0
+ 3936 01ab 08       		.byte	0x8
+ 3937 01ac FF       		.byte	0xff
+ 3938 01ad 1A       		.byte	0x1a
+ 3939 01ae 9F       		.byte	0x9f
+ 3940 01af 4A000000 		.4byte	.LVL32
+ 3941 01b3 6C000000 		.4byte	.LFE126
+ 3942 01b7 0600     		.2byte	0x6
+ 3943 01b9 74       		.byte	0x74
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 71
+
+
+ 3944 01ba 00       		.sleb128 0
+ 3945 01bb 08       		.byte	0x8
+ 3946 01bc FF       		.byte	0xff
+ 3947 01bd 1A       		.byte	0x1a
+ 3948 01be 9F       		.byte	0x9f
+ 3949 01bf 00000000 		.4byte	0
+ 3950 01c3 00000000 		.4byte	0
+ 3951              	.LLST13:
+ 3952 01c7 00000000 		.4byte	.LFB127
+ 3953 01cb 02000000 		.4byte	.LCFI9
+ 3954 01cf 0200     		.2byte	0x2
+ 3955 01d1 7D       		.byte	0x7d
+ 3956 01d2 00       		.sleb128 0
+ 3957 01d3 02000000 		.4byte	.LCFI9
+ 3958 01d7 16000000 		.4byte	.LFE127
+ 3959 01db 0200     		.2byte	0x2
+ 3960 01dd 7D       		.byte	0x7d
+ 3961 01de 08       		.sleb128 8
+ 3962 01df 00000000 		.4byte	0
+ 3963 01e3 00000000 		.4byte	0
+ 3964              	.LLST14:
+ 3965 01e7 00000000 		.4byte	.LFB128
+ 3966 01eb 02000000 		.4byte	.LCFI10
+ 3967 01ef 0200     		.2byte	0x2
+ 3968 01f1 7D       		.byte	0x7d
+ 3969 01f2 00       		.sleb128 0
+ 3970 01f3 02000000 		.4byte	.LCFI10
+ 3971 01f7 A6000000 		.4byte	.LFE128
+ 3972 01fb 0200     		.2byte	0x2
+ 3973 01fd 7D       		.byte	0x7d
+ 3974 01fe 10       		.sleb128 16
+ 3975 01ff 00000000 		.4byte	0
+ 3976 0203 00000000 		.4byte	0
+ 3977              	.LLST15:
+ 3978 0207 00000000 		.4byte	.LFB129
+ 3979 020b 08000000 		.4byte	.LCFI11
+ 3980 020f 0200     		.2byte	0x2
+ 3981 0211 7D       		.byte	0x7d
+ 3982 0212 00       		.sleb128 0
+ 3983 0213 08000000 		.4byte	.LCFI11
+ 3984 0217 D0020000 		.4byte	.LFE129
+ 3985 021b 0200     		.2byte	0x2
+ 3986 021d 7D       		.byte	0x7d
+ 3987 021e 18       		.sleb128 24
+ 3988 021f 00000000 		.4byte	0
+ 3989 0223 00000000 		.4byte	0
+ 3990              	.LLST16:
+ 3991 0227 00000000 		.4byte	.LVL45
+ 3992 022b 14000000 		.4byte	.LVL46
+ 3993 022f 0100     		.2byte	0x1
+ 3994 0231 50       		.byte	0x50
+ 3995 0232 14000000 		.4byte	.LVL46
+ 3996 0236 94000000 		.4byte	.LVL57
+ 3997 023a 0100     		.2byte	0x1
+ 3998 023c 54       		.byte	0x54
+ 3999 023d 94000000 		.4byte	.LVL57
+ 4000 0241 BE000000 		.4byte	.LVL60
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 72
+
+
+ 4001 0245 0400     		.2byte	0x4
+ 4002 0247 F3       		.byte	0xf3
+ 4003 0248 01       		.uleb128 0x1
+ 4004 0249 50       		.byte	0x50
+ 4005 024a 9F       		.byte	0x9f
+ 4006 024b BE000000 		.4byte	.LVL60
+ 4007 024f F6000000 		.4byte	.LVL69
+ 4008 0253 0100     		.2byte	0x1
+ 4009 0255 54       		.byte	0x54
+ 4010 0256 F6000000 		.4byte	.LVL69
+ 4011 025a 14010000 		.4byte	.LVL73
+ 4012 025e 0400     		.2byte	0x4
+ 4013 0260 F3       		.byte	0xf3
+ 4014 0261 01       		.uleb128 0x1
+ 4015 0262 50       		.byte	0x50
+ 4016 0263 9F       		.byte	0x9f
+ 4017 0264 14010000 		.4byte	.LVL73
+ 4018 0268 28010000 		.4byte	.LVL79
+ 4019 026c 0100     		.2byte	0x1
+ 4020 026e 54       		.byte	0x54
+ 4021 026f 28010000 		.4byte	.LVL79
+ 4022 0273 42010000 		.4byte	.LVL80
+ 4023 0277 0100     		.2byte	0x1
+ 4024 0279 50       		.byte	0x50
+ 4025 027a 42010000 		.4byte	.LVL80
+ 4026 027e 6E010000 		.4byte	.LVL84
+ 4027 0282 0100     		.2byte	0x1
+ 4028 0284 54       		.byte	0x54
+ 4029 0285 6E010000 		.4byte	.LVL84
+ 4030 0289 78010000 		.4byte	.LVL87
+ 4031 028d 0400     		.2byte	0x4
+ 4032 028f F3       		.byte	0xf3
+ 4033 0290 01       		.uleb128 0x1
+ 4034 0291 50       		.byte	0x50
+ 4035 0292 9F       		.byte	0x9f
+ 4036 0293 78010000 		.4byte	.LVL87
+ 4037 0297 A8010000 		.4byte	.LVL89
+ 4038 029b 0100     		.2byte	0x1
+ 4039 029d 54       		.byte	0x54
+ 4040 029e A8010000 		.4byte	.LVL89
+ 4041 02a2 B4010000 		.4byte	.LVL90
+ 4042 02a6 0100     		.2byte	0x1
+ 4043 02a8 50       		.byte	0x50
+ 4044 02a9 B4010000 		.4byte	.LVL90
+ 4045 02ad E0010000 		.4byte	.LVL93
+ 4046 02b1 0100     		.2byte	0x1
+ 4047 02b3 54       		.byte	0x54
+ 4048 02b4 E0010000 		.4byte	.LVL93
+ 4049 02b8 EC010000 		.4byte	.LVL94
+ 4050 02bc 0100     		.2byte	0x1
+ 4051 02be 50       		.byte	0x50
+ 4052 02bf EC010000 		.4byte	.LVL94
+ 4053 02c3 10020000 		.4byte	.LVL96
+ 4054 02c7 0100     		.2byte	0x1
+ 4055 02c9 54       		.byte	0x54
+ 4056 02ca 10020000 		.4byte	.LVL96
+ 4057 02ce 1C020000 		.4byte	.LVL97
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 73
+
+
+ 4058 02d2 0100     		.2byte	0x1
+ 4059 02d4 50       		.byte	0x50
+ 4060 02d5 1C020000 		.4byte	.LVL97
+ 4061 02d9 40020000 		.4byte	.LVL99
+ 4062 02dd 0100     		.2byte	0x1
+ 4063 02df 54       		.byte	0x54
+ 4064 02e0 40020000 		.4byte	.LVL99
+ 4065 02e4 4A020000 		.4byte	.LVL100
+ 4066 02e8 0100     		.2byte	0x1
+ 4067 02ea 50       		.byte	0x50
+ 4068 02eb 4A020000 		.4byte	.LVL100
+ 4069 02ef D0020000 		.4byte	.LFE129
+ 4070 02f3 0100     		.2byte	0x1
+ 4071 02f5 54       		.byte	0x54
+ 4072 02f6 00000000 		.4byte	0
+ 4073 02fa 00000000 		.4byte	0
+ 4074              	.LLST17:
+ 4075 02fe 2C000000 		.4byte	.LVL47
+ 4076 0302 3E000000 		.4byte	.LVL48
+ 4077 0306 1000     		.2byte	0x10
+ 4078 0308 74       		.byte	0x74
+ 4079 0309 0C       		.sleb128 12
+ 4080 030a 06       		.byte	0x6
+ 4081 030b F7       		.byte	0xf7
+ 4082 030c 29       		.uleb128 0x29
+ 4083 030d 71       		.byte	0x71
+ 4084 030e 00       		.sleb128 0
+ 4085 030f 06       		.byte	0x6
+ 4086 0310 F7       		.byte	0xf7
+ 4087 0311 29       		.uleb128 0x29
+ 4088 0312 1B       		.byte	0x1b
+ 4089 0313 F7       		.byte	0xf7
+ 4090 0314 00       		.uleb128 0
+ 4091 0315 31       		.byte	0x31
+ 4092 0316 1C       		.byte	0x1c
+ 4093 0317 9F       		.byte	0x9f
+ 4094 0318 3E000000 		.4byte	.LVL48
+ 4095 031c 40000000 		.4byte	.LVL49
+ 4096 0320 0100     		.2byte	0x1
+ 4097 0322 50       		.byte	0x50
+ 4098 0323 40000000 		.4byte	.LVL49
+ 4099 0327 94000000 		.4byte	.LVL57
+ 4100 032b 1000     		.2byte	0x10
+ 4101 032d 74       		.byte	0x74
+ 4102 032e 0C       		.sleb128 12
+ 4103 032f 06       		.byte	0x6
+ 4104 0330 F7       		.byte	0xf7
+ 4105 0331 29       		.uleb128 0x29
+ 4106 0332 71       		.byte	0x71
+ 4107 0333 00       		.sleb128 0
+ 4108 0334 06       		.byte	0x6
+ 4109 0335 F7       		.byte	0xf7
+ 4110 0336 29       		.uleb128 0x29
+ 4111 0337 1B       		.byte	0x1b
+ 4112 0338 F7       		.byte	0xf7
+ 4113 0339 00       		.uleb128 0
+ 4114 033a 31       		.byte	0x31
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 74
+
+
+ 4115 033b 1C       		.byte	0x1c
+ 4116 033c 9F       		.byte	0x9f
+ 4117 033d 94000000 		.4byte	.LVL57
+ 4118 0341 AA000000 		.4byte	.LVL59
+ 4119 0345 1300     		.2byte	0x13
+ 4120 0347 F3       		.byte	0xf3
+ 4121 0348 01       		.uleb128 0x1
+ 4122 0349 50       		.byte	0x50
+ 4123 034a 23       		.byte	0x23
+ 4124 034b 0C       		.uleb128 0xc
+ 4125 034c 06       		.byte	0x6
+ 4126 034d F7       		.byte	0xf7
+ 4127 034e 29       		.uleb128 0x29
+ 4128 034f 71       		.byte	0x71
+ 4129 0350 00       		.sleb128 0
+ 4130 0351 06       		.byte	0x6
+ 4131 0352 F7       		.byte	0xf7
+ 4132 0353 29       		.uleb128 0x29
+ 4133 0354 1B       		.byte	0x1b
+ 4134 0355 F7       		.byte	0xf7
+ 4135 0356 00       		.uleb128 0
+ 4136 0357 31       		.byte	0x31
+ 4137 0358 1C       		.byte	0x1c
+ 4138 0359 9F       		.byte	0x9f
+ 4139 035a BE000000 		.4byte	.LVL60
+ 4140 035e F6000000 		.4byte	.LVL69
+ 4141 0362 1000     		.2byte	0x10
+ 4142 0364 74       		.byte	0x74
+ 4143 0365 0C       		.sleb128 12
+ 4144 0366 06       		.byte	0x6
+ 4145 0367 F7       		.byte	0xf7
+ 4146 0368 29       		.uleb128 0x29
+ 4147 0369 71       		.byte	0x71
+ 4148 036a 00       		.sleb128 0
+ 4149 036b 06       		.byte	0x6
+ 4150 036c F7       		.byte	0xf7
+ 4151 036d 29       		.uleb128 0x29
+ 4152 036e 1B       		.byte	0x1b
+ 4153 036f F7       		.byte	0xf7
+ 4154 0370 00       		.uleb128 0
+ 4155 0371 31       		.byte	0x31
+ 4156 0372 1C       		.byte	0x1c
+ 4157 0373 9F       		.byte	0x9f
+ 4158 0374 F6000000 		.4byte	.LVL69
+ 4159 0378 14010000 		.4byte	.LVL73
+ 4160 037c 1300     		.2byte	0x13
+ 4161 037e F3       		.byte	0xf3
+ 4162 037f 01       		.uleb128 0x1
+ 4163 0380 50       		.byte	0x50
+ 4164 0381 23       		.byte	0x23
+ 4165 0382 0C       		.uleb128 0xc
+ 4166 0383 06       		.byte	0x6
+ 4167 0384 F7       		.byte	0xf7
+ 4168 0385 29       		.uleb128 0x29
+ 4169 0386 71       		.byte	0x71
+ 4170 0387 00       		.sleb128 0
+ 4171 0388 06       		.byte	0x6
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 75
+
+
+ 4172 0389 F7       		.byte	0xf7
+ 4173 038a 29       		.uleb128 0x29
+ 4174 038b 1B       		.byte	0x1b
+ 4175 038c F7       		.byte	0xf7
+ 4176 038d 00       		.uleb128 0
+ 4177 038e 31       		.byte	0x31
+ 4178 038f 1C       		.byte	0x1c
+ 4179 0390 9F       		.byte	0x9f
+ 4180 0391 14010000 		.4byte	.LVL73
+ 4181 0395 28010000 		.4byte	.LVL79
+ 4182 0399 1000     		.2byte	0x10
+ 4183 039b 74       		.byte	0x74
+ 4184 039c 0C       		.sleb128 12
+ 4185 039d 06       		.byte	0x6
+ 4186 039e F7       		.byte	0xf7
+ 4187 039f 29       		.uleb128 0x29
+ 4188 03a0 71       		.byte	0x71
+ 4189 03a1 00       		.sleb128 0
+ 4190 03a2 06       		.byte	0x6
+ 4191 03a3 F7       		.byte	0xf7
+ 4192 03a4 29       		.uleb128 0x29
+ 4193 03a5 1B       		.byte	0x1b
+ 4194 03a6 F7       		.byte	0xf7
+ 4195 03a7 00       		.uleb128 0
+ 4196 03a8 31       		.byte	0x31
+ 4197 03a9 1C       		.byte	0x1c
+ 4198 03aa 9F       		.byte	0x9f
+ 4199 03ab 64010000 		.4byte	.LVL81
+ 4200 03af 6E010000 		.4byte	.LVL84
+ 4201 03b3 1000     		.2byte	0x10
+ 4202 03b5 74       		.byte	0x74
+ 4203 03b6 0C       		.sleb128 12
+ 4204 03b7 06       		.byte	0x6
+ 4205 03b8 F7       		.byte	0xf7
+ 4206 03b9 29       		.uleb128 0x29
+ 4207 03ba 71       		.byte	0x71
+ 4208 03bb 00       		.sleb128 0
+ 4209 03bc 06       		.byte	0x6
+ 4210 03bd F7       		.byte	0xf7
+ 4211 03be 29       		.uleb128 0x29
+ 4212 03bf 1B       		.byte	0x1b
+ 4213 03c0 F7       		.byte	0xf7
+ 4214 03c1 00       		.uleb128 0
+ 4215 03c2 31       		.byte	0x31
+ 4216 03c3 1C       		.byte	0x1c
+ 4217 03c4 9F       		.byte	0x9f
+ 4218 03c5 6E010000 		.4byte	.LVL84
+ 4219 03c9 78010000 		.4byte	.LVL87
+ 4220 03cd 1300     		.2byte	0x13
+ 4221 03cf F3       		.byte	0xf3
+ 4222 03d0 01       		.uleb128 0x1
+ 4223 03d1 50       		.byte	0x50
+ 4224 03d2 23       		.byte	0x23
+ 4225 03d3 0C       		.uleb128 0xc
+ 4226 03d4 06       		.byte	0x6
+ 4227 03d5 F7       		.byte	0xf7
+ 4228 03d6 29       		.uleb128 0x29
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 76
+
+
+ 4229 03d7 71       		.byte	0x71
+ 4230 03d8 00       		.sleb128 0
+ 4231 03d9 06       		.byte	0x6
+ 4232 03da F7       		.byte	0xf7
+ 4233 03db 29       		.uleb128 0x29
+ 4234 03dc 1B       		.byte	0x1b
+ 4235 03dd F7       		.byte	0xf7
+ 4236 03de 00       		.uleb128 0
+ 4237 03df 31       		.byte	0x31
+ 4238 03e0 1C       		.byte	0x1c
+ 4239 03e1 9F       		.byte	0x9f
+ 4240 03e2 00000000 		.4byte	0
+ 4241 03e6 00000000 		.4byte	0
+ 4242              	.LLST18:
+ 4243 03ea 54000000 		.4byte	.LVL50
+ 4244 03ee 5E000000 		.4byte	.LVL51
+ 4245 03f2 0200     		.2byte	0x2
+ 4246 03f4 30       		.byte	0x30
+ 4247 03f5 9F       		.byte	0x9f
+ 4248 03f6 5E000000 		.4byte	.LVL51
+ 4249 03fa 78000000 		.4byte	.LVL52
+ 4250 03fe 0100     		.2byte	0x1
+ 4251 0400 52       		.byte	0x52
+ 4252 0401 7C000000 		.4byte	.LVL53
+ 4253 0405 86000000 		.4byte	.LVL54
+ 4254 0409 0100     		.2byte	0x1
+ 4255 040b 52       		.byte	0x52
+ 4256 040c 8A000000 		.4byte	.LVL55
+ 4257 0410 8E000000 		.4byte	.LVL56
+ 4258 0414 0100     		.2byte	0x1
+ 4259 0416 52       		.byte	0x52
+ 4260 0417 94000000 		.4byte	.LVL57
+ 4261 041b A0000000 		.4byte	.LVL58
+ 4262 041f 0100     		.2byte	0x1
+ 4263 0421 52       		.byte	0x52
+ 4264 0422 A0000000 		.4byte	.LVL58
+ 4265 0426 BE000000 		.4byte	.LVL60
+ 4266 042a 0400     		.2byte	0x4
+ 4267 042c 73       		.byte	0x73
+ 4268 042d 20       		.sleb128 32
+ 4269 042e 06       		.byte	0x6
+ 4270 042f 9F       		.byte	0x9f
+ 4271 0430 BE000000 		.4byte	.LVL60
+ 4272 0434 E6000000 		.4byte	.LVL67
+ 4273 0438 0100     		.2byte	0x1
+ 4274 043a 52       		.byte	0x52
+ 4275 043b F2000000 		.4byte	.LVL68
+ 4276 043f 14010000 		.4byte	.LVL73
+ 4277 0443 0100     		.2byte	0x1
+ 4278 0445 52       		.byte	0x52
+ 4279 0446 18010000 		.4byte	.LVL74
+ 4280 044a 1E010000 		.4byte	.LVL76
+ 4281 044e 0100     		.2byte	0x1
+ 4282 0450 52       		.byte	0x52
+ 4283 0451 22010000 		.4byte	.LVL77
+ 4284 0455 28010000 		.4byte	.LVL79
+ 4285 0459 0100     		.2byte	0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 77
+
+
+ 4286 045b 52       		.byte	0x52
+ 4287 045c 68010000 		.4byte	.LVL82
+ 4288 0460 78010000 		.4byte	.LVL87
+ 4289 0464 0100     		.2byte	0x1
+ 4290 0466 52       		.byte	0x52
+ 4291 0467 00000000 		.4byte	0
+ 4292 046b 00000000 		.4byte	0
+ 4293              	.LLST19:
+ 4294 046f 00000000 		.4byte	.LFB130
+ 4295 0473 06000000 		.4byte	.LCFI12
+ 4296 0477 0200     		.2byte	0x2
+ 4297 0479 7D       		.byte	0x7d
+ 4298 047a 00       		.sleb128 0
+ 4299 047b 06000000 		.4byte	.LCFI12
+ 4300 047f 14010000 		.4byte	.LFE130
+ 4301 0483 0200     		.2byte	0x2
+ 4302 0485 7D       		.byte	0x7d
+ 4303 0486 08       		.sleb128 8
+ 4304 0487 00000000 		.4byte	0
+ 4305 048b 00000000 		.4byte	0
+ 4306              	.LLST20:
+ 4307 048f 00000000 		.4byte	.LVL103
+ 4308 0493 0A000000 		.4byte	.LVL104
+ 4309 0497 0100     		.2byte	0x1
+ 4310 0499 50       		.byte	0x50
+ 4311 049a 0A000000 		.4byte	.LVL104
+ 4312 049e 0C000000 		.4byte	.LVL105
+ 4313 04a2 0100     		.2byte	0x1
+ 4314 04a4 54       		.byte	0x54
+ 4315 04a5 0C000000 		.4byte	.LVL105
+ 4316 04a9 10000000 		.4byte	.LVL106
+ 4317 04ad 0100     		.2byte	0x1
+ 4318 04af 50       		.byte	0x50
+ 4319 04b0 10000000 		.4byte	.LVL106
+ 4320 04b4 14010000 		.4byte	.LFE130
+ 4321 04b8 0100     		.2byte	0x1
+ 4322 04ba 54       		.byte	0x54
+ 4323 04bb 00000000 		.4byte	0
+ 4324 04bf 00000000 		.4byte	0
+ 4325              	.LLST21:
+ 4326 04c3 00000000 		.4byte	.LFB131
+ 4327 04c7 02000000 		.4byte	.LCFI13
+ 4328 04cb 0200     		.2byte	0x2
+ 4329 04cd 7D       		.byte	0x7d
+ 4330 04ce 00       		.sleb128 0
+ 4331 04cf 02000000 		.4byte	.LCFI13
+ 4332 04d3 30000000 		.4byte	.LFE131
+ 4333 04d7 0200     		.2byte	0x2
+ 4334 04d9 7D       		.byte	0x7d
+ 4335 04da 04       		.sleb128 4
+ 4336 04db 00000000 		.4byte	0
+ 4337 04df 00000000 		.4byte	0
+ 4338              	.LLST22:
+ 4339 04e3 00000000 		.4byte	.LVL116
+ 4340 04e7 0A000000 		.4byte	.LVL117
+ 4341 04eb 0100     		.2byte	0x1
+ 4342 04ed 50       		.byte	0x50
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 78
+
+
+ 4343 04ee 0A000000 		.4byte	.LVL117
+ 4344 04f2 30000000 		.4byte	.LFE131
+ 4345 04f6 0400     		.2byte	0x4
+ 4346 04f8 F3       		.byte	0xf3
+ 4347 04f9 01       		.uleb128 0x1
+ 4348 04fa 50       		.byte	0x50
+ 4349 04fb 9F       		.byte	0x9f
+ 4350 04fc 00000000 		.4byte	0
+ 4351 0500 00000000 		.4byte	0
+ 4352              	.LLST23:
+ 4353 0504 00000000 		.4byte	.LVL116
+ 4354 0508 20000000 		.4byte	.LVL119
+ 4355 050c 0100     		.2byte	0x1
+ 4356 050e 51       		.byte	0x51
+ 4357 050f 20000000 		.4byte	.LVL119
+ 4358 0513 30000000 		.4byte	.LFE131
+ 4359 0517 0400     		.2byte	0x4
+ 4360 0519 F3       		.byte	0xf3
+ 4361 051a 01       		.uleb128 0x1
+ 4362 051b 51       		.byte	0x51
+ 4363 051c 9F       		.byte	0x9f
+ 4364 051d 00000000 		.4byte	0
+ 4365 0521 00000000 		.4byte	0
+ 4366              	.LLST24:
+ 4367 0525 00000000 		.4byte	.LVL116
+ 4368 0529 1C000000 		.4byte	.LVL118
+ 4369 052d 0100     		.2byte	0x1
+ 4370 052f 52       		.byte	0x52
+ 4371 0530 1C000000 		.4byte	.LVL118
+ 4372 0534 30000000 		.4byte	.LFE131
+ 4373 0538 0400     		.2byte	0x4
+ 4374 053a F3       		.byte	0xf3
+ 4375 053b 01       		.uleb128 0x1
+ 4376 053c 52       		.byte	0x52
+ 4377 053d 9F       		.byte	0x9f
+ 4378 053e 00000000 		.4byte	0
+ 4379 0542 00000000 		.4byte	0
+ 4380              	.LLST25:
+ 4381 0546 1C000000 		.4byte	.LVL118
+ 4382 054a 26000000 		.4byte	.LVL120
+ 4383 054e 0100     		.2byte	0x1
+ 4384 0550 52       		.byte	0x52
+ 4385 0551 00000000 		.4byte	0
+ 4386 0555 00000000 		.4byte	0
+ 4387              	.LLST26:
+ 4388 0559 00000000 		.4byte	.LVL121
+ 4389 055d 0C000000 		.4byte	.LVL122
+ 4390 0561 0100     		.2byte	0x1
+ 4391 0563 50       		.byte	0x50
+ 4392 0564 0C000000 		.4byte	.LVL122
+ 4393 0568 1E000000 		.4byte	.LFE132
+ 4394 056c 0400     		.2byte	0x4
+ 4395 056e F3       		.byte	0xf3
+ 4396 056f 01       		.uleb128 0x1
+ 4397 0570 50       		.byte	0x50
+ 4398 0571 9F       		.byte	0x9f
+ 4399 0572 00000000 		.4byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 79
+
+
+ 4400 0576 00000000 		.4byte	0
+ 4401              	.LLST27:
+ 4402 057a 00000000 		.4byte	.LVL121
+ 4403 057e 16000000 		.4byte	.LVL123
+ 4404 0582 0100     		.2byte	0x1
+ 4405 0584 51       		.byte	0x51
+ 4406 0585 16000000 		.4byte	.LVL123
+ 4407 0589 1E000000 		.4byte	.LFE132
+ 4408 058d 0400     		.2byte	0x4
+ 4409 058f F3       		.byte	0xf3
+ 4410 0590 01       		.uleb128 0x1
+ 4411 0591 51       		.byte	0x51
+ 4412 0592 9F       		.byte	0x9f
+ 4413 0593 00000000 		.4byte	0
+ 4414 0597 00000000 		.4byte	0
+ 4415              		.section	.debug_aranges,"",%progbits
+ 4416 0000 8C000000 		.4byte	0x8c
+ 4417 0004 0200     		.2byte	0x2
+ 4418 0006 00000000 		.4byte	.Ldebug_info0
+ 4419 000a 04       		.byte	0x4
+ 4420 000b 00       		.byte	0
+ 4421 000c 0000     		.2byte	0
+ 4422 000e 0000     		.2byte	0
+ 4423 0010 00000000 		.4byte	.LFB118
+ 4424 0014 68000000 		.4byte	.LFE118-.LFB118
+ 4425 0018 00000000 		.4byte	.LFB119
+ 4426 001c 24000000 		.4byte	.LFE119-.LFB119
+ 4427 0020 00000000 		.4byte	.LFB120
+ 4428 0024 6C000000 		.4byte	.LFE120-.LFB120
+ 4429 0028 00000000 		.4byte	.LFB121
+ 4430 002c 16000000 		.4byte	.LFE121-.LFB121
+ 4431 0030 00000000 		.4byte	.LFB122
+ 4432 0034 16000000 		.4byte	.LFE122-.LFB122
+ 4433 0038 00000000 		.4byte	.LFB123
+ 4434 003c 16000000 		.4byte	.LFE123-.LFB123
+ 4435 0040 00000000 		.4byte	.LFB124
+ 4436 0044 16000000 		.4byte	.LFE124-.LFB124
+ 4437 0048 00000000 		.4byte	.LFB125
+ 4438 004c 26000000 		.4byte	.LFE125-.LFB125
+ 4439 0050 00000000 		.4byte	.LFB126
+ 4440 0054 6C000000 		.4byte	.LFE126-.LFB126
+ 4441 0058 00000000 		.4byte	.LFB127
+ 4442 005c 16000000 		.4byte	.LFE127-.LFB127
+ 4443 0060 00000000 		.4byte	.LFB128
+ 4444 0064 A6000000 		.4byte	.LFE128-.LFB128
+ 4445 0068 00000000 		.4byte	.LFB129
+ 4446 006c D0020000 		.4byte	.LFE129-.LFB129
+ 4447 0070 00000000 		.4byte	.LFB130
+ 4448 0074 14010000 		.4byte	.LFE130-.LFB130
+ 4449 0078 00000000 		.4byte	.LFB131
+ 4450 007c 30000000 		.4byte	.LFE131-.LFB131
+ 4451 0080 00000000 		.4byte	.LFB132
+ 4452 0084 1E000000 		.4byte	.LFE132-.LFB132
+ 4453 0088 00000000 		.4byte	0
+ 4454 008c 00000000 		.4byte	0
+ 4455              		.section	.debug_ranges,"",%progbits
+ 4456              	.Ldebug_ranges0:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 80
+
+
+ 4457 0000 00000000 		.4byte	.LFB118
+ 4458 0004 68000000 		.4byte	.LFE118
+ 4459 0008 00000000 		.4byte	.LFB119
+ 4460 000c 24000000 		.4byte	.LFE119
+ 4461 0010 00000000 		.4byte	.LFB120
+ 4462 0014 6C000000 		.4byte	.LFE120
+ 4463 0018 00000000 		.4byte	.LFB121
+ 4464 001c 16000000 		.4byte	.LFE121
+ 4465 0020 00000000 		.4byte	.LFB122
+ 4466 0024 16000000 		.4byte	.LFE122
+ 4467 0028 00000000 		.4byte	.LFB123
+ 4468 002c 16000000 		.4byte	.LFE123
+ 4469 0030 00000000 		.4byte	.LFB124
+ 4470 0034 16000000 		.4byte	.LFE124
+ 4471 0038 00000000 		.4byte	.LFB125
+ 4472 003c 26000000 		.4byte	.LFE125
+ 4473 0040 00000000 		.4byte	.LFB126
+ 4474 0044 6C000000 		.4byte	.LFE126
+ 4475 0048 00000000 		.4byte	.LFB127
+ 4476 004c 16000000 		.4byte	.LFE127
+ 4477 0050 00000000 		.4byte	.LFB128
+ 4478 0054 A6000000 		.4byte	.LFE128
+ 4479 0058 00000000 		.4byte	.LFB129
+ 4480 005c D0020000 		.4byte	.LFE129
+ 4481 0060 00000000 		.4byte	.LFB130
+ 4482 0064 14010000 		.4byte	.LFE130
+ 4483 0068 00000000 		.4byte	.LFB131
+ 4484 006c 30000000 		.4byte	.LFE131
+ 4485 0070 00000000 		.4byte	.LFB132
+ 4486 0074 1E000000 		.4byte	.LFE132
+ 4487 0078 00000000 		.4byte	0
+ 4488 007c 00000000 		.4byte	0
+ 4489              		.section	.debug_line,"",%progbits
+ 4490              	.Ldebug_line0:
+ 4491 0000 79040000 		.section	.debug_str,"MS",%progbits,1
+ 4491      0200EF01 
+ 4491      00000201 
+ 4491      FB0E0D00 
+ 4491      01010101 
+ 4492              	.LASF68:
+ 4493 0000 70776D63 		.ascii	"pwmchannel_t\000"
+ 4493      68616E6E 
+ 4493      656C5F74 
+ 4493      00
+ 4494              	.LASF36:
+ 4495 000d 41504231 		.ascii	"APB1LPENR\000"
+ 4495      4C50454E 
+ 4495      5200
+ 4496              	.LASF57:
+ 4497 0017 44494552 		.ascii	"DIER\000"
+ 4497      00
+ 4498              	.LASF109:
+ 4499 001c 70776D5F 		.ascii	"pwm_lld_serve_interrupt\000"
+ 4499      6C6C645F 
+ 4499      73657276 
+ 4499      655F696E 
+ 4499      74657272 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 81
+
+
+ 4500              	.LASF86:
+ 4501 0034 56656374 		.ascii	"VectorA0\000"
+ 4501      6F724130 
+ 4501      00
+ 4502              	.LASF78:
+ 4503 003d 56656374 		.ascii	"VectorA4\000"
+ 4503      6F724134 
+ 4503      00
+ 4504              	.LASF59:
+ 4505 0046 43434D52 		.ascii	"CCMR2\000"
+ 4505      3200
+ 4506              	.LASF107:
+ 4507 004c 2E2E2F2E 		.ascii	"../../chibios/os/hal/platforms/STM32/TIMv1/pwm_lld."
+ 4507      2E2F6368 
+ 4507      6962696F 
+ 4507      732F6F73 
+ 4507      2F68616C 
+ 4508 007f 6300     		.ascii	"c\000"
+ 4509              	.LASF53:
+ 4510 0081 70657269 		.ascii	"period\000"
+ 4510      6F6400
+ 4511              	.LASF79:
+ 4512 0088 56656374 		.ascii	"VectorAC\000"
+ 4512      6F724143 
+ 4512      00
+ 4513              	.LASF12:
+ 4514 0091 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 4514      206C6F6E 
+ 4514      6720756E 
+ 4514      7369676E 
+ 4514      65642069 
+ 4515              	.LASF75:
+ 4516 00a8 62647472 		.ascii	"bdtr\000"
+ 4516      00
+ 4517              	.LASF95:
+ 4518 00ad 70776D5F 		.ascii	"pwm_lld_disable_channel\000"
+ 4518      6C6C645F 
+ 4518      64697361 
+ 4518      626C655F 
+ 4518      6368616E 
+ 4519              	.LASF61:
+ 4520 00c5 42445452 		.ascii	"BDTR\000"
+ 4520      00
+ 4521              	.LASF73:
+ 4522 00ca 66726571 		.ascii	"frequency\000"
+ 4522      75656E63 
+ 4522      7900
+ 4523              	.LASF32:
+ 4524 00d4 41484231 		.ascii	"AHB1LPENR\000"
+ 4524      4C50454E 
+ 4524      5200
+ 4525              	.LASF48:
+ 4526 00de 50574D5F 		.ascii	"PWM_READY\000"
+ 4526      52454144 
+ 4526      5900
+ 4527              	.LASF105:
+ 4528 00e8 6E766963 		.ascii	"nvicEnableVector\000"
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 82
+
+
+ 4528      456E6162 
+ 4528      6C655665 
+ 4528      63746F72 
+ 4528      00
+ 4529              	.LASF58:
+ 4530 00f9 43434D52 		.ascii	"CCMR1\000"
+ 4530      3100
+ 4531              	.LASF44:
+ 4532 00ff 44434B43 		.ascii	"DCKCFGR\000"
+ 4532      46475200 
+ 4533              	.LASF63:
+ 4534 0107 43434D52 		.ascii	"CCMR3\000"
+ 4534      3300
+ 4535              	.LASF1:
+ 4536 010d 7369676E 		.ascii	"signed char\000"
+ 4536      65642063 
+ 4536      68617200 
+ 4537              	.LASF18:
+ 4538 0119 41484231 		.ascii	"AHB1RSTR\000"
+ 4538      52535452 
+ 4538      00
+ 4539              	.LASF67:
+ 4540 0122 70776D6D 		.ascii	"pwmmode_t\000"
+ 4540      6F64655F 
+ 4540      7400
+ 4541              	.LASF80:
+ 4542 012c 56656374 		.ascii	"VectorB0\000"
+ 4542      6F724230 
+ 4542      00
+ 4543              	.LASF81:
+ 4544 0135 56656374 		.ascii	"VectorB4\000"
+ 4544      6F724234 
+ 4544      00
+ 4545              	.LASF101:
+ 4546 013e 50574D44 		.ascii	"PWMD5\000"
+ 4546      3500
+ 4547              	.LASF51:
+ 4548 0144 73746174 		.ascii	"state\000"
+ 4548      6500
+ 4549              	.LASF74:
+ 4550 014a 6368616E 		.ascii	"channels\000"
+ 4550      6E656C73 
+ 4550      00
+ 4551              	.LASF8:
+ 4552 0153 6C6F6E67 		.ascii	"long int\000"
+ 4552      20696E74 
+ 4552      00
+ 4553              	.LASF88:
+ 4554 015c 70776D5F 		.ascii	"pwm_lld_start\000"
+ 4554      6C6C645F 
+ 4554      73746172 
+ 4554      7400
+ 4555              	.LASF23:
+ 4556 016a 41504232 		.ascii	"APB2RSTR\000"
+ 4556      52535452 
+ 4556      00
+ 4557              	.LASF60:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 83
+
+
+ 4558 0173 43434552 		.ascii	"CCER\000"
+ 4558      00
+ 4559              	.LASF11:
+ 4560 0178 6C6F6E67 		.ascii	"long long int\000"
+ 4560      206C6F6E 
+ 4560      6720696E 
+ 4560      7400
+ 4561              	.LASF5:
+ 4562 0186 75696E74 		.ascii	"uint16_t\000"
+ 4562      31365F74 
+ 4562      00
+ 4563              	.LASF16:
+ 4564 018f 504C4C43 		.ascii	"PLLCFGR\000"
+ 4564      46475200 
+ 4565              	.LASF97:
+ 4566 0197 50574D44 		.ascii	"PWMD1\000"
+ 4566      3100
+ 4567              	.LASF98:
+ 4568 019d 50574D44 		.ascii	"PWMD2\000"
+ 4568      3200
+ 4569              	.LASF99:
+ 4570 01a3 50574D44 		.ascii	"PWMD3\000"
+ 4570      3300
+ 4571              	.LASF100:
+ 4572 01a9 50574D44 		.ascii	"PWMD4\000"
+ 4572      3400
+ 4573              	.LASF82:
+ 4574 01af 56656374 		.ascii	"VectorB8\000"
+ 4574      6F724238 
+ 4574      00
+ 4575              	.LASF102:
+ 4576 01b8 50574D44 		.ascii	"PWMD8\000"
+ 4576      3800
+ 4577              	.LASF103:
+ 4578 01be 50574D44 		.ascii	"PWMD9\000"
+ 4578      3900
+ 4579              	.LASF0:
+ 4580 01c4 756E7369 		.ascii	"unsigned int\000"
+ 4580      676E6564 
+ 4580      20696E74 
+ 4580      00
+ 4581              	.LASF111:
+ 4582 01d1 6E766963 		.ascii	"nvicDisableVector\000"
+ 4582      44697361 
+ 4582      626C6556 
+ 4582      6563746F 
+ 4582      7200
+ 4583              	.LASF10:
+ 4584 01e3 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4584      20756E73 
+ 4584      69676E65 
+ 4584      6420696E 
+ 4584      7400
+ 4585              	.LASF45:
+ 4586 01f5 5243435F 		.ascii	"RCC_TypeDef\000"
+ 4586      54797065 
+ 4586      44656600 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 84
+
+
+ 4587              	.LASF94:
+ 4588 0201 77696474 		.ascii	"width\000"
+ 4588      6800
+ 4589              	.LASF56:
+ 4590 0207 534D4352 		.ascii	"SMCR\000"
+ 4590      00
+ 4591              	.LASF42:
+ 4592 020c 504C4C49 		.ascii	"PLLI2SCFGR\000"
+ 4592      32534346 
+ 4592      475200
+ 4593              	.LASF20:
+ 4594 0217 41484233 		.ascii	"AHB3RSTR\000"
+ 4594      52535452 
+ 4594      00
+ 4595              	.LASF110:
+ 4596 0220 5F706F72 		.ascii	"_port_irq_epilogue\000"
+ 4596      745F6972 
+ 4596      715F6570 
+ 4596      696C6F67 
+ 4596      756500
+ 4597              	.LASF71:
+ 4598 0233 63616C6C 		.ascii	"callback\000"
+ 4598      6261636B 
+ 4598      00
+ 4599              	.LASF83:
+ 4600 023c 56656374 		.ascii	"Vector108\000"
+ 4600      6F723130 
+ 4600      3800
+ 4601              	.LASF66:
+ 4602 0246 73746D33 		.ascii	"stm32_tim_t\000"
+ 4602      325F7469 
+ 4602      6D5F7400 
+ 4603              	.LASF37:
+ 4604 0252 41504232 		.ascii	"APB2LPENR\000"
+ 4604      4C50454E 
+ 4604      5200
+ 4605              	.LASF90:
+ 4606 025c 63636572 		.ascii	"ccer\000"
+ 4606      00
+ 4607              	.LASF89:
+ 4608 0261 70776D70 		.ascii	"pwmp\000"
+ 4608      00
+ 4609              	.LASF14:
+ 4610 0266 73697A65 		.ascii	"sizetype\000"
+ 4610      74797065 
+ 4610      00
+ 4611              	.LASF106:
+ 4612 026f 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 4612      4320342E 
+ 4612      372E3420 
+ 4612      32303134 
+ 4612      30343031 
+ 4613 02a2 616E6368 		.ascii	"anch revision 209195]\000"
+ 4613      20726576 
+ 4613      6973696F 
+ 4613      6E203230 
+ 4613      39313935 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 85
+
+
+ 4614              	.LASF87:
+ 4615 02b8 70776D5F 		.ascii	"pwm_lld_init\000"
+ 4615      6C6C645F 
+ 4615      696E6974 
+ 4615      00
+ 4616              	.LASF33:
+ 4617 02c5 41484232 		.ascii	"AHB2LPENR\000"
+ 4617      4C50454E 
+ 4617      5200
+ 4618              	.LASF22:
+ 4619 02cf 41504231 		.ascii	"APB1RSTR\000"
+ 4619      52535452 
+ 4619      00
+ 4620              	.LASF43:
+ 4621 02d8 504C4C53 		.ascii	"PLLSAICFGR\000"
+ 4621      41494346 
+ 4621      475200
+ 4622              	.LASF55:
+ 4623 02e3 70776D63 		.ascii	"pwmcallback_t\000"
+ 4623      616C6C62 
+ 4623      61636B5F 
+ 4623      7400
+ 4624              	.LASF21:
+ 4625 02f1 52455345 		.ascii	"RESERVED0\000"
+ 4625      52564544 
+ 4625      3000
+ 4626              	.LASF24:
+ 4627 02fb 52455345 		.ascii	"RESERVED1\000"
+ 4627      52564544 
+ 4627      3100
+ 4628              	.LASF28:
+ 4629 0305 52455345 		.ascii	"RESERVED2\000"
+ 4629      52564544 
+ 4629      3200
+ 4630              	.LASF31:
+ 4631 030f 52455345 		.ascii	"RESERVED3\000"
+ 4631      52564544 
+ 4631      3300
+ 4632              	.LASF35:
+ 4633 0319 52455345 		.ascii	"RESERVED4\000"
+ 4633      52564544 
+ 4633      3400
+ 4634              	.LASF38:
+ 4635 0323 52455345 		.ascii	"RESERVED5\000"
+ 4635      52564544 
+ 4635      3500
+ 4636              	.LASF40:
+ 4637 032d 52455345 		.ascii	"RESERVED6\000"
+ 4637      52564544 
+ 4637      3600
+ 4638              	.LASF13:
+ 4639 0337 5F426F6F 		.ascii	"_Bool\000"
+ 4639      6C00
+ 4640              	.LASF7:
+ 4641 033d 696E7433 		.ascii	"int32_t\000"
+ 4641      325F7400 
+ 4642              	.LASF2:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 86
+
+
+ 4643 0345 756E7369 		.ascii	"unsigned char\000"
+ 4643      676E6564 
+ 4643      20636861 
+ 4643      7200
+ 4644              	.LASF96:
+ 4645 0353 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 4645      52784275 
+ 4645      66666572 
+ 4645      00
+ 4646              	.LASF3:
+ 4647 0360 73686F72 		.ascii	"short int\000"
+ 4647      7420696E 
+ 4647      7400
+ 4648              	.LASF34:
+ 4649 036a 41484233 		.ascii	"AHB3LPENR\000"
+ 4649      4C50454E 
+ 4649      5200
+ 4650              	.LASF84:
+ 4651 0374 56656374 		.ascii	"VectorF0\000"
+ 4651      6F724630 
+ 4651      00
+ 4652              	.LASF30:
+ 4653 037d 41504232 		.ascii	"APB2ENR\000"
+ 4653      454E5200 
+ 4654              	.LASF93:
+ 4655 0385 6368616E 		.ascii	"channel\000"
+ 4655      6E656C00 
+ 4656              	.LASF27:
+ 4657 038d 41484233 		.ascii	"AHB3ENR\000"
+ 4657      454E5200 
+ 4658              	.LASF85:
+ 4659 0395 56656374 		.ascii	"VectorF8\000"
+ 4659      6F724638 
+ 4659      00
+ 4660              	.LASF91:
+ 4661 039e 70776D5F 		.ascii	"pwm_lld_stop\000"
+ 4661      6C6C645F 
+ 4661      73746F70 
+ 4661      00
+ 4662              	.LASF108:
+ 4663 03ab 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace\\DCM_test_3\000"
+ 4663      68696269 
+ 4663      53747564 
+ 4663      696F5C77 
+ 4663      6F726B73 
+ 4664              	.LASF9:
+ 4665 03cf 75696E74 		.ascii	"uint32_t\000"
+ 4665      33325F74 
+ 4665      00
+ 4666              	.LASF77:
+ 4667 03d8 50574D43 		.ascii	"PWMConfig\000"
+ 4667      6F6E6669 
+ 4667      6700
+ 4668              	.LASF92:
+ 4669 03e2 70776D5F 		.ascii	"pwm_lld_enable_channel\000"
+ 4669      6C6C645F 
+ 4669      656E6162 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 87
+
+
+ 4669      6C655F63 
+ 4669      68616E6E 
+ 4670              	.LASF47:
+ 4671 03f9 50574D5F 		.ascii	"PWM_STOP\000"
+ 4671      53544F50 
+ 4671      00
+ 4672              	.LASF15:
+ 4673 0402 63686172 		.ascii	"char\000"
+ 4673      00
+ 4674              	.LASF70:
+ 4675 0407 6D6F6465 		.ascii	"mode\000"
+ 4675      00
+ 4676              	.LASF52:
+ 4677 040c 636F6E66 		.ascii	"config\000"
+ 4677      696700
+ 4678              	.LASF62:
+ 4679 0413 444D4152 		.ascii	"DMAR\000"
+ 4679      00
+ 4680              	.LASF19:
+ 4681 0418 41484232 		.ascii	"AHB2RSTR\000"
+ 4681      52535452 
+ 4681      00
+ 4682              	.LASF29:
+ 4683 0421 41504231 		.ascii	"APB1ENR\000"
+ 4683      454E5200 
+ 4684              	.LASF26:
+ 4685 0429 41484232 		.ascii	"AHB2ENR\000"
+ 4685      454E5200 
+ 4686              	.LASF6:
+ 4687 0431 73686F72 		.ascii	"short unsigned int\000"
+ 4687      7420756E 
+ 4687      7369676E 
+ 4687      65642069 
+ 4687      6E7400
+ 4688              	.LASF72:
+ 4689 0444 50574D43 		.ascii	"PWMChannelConfig\000"
+ 4689      68616E6E 
+ 4689      656C436F 
+ 4689      6E666967 
+ 4689      00
+ 4690              	.LASF41:
+ 4691 0455 53534347 		.ascii	"SSCGR\000"
+ 4691      5200
+ 4692              	.LASF64:
+ 4693 045b 43435235 		.ascii	"CCR5\000"
+ 4693      00
+ 4694              	.LASF65:
+ 4695 0460 43435236 		.ascii	"CCR6\000"
+ 4695      00
+ 4696              	.LASF39:
+ 4697 0465 42444352 		.ascii	"BDCR\000"
+ 4697      00
+ 4698              	.LASF4:
+ 4699 046a 75696E74 		.ascii	"uint8_t\000"
+ 4699      385F7400 
+ 4700              	.LASF50:
+ 4701 0472 50574D44 		.ascii	"PWMDriver\000"
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 88
+
+
+ 4701      72697665 
+ 4701      7200
+ 4702              	.LASF49:
+ 4703 047c 70776D73 		.ascii	"pwmstate_t\000"
+ 4703      74617465 
+ 4703      5F7400
+ 4704              	.LASF69:
+ 4705 0487 70776D63 		.ascii	"pwmcnt_t\000"
+ 4705      6E745F74 
+ 4705      00
+ 4706              	.LASF25:
+ 4707 0490 41484231 		.ascii	"AHB1ENR\000"
+ 4707      454E5200 
+ 4708              	.LASF17:
+ 4709 0498 43464752 		.ascii	"CFGR\000"
+ 4709      00
+ 4710              	.LASF54:
+ 4711 049d 636C6F63 		.ascii	"clock\000"
+ 4711      6B00
+ 4712              	.LASF46:
+ 4713 04a3 50574D5F 		.ascii	"PWM_UNINIT\000"
+ 4713      554E494E 
+ 4713      495400
+ 4714              	.LASF104:
+ 4715 04ae 70776D4F 		.ascii	"pwmObjectInit\000"
+ 4715      626A6563 
+ 4715      74496E69 
+ 4715      7400
+ 4716              	.LASF76:
+ 4717 04bc 64696572 		.ascii	"dier\000"
+ 4717      00
+ 4718              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 89
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 pwm_lld.c
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:19     .text.pwm_lld_serve_interrupt:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:24     .text.pwm_lld_serve_interrupt:00000000 pwm_lld_serve_interrupt
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:126    .text.VectorA4:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:132    .text.VectorA4:00000000 VectorA4
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1490   .bss.PWMD1:00000000 .LANCHOR0
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:168    .text.VectorAC:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:174    .text.VectorAC:00000000 VectorAC
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:263    .text.VectorAC:00000068 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:268    .text.VectorB0:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:274    .text.VectorB0:00000000 VectorB0
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1497   .bss.PWMD2:00000000 .LANCHOR1
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:299    .text.VectorB4:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:305    .text.VectorB4:00000000 VectorB4
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1504   .bss.PWMD3:00000000 .LANCHOR2
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:330    .text.VectorB8:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:336    .text.VectorB8:00000000 VectorB8
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1511   .bss.PWMD4:00000000 .LANCHOR3
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:361    .text.Vector108:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:367    .text.Vector108:00000000 Vector108
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1518   .bss.PWMD5:00000000 .LANCHOR4
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:392    .text.VectorF0:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:398    .text.VectorF0:00000000 VectorF0
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1525   .bss.PWMD8:00000000 .LANCHOR5
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:434    .text.VectorF8:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:440    .text.VectorF8:00000000 VectorF8
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:529    .text.VectorF8:00000068 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:534    .text.VectorA0:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:540    .text.VectorA0:00000000 VectorA0
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1532   .bss.PWMD9:00000000 .LANCHOR6
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:565    .text.pwm_lld_init:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:571    .text.pwm_lld_init:00000000 pwm_lld_init
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:683    .text.pwm_lld_start:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:689    .text.pwm_lld_start:00000000 pwm_lld_start
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1195   .text.pwm_lld_start:000002b4 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1206   .text.pwm_lld_stop:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1212   .text.pwm_lld_stop:00000000 pwm_lld_stop
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1375   .text.pwm_lld_stop:000000f8 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1386   .text.pwm_lld_enable_channel:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1392   .text.pwm_lld_enable_channel:00000000 pwm_lld_enable_channel
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1449   .text.pwm_lld_disable_channel:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1455   .text.pwm_lld_disable_channel:00000000 pwm_lld_disable_channel
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1535   .bss.PWMD9:00000000 PWMD9
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1528   .bss.PWMD8:00000000 PWMD8
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1521   .bss.PWMD5:00000000 PWMD5
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1514   .bss.PWMD4:00000000 PWMD4
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1507   .bss.PWMD3:00000000 PWMD3
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1500   .bss.PWMD2:00000000 PWMD2
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1493   .bss.PWMD1:00000000 PWMD1
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1489   .bss.PWMD1:00000000 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1496   .bss.PWMD2:00000000 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1503   .bss.PWMD3:00000000 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1510   .bss.PWMD4:00000000 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1517   .bss.PWMD5:00000000 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1524   .bss.PWMD8:00000000 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1531   .bss.PWMD9:00000000 $d
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s 			page 90
+
+
+                     .debug_frame:00000010 $d
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:267    .text.VectorAC:0000006c $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:533    .text.VectorF8:0000006c $t
+C:\Users\Mohamad\AppData\Local\Temp\ccYumLog.s:1385   .text.pwm_lld_stop:00000114 $t
+
+UNDEFINED SYMBOLS
+_port_irq_epilogue
+pwmObjectInit
+nvicEnableVector
+nvicDisableVector

@@ -1,0 +1,2155 @@
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"ext_lld.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.ext_lld_init,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.global	ext_lld_init
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	ext_lld_init, %function
+  25              	ext_lld_init:
+  26              	.LFB118:
+  27              		.file 1 "../../chibios/os/hal/platforms/STM32/ext_lld.c"
+  28              		.loc 1 66 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              		.loc 1 69 0
+  34 0000 40F20000 		movw	r0, #:lower16:.LANCHOR0
+  35 0004 C0F20000 		movt	r0, #:upper16:.LANCHOR0
+  36              		.loc 1 70 0
+  37              		.loc 1 69 0
+  38 0008 FFF7FEBF 		b	extObjectInit
+  39              	.LVL0:
+  40              		.cfi_endproc
+  41              	.LFE118:
+  42              		.size	ext_lld_init, .-ext_lld_init
+  43 000c AFF30080 		.section	.text.ext_lld_stop,"ax",%progbits
+  44              		.align	2
+  45              		.p2align 4,,15
+  46              		.global	ext_lld_stop
+  47              		.thumb
+  48              		.thumb_func
+  49              		.type	ext_lld_stop, %function
+  50              	ext_lld_stop:
+  51              	.LFB120:
+  52              		.loc 1 100 0
+  53              		.cfi_startproc
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56              	.LVL1:
+  57 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 2
+
+
+  58              	.LCFI0:
+  59              		.cfi_def_cfa_offset 8
+  60              		.cfi_offset 3, -8
+  61              		.cfi_offset 14, -4
+  62              		.loc 1 102 0
+  63 0002 0378     		ldrb	r3, [r0, #0]	@ zero_extendqisi2
+  64 0004 022B     		cmp	r3, #2
+  65 0006 0AD0     		beq	.L5
+  66              	.LVL2:
+  67              	.L3:
+  68              		.loc 1 105 0
+  69 0008 4FF47050 		mov	r0, #15360
+  70 000c C4F20100 		movt	r0, 16385
+  71 0010 0022     		movs	r2, #0
+  72              		.loc 1 107 0
+  73 0012 4FF0FF31 		mov	r1, #-1
+  74              		.loc 1 105 0
+  75 0016 4260     		str	r2, [r0, #4]
+  76              		.loc 1 106 0
+  77 0018 0260     		str	r2, [r0, #0]
+  78              		.loc 1 107 0
+  79 001a 4161     		str	r1, [r0, #20]
+  80 001c 08BD     		pop	{r3, pc}
+  81              	.LVL3:
+  82              	.L5:
+  83              		.loc 1 103 0
+  84 001e FFF7FEFF 		bl	ext_lld_exti_irq_disable
+  85              	.LVL4:
+  86 0022 F1E7     		b	.L3
+  87              		.cfi_endproc
+  88              	.LFE120:
+  89              		.size	ext_lld_stop, .-ext_lld_stop
+  90 0024 AFF30080 		.section	.text.ext_lld_channel_enable,"ax",%progbits
+  90      AFF30080 
+  90      AFF30080 
+  91              		.align	2
+  92              		.p2align 4,,15
+  93              		.global	ext_lld_channel_enable
+  94              		.thumb
+  95              		.thumb_func
+  96              		.type	ext_lld_channel_enable, %function
+  97              	ext_lld_channel_enable:
+  98              	.LFB121:
+  99              		.loc 1 121 0
+ 100              		.cfi_startproc
+ 101              		@ args = 0, pretend = 0, frame = 0
+ 102              		@ frame_needed = 0, uses_anonymous_args = 0
+ 103              		@ link register save eliminated.
+ 104              	.LVL5:
+ 105              		.loc 1 124 0
+ 106 0000 0F29     		cmp	r1, #15
+ 107              		.loc 1 121 0
+ 108 0002 F0B4     		push	{r4, r5, r6, r7}
+ 109              	.LCFI1:
+ 110              		.cfi_def_cfa_offset 16
+ 111              		.cfi_offset 4, -16
+ 112              		.cfi_offset 5, -12
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 3
+
+
+ 113              		.cfi_offset 6, -8
+ 114              		.cfi_offset 7, -4
+ 115              	.LBB2:
+ 116              		.loc 1 127 0
+ 117 0004 4068     		ldr	r0, [r0, #4]
+ 118              	.LVL6:
+ 119              	.LBE2:
+ 120              		.loc 1 124 0
+ 121 0006 2AD9     		bls	.L7
+ 122 0008 50F83130 		ldr	r3, [r0, r1, lsl #3]
+ 123              		.loc 1 145 0
+ 124 000c DA07     		lsls	r2, r3, #31
+ 125 000e 42D5     		bpl	.L9
+ 126              	.L15:
+ 127              		.loc 1 146 0
+ 128 0010 4FF47054 		mov	r4, #15360
+ 129 0014 C4F20104 		movt	r4, 16385
+ 130 0018 0122     		movs	r2, #1
+ 131 001a A568     		ldr	r5, [r4, #8]
+ 132 001c 02FA01F2 		lsl	r2, r2, r1
+ 133 0020 1543     		orrs	r5, r5, r2
+ 134 0022 A560     		str	r5, [r4, #8]
+ 135 0024 D443     		mvns	r4, r2
+ 136              	.L10:
+ 137              		.loc 1 149 0
+ 138 0026 13F0020F 		tst	r3, #2
+ 139              		.loc 1 150 0
+ 140 002a 4FF47053 		mov	r3, #15360
+ 141 002e C4F20103 		movt	r3, 16385
+ 142              		.loc 1 155 0
+ 143 0032 00EBC101 		add	r1, r0, r1, lsl #3
+ 144              	.LVL7:
+ 145              		.loc 1 150 0
+ 146 0036 DD68     		ldr	r5, [r3, #12]
+ 147              		.loc 1 155 0
+ 148 0038 4868     		ldr	r0, [r1, #4]
+ 149              		.loc 1 150 0
+ 150 003a 14BF     		ite	ne
+ 151 003c 1543     		orrne	r5, r2, r5
+ 152              		.loc 1 152 0
+ 153 003e 2540     		andeq	r5, r5, r4
+ 154 0040 DD60     		str	r5, [r3, #12]
+ 155              		.loc 1 155 0
+ 156 0042 0028     		cmp	r0, #0
+ 157 0044 33D0     		beq	.L13
+ 158              		.loc 1 156 0
+ 159 0046 4FF47050 		mov	r0, #15360
+ 160 004a C4F20100 		movt	r0, 16385
+ 161 004e 0368     		ldr	r3, [r0, #0]
+ 162 0050 1A43     		orrs	r2, r2, r3
+ 163 0052 0260     		str	r2, [r0, #0]
+ 164              		.loc 1 157 0
+ 165 0054 4168     		ldr	r1, [r0, #4]
+ 166 0056 0C40     		ands	r4, r4, r1
+ 167 0058 4460     		str	r4, [r0, #4]
+ 168              	.L6:
+ 169              		.loc 1 187 0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 4
+
+
+ 170 005a F0BC     		pop	{r4, r5, r6, r7}
+ 171 005c 7047     		bx	lr
+ 172              	.LVL8:
+ 173              	.L7:
+ 174              	.LBB3:
+ 175              		.loc 1 125 0
+ 176 005e 8C08     		lsrs	r4, r1, #2
+ 177              	.LVL9:
+ 178              		.loc 1 137 0
+ 179 0060 4FF46052 		mov	r2, #14336
+ 180 0064 C4F20102 		movt	r2, 16385
+ 181 0068 0234     		adds	r4, r4, #2
+ 182              	.LVL10:
+ 183              		.loc 1 127 0
+ 184 006a 50F83130 		ldr	r3, [r0, r1, lsl #3]
+ 185              		.loc 1 137 0
+ 186 006e 52F82460 		ldr	r6, [r2, r4, lsl #2]
+ 187              		.loc 1 126 0
+ 188 0072 01F00305 		and	r5, r1, #3
+ 189 0076 AD00     		lsls	r5, r5, #2
+ 190              	.LVL11:
+ 191 0078 4FF00F0C 		mov	ip, #15
+ 192 007c 0CFA05FC 		lsl	ip, ip, r5
+ 193              		.loc 1 128 0
+ 194 0080 C3F30317 		ubfx	r7, r3, #4, #4
+ 195              		.loc 1 137 0
+ 196 0084 26EA0C06 		bic	r6, r6, ip
+ 197              		.loc 1 127 0
+ 198 0088 07FA05F5 		lsl	r5, r7, r5
+ 199              	.LVL12:
+ 200              		.loc 1 137 0
+ 201 008c 3543     		orrs	r5, r5, r6
+ 202 008e 42F82450 		str	r5, [r2, r4, lsl #2]
+ 203              	.LBE3:
+ 204              		.loc 1 145 0
+ 205 0092 DA07     		lsls	r2, r3, #31
+ 206 0094 BCD4     		bmi	.L15
+ 207              	.LVL13:
+ 208              	.L9:
+ 209              		.loc 1 148 0
+ 210 0096 4FF47055 		mov	r5, #15360
+ 211 009a C4F20105 		movt	r5, 16385
+ 212 009e 0122     		movs	r2, #1
+ 213 00a0 AE68     		ldr	r6, [r5, #8]
+ 214 00a2 02FA01F2 		lsl	r2, r2, r1
+ 215 00a6 D443     		mvns	r4, r2
+ 216 00a8 2640     		ands	r6, r6, r4
+ 217 00aa AE60     		str	r6, [r5, #8]
+ 218 00ac BBE7     		b	.L10
+ 219              	.LVL14:
+ 220              	.L13:
+ 221              		.loc 1 160 0
+ 222 00ae 4FF47053 		mov	r3, #15360
+ 223 00b2 C4F20103 		movt	r3, 16385
+ 224 00b6 5968     		ldr	r1, [r3, #4]
+ 225 00b8 0A43     		orrs	r2, r2, r1
+ 226 00ba 5A60     		str	r2, [r3, #4]
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 5
+
+
+ 227              		.loc 1 161 0
+ 228 00bc 1A68     		ldr	r2, [r3, #0]
+ 229 00be 1440     		ands	r4, r4, r2
+ 230 00c0 1C60     		str	r4, [r3, #0]
+ 231 00c2 CAE7     		b	.L6
+ 232              		.cfi_endproc
+ 233              	.LFE121:
+ 234              		.size	ext_lld_channel_enable, .-ext_lld_channel_enable
+ 235 00c4 AFF30080 		.section	.text.ext_lld_channel_disable,"ax",%progbits
+ 235      AFF30080 
+ 235      AFF30080 
+ 236              		.align	2
+ 237              		.p2align 4,,15
+ 238              		.global	ext_lld_channel_disable
+ 239              		.thumb
+ 240              		.thumb_func
+ 241              		.type	ext_lld_channel_disable, %function
+ 242              	ext_lld_channel_disable:
+ 243              	.LFB122:
+ 244              		.loc 1 197 0
+ 245              		.cfi_startproc
+ 246              		@ args = 0, pretend = 0, frame = 0
+ 247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 248              		@ link register save eliminated.
+ 249              	.LVL15:
+ 250              		.loc 1 204 0
+ 251 0000 4FF47053 		mov	r3, #15360
+ 252 0004 C4F20103 		movt	r3, 16385
+ 253 0008 0122     		movs	r2, #1
+ 254 000a 1868     		ldr	r0, [r3, #0]
+ 255              	.LVL16:
+ 256 000c 02FA01F1 		lsl	r1, r2, r1
+ 257              	.LVL17:
+ 258 0010 CA43     		mvns	r2, r1
+ 259 0012 1040     		ands	r0, r0, r2
+ 260 0014 1860     		str	r0, [r3, #0]
+ 261              		.loc 1 205 0
+ 262 0016 5868     		ldr	r0, [r3, #4]
+ 263 0018 1040     		ands	r0, r0, r2
+ 264 001a 5860     		str	r0, [r3, #4]
+ 265              		.loc 1 206 0
+ 266 001c 9868     		ldr	r0, [r3, #8]
+ 267 001e 1040     		ands	r0, r0, r2
+ 268 0020 9860     		str	r0, [r3, #8]
+ 269              		.loc 1 207 0
+ 270 0022 D868     		ldr	r0, [r3, #12]
+ 271 0024 0240     		ands	r2, r2, r0
+ 272 0026 DA60     		str	r2, [r3, #12]
+ 273              		.loc 1 208 0
+ 274 0028 5961     		str	r1, [r3, #20]
+ 275 002a 7047     		bx	lr
+ 276              		.cfi_endproc
+ 277              	.LFE122:
+ 278              		.size	ext_lld_channel_disable, .-ext_lld_channel_disable
+ 279 002c AFF30080 		.section	.text.ext_lld_start,"ax",%progbits
+ 280              		.align	2
+ 281              		.p2align 4,,15
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 6
+
+
+ 282              		.global	ext_lld_start
+ 283              		.thumb
+ 284              		.thumb_func
+ 285              		.type	ext_lld_start, %function
+ 286              	ext_lld_start:
+ 287              	.LFB119:
+ 288              		.loc 1 79 0
+ 289              		.cfi_startproc
+ 290              		@ args = 0, pretend = 0, frame = 0
+ 291              		@ frame_needed = 0, uses_anonymous_args = 0
+ 292              	.LVL18:
+ 293 0000 38B5     		push	{r3, r4, r5, lr}
+ 294              	.LCFI2:
+ 295              		.cfi_def_cfa_offset 16
+ 296              		.cfi_offset 3, -16
+ 297              		.cfi_offset 4, -12
+ 298              		.cfi_offset 5, -8
+ 299              		.cfi_offset 14, -4
+ 300              		.loc 1 82 0
+ 301 0002 0378     		ldrb	r3, [r0, #0]	@ zero_extendqisi2
+ 302 0004 012B     		cmp	r3, #1
+ 303              		.loc 1 79 0
+ 304 0006 0546     		mov	r5, r0
+ 305              		.loc 1 82 0
+ 306 0008 35D0     		beq	.L32
+ 307              	.LVL19:
+ 308              	.L18:
+ 309              		.loc 1 87 0 discriminator 1
+ 310 000a 6868     		ldr	r0, [r5, #4]
+ 311 000c 0168     		ldr	r1, [r0, #0]
+ 312 000e 11F00401 		ands	r1, r1, #4
+ 313 0012 2CD0     		beq	.L23
+ 314              		.loc 1 88 0
+ 315 0014 2846     		mov	r0, r5
+ 316 0016 0021     		movs	r1, #0
+ 317 0018 FFF7FEFF 		bl	ext_lld_channel_enable
+ 318              	.LVL20:
+ 319              	.L29:
+ 320              		.loc 1 86 0
+ 321 001c 0124     		movs	r4, #1
+ 322              	.LVL21:
+ 323 001e 0EE0     		b	.L21
+ 324              	.LVL22:
+ 325              	.L34:
+ 326              		.loc 1 88 0
+ 327 0020 FFF7FEFF 		bl	ext_lld_channel_enable
+ 328              	.LVL23:
+ 329              		.loc 1 86 0
+ 330 0024 0134     		adds	r4, r4, #1
+ 331              		.loc 1 87 0
+ 332 0026 6868     		ldr	r0, [r5, #4]
+ 333 0028 50F83410 		ldr	r1, [r0, r4, lsl #3]
+ 334 002c 4B07     		lsls	r3, r1, #29
+ 335 002e 16D5     		bpl	.L25
+ 336              	.L35:
+ 337              		.loc 1 88 0
+ 338 0030 2146     		mov	r1, r4
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 7
+
+
+ 339 0032 2846     		mov	r0, r5
+ 340              		.loc 1 86 0
+ 341 0034 0134     		adds	r4, r4, #1
+ 342              		.loc 1 88 0
+ 343 0036 FFF7FEFF 		bl	ext_lld_channel_enable
+ 344              	.LVL24:
+ 345              		.loc 1 86 0
+ 346 003a 172C     		cmp	r4, #23
+ 347 003c 16D0     		beq	.L33
+ 348              	.L21:
+ 349              		.loc 1 87 0
+ 350 003e 6A68     		ldr	r2, [r5, #4]
+ 351 0040 52F83430 		ldr	r3, [r2, r4, lsl #3]
+ 352 0044 13F0040F 		tst	r3, #4
+ 353              		.loc 1 90 0
+ 354 0048 2846     		mov	r0, r5
+ 355 004a 2146     		mov	r1, r4
+ 356              		.loc 1 87 0
+ 357 004c E8D1     		bne	.L34
+ 358              	.LVL25:
+ 359              		.loc 1 90 0
+ 360 004e FFF7FEFF 		bl	ext_lld_channel_disable
+ 361              	.LVL26:
+ 362              		.loc 1 86 0
+ 363 0052 0134     		adds	r4, r4, #1
+ 364              		.loc 1 87 0
+ 365 0054 6868     		ldr	r0, [r5, #4]
+ 366 0056 50F83410 		ldr	r1, [r0, r4, lsl #3]
+ 367 005a 4B07     		lsls	r3, r1, #29
+ 368 005c E8D4     		bmi	.L35
+ 369              	.L25:
+ 370              		.loc 1 90 0
+ 371 005e 2146     		mov	r1, r4
+ 372 0060 2846     		mov	r0, r5
+ 373              		.loc 1 86 0
+ 374 0062 0134     		adds	r4, r4, #1
+ 375              		.loc 1 90 0
+ 376 0064 FFF7FEFF 		bl	ext_lld_channel_disable
+ 377              	.LVL27:
+ 378              		.loc 1 86 0
+ 379 0068 172C     		cmp	r4, #23
+ 380 006a E8D1     		bne	.L21
+ 381              	.L33:
+ 382 006c 38BD     		pop	{r3, r4, r5, pc}
+ 383              	.LVL28:
+ 384              	.L23:
+ 385              		.loc 1 90 0
+ 386 006e 2846     		mov	r0, r5
+ 387 0070 FFF7FEFF 		bl	ext_lld_channel_disable
+ 388              	.LVL29:
+ 389 0074 D2E7     		b	.L29
+ 390              	.LVL30:
+ 391              	.L32:
+ 392              		.loc 1 83 0
+ 393 0076 FFF7FEFF 		bl	ext_lld_exti_irq_enable
+ 394              	.LVL31:
+ 395 007a C6E7     		b	.L18
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 8
+
+
+ 396              		.cfi_endproc
+ 397              	.LFE119:
+ 398              		.size	ext_lld_start, .-ext_lld_start
+ 399              		.global	EXTD1
+ 400 007c AFF30080 		.section	.bss.EXTD1,"aw",%nobits
+ 401              		.align	2
+ 402              		.set	.LANCHOR0,. + 0
+ 403              		.type	EXTD1, %object
+ 404              		.size	EXTD1, 8
+ 405              	EXTD1:
+ 406 0000 00000000 		.space	8
+ 406      00000000 
+ 407              		.text
+ 408              	.Letext0:
+ 409              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 410              		.file 3 "../../chibios/os/hal/platforms/STM32F4xx/stm32f4xx.h"
+ 411              		.file 4 "../../chibios/os/hal/include/ext.h"
+ 412              		.file 5 "../../chibios/os/hal/platforms/STM32/ext_lld.h"
+ 413              		.file 6 "../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4.h"
+ 414              		.file 7 "../../chibios/os/hal/platforms/STM32F4xx/ext_lld_isr.h"
+ 415              		.section	.debug_info,"",%progbits
+ 416              	.Ldebug_info0:
+ 417 0000 9E040000 		.4byte	0x49e
+ 418 0004 0200     		.2byte	0x2
+ 419 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 420 000a 04       		.byte	0x4
+ 421 000b 01       		.uleb128 0x1
+ 422 000c 09020000 		.4byte	.LASF49
+ 423 0010 01       		.byte	0x1
+ 424 0011 5F000000 		.4byte	.LASF50
+ 425 0015 8E000000 		.4byte	.LASF51
+ 426 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 427 001d 00000000 		.4byte	0
+ 428 0021 00000000 		.4byte	0
+ 429 0025 00000000 		.4byte	.Ldebug_line0
+ 430 0029 02       		.uleb128 0x2
+ 431 002a 04       		.byte	0x4
+ 432 002b 05       		.byte	0x5
+ 433 002c 696E7400 		.ascii	"int\000"
+ 434 0030 03       		.uleb128 0x3
+ 435 0031 04       		.byte	0x4
+ 436 0032 07       		.byte	0x7
+ 437 0033 C9010000 		.4byte	.LASF0
+ 438 0037 03       		.uleb128 0x3
+ 439 0038 01       		.byte	0x1
+ 440 0039 06       		.byte	0x6
+ 441 003a 9B020000 		.4byte	.LASF1
+ 442 003e 03       		.uleb128 0x3
+ 443 003f 01       		.byte	0x1
+ 444 0040 08       		.byte	0x8
+ 445 0041 33010000 		.4byte	.LASF2
+ 446 0045 03       		.uleb128 0x3
+ 447 0046 02       		.byte	0x2
+ 448 0047 05       		.byte	0x5
+ 449 0048 66020000 		.4byte	.LASF3
+ 450 004c 03       		.uleb128 0x3
+ 451 004d 02       		.byte	0x2
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 9
+
+
+ 452 004e 07       		.byte	0x7
+ 453 004f 4C000000 		.4byte	.LASF4
+ 454 0053 04       		.uleb128 0x4
+ 455 0054 E5010000 		.4byte	.LASF6
+ 456 0058 02       		.byte	0x2
+ 457 0059 4F       		.byte	0x4f
+ 458 005a 5E000000 		.4byte	0x5e
+ 459 005e 03       		.uleb128 0x3
+ 460 005f 04       		.byte	0x4
+ 461 0060 05       		.byte	0x5
+ 462 0061 92020000 		.4byte	.LASF5
+ 463 0065 04       		.uleb128 0x4
+ 464 0066 A7020000 		.4byte	.LASF7
+ 465 006a 02       		.byte	0x2
+ 466 006b 50       		.byte	0x50
+ 467 006c 70000000 		.4byte	0x70
+ 468 0070 03       		.uleb128 0x3
+ 469 0071 04       		.byte	0x4
+ 470 0072 07       		.byte	0x7
+ 471 0073 41010000 		.4byte	.LASF8
+ 472 0077 03       		.uleb128 0x3
+ 473 0078 08       		.byte	0x8
+ 474 0079 05       		.byte	0x5
+ 475 007a F6010000 		.4byte	.LASF9
+ 476 007e 03       		.uleb128 0x3
+ 477 007f 08       		.byte	0x8
+ 478 0080 07       		.byte	0x7
+ 479 0081 16010000 		.4byte	.LASF10
+ 480 0085 03       		.uleb128 0x3
+ 481 0086 01       		.byte	0x1
+ 482 0087 02       		.byte	0x2
+ 483 0088 B0020000 		.4byte	.LASF11
+ 484 008c 05       		.uleb128 0x5
+ 485 008d 65000000 		.4byte	0x65
+ 486 0091 03       		.uleb128 0x3
+ 487 0092 04       		.byte	0x4
+ 488 0093 07       		.byte	0x7
+ 489 0094 ED010000 		.4byte	.LASF12
+ 490 0098 03       		.uleb128 0x3
+ 491 0099 01       		.byte	0x1
+ 492 009a 08       		.byte	0x8
+ 493 009b DB010000 		.4byte	.LASF13
+ 494 009f 06       		.uleb128 0x6
+ 495 00a0 65000000 		.4byte	0x65
+ 496 00a4 AF000000 		.4byte	0xaf
+ 497 00a8 07       		.uleb128 0x7
+ 498 00a9 91000000 		.4byte	0x91
+ 499 00ad 01       		.byte	0x1
+ 500 00ae 00       		.byte	0
+ 501 00af 06       		.uleb128 0x6
+ 502 00b0 65000000 		.4byte	0x65
+ 503 00b4 BF000000 		.4byte	0xbf
+ 504 00b8 07       		.uleb128 0x7
+ 505 00b9 91000000 		.4byte	0x91
+ 506 00bd 03       		.byte	0x3
+ 507 00be 00       		.byte	0
+ 508 00bf 05       		.uleb128 0x5
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 10
+
+
+ 509 00c0 53000000 		.4byte	0x53
+ 510 00c4 08       		.uleb128 0x8
+ 511 00c5 18       		.byte	0x18
+ 512 00c6 03       		.byte	0x3
+ 513 00c7 3003     		.2byte	0x330
+ 514 00c9 27010000 		.4byte	0x127
+ 515 00cd 09       		.uleb128 0x9
+ 516 00ce 494D5200 		.ascii	"IMR\000"
+ 517 00d2 03       		.byte	0x3
+ 518 00d3 3203     		.2byte	0x332
+ 519 00d5 8C000000 		.4byte	0x8c
+ 520 00d9 02       		.byte	0x2
+ 521 00da 23       		.byte	0x23
+ 522 00db 00       		.uleb128 0
+ 523 00dc 09       		.uleb128 0x9
+ 524 00dd 454D5200 		.ascii	"EMR\000"
+ 525 00e1 03       		.byte	0x3
+ 526 00e2 3303     		.2byte	0x333
+ 527 00e4 8C000000 		.4byte	0x8c
+ 528 00e8 02       		.byte	0x2
+ 529 00e9 23       		.byte	0x23
+ 530 00ea 04       		.uleb128 0x4
+ 531 00eb 0A       		.uleb128 0xa
+ 532 00ec 74010000 		.4byte	.LASF14
+ 533 00f0 03       		.byte	0x3
+ 534 00f1 3403     		.2byte	0x334
+ 535 00f3 8C000000 		.4byte	0x8c
+ 536 00f7 02       		.byte	0x2
+ 537 00f8 23       		.byte	0x23
+ 538 00f9 08       		.uleb128 0x8
+ 539 00fa 0A       		.uleb128 0xa
+ 540 00fb 8D020000 		.4byte	.LASF15
+ 541 00ff 03       		.byte	0x3
+ 542 0100 3503     		.2byte	0x335
+ 543 0102 8C000000 		.4byte	0x8c
+ 544 0106 02       		.byte	0x2
+ 545 0107 23       		.byte	0x23
+ 546 0108 0C       		.uleb128 0xc
+ 547 0109 0A       		.uleb128 0xa
+ 548 010a B6020000 		.4byte	.LASF16
+ 549 010e 03       		.byte	0x3
+ 550 010f 3603     		.2byte	0x336
+ 551 0111 8C000000 		.4byte	0x8c
+ 552 0115 02       		.byte	0x2
+ 553 0116 23       		.byte	0x23
+ 554 0117 10       		.uleb128 0x10
+ 555 0118 09       		.uleb128 0x9
+ 556 0119 505200   		.ascii	"PR\000"
+ 557 011c 03       		.byte	0x3
+ 558 011d 3703     		.2byte	0x337
+ 559 011f 8C000000 		.4byte	0x8c
+ 560 0123 02       		.byte	0x2
+ 561 0124 23       		.byte	0x23
+ 562 0125 14       		.uleb128 0x14
+ 563 0126 00       		.byte	0
+ 564 0127 0B       		.uleb128 0xb
+ 565 0128 5A010000 		.4byte	.LASF17
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 11
+
+
+ 566 012c 03       		.byte	0x3
+ 567 012d 3803     		.2byte	0x338
+ 568 012f C4000000 		.4byte	0xc4
+ 569 0133 08       		.uleb128 0x8
+ 570 0134 24       		.byte	0x24
+ 571 0135 03       		.byte	0x3
+ 572 0136 E903     		.2byte	0x3e9
+ 573 0138 88010000 		.4byte	0x188
+ 574 013c 0A       		.uleb128 0xa
+ 575 013d 53010000 		.4byte	.LASF18
+ 576 0141 03       		.byte	0x3
+ 577 0142 EB03     		.2byte	0x3eb
+ 578 0144 8C000000 		.4byte	0x8c
+ 579 0148 02       		.byte	0x2
+ 580 0149 23       		.byte	0x23
+ 581 014a 00       		.uleb128 0
+ 582 014b 09       		.uleb128 0x9
+ 583 014c 504D4300 		.ascii	"PMC\000"
+ 584 0150 03       		.byte	0x3
+ 585 0151 EC03     		.2byte	0x3ec
+ 586 0153 8C000000 		.4byte	0x8c
+ 587 0157 02       		.byte	0x2
+ 588 0158 23       		.byte	0x23
+ 589 0159 04       		.uleb128 0x4
+ 590 015a 0A       		.uleb128 0xa
+ 591 015b B7010000 		.4byte	.LASF19
+ 592 015f 03       		.byte	0x3
+ 593 0160 ED03     		.2byte	0x3ed
+ 594 0162 88010000 		.4byte	0x188
+ 595 0166 02       		.byte	0x2
+ 596 0167 23       		.byte	0x23
+ 597 0168 08       		.uleb128 0x8
+ 598 0169 0A       		.uleb128 0xa
+ 599 016a 8A010000 		.4byte	.LASF20
+ 600 016e 03       		.byte	0x3
+ 601 016f EE03     		.2byte	0x3ee
+ 602 0171 9F000000 		.4byte	0x9f
+ 603 0175 02       		.byte	0x2
+ 604 0176 23       		.byte	0x23
+ 605 0177 18       		.uleb128 0x18
+ 606 0178 0A       		.uleb128 0xa
+ 607 0179 2D010000 		.4byte	.LASF21
+ 608 017d 03       		.byte	0x3
+ 609 017e EF03     		.2byte	0x3ef
+ 610 0180 8C000000 		.4byte	0x8c
+ 611 0184 02       		.byte	0x2
+ 612 0185 23       		.byte	0x23
+ 613 0186 20       		.uleb128 0x20
+ 614 0187 00       		.byte	0
+ 615 0188 05       		.uleb128 0x5
+ 616 0189 AF000000 		.4byte	0xaf
+ 617 018d 0B       		.uleb128 0xb
+ 618 018e 70020000 		.4byte	.LASF22
+ 619 0192 03       		.byte	0x3
+ 620 0193 F003     		.2byte	0x3f0
+ 621 0195 33010000 		.4byte	0x133
+ 622 0199 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 12
+
+
+ 623 019a 01       		.byte	0x1
+ 624 019b 04       		.byte	0x4
+ 625 019c 4A       		.byte	0x4a
+ 626 019d B4010000 		.4byte	0x1b4
+ 627 01a1 0D       		.uleb128 0xd
+ 628 01a2 41000000 		.4byte	.LASF23
+ 629 01a6 00       		.sleb128 0
+ 630 01a7 0D       		.uleb128 0xd
+ 631 01a8 CA020000 		.4byte	.LASF24
+ 632 01ac 01       		.sleb128 1
+ 633 01ad 0D       		.uleb128 0xd
+ 634 01ae BE010000 		.4byte	.LASF25
+ 635 01b2 02       		.sleb128 2
+ 636 01b3 00       		.byte	0
+ 637 01b4 04       		.uleb128 0x4
+ 638 01b5 25000000 		.4byte	.LASF26
+ 639 01b9 04       		.byte	0x4
+ 640 01ba 4E       		.byte	0x4e
+ 641 01bb 99010000 		.4byte	0x199
+ 642 01bf 04       		.uleb128 0x4
+ 643 01c0 00000000 		.4byte	.LASF27
+ 644 01c4 04       		.byte	0x4
+ 645 01c5 53       		.byte	0x53
+ 646 01c6 CA010000 		.4byte	0x1ca
+ 647 01ca 0E       		.uleb128 0xe
+ 648 01cb 00000000 		.4byte	.LASF27
+ 649 01cf 08       		.byte	0x8
+ 650 01d0 05       		.byte	0x5
+ 651 01d1 71       		.byte	0x71
+ 652 01d2 F3010000 		.4byte	0x1f3
+ 653 01d6 0F       		.uleb128 0xf
+ 654 01d7 1F000000 		.4byte	.LASF28
+ 655 01db 05       		.byte	0x5
+ 656 01dc 75       		.byte	0x75
+ 657 01dd B4010000 		.4byte	0x1b4
+ 658 01e1 02       		.byte	0x2
+ 659 01e2 23       		.byte	0x23
+ 660 01e3 00       		.uleb128 0
+ 661 01e4 0F       		.uleb128 0xf
+ 662 01e5 79010000 		.4byte	.LASF29
+ 663 01e9 05       		.byte	0x5
+ 664 01ea 79       		.byte	0x79
+ 665 01eb 87020000 		.4byte	0x287
+ 666 01ef 02       		.byte	0x2
+ 667 01f0 23       		.byte	0x23
+ 668 01f1 04       		.uleb128 0x4
+ 669 01f2 00       		.byte	0
+ 670 01f3 04       		.uleb128 0x4
+ 671 01f4 B2000000 		.4byte	.LASF30
+ 672 01f8 05       		.byte	0x5
+ 673 01f9 47       		.byte	0x47
+ 674 01fa 65000000 		.4byte	0x65
+ 675 01fe 04       		.uleb128 0x4
+ 676 01ff D8000000 		.4byte	.LASF31
+ 677 0203 05       		.byte	0x5
+ 678 0204 4F       		.byte	0x4f
+ 679 0205 09020000 		.4byte	0x209
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 13
+
+
+ 680 0209 10       		.uleb128 0x10
+ 681 020a 04       		.byte	0x4
+ 682 020b 0F020000 		.4byte	0x20f
+ 683 020f 11       		.uleb128 0x11
+ 684 0210 01       		.byte	0x1
+ 685 0211 20020000 		.4byte	0x220
+ 686 0215 12       		.uleb128 0x12
+ 687 0216 20020000 		.4byte	0x220
+ 688 021a 12       		.uleb128 0x12
+ 689 021b F3010000 		.4byte	0x1f3
+ 690 021f 00       		.byte	0
+ 691 0220 10       		.uleb128 0x10
+ 692 0221 04       		.byte	0x4
+ 693 0222 BF010000 		.4byte	0x1bf
+ 694 0226 13       		.uleb128 0x13
+ 695 0227 08       		.byte	0x8
+ 696 0228 05       		.byte	0x5
+ 697 0229 54       		.byte	0x54
+ 698 022a 4A020000 		.4byte	0x24a
+ 699 022e 0F       		.uleb128 0xf
+ 700 022f E0010000 		.4byte	.LASF32
+ 701 0233 05       		.byte	0x5
+ 702 0234 58       		.byte	0x58
+ 703 0235 65000000 		.4byte	0x65
+ 704 0239 02       		.byte	0x2
+ 705 023a 23       		.byte	0x23
+ 706 023b 00       		.uleb128 0
+ 707 023c 14       		.uleb128 0x14
+ 708 023d 636200   		.ascii	"cb\000"
+ 709 0240 05       		.byte	0x5
+ 710 0241 5F       		.byte	0x5f
+ 711 0242 FE010000 		.4byte	0x1fe
+ 712 0246 02       		.byte	0x2
+ 713 0247 23       		.byte	0x23
+ 714 0248 04       		.uleb128 0x4
+ 715 0249 00       		.byte	0
+ 716 024a 04       		.uleb128 0x4
+ 717 024b 30000000 		.4byte	.LASF33
+ 718 024f 05       		.byte	0x5
+ 719 0250 60       		.byte	0x60
+ 720 0251 26020000 		.4byte	0x226
+ 721 0255 13       		.uleb128 0x13
+ 722 0256 B8       		.byte	0xb8
+ 723 0257 05       		.byte	0x5
+ 724 0258 66       		.byte	0x66
+ 725 0259 6C020000 		.4byte	0x26c
+ 726 025d 0F       		.uleb128 0xf
+ 727 025e 52020000 		.4byte	.LASF34
+ 728 0262 05       		.byte	0x5
+ 729 0263 6A       		.byte	0x6a
+ 730 0264 6C020000 		.4byte	0x26c
+ 731 0268 02       		.byte	0x2
+ 732 0269 23       		.byte	0x23
+ 733 026a 00       		.uleb128 0
+ 734 026b 00       		.byte	0
+ 735 026c 06       		.uleb128 0x6
+ 736 026d 4A020000 		.4byte	0x24a
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 14
+
+
+ 737 0271 7C020000 		.4byte	0x27c
+ 738 0275 07       		.uleb128 0x7
+ 739 0276 91000000 		.4byte	0x91
+ 740 027a 16       		.byte	0x16
+ 741 027b 00       		.byte	0
+ 742 027c 04       		.uleb128 0x4
+ 743 027d 80010000 		.4byte	.LASF35
+ 744 0281 05       		.byte	0x5
+ 745 0282 6C       		.byte	0x6c
+ 746 0283 55020000 		.4byte	0x255
+ 747 0287 10       		.uleb128 0x10
+ 748 0288 04       		.byte	0x4
+ 749 0289 8D020000 		.4byte	0x28d
+ 750 028d 15       		.uleb128 0x15
+ 751 028e 7C020000 		.4byte	0x27c
+ 752 0292 16       		.uleb128 0x16
+ 753 0293 01       		.byte	0x1
+ 754 0294 12000000 		.4byte	.LASF36
+ 755 0298 01       		.byte	0x1
+ 756 0299 42       		.byte	0x42
+ 757 029a 01       		.byte	0x1
+ 758 029b 00000000 		.4byte	.LFB118
+ 759 029f 0C000000 		.4byte	.LFE118
+ 760 02a3 02       		.byte	0x2
+ 761 02a4 7D       		.byte	0x7d
+ 762 02a5 00       		.sleb128 0
+ 763 02a6 01       		.byte	0x1
+ 764 02a7 C0020000 		.4byte	0x2c0
+ 765 02ab 17       		.uleb128 0x17
+ 766 02ac 0C000000 		.4byte	.LVL0
+ 767 02b0 01       		.byte	0x1
+ 768 02b1 79040000 		.4byte	0x479
+ 769 02b5 18       		.uleb128 0x18
+ 770 02b6 01       		.byte	0x1
+ 771 02b7 50       		.byte	0x50
+ 772 02b8 05       		.byte	0x5
+ 773 02b9 03       		.byte	0x3
+ 774 02ba 00000000 		.4byte	.LANCHOR0
+ 775 02be 00       		.byte	0
+ 776 02bf 00       		.byte	0
+ 777 02c0 19       		.uleb128 0x19
+ 778 02c1 01       		.byte	0x1
+ 779 02c2 AA010000 		.4byte	.LASF37
+ 780 02c6 01       		.byte	0x1
+ 781 02c7 64       		.byte	0x64
+ 782 02c8 01       		.byte	0x1
+ 783 02c9 00000000 		.4byte	.LFB120
+ 784 02cd 24000000 		.4byte	.LFE120
+ 785 02d1 00000000 		.4byte	.LLST0
+ 786 02d5 01       		.byte	0x1
+ 787 02d6 F3020000 		.4byte	0x2f3
+ 788 02da 1A       		.uleb128 0x1a
+ 789 02db D6010000 		.4byte	.LASF39
+ 790 02df 01       		.byte	0x1
+ 791 02e0 64       		.byte	0x64
+ 792 02e1 20020000 		.4byte	0x220
+ 793 02e5 20000000 		.4byte	.LLST1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 15
+
+
+ 794 02e9 1B       		.uleb128 0x1b
+ 795 02ea 22000000 		.4byte	.LVL4
+ 796 02ee 8D040000 		.4byte	0x48d
+ 797 02f2 00       		.byte	0
+ 798 02f3 19       		.uleb128 0x19
+ 799 02f4 01       		.byte	0x1
+ 800 02f5 93010000 		.4byte	.LASF38
+ 801 02f9 01       		.byte	0x1
+ 802 02fa 79       		.byte	0x79
+ 803 02fb 01       		.byte	0x1
+ 804 02fc 00000000 		.4byte	.LFB121
+ 805 0300 C4000000 		.4byte	.LFE121
+ 806 0304 5A000000 		.4byte	.LLST2
+ 807 0308 01       		.byte	0x1
+ 808 0309 5D030000 		.4byte	0x35d
+ 809 030d 1A       		.uleb128 0x1a
+ 810 030e D6010000 		.4byte	.LASF39
+ 811 0312 01       		.byte	0x1
+ 812 0313 79       		.byte	0x79
+ 813 0314 20020000 		.4byte	0x220
+ 814 0318 7A000000 		.4byte	.LLST3
+ 815 031c 1A       		.uleb128 0x1a
+ 816 031d 0A000000 		.4byte	.LASF40
+ 817 0321 01       		.byte	0x1
+ 818 0322 79       		.byte	0x79
+ 819 0323 F3010000 		.4byte	0x1f3
+ 820 0327 9B000000 		.4byte	.LLST4
+ 821 032b 1C       		.uleb128 0x1c
+ 822 032c 00000000 		.4byte	.Ldebug_ranges0+0
+ 823 0330 1D       		.uleb128 0x1d
+ 824 0331 6E00     		.ascii	"n\000"
+ 825 0333 01       		.byte	0x1
+ 826 0334 7D       		.byte	0x7d
+ 827 0335 65000000 		.4byte	0x65
+ 828 0339 D5000000 		.4byte	.LLST5
+ 829 033d 1E       		.uleb128 0x1e
+ 830 033e 04020000 		.4byte	.LASF41
+ 831 0342 01       		.byte	0x1
+ 832 0343 7E       		.byte	0x7e
+ 833 0344 65000000 		.4byte	0x65
+ 834 0348 F5000000 		.4byte	.LLST6
+ 835 034c 1E       		.uleb128 0x1e
+ 836 034d 5B020000 		.4byte	.LASF42
+ 837 0351 01       		.byte	0x1
+ 838 0352 7F       		.byte	0x7f
+ 839 0353 65000000 		.4byte	0x65
+ 840 0357 21010000 		.4byte	.LLST7
+ 841 035b 00       		.byte	0
+ 842 035c 00       		.byte	0
+ 843 035d 16       		.uleb128 0x16
+ 844 035e 01       		.byte	0x1
+ 845 035f FE000000 		.4byte	.LASF43
+ 846 0363 01       		.byte	0x1
+ 847 0364 C5       		.byte	0xc5
+ 848 0365 01       		.byte	0x1
+ 849 0366 00000000 		.4byte	.LFB122
+ 850 036a 2C000000 		.4byte	.LFE122
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 16
+
+
+ 851 036e 02       		.byte	0x2
+ 852 036f 7D       		.byte	0x7d
+ 853 0370 00       		.sleb128 0
+ 854 0371 01       		.byte	0x1
+ 855 0372 95030000 		.4byte	0x395
+ 856 0376 1A       		.uleb128 0x1a
+ 857 0377 D6010000 		.4byte	.LASF39
+ 858 037b 01       		.byte	0x1
+ 859 037c C5       		.byte	0xc5
+ 860 037d 20020000 		.4byte	0x220
+ 861 0381 57010000 		.4byte	.LLST8
+ 862 0385 1A       		.uleb128 0x1a
+ 863 0386 0A000000 		.4byte	.LASF40
+ 864 038a 01       		.byte	0x1
+ 865 038b C5       		.byte	0xc5
+ 866 038c F3010000 		.4byte	0x1f3
+ 867 0390 78010000 		.4byte	.LLST9
+ 868 0394 00       		.byte	0
+ 869 0395 19       		.uleb128 0x19
+ 870 0396 01       		.byte	0x1
+ 871 0397 BC020000 		.4byte	.LASF44
+ 872 039b 01       		.byte	0x1
+ 873 039c 4F       		.byte	0x4f
+ 874 039d 01       		.byte	0x1
+ 875 039e 00000000 		.4byte	.LFB119
+ 876 03a2 7C000000 		.4byte	.LFE119
+ 877 03a6 99010000 		.4byte	.LLST10
+ 878 03aa 01       		.byte	0x1
+ 879 03ab 59040000 		.4byte	0x459
+ 880 03af 1A       		.uleb128 0x1a
+ 881 03b0 D6010000 		.4byte	.LASF39
+ 882 03b4 01       		.byte	0x1
+ 883 03b5 4F       		.byte	0x4f
+ 884 03b6 20020000 		.4byte	0x220
+ 885 03ba B9010000 		.4byte	.LLST11
+ 886 03be 1D       		.uleb128 0x1d
+ 887 03bf 6900     		.ascii	"i\000"
+ 888 03c1 01       		.byte	0x1
+ 889 03c2 50       		.byte	0x50
+ 890 03c3 30000000 		.4byte	0x30
+ 891 03c7 19020000 		.4byte	.LLST12
+ 892 03cb 1F       		.uleb128 0x1f
+ 893 03cc 1C000000 		.4byte	.LVL20
+ 894 03d0 F3020000 		.4byte	0x2f3
+ 895 03d4 E4030000 		.4byte	0x3e4
+ 896 03d8 18       		.uleb128 0x18
+ 897 03d9 01       		.byte	0x1
+ 898 03da 51       		.byte	0x51
+ 899 03db 01       		.byte	0x1
+ 900 03dc 30       		.byte	0x30
+ 901 03dd 18       		.uleb128 0x18
+ 902 03de 01       		.byte	0x1
+ 903 03df 50       		.byte	0x50
+ 904 03e0 02       		.byte	0x2
+ 905 03e1 75       		.byte	0x75
+ 906 03e2 00       		.sleb128 0
+ 907 03e3 00       		.byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 17
+
+
+ 908 03e4 1B       		.uleb128 0x1b
+ 909 03e5 24000000 		.4byte	.LVL23
+ 910 03e9 F3020000 		.4byte	0x2f3
+ 911 03ed 1F       		.uleb128 0x1f
+ 912 03ee 3A000000 		.4byte	.LVL24
+ 913 03f2 F3020000 		.4byte	0x2f3
+ 914 03f6 07040000 		.4byte	0x407
+ 915 03fa 18       		.uleb128 0x18
+ 916 03fb 01       		.byte	0x1
+ 917 03fc 51       		.byte	0x51
+ 918 03fd 02       		.byte	0x2
+ 919 03fe 74       		.byte	0x74
+ 920 03ff 7F       		.sleb128 -1
+ 921 0400 18       		.uleb128 0x18
+ 922 0401 01       		.byte	0x1
+ 923 0402 50       		.byte	0x50
+ 924 0403 02       		.byte	0x2
+ 925 0404 75       		.byte	0x75
+ 926 0405 00       		.sleb128 0
+ 927 0406 00       		.byte	0
+ 928 0407 1F       		.uleb128 0x1f
+ 929 0408 52000000 		.4byte	.LVL26
+ 930 040c 5D030000 		.4byte	0x35d
+ 931 0410 21040000 		.4byte	0x421
+ 932 0414 18       		.uleb128 0x18
+ 933 0415 01       		.byte	0x1
+ 934 0416 51       		.byte	0x51
+ 935 0417 02       		.byte	0x2
+ 936 0418 74       		.byte	0x74
+ 937 0419 00       		.sleb128 0
+ 938 041a 18       		.uleb128 0x18
+ 939 041b 01       		.byte	0x1
+ 940 041c 50       		.byte	0x50
+ 941 041d 02       		.byte	0x2
+ 942 041e 75       		.byte	0x75
+ 943 041f 00       		.sleb128 0
+ 944 0420 00       		.byte	0
+ 945 0421 1F       		.uleb128 0x1f
+ 946 0422 68000000 		.4byte	.LVL27
+ 947 0426 5D030000 		.4byte	0x35d
+ 948 042a 3B040000 		.4byte	0x43b
+ 949 042e 18       		.uleb128 0x18
+ 950 042f 01       		.byte	0x1
+ 951 0430 51       		.byte	0x51
+ 952 0431 02       		.byte	0x2
+ 953 0432 74       		.byte	0x74
+ 954 0433 7F       		.sleb128 -1
+ 955 0434 18       		.uleb128 0x18
+ 956 0435 01       		.byte	0x1
+ 957 0436 50       		.byte	0x50
+ 958 0437 02       		.byte	0x2
+ 959 0438 75       		.byte	0x75
+ 960 0439 00       		.sleb128 0
+ 961 043a 00       		.byte	0
+ 962 043b 1F       		.uleb128 0x1f
+ 963 043c 74000000 		.4byte	.LVL29
+ 964 0440 5D030000 		.4byte	0x35d
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 18
+
+
+ 965 0444 4F040000 		.4byte	0x44f
+ 966 0448 18       		.uleb128 0x18
+ 967 0449 01       		.byte	0x1
+ 968 044a 50       		.byte	0x50
+ 969 044b 02       		.byte	0x2
+ 970 044c 75       		.byte	0x75
+ 971 044d 00       		.sleb128 0
+ 972 044e 00       		.byte	0
+ 973 044f 1B       		.uleb128 0x1b
+ 974 0450 7A000000 		.4byte	.LVL31
+ 975 0454 97040000 		.4byte	0x497
+ 976 0458 00       		.byte	0
+ 977 0459 20       		.uleb128 0x20
+ 978 045a 67010000 		.4byte	.LASF45
+ 979 045e 06       		.byte	0x6
+ 980 045f 9806     		.2byte	0x698
+ 981 0461 BF000000 		.4byte	0xbf
+ 982 0465 01       		.byte	0x1
+ 983 0466 01       		.byte	0x1
+ 984 0467 21       		.uleb128 0x21
+ 985 0468 60020000 		.4byte	.LASF46
+ 986 046c 01       		.byte	0x1
+ 987 046d 2B       		.byte	0x2b
+ 988 046e BF010000 		.4byte	0x1bf
+ 989 0472 01       		.byte	0x1
+ 990 0473 05       		.byte	0x5
+ 991 0474 03       		.byte	0x3
+ 992 0475 00000000 		.4byte	EXTD1
+ 993 0479 22       		.uleb128 0x22
+ 994 047a 01       		.byte	0x1
+ 995 047b 7F020000 		.4byte	.LASF52
+ 996 047f 04       		.byte	0x4
+ 997 0480 91       		.byte	0x91
+ 998 0481 01       		.byte	0x1
+ 999 0482 01       		.byte	0x1
+ 1000 0483 8D040000 		.4byte	0x48d
+ 1001 0487 12       		.uleb128 0x12
+ 1002 0488 20020000 		.4byte	0x220
+ 1003 048c 00       		.byte	0
+ 1004 048d 23       		.uleb128 0x23
+ 1005 048e 01       		.byte	0x1
+ 1006 048f BF000000 		.4byte	.LASF47
+ 1007 0493 07       		.byte	0x7
+ 1008 0494 A1       		.byte	0xa1
+ 1009 0495 01       		.byte	0x1
+ 1010 0496 01       		.byte	0x1
+ 1011 0497 23       		.uleb128 0x23
+ 1012 0498 01       		.byte	0x1
+ 1013 0499 E6000000 		.4byte	.LASF48
+ 1014 049d 07       		.byte	0x7
+ 1015 049e A0       		.byte	0xa0
+ 1016 049f 01       		.byte	0x1
+ 1017 04a0 01       		.byte	0x1
+ 1018 04a1 00       		.byte	0
+ 1019              		.section	.debug_abbrev,"",%progbits
+ 1020              	.Ldebug_abbrev0:
+ 1021 0000 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 19
+
+
+ 1022 0001 11       		.uleb128 0x11
+ 1023 0002 01       		.byte	0x1
+ 1024 0003 25       		.uleb128 0x25
+ 1025 0004 0E       		.uleb128 0xe
+ 1026 0005 13       		.uleb128 0x13
+ 1027 0006 0B       		.uleb128 0xb
+ 1028 0007 03       		.uleb128 0x3
+ 1029 0008 0E       		.uleb128 0xe
+ 1030 0009 1B       		.uleb128 0x1b
+ 1031 000a 0E       		.uleb128 0xe
+ 1032 000b 55       		.uleb128 0x55
+ 1033 000c 06       		.uleb128 0x6
+ 1034 000d 11       		.uleb128 0x11
+ 1035 000e 01       		.uleb128 0x1
+ 1036 000f 52       		.uleb128 0x52
+ 1037 0010 01       		.uleb128 0x1
+ 1038 0011 10       		.uleb128 0x10
+ 1039 0012 06       		.uleb128 0x6
+ 1040 0013 00       		.byte	0
+ 1041 0014 00       		.byte	0
+ 1042 0015 02       		.uleb128 0x2
+ 1043 0016 24       		.uleb128 0x24
+ 1044 0017 00       		.byte	0
+ 1045 0018 0B       		.uleb128 0xb
+ 1046 0019 0B       		.uleb128 0xb
+ 1047 001a 3E       		.uleb128 0x3e
+ 1048 001b 0B       		.uleb128 0xb
+ 1049 001c 03       		.uleb128 0x3
+ 1050 001d 08       		.uleb128 0x8
+ 1051 001e 00       		.byte	0
+ 1052 001f 00       		.byte	0
+ 1053 0020 03       		.uleb128 0x3
+ 1054 0021 24       		.uleb128 0x24
+ 1055 0022 00       		.byte	0
+ 1056 0023 0B       		.uleb128 0xb
+ 1057 0024 0B       		.uleb128 0xb
+ 1058 0025 3E       		.uleb128 0x3e
+ 1059 0026 0B       		.uleb128 0xb
+ 1060 0027 03       		.uleb128 0x3
+ 1061 0028 0E       		.uleb128 0xe
+ 1062 0029 00       		.byte	0
+ 1063 002a 00       		.byte	0
+ 1064 002b 04       		.uleb128 0x4
+ 1065 002c 16       		.uleb128 0x16
+ 1066 002d 00       		.byte	0
+ 1067 002e 03       		.uleb128 0x3
+ 1068 002f 0E       		.uleb128 0xe
+ 1069 0030 3A       		.uleb128 0x3a
+ 1070 0031 0B       		.uleb128 0xb
+ 1071 0032 3B       		.uleb128 0x3b
+ 1072 0033 0B       		.uleb128 0xb
+ 1073 0034 49       		.uleb128 0x49
+ 1074 0035 13       		.uleb128 0x13
+ 1075 0036 00       		.byte	0
+ 1076 0037 00       		.byte	0
+ 1077 0038 05       		.uleb128 0x5
+ 1078 0039 35       		.uleb128 0x35
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 20
+
+
+ 1079 003a 00       		.byte	0
+ 1080 003b 49       		.uleb128 0x49
+ 1081 003c 13       		.uleb128 0x13
+ 1082 003d 00       		.byte	0
+ 1083 003e 00       		.byte	0
+ 1084 003f 06       		.uleb128 0x6
+ 1085 0040 01       		.uleb128 0x1
+ 1086 0041 01       		.byte	0x1
+ 1087 0042 49       		.uleb128 0x49
+ 1088 0043 13       		.uleb128 0x13
+ 1089 0044 01       		.uleb128 0x1
+ 1090 0045 13       		.uleb128 0x13
+ 1091 0046 00       		.byte	0
+ 1092 0047 00       		.byte	0
+ 1093 0048 07       		.uleb128 0x7
+ 1094 0049 21       		.uleb128 0x21
+ 1095 004a 00       		.byte	0
+ 1096 004b 49       		.uleb128 0x49
+ 1097 004c 13       		.uleb128 0x13
+ 1098 004d 2F       		.uleb128 0x2f
+ 1099 004e 0B       		.uleb128 0xb
+ 1100 004f 00       		.byte	0
+ 1101 0050 00       		.byte	0
+ 1102 0051 08       		.uleb128 0x8
+ 1103 0052 13       		.uleb128 0x13
+ 1104 0053 01       		.byte	0x1
+ 1105 0054 0B       		.uleb128 0xb
+ 1106 0055 0B       		.uleb128 0xb
+ 1107 0056 3A       		.uleb128 0x3a
+ 1108 0057 0B       		.uleb128 0xb
+ 1109 0058 3B       		.uleb128 0x3b
+ 1110 0059 05       		.uleb128 0x5
+ 1111 005a 01       		.uleb128 0x1
+ 1112 005b 13       		.uleb128 0x13
+ 1113 005c 00       		.byte	0
+ 1114 005d 00       		.byte	0
+ 1115 005e 09       		.uleb128 0x9
+ 1116 005f 0D       		.uleb128 0xd
+ 1117 0060 00       		.byte	0
+ 1118 0061 03       		.uleb128 0x3
+ 1119 0062 08       		.uleb128 0x8
+ 1120 0063 3A       		.uleb128 0x3a
+ 1121 0064 0B       		.uleb128 0xb
+ 1122 0065 3B       		.uleb128 0x3b
+ 1123 0066 05       		.uleb128 0x5
+ 1124 0067 49       		.uleb128 0x49
+ 1125 0068 13       		.uleb128 0x13
+ 1126 0069 38       		.uleb128 0x38
+ 1127 006a 0A       		.uleb128 0xa
+ 1128 006b 00       		.byte	0
+ 1129 006c 00       		.byte	0
+ 1130 006d 0A       		.uleb128 0xa
+ 1131 006e 0D       		.uleb128 0xd
+ 1132 006f 00       		.byte	0
+ 1133 0070 03       		.uleb128 0x3
+ 1134 0071 0E       		.uleb128 0xe
+ 1135 0072 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 21
+
+
+ 1136 0073 0B       		.uleb128 0xb
+ 1137 0074 3B       		.uleb128 0x3b
+ 1138 0075 05       		.uleb128 0x5
+ 1139 0076 49       		.uleb128 0x49
+ 1140 0077 13       		.uleb128 0x13
+ 1141 0078 38       		.uleb128 0x38
+ 1142 0079 0A       		.uleb128 0xa
+ 1143 007a 00       		.byte	0
+ 1144 007b 00       		.byte	0
+ 1145 007c 0B       		.uleb128 0xb
+ 1146 007d 16       		.uleb128 0x16
+ 1147 007e 00       		.byte	0
+ 1148 007f 03       		.uleb128 0x3
+ 1149 0080 0E       		.uleb128 0xe
+ 1150 0081 3A       		.uleb128 0x3a
+ 1151 0082 0B       		.uleb128 0xb
+ 1152 0083 3B       		.uleb128 0x3b
+ 1153 0084 05       		.uleb128 0x5
+ 1154 0085 49       		.uleb128 0x49
+ 1155 0086 13       		.uleb128 0x13
+ 1156 0087 00       		.byte	0
+ 1157 0088 00       		.byte	0
+ 1158 0089 0C       		.uleb128 0xc
+ 1159 008a 04       		.uleb128 0x4
+ 1160 008b 01       		.byte	0x1
+ 1161 008c 0B       		.uleb128 0xb
+ 1162 008d 0B       		.uleb128 0xb
+ 1163 008e 3A       		.uleb128 0x3a
+ 1164 008f 0B       		.uleb128 0xb
+ 1165 0090 3B       		.uleb128 0x3b
+ 1166 0091 0B       		.uleb128 0xb
+ 1167 0092 01       		.uleb128 0x1
+ 1168 0093 13       		.uleb128 0x13
+ 1169 0094 00       		.byte	0
+ 1170 0095 00       		.byte	0
+ 1171 0096 0D       		.uleb128 0xd
+ 1172 0097 28       		.uleb128 0x28
+ 1173 0098 00       		.byte	0
+ 1174 0099 03       		.uleb128 0x3
+ 1175 009a 0E       		.uleb128 0xe
+ 1176 009b 1C       		.uleb128 0x1c
+ 1177 009c 0D       		.uleb128 0xd
+ 1178 009d 00       		.byte	0
+ 1179 009e 00       		.byte	0
+ 1180 009f 0E       		.uleb128 0xe
+ 1181 00a0 13       		.uleb128 0x13
+ 1182 00a1 01       		.byte	0x1
+ 1183 00a2 03       		.uleb128 0x3
+ 1184 00a3 0E       		.uleb128 0xe
+ 1185 00a4 0B       		.uleb128 0xb
+ 1186 00a5 0B       		.uleb128 0xb
+ 1187 00a6 3A       		.uleb128 0x3a
+ 1188 00a7 0B       		.uleb128 0xb
+ 1189 00a8 3B       		.uleb128 0x3b
+ 1190 00a9 0B       		.uleb128 0xb
+ 1191 00aa 01       		.uleb128 0x1
+ 1192 00ab 13       		.uleb128 0x13
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 22
+
+
+ 1193 00ac 00       		.byte	0
+ 1194 00ad 00       		.byte	0
+ 1195 00ae 0F       		.uleb128 0xf
+ 1196 00af 0D       		.uleb128 0xd
+ 1197 00b0 00       		.byte	0
+ 1198 00b1 03       		.uleb128 0x3
+ 1199 00b2 0E       		.uleb128 0xe
+ 1200 00b3 3A       		.uleb128 0x3a
+ 1201 00b4 0B       		.uleb128 0xb
+ 1202 00b5 3B       		.uleb128 0x3b
+ 1203 00b6 0B       		.uleb128 0xb
+ 1204 00b7 49       		.uleb128 0x49
+ 1205 00b8 13       		.uleb128 0x13
+ 1206 00b9 38       		.uleb128 0x38
+ 1207 00ba 0A       		.uleb128 0xa
+ 1208 00bb 00       		.byte	0
+ 1209 00bc 00       		.byte	0
+ 1210 00bd 10       		.uleb128 0x10
+ 1211 00be 0F       		.uleb128 0xf
+ 1212 00bf 00       		.byte	0
+ 1213 00c0 0B       		.uleb128 0xb
+ 1214 00c1 0B       		.uleb128 0xb
+ 1215 00c2 49       		.uleb128 0x49
+ 1216 00c3 13       		.uleb128 0x13
+ 1217 00c4 00       		.byte	0
+ 1218 00c5 00       		.byte	0
+ 1219 00c6 11       		.uleb128 0x11
+ 1220 00c7 15       		.uleb128 0x15
+ 1221 00c8 01       		.byte	0x1
+ 1222 00c9 27       		.uleb128 0x27
+ 1223 00ca 0C       		.uleb128 0xc
+ 1224 00cb 01       		.uleb128 0x1
+ 1225 00cc 13       		.uleb128 0x13
+ 1226 00cd 00       		.byte	0
+ 1227 00ce 00       		.byte	0
+ 1228 00cf 12       		.uleb128 0x12
+ 1229 00d0 05       		.uleb128 0x5
+ 1230 00d1 00       		.byte	0
+ 1231 00d2 49       		.uleb128 0x49
+ 1232 00d3 13       		.uleb128 0x13
+ 1233 00d4 00       		.byte	0
+ 1234 00d5 00       		.byte	0
+ 1235 00d6 13       		.uleb128 0x13
+ 1236 00d7 13       		.uleb128 0x13
+ 1237 00d8 01       		.byte	0x1
+ 1238 00d9 0B       		.uleb128 0xb
+ 1239 00da 0B       		.uleb128 0xb
+ 1240 00db 3A       		.uleb128 0x3a
+ 1241 00dc 0B       		.uleb128 0xb
+ 1242 00dd 3B       		.uleb128 0x3b
+ 1243 00de 0B       		.uleb128 0xb
+ 1244 00df 01       		.uleb128 0x1
+ 1245 00e0 13       		.uleb128 0x13
+ 1246 00e1 00       		.byte	0
+ 1247 00e2 00       		.byte	0
+ 1248 00e3 14       		.uleb128 0x14
+ 1249 00e4 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 23
+
+
+ 1250 00e5 00       		.byte	0
+ 1251 00e6 03       		.uleb128 0x3
+ 1252 00e7 08       		.uleb128 0x8
+ 1253 00e8 3A       		.uleb128 0x3a
+ 1254 00e9 0B       		.uleb128 0xb
+ 1255 00ea 3B       		.uleb128 0x3b
+ 1256 00eb 0B       		.uleb128 0xb
+ 1257 00ec 49       		.uleb128 0x49
+ 1258 00ed 13       		.uleb128 0x13
+ 1259 00ee 38       		.uleb128 0x38
+ 1260 00ef 0A       		.uleb128 0xa
+ 1261 00f0 00       		.byte	0
+ 1262 00f1 00       		.byte	0
+ 1263 00f2 15       		.uleb128 0x15
+ 1264 00f3 26       		.uleb128 0x26
+ 1265 00f4 00       		.byte	0
+ 1266 00f5 49       		.uleb128 0x49
+ 1267 00f6 13       		.uleb128 0x13
+ 1268 00f7 00       		.byte	0
+ 1269 00f8 00       		.byte	0
+ 1270 00f9 16       		.uleb128 0x16
+ 1271 00fa 2E       		.uleb128 0x2e
+ 1272 00fb 01       		.byte	0x1
+ 1273 00fc 3F       		.uleb128 0x3f
+ 1274 00fd 0C       		.uleb128 0xc
+ 1275 00fe 03       		.uleb128 0x3
+ 1276 00ff 0E       		.uleb128 0xe
+ 1277 0100 3A       		.uleb128 0x3a
+ 1278 0101 0B       		.uleb128 0xb
+ 1279 0102 3B       		.uleb128 0x3b
+ 1280 0103 0B       		.uleb128 0xb
+ 1281 0104 27       		.uleb128 0x27
+ 1282 0105 0C       		.uleb128 0xc
+ 1283 0106 11       		.uleb128 0x11
+ 1284 0107 01       		.uleb128 0x1
+ 1285 0108 12       		.uleb128 0x12
+ 1286 0109 01       		.uleb128 0x1
+ 1287 010a 40       		.uleb128 0x40
+ 1288 010b 0A       		.uleb128 0xa
+ 1289 010c 9742     		.uleb128 0x2117
+ 1290 010e 0C       		.uleb128 0xc
+ 1291 010f 01       		.uleb128 0x1
+ 1292 0110 13       		.uleb128 0x13
+ 1293 0111 00       		.byte	0
+ 1294 0112 00       		.byte	0
+ 1295 0113 17       		.uleb128 0x17
+ 1296 0114 898201   		.uleb128 0x4109
+ 1297 0117 01       		.byte	0x1
+ 1298 0118 11       		.uleb128 0x11
+ 1299 0119 01       		.uleb128 0x1
+ 1300 011a 9542     		.uleb128 0x2115
+ 1301 011c 0C       		.uleb128 0xc
+ 1302 011d 31       		.uleb128 0x31
+ 1303 011e 13       		.uleb128 0x13
+ 1304 011f 00       		.byte	0
+ 1305 0120 00       		.byte	0
+ 1306 0121 18       		.uleb128 0x18
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 24
+
+
+ 1307 0122 8A8201   		.uleb128 0x410a
+ 1308 0125 00       		.byte	0
+ 1309 0126 02       		.uleb128 0x2
+ 1310 0127 0A       		.uleb128 0xa
+ 1311 0128 9142     		.uleb128 0x2111
+ 1312 012a 0A       		.uleb128 0xa
+ 1313 012b 00       		.byte	0
+ 1314 012c 00       		.byte	0
+ 1315 012d 19       		.uleb128 0x19
+ 1316 012e 2E       		.uleb128 0x2e
+ 1317 012f 01       		.byte	0x1
+ 1318 0130 3F       		.uleb128 0x3f
+ 1319 0131 0C       		.uleb128 0xc
+ 1320 0132 03       		.uleb128 0x3
+ 1321 0133 0E       		.uleb128 0xe
+ 1322 0134 3A       		.uleb128 0x3a
+ 1323 0135 0B       		.uleb128 0xb
+ 1324 0136 3B       		.uleb128 0x3b
+ 1325 0137 0B       		.uleb128 0xb
+ 1326 0138 27       		.uleb128 0x27
+ 1327 0139 0C       		.uleb128 0xc
+ 1328 013a 11       		.uleb128 0x11
+ 1329 013b 01       		.uleb128 0x1
+ 1330 013c 12       		.uleb128 0x12
+ 1331 013d 01       		.uleb128 0x1
+ 1332 013e 40       		.uleb128 0x40
+ 1333 013f 06       		.uleb128 0x6
+ 1334 0140 9742     		.uleb128 0x2117
+ 1335 0142 0C       		.uleb128 0xc
+ 1336 0143 01       		.uleb128 0x1
+ 1337 0144 13       		.uleb128 0x13
+ 1338 0145 00       		.byte	0
+ 1339 0146 00       		.byte	0
+ 1340 0147 1A       		.uleb128 0x1a
+ 1341 0148 05       		.uleb128 0x5
+ 1342 0149 00       		.byte	0
+ 1343 014a 03       		.uleb128 0x3
+ 1344 014b 0E       		.uleb128 0xe
+ 1345 014c 3A       		.uleb128 0x3a
+ 1346 014d 0B       		.uleb128 0xb
+ 1347 014e 3B       		.uleb128 0x3b
+ 1348 014f 0B       		.uleb128 0xb
+ 1349 0150 49       		.uleb128 0x49
+ 1350 0151 13       		.uleb128 0x13
+ 1351 0152 02       		.uleb128 0x2
+ 1352 0153 06       		.uleb128 0x6
+ 1353 0154 00       		.byte	0
+ 1354 0155 00       		.byte	0
+ 1355 0156 1B       		.uleb128 0x1b
+ 1356 0157 898201   		.uleb128 0x4109
+ 1357 015a 00       		.byte	0
+ 1358 015b 11       		.uleb128 0x11
+ 1359 015c 01       		.uleb128 0x1
+ 1360 015d 31       		.uleb128 0x31
+ 1361 015e 13       		.uleb128 0x13
+ 1362 015f 00       		.byte	0
+ 1363 0160 00       		.byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 25
+
+
+ 1364 0161 1C       		.uleb128 0x1c
+ 1365 0162 0B       		.uleb128 0xb
+ 1366 0163 01       		.byte	0x1
+ 1367 0164 55       		.uleb128 0x55
+ 1368 0165 06       		.uleb128 0x6
+ 1369 0166 00       		.byte	0
+ 1370 0167 00       		.byte	0
+ 1371 0168 1D       		.uleb128 0x1d
+ 1372 0169 34       		.uleb128 0x34
+ 1373 016a 00       		.byte	0
+ 1374 016b 03       		.uleb128 0x3
+ 1375 016c 08       		.uleb128 0x8
+ 1376 016d 3A       		.uleb128 0x3a
+ 1377 016e 0B       		.uleb128 0xb
+ 1378 016f 3B       		.uleb128 0x3b
+ 1379 0170 0B       		.uleb128 0xb
+ 1380 0171 49       		.uleb128 0x49
+ 1381 0172 13       		.uleb128 0x13
+ 1382 0173 02       		.uleb128 0x2
+ 1383 0174 06       		.uleb128 0x6
+ 1384 0175 00       		.byte	0
+ 1385 0176 00       		.byte	0
+ 1386 0177 1E       		.uleb128 0x1e
+ 1387 0178 34       		.uleb128 0x34
+ 1388 0179 00       		.byte	0
+ 1389 017a 03       		.uleb128 0x3
+ 1390 017b 0E       		.uleb128 0xe
+ 1391 017c 3A       		.uleb128 0x3a
+ 1392 017d 0B       		.uleb128 0xb
+ 1393 017e 3B       		.uleb128 0x3b
+ 1394 017f 0B       		.uleb128 0xb
+ 1395 0180 49       		.uleb128 0x49
+ 1396 0181 13       		.uleb128 0x13
+ 1397 0182 02       		.uleb128 0x2
+ 1398 0183 06       		.uleb128 0x6
+ 1399 0184 00       		.byte	0
+ 1400 0185 00       		.byte	0
+ 1401 0186 1F       		.uleb128 0x1f
+ 1402 0187 898201   		.uleb128 0x4109
+ 1403 018a 01       		.byte	0x1
+ 1404 018b 11       		.uleb128 0x11
+ 1405 018c 01       		.uleb128 0x1
+ 1406 018d 31       		.uleb128 0x31
+ 1407 018e 13       		.uleb128 0x13
+ 1408 018f 01       		.uleb128 0x1
+ 1409 0190 13       		.uleb128 0x13
+ 1410 0191 00       		.byte	0
+ 1411 0192 00       		.byte	0
+ 1412 0193 20       		.uleb128 0x20
+ 1413 0194 34       		.uleb128 0x34
+ 1414 0195 00       		.byte	0
+ 1415 0196 03       		.uleb128 0x3
+ 1416 0197 0E       		.uleb128 0xe
+ 1417 0198 3A       		.uleb128 0x3a
+ 1418 0199 0B       		.uleb128 0xb
+ 1419 019a 3B       		.uleb128 0x3b
+ 1420 019b 05       		.uleb128 0x5
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 26
+
+
+ 1421 019c 49       		.uleb128 0x49
+ 1422 019d 13       		.uleb128 0x13
+ 1423 019e 3F       		.uleb128 0x3f
+ 1424 019f 0C       		.uleb128 0xc
+ 1425 01a0 3C       		.uleb128 0x3c
+ 1426 01a1 0C       		.uleb128 0xc
+ 1427 01a2 00       		.byte	0
+ 1428 01a3 00       		.byte	0
+ 1429 01a4 21       		.uleb128 0x21
+ 1430 01a5 34       		.uleb128 0x34
+ 1431 01a6 00       		.byte	0
+ 1432 01a7 03       		.uleb128 0x3
+ 1433 01a8 0E       		.uleb128 0xe
+ 1434 01a9 3A       		.uleb128 0x3a
+ 1435 01aa 0B       		.uleb128 0xb
+ 1436 01ab 3B       		.uleb128 0x3b
+ 1437 01ac 0B       		.uleb128 0xb
+ 1438 01ad 49       		.uleb128 0x49
+ 1439 01ae 13       		.uleb128 0x13
+ 1440 01af 3F       		.uleb128 0x3f
+ 1441 01b0 0C       		.uleb128 0xc
+ 1442 01b1 02       		.uleb128 0x2
+ 1443 01b2 0A       		.uleb128 0xa
+ 1444 01b3 00       		.byte	0
+ 1445 01b4 00       		.byte	0
+ 1446 01b5 22       		.uleb128 0x22
+ 1447 01b6 2E       		.uleb128 0x2e
+ 1448 01b7 01       		.byte	0x1
+ 1449 01b8 3F       		.uleb128 0x3f
+ 1450 01b9 0C       		.uleb128 0xc
+ 1451 01ba 03       		.uleb128 0x3
+ 1452 01bb 0E       		.uleb128 0xe
+ 1453 01bc 3A       		.uleb128 0x3a
+ 1454 01bd 0B       		.uleb128 0xb
+ 1455 01be 3B       		.uleb128 0x3b
+ 1456 01bf 0B       		.uleb128 0xb
+ 1457 01c0 27       		.uleb128 0x27
+ 1458 01c1 0C       		.uleb128 0xc
+ 1459 01c2 3C       		.uleb128 0x3c
+ 1460 01c3 0C       		.uleb128 0xc
+ 1461 01c4 01       		.uleb128 0x1
+ 1462 01c5 13       		.uleb128 0x13
+ 1463 01c6 00       		.byte	0
+ 1464 01c7 00       		.byte	0
+ 1465 01c8 23       		.uleb128 0x23
+ 1466 01c9 2E       		.uleb128 0x2e
+ 1467 01ca 00       		.byte	0
+ 1468 01cb 3F       		.uleb128 0x3f
+ 1469 01cc 0C       		.uleb128 0xc
+ 1470 01cd 03       		.uleb128 0x3
+ 1471 01ce 0E       		.uleb128 0xe
+ 1472 01cf 3A       		.uleb128 0x3a
+ 1473 01d0 0B       		.uleb128 0xb
+ 1474 01d1 3B       		.uleb128 0x3b
+ 1475 01d2 0B       		.uleb128 0xb
+ 1476 01d3 27       		.uleb128 0x27
+ 1477 01d4 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 27
+
+
+ 1478 01d5 3C       		.uleb128 0x3c
+ 1479 01d6 0C       		.uleb128 0xc
+ 1480 01d7 00       		.byte	0
+ 1481 01d8 00       		.byte	0
+ 1482 01d9 00       		.byte	0
+ 1483              		.section	.debug_loc,"",%progbits
+ 1484              	.Ldebug_loc0:
+ 1485              	.LLST0:
+ 1486 0000 00000000 		.4byte	.LFB120
+ 1487 0004 02000000 		.4byte	.LCFI0
+ 1488 0008 0200     		.2byte	0x2
+ 1489 000a 7D       		.byte	0x7d
+ 1490 000b 00       		.sleb128 0
+ 1491 000c 02000000 		.4byte	.LCFI0
+ 1492 0010 24000000 		.4byte	.LFE120
+ 1493 0014 0200     		.2byte	0x2
+ 1494 0016 7D       		.byte	0x7d
+ 1495 0017 08       		.sleb128 8
+ 1496 0018 00000000 		.4byte	0
+ 1497 001c 00000000 		.4byte	0
+ 1498              	.LLST1:
+ 1499 0020 00000000 		.4byte	.LVL1
+ 1500 0024 08000000 		.4byte	.LVL2
+ 1501 0028 0100     		.2byte	0x1
+ 1502 002a 50       		.byte	0x50
+ 1503 002b 08000000 		.4byte	.LVL2
+ 1504 002f 1E000000 		.4byte	.LVL3
+ 1505 0033 0400     		.2byte	0x4
+ 1506 0035 F3       		.byte	0xf3
+ 1507 0036 01       		.uleb128 0x1
+ 1508 0037 50       		.byte	0x50
+ 1509 0038 9F       		.byte	0x9f
+ 1510 0039 1E000000 		.4byte	.LVL3
+ 1511 003d 21000000 		.4byte	.LVL4-1
+ 1512 0041 0100     		.2byte	0x1
+ 1513 0043 50       		.byte	0x50
+ 1514 0044 21000000 		.4byte	.LVL4-1
+ 1515 0048 24000000 		.4byte	.LFE120
+ 1516 004c 0400     		.2byte	0x4
+ 1517 004e F3       		.byte	0xf3
+ 1518 004f 01       		.uleb128 0x1
+ 1519 0050 50       		.byte	0x50
+ 1520 0051 9F       		.byte	0x9f
+ 1521 0052 00000000 		.4byte	0
+ 1522 0056 00000000 		.4byte	0
+ 1523              	.LLST2:
+ 1524 005a 00000000 		.4byte	.LFB121
+ 1525 005e 04000000 		.4byte	.LCFI1
+ 1526 0062 0200     		.2byte	0x2
+ 1527 0064 7D       		.byte	0x7d
+ 1528 0065 00       		.sleb128 0
+ 1529 0066 04000000 		.4byte	.LCFI1
+ 1530 006a C4000000 		.4byte	.LFE121
+ 1531 006e 0200     		.2byte	0x2
+ 1532 0070 7D       		.byte	0x7d
+ 1533 0071 10       		.sleb128 16
+ 1534 0072 00000000 		.4byte	0
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 28
+
+
+ 1535 0076 00000000 		.4byte	0
+ 1536              	.LLST3:
+ 1537 007a 00000000 		.4byte	.LVL5
+ 1538 007e 06000000 		.4byte	.LVL6
+ 1539 0082 0100     		.2byte	0x1
+ 1540 0084 50       		.byte	0x50
+ 1541 0085 06000000 		.4byte	.LVL6
+ 1542 0089 C4000000 		.4byte	.LFE121
+ 1543 008d 0400     		.2byte	0x4
+ 1544 008f F3       		.byte	0xf3
+ 1545 0090 01       		.uleb128 0x1
+ 1546 0091 50       		.byte	0x50
+ 1547 0092 9F       		.byte	0x9f
+ 1548 0093 00000000 		.4byte	0
+ 1549 0097 00000000 		.4byte	0
+ 1550              	.LLST4:
+ 1551 009b 00000000 		.4byte	.LVL5
+ 1552 009f 36000000 		.4byte	.LVL7
+ 1553 00a3 0100     		.2byte	0x1
+ 1554 00a5 51       		.byte	0x51
+ 1555 00a6 36000000 		.4byte	.LVL7
+ 1556 00aa 5E000000 		.4byte	.LVL8
+ 1557 00ae 0400     		.2byte	0x4
+ 1558 00b0 F3       		.byte	0xf3
+ 1559 00b1 01       		.uleb128 0x1
+ 1560 00b2 51       		.byte	0x51
+ 1561 00b3 9F       		.byte	0x9f
+ 1562 00b4 5E000000 		.4byte	.LVL8
+ 1563 00b8 AE000000 		.4byte	.LVL14
+ 1564 00bc 0100     		.2byte	0x1
+ 1565 00be 51       		.byte	0x51
+ 1566 00bf AE000000 		.4byte	.LVL14
+ 1567 00c3 C4000000 		.4byte	.LFE121
+ 1568 00c7 0400     		.2byte	0x4
+ 1569 00c9 F3       		.byte	0xf3
+ 1570 00ca 01       		.uleb128 0x1
+ 1571 00cb 51       		.byte	0x51
+ 1572 00cc 9F       		.byte	0x9f
+ 1573 00cd 00000000 		.4byte	0
+ 1574 00d1 00000000 		.4byte	0
+ 1575              	.LLST5:
+ 1576 00d5 60000000 		.4byte	.LVL9
+ 1577 00d9 6A000000 		.4byte	.LVL10
+ 1578 00dd 0100     		.2byte	0x1
+ 1579 00df 54       		.byte	0x54
+ 1580 00e0 6A000000 		.4byte	.LVL10
+ 1581 00e4 96000000 		.4byte	.LVL13
+ 1582 00e8 0300     		.2byte	0x3
+ 1583 00ea 74       		.byte	0x74
+ 1584 00eb 7E       		.sleb128 -2
+ 1585 00ec 9F       		.byte	0x9f
+ 1586 00ed 00000000 		.4byte	0
+ 1587 00f1 00000000 		.4byte	0
+ 1588              	.LLST6:
+ 1589 00f5 78000000 		.4byte	.LVL11
+ 1590 00f9 8C000000 		.4byte	.LVL12
+ 1591 00fd 0600     		.2byte	0x6
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 29
+
+
+ 1592 00ff 3F       		.byte	0x3f
+ 1593 0100 75       		.byte	0x75
+ 1594 0101 00       		.sleb128 0
+ 1595 0102 24       		.byte	0x24
+ 1596 0103 20       		.byte	0x20
+ 1597 0104 9F       		.byte	0x9f
+ 1598 0105 8C000000 		.4byte	.LVL12
+ 1599 0109 96000000 		.4byte	.LVL13
+ 1600 010d 0A00     		.2byte	0xa
+ 1601 010f 3F       		.byte	0x3f
+ 1602 0110 71       		.byte	0x71
+ 1603 0111 00       		.sleb128 0
+ 1604 0112 33       		.byte	0x33
+ 1605 0113 1A       		.byte	0x1a
+ 1606 0114 32       		.byte	0x32
+ 1607 0115 24       		.byte	0x24
+ 1608 0116 24       		.byte	0x24
+ 1609 0117 20       		.byte	0x20
+ 1610 0118 9F       		.byte	0x9f
+ 1611 0119 00000000 		.4byte	0
+ 1612 011d 00000000 		.4byte	0
+ 1613              	.LLST7:
+ 1614 0121 78000000 		.4byte	.LVL11
+ 1615 0125 8C000000 		.4byte	.LVL12
+ 1616 0129 0B00     		.2byte	0xb
+ 1617 012b 73       		.byte	0x73
+ 1618 012c 00       		.sleb128 0
+ 1619 012d 08       		.byte	0x8
+ 1620 012e F0       		.byte	0xf0
+ 1621 012f 1A       		.byte	0x1a
+ 1622 0130 34       		.byte	0x34
+ 1623 0131 25       		.byte	0x25
+ 1624 0132 75       		.byte	0x75
+ 1625 0133 00       		.sleb128 0
+ 1626 0134 24       		.byte	0x24
+ 1627 0135 9F       		.byte	0x9f
+ 1628 0136 8C000000 		.4byte	.LVL12
+ 1629 013a 96000000 		.4byte	.LVL13
+ 1630 013e 0F00     		.2byte	0xf
+ 1631 0140 73       		.byte	0x73
+ 1632 0141 00       		.sleb128 0
+ 1633 0142 08       		.byte	0x8
+ 1634 0143 F0       		.byte	0xf0
+ 1635 0144 1A       		.byte	0x1a
+ 1636 0145 34       		.byte	0x34
+ 1637 0146 25       		.byte	0x25
+ 1638 0147 71       		.byte	0x71
+ 1639 0148 00       		.sleb128 0
+ 1640 0149 33       		.byte	0x33
+ 1641 014a 1A       		.byte	0x1a
+ 1642 014b 32       		.byte	0x32
+ 1643 014c 24       		.byte	0x24
+ 1644 014d 24       		.byte	0x24
+ 1645 014e 9F       		.byte	0x9f
+ 1646 014f 00000000 		.4byte	0
+ 1647 0153 00000000 		.4byte	0
+ 1648              	.LLST8:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 30
+
+
+ 1649 0157 00000000 		.4byte	.LVL15
+ 1650 015b 0C000000 		.4byte	.LVL16
+ 1651 015f 0100     		.2byte	0x1
+ 1652 0161 50       		.byte	0x50
+ 1653 0162 0C000000 		.4byte	.LVL16
+ 1654 0166 2C000000 		.4byte	.LFE122
+ 1655 016a 0400     		.2byte	0x4
+ 1656 016c F3       		.byte	0xf3
+ 1657 016d 01       		.uleb128 0x1
+ 1658 016e 50       		.byte	0x50
+ 1659 016f 9F       		.byte	0x9f
+ 1660 0170 00000000 		.4byte	0
+ 1661 0174 00000000 		.4byte	0
+ 1662              	.LLST9:
+ 1663 0178 00000000 		.4byte	.LVL15
+ 1664 017c 10000000 		.4byte	.LVL17
+ 1665 0180 0100     		.2byte	0x1
+ 1666 0182 51       		.byte	0x51
+ 1667 0183 10000000 		.4byte	.LVL17
+ 1668 0187 2C000000 		.4byte	.LFE122
+ 1669 018b 0400     		.2byte	0x4
+ 1670 018d F3       		.byte	0xf3
+ 1671 018e 01       		.uleb128 0x1
+ 1672 018f 51       		.byte	0x51
+ 1673 0190 9F       		.byte	0x9f
+ 1674 0191 00000000 		.4byte	0
+ 1675 0195 00000000 		.4byte	0
+ 1676              	.LLST10:
+ 1677 0199 00000000 		.4byte	.LFB119
+ 1678 019d 02000000 		.4byte	.LCFI2
+ 1679 01a1 0200     		.2byte	0x2
+ 1680 01a3 7D       		.byte	0x7d
+ 1681 01a4 00       		.sleb128 0
+ 1682 01a5 02000000 		.4byte	.LCFI2
+ 1683 01a9 7C000000 		.4byte	.LFE119
+ 1684 01ad 0200     		.2byte	0x2
+ 1685 01af 7D       		.byte	0x7d
+ 1686 01b0 10       		.sleb128 16
+ 1687 01b1 00000000 		.4byte	0
+ 1688 01b5 00000000 		.4byte	0
+ 1689              	.LLST11:
+ 1690 01b9 00000000 		.4byte	.LVL18
+ 1691 01bd 0A000000 		.4byte	.LVL19
+ 1692 01c1 0100     		.2byte	0x1
+ 1693 01c3 50       		.byte	0x50
+ 1694 01c4 0A000000 		.4byte	.LVL19
+ 1695 01c8 20000000 		.4byte	.LVL22
+ 1696 01cc 0100     		.2byte	0x1
+ 1697 01ce 55       		.byte	0x55
+ 1698 01cf 20000000 		.4byte	.LVL22
+ 1699 01d3 23000000 		.4byte	.LVL23-1
+ 1700 01d7 0100     		.2byte	0x1
+ 1701 01d9 50       		.byte	0x50
+ 1702 01da 23000000 		.4byte	.LVL23-1
+ 1703 01de 4E000000 		.4byte	.LVL25
+ 1704 01e2 0100     		.2byte	0x1
+ 1705 01e4 55       		.byte	0x55
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 31
+
+
+ 1706 01e5 4E000000 		.4byte	.LVL25
+ 1707 01e9 51000000 		.4byte	.LVL26-1
+ 1708 01ed 0100     		.2byte	0x1
+ 1709 01ef 50       		.byte	0x50
+ 1710 01f0 51000000 		.4byte	.LVL26-1
+ 1711 01f4 76000000 		.4byte	.LVL30
+ 1712 01f8 0100     		.2byte	0x1
+ 1713 01fa 55       		.byte	0x55
+ 1714 01fb 76000000 		.4byte	.LVL30
+ 1715 01ff 79000000 		.4byte	.LVL31-1
+ 1716 0203 0100     		.2byte	0x1
+ 1717 0205 50       		.byte	0x50
+ 1718 0206 79000000 		.4byte	.LVL31-1
+ 1719 020a 7C000000 		.4byte	.LFE119
+ 1720 020e 0100     		.2byte	0x1
+ 1721 0210 55       		.byte	0x55
+ 1722 0211 00000000 		.4byte	0
+ 1723 0215 00000000 		.4byte	0
+ 1724              	.LLST12:
+ 1725 0219 0A000000 		.4byte	.LVL19
+ 1726 021d 1E000000 		.4byte	.LVL21
+ 1727 0221 0200     		.2byte	0x2
+ 1728 0223 30       		.byte	0x30
+ 1729 0224 9F       		.byte	0x9f
+ 1730 0225 6E000000 		.4byte	.LVL28
+ 1731 0229 76000000 		.4byte	.LVL30
+ 1732 022d 0200     		.2byte	0x2
+ 1733 022f 30       		.byte	0x30
+ 1734 0230 9F       		.byte	0x9f
+ 1735 0231 00000000 		.4byte	0
+ 1736 0235 00000000 		.4byte	0
+ 1737              		.section	.debug_aranges,"",%progbits
+ 1738 0000 3C000000 		.4byte	0x3c
+ 1739 0004 0200     		.2byte	0x2
+ 1740 0006 00000000 		.4byte	.Ldebug_info0
+ 1741 000a 04       		.byte	0x4
+ 1742 000b 00       		.byte	0
+ 1743 000c 0000     		.2byte	0
+ 1744 000e 0000     		.2byte	0
+ 1745 0010 00000000 		.4byte	.LFB118
+ 1746 0014 0C000000 		.4byte	.LFE118-.LFB118
+ 1747 0018 00000000 		.4byte	.LFB120
+ 1748 001c 24000000 		.4byte	.LFE120-.LFB120
+ 1749 0020 00000000 		.4byte	.LFB121
+ 1750 0024 C4000000 		.4byte	.LFE121-.LFB121
+ 1751 0028 00000000 		.4byte	.LFB122
+ 1752 002c 2C000000 		.4byte	.LFE122-.LFB122
+ 1753 0030 00000000 		.4byte	.LFB119
+ 1754 0034 7C000000 		.4byte	.LFE119-.LFB119
+ 1755 0038 00000000 		.4byte	0
+ 1756 003c 00000000 		.4byte	0
+ 1757              		.section	.debug_ranges,"",%progbits
+ 1758              	.Ldebug_ranges0:
+ 1759 0000 04000000 		.4byte	.LBB2
+ 1760 0004 06000000 		.4byte	.LBE2
+ 1761 0008 5E000000 		.4byte	.LBB3
+ 1762 000c 92000000 		.4byte	.LBE3
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 32
+
+
+ 1763 0010 00000000 		.4byte	0
+ 1764 0014 00000000 		.4byte	0
+ 1765 0018 00000000 		.4byte	.LFB118
+ 1766 001c 0C000000 		.4byte	.LFE118
+ 1767 0020 00000000 		.4byte	.LFB120
+ 1768 0024 24000000 		.4byte	.LFE120
+ 1769 0028 00000000 		.4byte	.LFB121
+ 1770 002c C4000000 		.4byte	.LFE121
+ 1771 0030 00000000 		.4byte	.LFB122
+ 1772 0034 2C000000 		.4byte	.LFE122
+ 1773 0038 00000000 		.4byte	.LFB119
+ 1774 003c 7C000000 		.4byte	.LFE119
+ 1775 0040 00000000 		.4byte	0
+ 1776 0044 00000000 		.4byte	0
+ 1777              		.section	.debug_line,"",%progbits
+ 1778              	.Ldebug_line0:
+ 1779 0000 42020000 		.section	.debug_str,"MS",%progbits,1
+ 1779      02008A01 
+ 1779      00000201 
+ 1779      FB0E0D00 
+ 1779      01010101 
+ 1780              	.LASF27:
+ 1781 0000 45585444 		.ascii	"EXTDriver\000"
+ 1781      72697665 
+ 1781      7200
+ 1782              	.LASF40:
+ 1783 000a 6368616E 		.ascii	"channel\000"
+ 1783      6E656C00 
+ 1784              	.LASF36:
+ 1785 0012 6578745F 		.ascii	"ext_lld_init\000"
+ 1785      6C6C645F 
+ 1785      696E6974 
+ 1785      00
+ 1786              	.LASF28:
+ 1787 001f 73746174 		.ascii	"state\000"
+ 1787      6500
+ 1788              	.LASF26:
+ 1789 0025 65787473 		.ascii	"extstate_t\000"
+ 1789      74617465 
+ 1789      5F7400
+ 1790              	.LASF33:
+ 1791 0030 45585443 		.ascii	"EXTChannelConfig\000"
+ 1791      68616E6E 
+ 1791      656C436F 
+ 1791      6E666967 
+ 1791      00
+ 1792              	.LASF23:
+ 1793 0041 4558545F 		.ascii	"EXT_UNINIT\000"
+ 1793      554E494E 
+ 1793      495400
+ 1794              	.LASF4:
+ 1795 004c 73686F72 		.ascii	"short unsigned int\000"
+ 1795      7420756E 
+ 1795      7369676E 
+ 1795      65642069 
+ 1795      6E7400
+ 1796              	.LASF50:
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 33
+
+
+ 1797 005f 2E2E2F2E 		.ascii	"../../chibios/os/hal/platforms/STM32/ext_lld.c\000"
+ 1797      2E2F6368 
+ 1797      6962696F 
+ 1797      732F6F73 
+ 1797      2F68616C 
+ 1798              	.LASF51:
+ 1799 008e 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace\\DCM_test_3\000"
+ 1799      68696269 
+ 1799      53747564 
+ 1799      696F5C77 
+ 1799      6F726B73 
+ 1800              	.LASF30:
+ 1801 00b2 65787063 		.ascii	"expchannel_t\000"
+ 1801      68616E6E 
+ 1801      656C5F74 
+ 1801      00
+ 1802              	.LASF47:
+ 1803 00bf 6578745F 		.ascii	"ext_lld_exti_irq_disable\000"
+ 1803      6C6C645F 
+ 1803      65787469 
+ 1803      5F697271 
+ 1803      5F646973 
+ 1804              	.LASF31:
+ 1805 00d8 65787463 		.ascii	"extcallback_t\000"
+ 1805      616C6C62 
+ 1805      61636B5F 
+ 1805      7400
+ 1806              	.LASF48:
+ 1807 00e6 6578745F 		.ascii	"ext_lld_exti_irq_enable\000"
+ 1807      6C6C645F 
+ 1807      65787469 
+ 1807      5F697271 
+ 1807      5F656E61 
+ 1808              	.LASF43:
+ 1809 00fe 6578745F 		.ascii	"ext_lld_channel_disable\000"
+ 1809      6C6C645F 
+ 1809      6368616E 
+ 1809      6E656C5F 
+ 1809      64697361 
+ 1810              	.LASF10:
+ 1811 0116 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1811      206C6F6E 
+ 1811      6720756E 
+ 1811      7369676E 
+ 1811      65642069 
+ 1812              	.LASF21:
+ 1813 012d 434D5043 		.ascii	"CMPCR\000"
+ 1813      5200
+ 1814              	.LASF2:
+ 1815 0133 756E7369 		.ascii	"unsigned char\000"
+ 1815      676E6564 
+ 1815      20636861 
+ 1815      7200
+ 1816              	.LASF8:
+ 1817 0141 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1817      20756E73 
+ 1817      69676E65 
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 34
+
+
+ 1817      6420696E 
+ 1817      7400
+ 1818              	.LASF18:
+ 1819 0153 4D454D52 		.ascii	"MEMRMP\000"
+ 1819      4D5000
+ 1820              	.LASF17:
+ 1821 015a 45585449 		.ascii	"EXTI_TypeDef\000"
+ 1821      5F547970 
+ 1821      65446566 
+ 1821      00
+ 1822              	.LASF45:
+ 1823 0167 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1823      52784275 
+ 1823      66666572 
+ 1823      00
+ 1824              	.LASF14:
+ 1825 0174 52545352 		.ascii	"RTSR\000"
+ 1825      00
+ 1826              	.LASF29:
+ 1827 0179 636F6E66 		.ascii	"config\000"
+ 1827      696700
+ 1828              	.LASF35:
+ 1829 0180 45585443 		.ascii	"EXTConfig\000"
+ 1829      6F6E6669 
+ 1829      6700
+ 1830              	.LASF20:
+ 1831 018a 52455345 		.ascii	"RESERVED\000"
+ 1831      52564544 
+ 1831      00
+ 1832              	.LASF38:
+ 1833 0193 6578745F 		.ascii	"ext_lld_channel_enable\000"
+ 1833      6C6C645F 
+ 1833      6368616E 
+ 1833      6E656C5F 
+ 1833      656E6162 
+ 1834              	.LASF37:
+ 1835 01aa 6578745F 		.ascii	"ext_lld_stop\000"
+ 1835      6C6C645F 
+ 1835      73746F70 
+ 1835      00
+ 1836              	.LASF19:
+ 1837 01b7 45585449 		.ascii	"EXTICR\000"
+ 1837      435200
+ 1838              	.LASF25:
+ 1839 01be 4558545F 		.ascii	"EXT_ACTIVE\000"
+ 1839      41435449 
+ 1839      564500
+ 1840              	.LASF0:
+ 1841 01c9 756E7369 		.ascii	"unsigned int\000"
+ 1841      676E6564 
+ 1841      20696E74 
+ 1841      00
+ 1842              	.LASF39:
+ 1843 01d6 65787470 		.ascii	"extp\000"
+ 1843      00
+ 1844              	.LASF13:
+ 1845 01db 63686172 		.ascii	"char\000"
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 35
+
+
+ 1845      00
+ 1846              	.LASF32:
+ 1847 01e0 6D6F6465 		.ascii	"mode\000"
+ 1847      00
+ 1848              	.LASF6:
+ 1849 01e5 696E7433 		.ascii	"int32_t\000"
+ 1849      325F7400 
+ 1850              	.LASF12:
+ 1851 01ed 73697A65 		.ascii	"sizetype\000"
+ 1851      74797065 
+ 1851      00
+ 1852              	.LASF9:
+ 1853 01f6 6C6F6E67 		.ascii	"long long int\000"
+ 1853      206C6F6E 
+ 1853      6720696E 
+ 1853      7400
+ 1854              	.LASF41:
+ 1855 0204 6D61736B 		.ascii	"mask\000"
+ 1855      00
+ 1856              	.LASF49:
+ 1857 0209 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 1857      4320342E 
+ 1857      372E3420 
+ 1857      32303134 
+ 1857      30343031 
+ 1858 023c 616E6368 		.ascii	"anch revision 209195]\000"
+ 1858      20726576 
+ 1858      6973696F 
+ 1858      6E203230 
+ 1858      39313935 
+ 1859              	.LASF34:
+ 1860 0252 6368616E 		.ascii	"channels\000"
+ 1860      6E656C73 
+ 1860      00
+ 1861              	.LASF42:
+ 1862 025b 706F7274 		.ascii	"port\000"
+ 1862      00
+ 1863              	.LASF46:
+ 1864 0260 45585444 		.ascii	"EXTD1\000"
+ 1864      3100
+ 1865              	.LASF3:
+ 1866 0266 73686F72 		.ascii	"short int\000"
+ 1866      7420696E 
+ 1866      7400
+ 1867              	.LASF22:
+ 1868 0270 53595343 		.ascii	"SYSCFG_TypeDef\000"
+ 1868      46475F54 
+ 1868      79706544 
+ 1868      656600
+ 1869              	.LASF52:
+ 1870 027f 6578744F 		.ascii	"extObjectInit\000"
+ 1870      626A6563 
+ 1870      74496E69 
+ 1870      7400
+ 1871              	.LASF15:
+ 1872 028d 46545352 		.ascii	"FTSR\000"
+ 1872      00
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 36
+
+
+ 1873              	.LASF5:
+ 1874 0292 6C6F6E67 		.ascii	"long int\000"
+ 1874      20696E74 
+ 1874      00
+ 1875              	.LASF1:
+ 1876 029b 7369676E 		.ascii	"signed char\000"
+ 1876      65642063 
+ 1876      68617200 
+ 1877              	.LASF7:
+ 1878 02a7 75696E74 		.ascii	"uint32_t\000"
+ 1878      33325F74 
+ 1878      00
+ 1879              	.LASF11:
+ 1880 02b0 5F426F6F 		.ascii	"_Bool\000"
+ 1880      6C00
+ 1881              	.LASF16:
+ 1882 02b6 53574945 		.ascii	"SWIER\000"
+ 1882      5200
+ 1883              	.LASF44:
+ 1884 02bc 6578745F 		.ascii	"ext_lld_start\000"
+ 1884      6C6C645F 
+ 1884      73746172 
+ 1884      7400
+ 1885              	.LASF24:
+ 1886 02ca 4558545F 		.ascii	"EXT_STOP\000"
+ 1886      53544F50 
+ 1886      00
+ 1887              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s 			page 37
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ext_lld.c
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:19     .text.ext_lld_init:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:25     .text.ext_lld_init:00000000 ext_lld_init
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:402    .bss.EXTD1:00000000 .LANCHOR0
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:44     .text.ext_lld_stop:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:50     .text.ext_lld_stop:00000000 ext_lld_stop
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:91     .text.ext_lld_channel_enable:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:97     .text.ext_lld_channel_enable:00000000 ext_lld_channel_enable
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:236    .text.ext_lld_channel_disable:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:242    .text.ext_lld_channel_disable:00000000 ext_lld_channel_disable
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:280    .text.ext_lld_start:00000000 $t
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:286    .text.ext_lld_start:00000000 ext_lld_start
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:405    .bss.EXTD1:00000000 EXTD1
+C:\Users\Mohamad\AppData\Local\Temp\ccVRVTiD.s:401    .bss.EXTD1:00000000 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+extObjectInit
+ext_lld_exti_irq_disable
+ext_lld_exti_irq_enable
