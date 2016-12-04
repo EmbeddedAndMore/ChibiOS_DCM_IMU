@@ -8,7 +8,7 @@ the motivation for this job raised when i was studing ArdoPilot code (https://gi
 
 i used GY-86 (MPU6050 , MS5611 , HMC5883) and also stm32f407VGT on my customized board (tested with stm32f407 discovery board)
 
-in order to get data from IMU i used Mavlink (http://qgroundcontrol.org/mavlink/start) which is ready simple and handy to use.
+in order to get data from IMU i used Mavlink (http://qgroundcontrol.org/mavlink/start) which is really simple and handy to use.
 
 the code is still naive and need to be overviewd and debuged (specialy in sensor calibration). any contribution would be appreciated.
 
